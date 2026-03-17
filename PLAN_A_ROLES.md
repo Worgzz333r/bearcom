@@ -26,12 +26,12 @@ Dev 2 робить git pull → drush cim → пише шаблон під цю 
 
 ### Dev 1 (Backend)
 
-- [ ] Включити всі модулі (paragraphs, admin_toolbar, pathauto, metatag, webform, search_api, twig_tweak, field_group, focal_point, geofield, leaflet, redirect, config_split, redis, captcha, recaptcha, BEF, views_ajax_history, address, entity_reference_revisions)
+- [ ] Включити всі модулі (paragraphs, admin_toolbar, pathauto, metatag, webform, search_api, twig_tweak, field_group, focal_point, geofield, leaflet, redirect, config_split, redis, captcha, recaptcha, BEF, views_ajax_history, address, entity_reference_revisions, simple_sitemap)
 - [ ] Налаштувати config export/import воркфлоу — перший `drush cex`, закомітити config/
 - [ ] Таксономія `product_category` — наповнити термами (Two-Way Radios, Accessories, Chargers, Earpieces, Antennas, Batteries, Cases, Microphones, Headsets)
 - [ ] Таксономія `industry_tax` — наповнити (Healthcare, Construction, Education, Hospitality, Manufacturing, Government, Retail, Transportation, Warehouse)
 - [ ] Таксономія `state_province` — всі 50 штатів США + 13 провінцій/територій Канади
-- [ ] Створити 13 стилів зображень (розміри в PROJECT_PLAN §7.7): `hero_desktop` (1920×600), `hero_mobile` (768×400), `product_card` (400×400), `product_gallery` (800×800), `product_thumb` (100×100), `industry_card` (400×300), `content_block` (600×400), `cta_block` (500×350), `location_photo` (600×400), `rental_card` (500×350), `article_hero` (1200×500), `article_inline` (800×auto), `logo_icon` (80×80)
+- [ ] Створити 15 стилів зображень (розміри в PROJECT_PLAN §7.7): `hero_desktop` (1920×600), `hero_mobile` (768×400), `product_card` (400×400), `product_gallery` (800×800), `product_thumb` (100×100), `industry_card` (400×300), `content_block` (600×400), `cta_block` (500×350), `location_photo` (600×400), `rental_card` (500×350), `article_hero` (1200×500), `article_inline` (800×auto), `landing_image` (600×auto), `gj_tab_image` (500×350), `logo_icon` (80×80)
 - [ ] Головне меню — створити повну структуру:
   - Solutions → Voice Communication (дочірні), Security Solutions (дочірні), Data Solutions (дочірні)
   - Rentals (дочірні пункти)
@@ -46,7 +46,7 @@ Dev 2 робить git pull → drush cim → пише шаблон під цю 
   - Кольори: `--color-primary: #FC5000`, `--color-dark: #22262C`, `--color-text: #4A4F55`, `--color-light-gray: #F5F5F5`, `--color-medium-gray: #D9D9D9`, `--color-white: #FFFFFF`, `--color-blue: #0057A0`, `--color-green: #28A745`, `--color-error: #FB591F`
   - Шрифт: `--font-family: 'Roboto Condensed', sans-serif`
   - Відступи: `--spacing-xs: 8px` через `--spacing-xxl: 80px`
-  - Контейнер: `--container-max: 1440px`, `--container-padding: 20px`
+  - Контейнер: `--container-max-width: 1320px`, `--container-padding: 20px`
 - [ ] `css/base/reset.css` — нормалізація
 - [ ] `css/base/typography.css` — H1-H5 desktop + mobile (за таблицею з PROJECT_PLAN §12)
 - [ ] `css/base/grid.css` — сітка, контейнер, утиліти
@@ -76,29 +76,31 @@ Dev 2 робить git pull → drush cim → пише шаблон під цю 
 
 ### Dev 1 (Backend)
 
-- [ ] Тип контенту `flexible_page`:
-  - `field_hero_title` (Text), `field_hero_subtitle` (Text), `field_hero_image` (Media), `field_hero_style` (Select: product/image/solid), `field_hero_cta_text` (Text), `field_hero_cta_url` (Link)
-  - `field_paragraphs` (Paragraphs — unlimited, all types)
-  - `field_benefits` (Paragraphs — Checklist Item)
-  - `field_form_reference` (Entity reference — Webform)
-- [ ] Параграф `hero_banner`: field_title, field_subtitle, field_image, field_style (product/image/solid), field_cta_text, field_cta_url, field_product_image
+- [ ] Тип контенту `flexible_page` (поля та machine names — строго за PROJECT_PLAN §7.1):
+  - `field_paragraphs` (Paragraphs: hero_banner, cta_block, card_grid, stats_counter, rentals_connected, guided_journey, content_block, product_grid, video_block, accessories_grid)
+  - `field_heading` (Text), `field_description` (Text formatted), `field_image` (Media)
+  - `field_benefits` (Paragraphs: Checklist Item)
+  - `field_webform` (Webform reference)
+  - `field_hero_style` (Select)
+- [ ] Параграф `hero_banner`: field_image, field_title, field_subtitle, field_cta_text, field_cta_url, field_style (Select: product/image/color), field_product_image (Media — для product-стилю)
 - [ ] Параграф `cta_block`: field_image, field_title, field_description, field_button_text, field_button_url, field_style (default/orange)
 - [ ] Параграф `card_grid`: field_title, field_subtitle, field_cards (Paragraphs: Card Item)
 - [ ] Параграф `card_item`: field_icon (Media), field_title, field_description, field_link
 - [ ] Параграф `stats_counter`: field_items (Paragraphs: Stat Item)
-- [ ] Параграф `stat_item`: field_number (Integer), field_suffix (Text: +, %, K), field_label
-- [ ] Параграф `rentals_connected`: field_title, field_cards (Paragraphs: Card Item, max 2)
+- [ ] Параграф `stat_item`: field_number (Text — дозволяє "12,000+"), field_label
+- [ ] Параграф `rentals_connected`: field_title, field_card_1_image, field_card_1_title, field_card_1_link, field_card_2_image, field_card_2_title, field_card_2_link
+- [ ] Параграф `product_grid`: field_title, field_view_id (Text), field_limit (Number)
 - [ ] Параграф `guided_journey`: field_title, field_tabs (Paragraphs: GJ Tab)
-- [ ] Параграф `gj_tab`: field_tab_title, field_body, field_checklist (Paragraphs: Checklist Item), field_image, field_cta_text, field_cta_url
+- [ ] Параграф `gj_tab`: field_tab_title, field_body, field_checklist (Text multiple), field_image
 - [ ] Параграф `checklist_item`: field_text
 - [ ] Створити ноду Homepage (flexible_page) → додати всі параграфи з тестовим контентом → встановити як front page (`/admin/config/system/site-information`)
 
 ### Dev 2 (Frontend)
 
 - [ ] `paragraph--hero-banner.html.twig` + `css/components/hero.css` — 3 стилі через `field_style`:
-  - `product`: темний фон, текст зліва, зображення товару справа
+  - `product`: темний фон, текст зліва, зображення товару справа (field_product_image)
   - `image`: фонова картинка на всю ширину, текст по центру
-  - `solid`: суцільний помаранчевий фон, текст по центру
+  - `color`: суцільний помаранчевий фон, текст по центру
 - [ ] `paragraph--cta-block.html.twig` + `css/components/cta-block.css`:
   - `default`: картинка зліва, текст + кнопка справа
   - `orange`: помаранчевий фон, текст + кнопка по центру
@@ -120,12 +122,13 @@ Dev 2 робить git pull → drush cim → пише шаблон під цю 
 
 ### Dev 1 (Backend)
 
-- [ ] Тип контенту `product`:
-  - `field_images` (Media — multiple), `field_price` (Text), `field_body` (Text formatted long), `field_category` (Term ref → product_category), `field_short_description` (Text)
+- [ ] Тип контенту `product` (поля за PROJECT_PLAN §7.1):
+  - `field_images` (Media multiple), `field_short_description` (Text formatted), `field_price` (Decimal)
+  - `field_body` (Paragraphs: content_block, video_block, cta_block, accessories_grid)
+  - `field_category` (Taxonomy: product_category)
   - `field_specs` (Paragraphs: Spec Table), `field_additional_specs` (Paragraphs: Spec Table)
-  - `field_accessories` (Entity ref → Product, multiple), `field_faq` (Paragraphs: FAQ Item)
-  - `field_guided_journey` (Paragraphs: Guided Journey), `field_cta` (Paragraphs: CTA Block)
-  - `field_related_products` (Entity ref → Product) або View
+  - `field_accessories` (Entity ref → Product), `field_related_products` (Entity ref → Product)
+  - `field_faq` (Paragraphs: FAQ Item), `field_guided_journey` (Paragraphs: Guided Journey)
 - [ ] View `products_listing`:
   - Format: Unformatted list
   - Fields: rendered entity (teaser)
@@ -133,6 +136,7 @@ Dev 2 робить git pull → drush cim → пише шаблон під цю 
   - AJAX: увімкнено
   - Pager: 9 items per page
   - Path: `/products`
+- [ ] Параграф `faq_item`: field_question (Text), field_answer (Text formatted) — потрібен для Category Page FAQ та далі
 - [ ] 3–5 тестових товарів з картинками (можна будь-які рації з інтернету)
 
 ### Dev 2 (Frontend)
@@ -184,15 +188,18 @@ Dev 2 робить git pull → drush cim → пише шаблон під цю 
 
 ### Dev 1 (Backend)
 
-- [ ] Тип контенту `industry`:
-  - `field_icon` (Media — SVG), `field_hero_image` (Media), `field_hero_title`, `field_body` (Text formatted)
+- [ ] Тип контенту `industry` (поля за PROJECT_PLAN §7.1):
+  - `field_icon` (Media), `field_hero_image` (Media), `field_description` (Text)
   - `field_solutions` (Paragraphs: Card Grid), `field_cta` (Paragraphs: CTA Block)
-- [ ] Тип контенту `service`:
-  - `field_hero_title`, `field_hero_subtitle`, `field_hero_image`
-  - `field_body` (Paragraphs: Content Block L/R), `field_video` (Media remote video)
+- [ ] Тип контенту `service` (поля за PROJECT_PLAN §7.1):
+  - `field_hero_image` (Media), `field_hero_style` (Select: image/color)
+  - `field_body` (Paragraphs: Content Block L/R), `field_video` (Paragraphs: Video Block)
   - `field_faq` (Paragraphs: FAQ Item), `field_cta` (Paragraphs: CTA Block)
+  - `field_related` (Entity ref → Service, Article)
 - [ ] Параграф `content_block`: field_title, field_body (formatted), field_image (Media), field_layout (Select: image-left / image-right)
-- [ ] Параграф `faq_item`: field_question (Text), field_answer (Text formatted)
+- [ ] Параграф `content_block` — якщо ще не створений (спільний)
+- [ ] View `related_articles`: Block, latest articles, exclude current, limit 4
+- [ ] View `related_services`: Block, other services, exclude current, limit 4
 - [ ] View `industries_listing`: Grid 3×3, path `/industries`, content type = industry, teaser display
 - [ ] Тестовий контент: 3 індустрії (Healthcare, Construction, Education), 2 сервіси
 
@@ -220,15 +227,17 @@ Dev 2 робить git pull → drush cim → пише шаблон під цю 
 
 ### Dev 1 (Backend)
 
-- [ ] Тип контенту `article`:
-  - `field_hero_image` (Media), `field_hero_style` (Select: image/blue), `field_body` (Text formatted long)
-  - `field_cta` (Paragraphs: CTA Block), `field_category` (Term ref)
+- [ ] Тип контенту `article` (поля за PROJECT_PLAN §7.1):
+  - `field_hero_image` (Media), `field_hero_style` (Select: image/blue)
+  - `body` (Text formatted, full HTML — Drupal core field)
+  - `field_show_share` (Boolean), `field_related` (Entity ref → Article)
+  - `field_cta` (Paragraphs: CTA Block)
 - [ ] Webform `contact_us`:
   - Поля: First Name, Last Name, Email, Phone, Company Name, State (select), ZIP Code, Question Type (select), Resale (yes/no radio), Message (textarea)
   - reCAPTCHA v2
   - AJAX submit → повідомлення "Дякуємо!" (або модалка)
   - Email handler → відправка на адмін-емейл
-- [ ] Нода Contact Us (`flexible_page`) на path `/contact-us`, field_form_reference → contact_us webform
+- [ ] Нода Contact Us (`flexible_page`) на path `/contact-us`, field_webform → contact_us webform
 - [ ] 2 тестові статті (одна з image hero, одна з blue hero)
 
 ### Dev 2 (Frontend)
@@ -253,11 +262,11 @@ Dev 2 робить git pull → drush cim → пише шаблон під цю 
 
 ### Dev 1 (Backend)
 
-- [ ] Тип контенту `location`:
-  - `field_address` (Address), `field_phone` (Text), `field_state` (Term ref → state_province)
-  - `field_geofield` (Geofield — lat/lon), `field_open_hours` (Paragraphs: Open Hours Row)
-  - `field_images` (Media — multiple), `field_faq` (Paragraphs: FAQ Item)
-  - `field_hero_style` (Select: orange/grey)
+- [ ] Тип контенту `location` (поля за PROJECT_PLAN §7.1):
+  - `field_address` (Address), `field_phone` (Text), `field_state` (Taxonomy: state_province)
+  - `field_geo` (Geofield), `field_open_hours` (Paragraphs: Open Hours Row)
+  - `field_photo` (Media), `field_about` (Text formatted)
+  - `field_faq` (Paragraphs: FAQ Item), `field_hero_style` (Select: orange/grey)
 - [ ] Параграф `open_hours_row`: field_day (Text), field_hours (Text)
 - [ ] Geofield + Leaflet модуль — налаштувати
 - [ ] View `locations_directory`: grouped by field_state, 5-column layout, path = block
@@ -294,9 +303,10 @@ Dev 2 робить git pull → drush cim → пише шаблон під цю 
 
 ### Dev 1 (Backend)
 
-- [ ] Тип контенту `landing_page`:
-  - `field_hero_title`, `field_hero_image`, `field_benefits` (Paragraphs: Checklist Item)
-  - `field_form_reference` (Entity ref → Webform), `field_cta` (Paragraphs: CTA Block)
+- [ ] Тип контенту `landing_page` (поля за PROJECT_PLAN §7.1):
+  - `field_headline` (Text), `field_image` (Media), `field_benefits` (Paragraphs: Checklist Item)
+  - `field_webform` (Webform reference), `field_cta` (Paragraphs: CTA Block)
+  - `field_minimal_header` (Boolean)
 - [ ] Webform `lead_capture`: First Name, Last Name, Email, Phone, Company, Job Title, Country, State, Message
 - [ ] Search API — налаштувати DB backend, створити server + index, проіндексувати весь контент
 - [ ] View `search_results`: Full text search input, fields = title (linked) + excerpt with highlight, pager, path `/search`
@@ -304,7 +314,7 @@ Dev 2 робить git pull → drush cim → пише шаблон під цю 
   - Product: `/products/[node:title]`
   - Article: `/resources/[node:title]`
   - Industry: `/industries/[node:title]`
-  - Service: `/solutions/[node:title]`
+  - Service: `/services/[node:title]`
   - Location: `/locations/[node:title]`
 - [ ] Metatag — глобальні дефолти + override для кожного CT
 

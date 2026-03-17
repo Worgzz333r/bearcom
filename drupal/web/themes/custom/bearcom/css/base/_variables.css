@@ -1,0 +1,63 @@
+:root {
+  /* Colors */
+  --color-primary: #FC5000;
+  --color-primary-dark: #D4551A;
+  --color-dark-blue: #22262C;
+  --color-text-primary: #4A4F55;
+  --color-background: #FAFAFA;
+  --color-background-alt: #EFEFEF;
+  --color-footer-bg: #4A4F55;
+  --color-error-orange: #FB591F;
+  --color-white: #FFFFFF;
+
+  /* Typography */
+  --font-family: 'Roboto Condensed', sans-serif;
+  --font-size-base: 16px;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+
+  /* Headings — Desktop */
+  --h1-size: 58px; --h1-lh: 64px;
+  --h2-size: 42px; --h2-lh: 44px;
+  --h3-size: 34px; --h3-lh: 36px;
+  --h4-size: 26px; --h4-lh: 28px;
+  --h5-size: 22px; --h5-lh: 24px;
+  --p-size: 16px; --p-lh: 20px;
+  --details-size: 16px; --details-lh: 18px;
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 40px;
+  --spacing-xl: 60px;
+  --spacing-xxl: 80px;
+  --section-padding: 80px;
+  --grid-gap: 24px;
+
+  /* Layout */
+  --container-max-width: 1320px;
+  --container-padding: 20px;
+
+  /* Border Radius */
+  --radius-button: 4px;
+  --radius-card: 8px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+}
+
+/* Mobile overrides */
+@media (max-width: 1023px) {
+  :root {
+    --h1-size: 38px; --h1-lh: 40px;
+    --h2-size: 30px; --h2-lh: 32px;
+    --h3-size: 24px; --h3-lh: 26px;
+    --h4-size: 20px; --h4-lh: 22px;
+    --h5-size: 18px; --h5-lh: 20px;
+    --p-size: 16px; --p-lh: 24px;
+    --section-padding: 40px;
+  }
+}

@@ -32,20 +32,22 @@ All design mockups are in the shared Figma file (see §14 Useful Links). Exporte
 ```
 mockups/
 ├── Homepage.png
-├── 2.png                              # Category Page (desktop variant)
-├── Category Page/1.jpg                # Category Page (full)
+├── category_page.png                  # Category Page (desktop variant)
+├── Category Page/1_page-0001 (2).jpg  # Category Page (full)
 ├── Product Page [visual start].jpg
 ├── Industry - Parent page.png
 ├── Industry Landing Page.png
 ├── Service - Landing page.png
 ├── Article content type.png           # Article v1
 ├── Article content type _ v2.jpg      # Article v2 (blue hero)
-├── Locations page/1.jpg               # Location detail v1 (orange hero)
-├── Locations page/3.jpg               # Location detail v2 (grey hero)
+├── Locations page/1_page-0001.jpg     # Location detail v1 (orange hero)
+├── Locations page/3_page-0001.jpg     # Location detail v2 (grey hero)
 ├── locations page.png                 # Location Parent (Branch Locator)
-├── Paid Search Landing Page/2.jpg
-├── contact-us.png                     # Contact Us page (from prod screenshot)
+├── Location - Parent Page.jpg         # Location Parent (alternate variant)
+├── Paid Search Landing Page/2_page-0001.jpg
+├── contact_us.jpg                     # Contact Us page
 ├── searchresult_page.jpg              # Search Results
+├── Accessory Template.png             # Accessory page variant (reference)
 ├── 403 page.png
 ├── 404 page.png
 ├── mobile/                            # Mobile breakpoint mockups
@@ -54,6 +56,7 @@ mockups/
 │   ├── M_ product page.png
 │   ├── M_ Industry page.png
 │   ├── M_ Paid Search..png
+│   ├── M_ Paid Search. (1).png        # Paid Search mobile (variant 2)
 │   └── Filters.png                    # Mobile filter overlay
 ├── mobile_hamburger/                  # Mobile navigation states
 │   ├── M_ Nav - 1st level.png
@@ -82,6 +85,7 @@ mockups/
 | Search | **Search API** (with DB backend) | Scalable to Solr later. Provides Views integration for custom result templates. |
 | CSS approach | **Vanilla CSS** with CSS variables | No build tools required, simple for 2-dev team. Can add preprocessor later. |
 | JS approach | **Vanilla JS** (no framework) | Lightweight, Drupal behaviors compatible. jQuery available via Drupal core if needed. |
+| Carousel/slider | **Splide.js** (lightweight, no dependencies) | Used for Related Products, Related Content, Product gallery, mobile swipers. Include via CDN or local copy in theme `js/vendor/`. |
 
 ### Git & Collaboration Workflow
 
@@ -94,6 +98,53 @@ mockups/
 3. Never edit the same content type simultaneously — communicate before making config changes
 4. Frontend dev can work on Twig/CSS/JS independently (these are file-based, no config conflicts)
 ```
+
+### Правила розробки (ОБОВ'ЯЗКОВІ)
+
+> Ці правила діють протягом усього проекту. Перед початком роботи — прочитай. Перед код-рев'ю — перевір.
+
+#### CSS
+
+1. **Тільки CSS-змінні** — всі кольори, шрифти, розміри, відступи, радіуси, transition беруться з `var(--...)` (файл `_variables.css`). Хардкод значень заборонений. Якщо токену немає — спочатку додай його в `_variables.css`.
+2. **BEM-подібне іменування** — `.block__element--modifier` (приклад: `.site-header__nav`, `.btn--primary`, `.hero-banner__title--large`).
+3. **Без `!important`** — якщо потрібен `!important`, значить щось зроблено неправильно вище по каскаду. Виправ причину.
+4. **Без inline styles** — ніяких `style="..."` в Twig-шаблонах. Всі стилі — у відповідному CSS-файлі.
+5. **Кожен компонент = окремий CSS-файл** — не змішувати стилі різних компонентів в одному файлі.
+6. **Mobile-first не потрібен** — верстаємо desktop-first (базові стилі = desktop), адаптив через `@media (max-width: ...)`.
+7. **Breakpoints**: `1023px` (tablet), `767px` (mobile). Використовувати тільки ці два.
+8. **Контейнер** — завжди `.container` (max-width: 1320px + padding 20px). Не створювати кастомні контейнери.
+
+#### Twig
+
+1. **Іменування шаблонів** — строго за Drupal conventions: `node--{type}--{view-mode}.html.twig`, `paragraph--{type}.html.twig`, `page--{type}.html.twig`.
+2. **Без логіки в шаблонах** — Twig тільки для розмітки. Складна логіка (підрахунки, фільтрація) — в `bearcom.theme` (preprocess functions).
+3. **Поля виводити через Twig** — `{{ content.field_name }}` для полів з форматуванням, `{{ node.field_name.value }}` тільки коли потрібне "сире" значення.
+4. **Перевіряти наявність** — `{% if content.field_name|render|trim %}` перед виводом опціональних полів, щоб не залишались порожні обгортки.
+
+#### JavaScript
+
+1. **Тільки через Drupal behaviors** — весь JS обов'язково обгорнутий в `(function (Drupal, once) { Drupal.behaviors.behaviorName = { attach: function (context, settings) { ... } }; })(Drupal, once);`.
+2. **`once()` обов'язково** — для уникнення повторної ініціалізації при AJAX-оновленнях.
+3. **Без глобальних змінних** — все всередині behavior closure.
+4. **Event delegation** — для динамічного контенту (AJAX-фільтри, каруселі) навішувати події на батьківський елемент.
+5. **Без jQuery де можливо** — vanilla JS. jQuery тільки якщо потрібна взаємодія з Drupal jQuery-плагінами.
+
+#### Backend (Drupal config)
+
+1. **Machine names** — строго за `PROJECT_PLAN.md` (секція §5–§7). Не вигадувати свої назви.
+2. **Config export після кожної зміни** — змінив щось в адміні → `drush cex` → git commit. Не накопичувати зміни.
+3. **Paragraph types** — використовувати існуючі перед створенням нових. Список спільних параграфів: `cta_block`, `content_block`, `faq_item`, `checklist_item`.
+4. **Image styles** — тільки 15 визначених у §7.7. Не створювати додаткових без узгодження.
+5. **Pathauto patterns** — налаштувати одразу при створенні CT (формати URL з §6).
+6. **Metatag defaults** — налаштувати для кожного CT одразу при створенні.
+
+#### Загальне
+
+1. **Не комітити** зламаний код — перед комітом перевірити що сайт працює (`drush cr`, перезавантажити сторінку).
+2. **Щоденний ритуал**: `git pull` → `drush cim` → працюєш → `drush cex` → `git push`.
+3. **Конфлікт в конфігах** — НІКОЛИ не вирішувати вручну. Відкотити, домовитись хто перший пушить, потім другий імпортує і робить свої зміни поверх.
+4. **Тестовий контент** — створювати 2–3 ноди одразу після CT, з усіма заповненими полями (включно з необов'язковими). Це потрібно фронтенду для верстки.
+5. **Перед закриттям таски** — перевірити на desktop (1920px) і mobile (375px). Якщо не виглядає як макет — не закривати.
 
 ### How to Start (for new developer)
 
@@ -132,19 +183,19 @@ docker compose exec php bash -c "cd web && ../vendor/bin/drush uli"   # One-time
 | # | Template | Complexity | Source |
 |---|----------|-----------|--------|
 | 1 | **Homepage** | High | Homepage.png |
-| 2 | **Category Page** | High | 2.png, Category Page/1.jpg |
+| 2 | **Category Page** | High | category_page.png, Category Page/1_page-0001 (2).jpg |
 | 3 | **Product Page** | High | Product Page [visual start].jpg |
 | 4 | **Industry - Parent Page** | Medium | Industry - Parent page.png |
 | 5 | **Industry Landing Page** | Medium | Industry Landing Page.png |
 | 6 | **Service Landing Page** | Medium | Service - Landing page.png |
 | 7 | **Article (v1)** | Low | Article content type.png |
 | 8 | **Article (v2 — blue hero)** | Low | Article content type _ v2.jpg |
-| 9 | **Location Page (v1 — orange hero)** | Medium | Locations page/1.jpg |
-| 10 | **Location Page (v2 — grey hero)** | Medium | Locations page/3.jpg |
-| 11 | **Paid Search Landing Page** | Medium | Paid Search Landing Page/2.jpg |
-| 12 | **Location Parent Page** | High | Location Parent Page.png |
-| 13 | **Search Results Page** | Medium | Search Results.png |
-| 14 | **Contact Us Page** | Medium | contact-us.png |
+| 9 | **Location Page (v1 — orange hero)** | Medium | Locations page/1_page-0001.jpg |
+| 10 | **Location Page (v2 — grey hero)** | Medium | Locations page/3_page-0001.jpg |
+| 11 | **Paid Search Landing Page** | Medium | Paid Search Landing Page/2_page-0001.jpg |
+| 12 | **Location Parent Page** | High | locations page.png, Location - Parent Page.jpg |
+| 13 | **Search Results Page** | Medium | searchresult_page.jpg |
+| 14 | **Contact Us Page** | Medium | contact_us.jpg |
 | 15 | **403 / 404 Error Pages** | Low | 403 page.png, 404 page.png |
 
 **Total: 15 templates**
@@ -153,6 +204,8 @@ docker compose exec php bash -c "cd web && ../vendor/bin/drush uli"   # One-time
 
 ## 2. Design Tokens
 
+> **ПРАВИЛО:** Всі кольори, розміри шрифтів, відступи, border-radius і transition ОБОВ'ЯЗКОВО беруться з CSS-змінних (`_variables.css`). Ніколи не хардкодити значення напряму — завжди `var(--color-primary)`, `var(--spacing-md)` і т.д. Це критично для підтримки та консистентності дизайну. Якщо потрібного токену немає — додай його в `_variables.css`, а потім використовуй.
+
 ```css
 :root {
   /* Colors */
@@ -160,7 +213,6 @@ docker compose exec php bash -c "cd web && ../vendor/bin/drush uli"   # One-time
   --color-primary-dark:   #D4551A;  /* hover state */
   --color-dark-blue:      #22262C;  /* hero Article v2, headings */
   --color-text-primary:   #4A4F55;
-  --color-text-secondary: #4A4F55;
   --color-background:     #FAFAFA;
   --color-background-alt: #EFEFEF;  /* grey sections */
   --color-footer-bg:      #4A4F55;
@@ -194,7 +246,7 @@ docker compose exec php bash -c "cd web && ../vendor/bin/drush uli"   # One-time
   /* Spacing */
   --section-padding:      80px;
   --grid-gap:             24px;
-  --container-max-width:  1200px;
+  --container-max-width:  1320px;
 
   /* Border Radius */
   --radius-button:        4px;
@@ -316,7 +368,7 @@ Orange sidebar positioned in center (not left) for this dropdown.
 
 ## 5. Mobile Responsive Behavior
 
-**Breakpoint:** < 1024px (based on typography scale switch)
+**Breakpoints:** Desktop (≥1024px), Tablet (768–1023px), Mobile (<768px). CSS: `@media (max-width: 1023px)` та `@media (max-width: 767px)`.
 
 ### Global
 - Header → logo + search icon + X (close) button
@@ -392,6 +444,54 @@ Orange sidebar positioned in center (not left) for this dropdown.
 - CTA block → full width stacked
 - Minimal footer
 
+### Article Page (no mobile mockup — follow layout rules below)
+- Hero → full width, image scales
+- Article v2 (blue hero) → solid color block, text centered
+- Body text → single column, full width
+- Share buttons → horizontal row below hero
+- CTA block → full width
+- Related articles → horizontal scroll carousel
+
+### Service Landing Page (no mobile mockup — follow layout rules below)
+- Hero → full width
+- Content blocks L/R → single column, image above text (all blocks)
+- Video → full width embed, 16:9 aspect ratio
+- FAQ accordion → full width
+- CTA block → full width
+- Related content → horizontal scroll carousel
+
+### Location Parent Page (no mobile mockup — follow layout rules below)
+- Search form → full width input
+- Map → full width, fixed height 300px
+- "Use my location" → centered below search
+- State directory → **1 column** (states stack vertically, locations list below each state)
+- Location cards (mini) → full width, stacked
+
+### Location Page (no mobile mockup — follow layout rules below)
+- Hero → full width
+- Address + phone → full width block
+- Open hours table → full width
+- Map → full width, fixed height 250px
+- FAQ accordion → full width
+- About section → single column
+
+### Contact Us Page (no mobile mockup — follow layout rules below)
+- Layout → **single column** (left content stacks above form)
+- Benefits checklist → full width
+- Webform → full width, all fields single column
+- Submit button → full width
+
+### Search Results Page (no mobile mockup — follow layout rules below)
+- Search input → full width
+- Results list → single column, full width
+- Pagination → centered
+
+### 403 / 404 Error Pages (no mobile mockup — follow layout rules below)
+- Error number → large, centered
+- Error message → centered text
+- CTA button → full width
+- Minimal footer
+
 ---
 
 ## 6. Reusable UI Components
@@ -403,7 +503,7 @@ Orange sidebar positioned in center (not left) for this dropdown.
 | **Industry Card** | Icon/Image, Title, Description, "Learn More" link | Industry Parent, Landing, Homepage |
 | **FAQ Accordion** | H2 title + collapsible Q&A items | Category, Product, Service, Location |
 | **CTA Block (default)** | Image, Title, Description, Button | Article, Location, Industry |
-| **CTA Block (orange)** | Orange background, Title, Button | Service, Homepage |
+| **CTA Block (orange)** | Orange background, Title, Button | Service, Homepage, Landing Page |
 | **Guided Journey Block** | Title, Tabs (Tab Title + Body + Checklist + Image) | Product, Homepage |
 | **Stats Counter** | Number + Label items (e.g. "over 12,000") | Homepage, Product |
 | **Rentals/Connected Services** | Title, 2 cards (Image + Title + Link) | Homepage, Product |
@@ -418,10 +518,10 @@ Orange sidebar positioned in center (not left) for this dropdown.
 | **Breadcrumbs** | Auto-generated path | Category, Article v2, Location v2 |
 | **Share Buttons** | Facebook, Twitter, LinkedIn, Email | Article v2 |
 | **Open Hours Table** | Day + Hours rows | Location |
-| **Google Map Embed** | Coordinates / address | Location |
+| **Leaflet Map** | Geofield coordinates, custom orange pin marker | Location |
 | **Lead Form** | First/Last Name, Email, Phone, Company, Job Title, Country, State, Message, Submit | Paid Search LP |
 | **Newsletter Form** | Email input + submit | Footer |
-| **Video Block** | Title, Video URL (embed) | Service |
+| **Video Block** | Title, Video URL (embed) | Service, Product, Flexible Page |
 | **Location Search** | ZIP/City input + "Use my location" link | Location Parent |
 | **Location Map** | Interactive map with pins (US + Canada) | Location Parent |
 | **Location Card (mini)** | Name, Address, City, State, ZIP, "More Info" link (orange left border) | Location Parent (search results) |
@@ -442,7 +542,7 @@ Orange sidebar positioned in center (not left) for this dropdown.
 | field_images | Media (multiple) | Product gallery |
 | field_short_description | Text (formatted) | For teaser/card view |
 | field_price | Decimal | For sort by price on Category Page |
-| field_body | Paragraphs | Flexible content sections |
+| field_body | Paragraphs (content_block, video_block, cta_block, accessories_grid) | Flexible content sections |
 | field_specs | Paragraphs (Spec Table) | Main specs table |
 | field_additional_specs | Paragraphs (Spec Table) | Additional specs |
 | field_related_products | Entity Reference (Product) | Related radios carousel |
@@ -459,6 +559,7 @@ Orange sidebar positioned in center (not left) for this dropdown.
 | field_hero_style | Select | "blue" / "image" |
 | body | Text (formatted, full HTML) | Rich text content |
 | field_show_share | Boolean | Show/hide share buttons |
+| field_related | Entity Reference (Article) | Related articles carousel |
 | field_cta | Paragraphs (CTA Block) | Bottom CTA |
 
 #### Industry (`industry`)
@@ -476,10 +577,12 @@ Orange sidebar positioned in center (not left) for this dropdown.
 |-------|------|-------|
 | title | Text | Service name |
 | field_hero_image | Media | Hero image |
+| field_hero_style | Select | "image" / "color" — hero variant |
 | field_body | Paragraphs (Content Block L/R) | Alternating text+image sections |
-| field_video | Media (remote video) | Embedded video |
+| field_video | Paragraphs (Video Block) | Embedded video section |
 | field_faq | Paragraphs (FAQ Item) | Q&A section |
-| field_related | Entity Reference | Related content |
+| field_cta | Paragraphs (CTA Block) | Bottom CTA (orange variant) |
+| field_related | Entity Reference (Service, Article) | Related content carousel |
 
 #### Location (`location`)
 | Field | Type | Notes |
@@ -502,7 +605,7 @@ Orange sidebar positioned in center (not left) for this dropdown.
 | field_headline | Text | Main headline |
 | field_benefits | Paragraphs (Checklist Item) | Benefits list with checkmarks |
 | field_image | Media | Left-side image |
-| field_form | Webform reference | Lead capture form |
+| field_webform | Webform reference | Lead capture form |
 | field_cta | Paragraphs (CTA Block) | Bottom CTA |
 | field_minimal_header | Boolean | Use minimal header/footer |
 
@@ -513,7 +616,7 @@ A single "Flexible Page" content type used for unique one-off pages that need cu
 | Field | Type | Notes |
 |-------|------|-------|
 | title | Text | Page title |
-| field_paragraphs | Paragraphs (all types) | Main flexible content (used by Homepage) |
+| field_paragraphs | Paragraphs (hero_banner, cta_block, card_grid, stats_counter, rentals_connected, guided_journey, content_block, product_grid, video_block, accessories_grid) | Main flexible content (used by Homepage) |
 | field_heading | Text | Secondary heading (used by Contact Us: "Contact us today!") |
 | field_description | Text (formatted) | Intro text (Contact Us, Location Parent) |
 | field_benefits | Paragraphs (Checklist Item) | Checkmark items (Contact Us, Paid Search) |
@@ -554,13 +657,14 @@ Fields are optional — each page uses only what it needs. Field visibility per 
 | Country | Select | No |
 | State | Select | No |
 | Message | Textarea | No |
+| CAPTCHA | reCAPTCHA v2 | Yes |
 | Submit | Button "SUBMIT" | — |
 
 ### 7.2 Paragraph Types
 
 | Paragraph Type | Fields |
 |----------------|--------|
-| **Hero Banner** (`hero_banner`) | field_image (Media), field_title (Text), field_subtitle (Text), field_cta_text (Text), field_cta_url (Link), field_style (Select: product/image/color) |
+| **Hero Banner** (`hero_banner`) | field_image (Media), field_title (Text), field_subtitle (Text), field_cta_text (Text), field_cta_url (Link), field_style (Select: product/image/color), field_product_image (Media — для product-стилю) |
 | **Content Block** (`content_block`) | field_title (Text), field_body (Text formatted), field_image (Media), field_layout (Select: image-left/image-right) |
 | **Card Grid** (`card_grid`) | field_title (Text), field_subtitle (Text), field_cards (Paragraphs: Card Item) |
 | **Card Item** (`card_item`) | field_icon (Media), field_title (Text), field_description (Text), field_link (Link) |
@@ -575,6 +679,7 @@ Fields are optional — each page uses only what it needs. Field visibility per 
 | **Spec Row** (`spec_row`) | field_label (Text), field_value (Text) |
 | **Video Block** (`video_block`) | field_title (Text), field_video (Media remote video) |
 | **Accessories Grid** (`accessories_grid`) | field_title (Text), field_items (Entity Reference: Product) |
+| **Product Grid** (`product_grid`) | field_title (Text), field_view_id (Text — machine name of View to embed, e.g. "products_listing"), field_limit (Number — max items to show). Used on Homepage to embed a product listing. |
 | **Checklist Item** (`checklist_item`) | field_text (Text formatted) — renders with checkmark icon. Used in Contact Us benefits and Paid Search LP benefits. |
 | **Open Hours Row** (`open_hours_row`) | field_day (Text), field_hours (Text) — single row in Location hours table. |
 
@@ -593,9 +698,11 @@ Fields are optional — each page uses only what it needs. Field visibility per 
 | **Products Listing** | Grid 3×3 + exposed filters (taxonomy) + pager | Category Page `/products` |
 | **Industries Listing** | Grid 3×3 cards | Industry Parent `/industries` |
 | **Related Products** | Carousel (same category, exclude current) | Product Page (block) |
+| **Related Articles** | Carousel (latest articles, exclude current) | Article Page (block) |
+| **Related Services** | Carousel (other services, exclude current) | Service Page (block) |
 | **Search Results** | List: title (link) + excerpt with keyword highlight + pager | Search `/search` |
 | **Locations Directory** | Grouped by State/Province, 5-column layout, each group = State name + location links | Location Parent `/locations` |
-| **Location Search** | AJAX search by ZIP/City → returns Location Card (mini) + map pin | Location Parent (block) |
+| **Location Search** | Custom REST endpoint (`bearcom_locations` module), NOT a View. AJAX search by ZIP/City → JSON response | Location Parent (block) |
 
 ### 7.5 Page Architecture
 
@@ -626,7 +733,8 @@ How each page is built in Drupal:
 | Industry | `/industries/[node:title]` | `/industries/healthcare` |
 | Service | `/services/[node:title]` | `/services/radio-repair` |
 | Location | `/locations/[node:title]` | `/locations/garland-texas` |
-| Landing Page | `/lp/[node:title]` | `/lp/two-way-radio-quote` |
+| Flexible Page | `/[node:title]` | `/contact-us`, `/locations` (Homepage = front page, no alias) |
+| Landing Page | `/lp/[node:title]` | `/lp/two-way-radio-quote` (can be overridden manually per node) |
 
 ### 7.7 Image Styles
 
@@ -644,6 +752,8 @@ How each page is built in Drupal:
 | `rental_card` | 500×350 (crop) | Rentals dropdown + Rentals/Connected section |
 | `article_hero` | 1200×500 (crop) | Article hero image |
 | `article_inline` | 800×auto (scale width) | Inline images in article body |
+| `landing_image` | 600×auto (scale width) | Landing Page left-side image |
+| `gj_tab_image` | 500×350 (scale & crop) | Guided Journey tab images |
 | `logo_icon` | 80×80 (scale) | Industry/menu icons |
 
 ---
@@ -668,9 +778,12 @@ How each page is built in Drupal:
 | `redirect` | URL redirects |
 | `config_split` | Environment-specific config |
 | `redis` | Cache backend |
-| `captcha` + `recaptcha` | reCAPTCHA v2 on Contact Us form |
+| `captcha` + `recaptcha` | reCAPTCHA v2 on Contact Us form + Lead Capture Form |
 | `better_exposed_filters` | AJAX filters with checkboxes on Category Page |
 | `views_ajax_history` | URL update on AJAX filter change (SEO-friendly) |
+| `address` | Structured address field for Location CT (`field_address`) |
+| `simple_sitemap` | XML sitemap generation for SEO |
+| `entity_reference_revisions` | Required by Paragraphs module for entity reference fields |
 
 ---
 
@@ -705,6 +818,15 @@ web/themes/custom/bearcom/
 │   │   ├── _share-buttons.css
 │   │   ├── _stats-counter.css
 │   │   ├── _carousel.css
+│   │   ├── _cta-block.css
+│   │   ├── _content-block.css
+│   │   ├── _guided-journey.css
+│   │   ├── _rentals.css
+│   │   ├── _product-grid.css
+│   │   ├── _checklist.css
+│   │   ├── _open-hours.css
+│   │   ├── _video-block.css
+│   │   ├── _webform.css
 │   │   ├── _newsletter.css
 │   │   ├── _mega-menu.css
 │   │   ├── _mobile-menu.css
@@ -736,7 +858,9 @@ web/themes/custom/bearcom/
 │   ├── stats-counter.js          # Count-up animation on scroll
 │   ├── search-expand.js          # Header search input slide
 │   ├── location-search.js        # AJAX location search + map update
-│   └── smooth-scroll.js          # Product page anchor tab scrolling
+│   ├── smooth-scroll.js          # Product page anchor tab scrolling
+│   └── vendor/
+│       └── splide.min.js         # Splide.js carousel library (+ splide.min.css)
 │
 ├── templates/
 │   ├── layout/
@@ -778,6 +902,7 @@ web/themes/custom/bearcom/
 │   │   ├── paragraph--video-block.html.twig
 │   │   ├── paragraph--rentals-connected.html.twig
 │   │   ├── paragraph--accessories-grid.html.twig
+│   │   ├── paragraph--product-grid.html.twig
 │   │   ├── paragraph--checklist-item.html.twig
 │   │   └── paragraph--open-hours-row.html.twig
 │   ├── views/
@@ -856,7 +981,7 @@ Dev 2 can work on CSS/JS components in parallel (they don't need Drupal structur
 - [ ] Enable & configure contrib modules
 - [ ] Config export/import workflow setup
 - [ ] Create taxonomy vocabularies (`product_category`, `industry_tax`, `state_province`)
-- [ ] Set up Image Styles (all 13 defined in §7.7)
+- [ ] Set up Image Styles (all 15 defined in §7.7)
 - [ ] Create Main Menu structure in Drupal admin (Solutions, Rentals, Industries, Resources, About + all children)
 
 **Developer 2 (Frontend) — starts Week 1 (files), full speed Week 2 (with Drupal running):**
@@ -878,7 +1003,7 @@ Dev 2 can work on CSS/JS components in parallel (they don't need Drupal structur
 **Developer 1 (Backend):**
 - [ ] Flexible Page content type (`flexible_page`) with all fields
 - [ ] Create Homepage node + set as Drupal front page
-- [ ] Paragraph types: `hero_banner`, `cta_block`, `card_grid`, `card_item`, `stats_counter`, `stat_item`, `rentals_connected`, `guided_journey`, `gj_tab`, `checklist_item`
+- [ ] Paragraph types: `hero_banner`, `cta_block`, `card_grid`, `card_item`, `stats_counter`, `stat_item`, `rentals_connected`, `guided_journey`, `gj_tab`, `checklist_item`, `product_grid`, `faq_item`, `content_block`
 - [ ] Product content type (`product`) with all fields including `field_price`
 - [ ] Products Listing View (grid 3×3 + exposed filters via BEF + AJAX + pager)
 - [ ] Create 3-5 sample Product nodes for testing
@@ -924,10 +1049,12 @@ Dev 2 can work on CSS/JS components in parallel (they don't need Drupal structur
 - [ ] Article content type (`article`) with all fields
 - [ ] Industry content type (`industry`) with all fields including `field_hero_image`
 - [ ] Service content type (`service`) with all fields
-- [ ] Paragraph types: `content_block`, `faq_item` (if not already created)
+- [ ] Paragraph types: `content_block`, `faq_item` (already created in Phase 2 — verify)
 - [ ] Industries Listing View (grid 3×3 of Industry teasers)
 - [ ] Webform: "Contact Us Form" (Name, Email, Phone, Company, State, ZIP, Question type, Message, Resale radio, reCAPTCHA v2) + AJAX submit + confirmation message
 - [ ] Flexible Page node for Contact Us at `/contact-us` with webform reference
+- [ ] View `related_articles`: Block, latest articles, exclude current, limit 4
+- [ ] View `related_services`: Block, other services, exclude current, limit 4
 - [ ] Create sample content: 2 Articles, 3 Industries, 2 Services
 
 **Developer 2 (Frontend):**
@@ -984,7 +1111,7 @@ Dev 2 can work on CSS/JS components in parallel (they don't need Drupal structur
 - [ ] Config export & environment split (dev/staging/prod)
 - [ ] Redis cache backend configuration
 - [ ] Performance: CSS/JS aggregation, image lazy loading
-- [ ] Robots.txt, sitemap.xml (via `simple_sitemap` or manual)
+- [ ] Robots.txt, sitemap.xml (via `simple_sitemap` module)
 - [ ] Security review (user permissions, text formats, file upload restrictions)
 - [ ] **Help Dev 2 with responsive QA** — test on real devices, fix backend-side issues
 
@@ -1045,7 +1172,7 @@ Font: **Roboto Condensed** (Google Fonts)
 - [x] ~~Contact Us page~~ → Split layout with Webform (Name, Email, Phone, Company, State, ZIP, Question type, Message, Resale radio, reCAPTCHA)
 
 ### Decisions made
-- **Breakpoints:** Desktop (≥1024px) + Mobile (<1024px). Tablet (768–1024px) — we design ourselves based on common sense
+- **Breakpoints:** Desktop (≥1024px), Tablet (768–1023px), Mobile (<768px). CSS breakpoints: `1023px` and `767px` (see §0 Правила розробки)
 - **Hover/focus/active states:** Our discretion, consistent with design language
 - **Empty states:** Simple text message ("No results found", "No products match your filters", etc.)
 - **Git:** Local Git for now, Bitbucket likely later

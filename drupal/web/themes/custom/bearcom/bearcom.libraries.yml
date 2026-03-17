@@ -1,0 +1,182 @@
+global:
+  css:
+    base:
+      css/base/_variables.css: {}
+      css/base/_reset.css: {}
+      css/base/_typography.css: {}
+    layout:
+      css/layout/_grid.css: {}
+      css/layout/_header.css: {}
+      css/layout/_footer.css: {}
+    component:
+      css/components/_button.css: {}
+      css/components/_hero.css: {}
+      css/components/_card.css: {}
+      css/components/_pagination.css: {}
+      css/components/_breadcrumbs.css: {}
+      css/components/_form.css: {}
+
+mega-menu:
+  js:
+    js/mega-menu.js: {}
+  css:
+    component:
+      css/components/_mega-menu.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+mobile-menu:
+  js:
+    js/mobile-menu.js: {}
+  css:
+    component:
+      css/components/_mobile-menu.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+search-expand:
+  js:
+    js/search-expand.js: {}
+  css:
+    component:
+      css/components/_search-expand.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+stats-counter:
+  js:
+    js/stats-counter.js: {}
+  css:
+    component:
+      css/components/_stats-counter.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+tabs:
+  js:
+    js/tabs.js: {}
+  css:
+    component:
+      css/components/_tabs.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+accordion:
+  js:
+    js/accordion.js: {}
+  css:
+    component:
+      css/components/_accordion.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+carousel:
+  js:
+    js/carousel.js: {}
+  css:
+    component:
+      css/components/_carousel.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+smooth-scroll:
+  js:
+    js/smooth-scroll.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+location-search:
+  js:
+    js/location-search.js: {}
+  css:
+    component:
+      css/components/_location-search.css: {}
+      css/components/_location-card.css: {}
+      css/components/_state-directory.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+filter-sidebar:
+  css:
+    component:
+      css/components/_filter-sidebar.css: {}
+
+share-buttons:
+  css:
+    component:
+      css/components/_share-buttons.css: {}
+
+newsletter:
+  css:
+    component:
+      css/components/_newsletter.css: {}
+
+specs-table:
+  css:
+    component:
+      css/components/_specs-table.css: {}
+
+homepage:
+  css:
+    theme:
+      css/pages/_homepage.css: {}
+
+category:
+  css:
+    theme:
+      css/pages/_category.css: {}
+
+product:
+  css:
+    theme:
+      css/pages/_product.css: {}
+
+article:
+  css:
+    theme:
+      css/pages/_article.css: {}
+
+industry:
+  css:
+    theme:
+      css/pages/_industry.css: {}
+
+service:
+  css:
+    theme:
+      css/pages/_service.css: {}
+
+location:
+  css:
+    theme:
+      css/pages/_location.css: {}
+      css/pages/_location-parent.css: {}
+
+landing-page:
+  css:
+    theme:
+      css/pages/_landing-page.css: {}
+
+search-results:
+  css:
+    theme:
+      css/pages/_search-results.css: {}
+
+contact-us:
+  css:
+    theme:
+      css/pages/_contact-us.css: {}
+
+error-page:
+  css:
+    theme:
+      css/pages/_error.css: {}

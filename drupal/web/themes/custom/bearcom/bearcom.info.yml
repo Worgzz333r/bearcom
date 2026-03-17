@@ -1,0 +1,19 @@
+name: BearCom
+type: theme
+description: 'Custom theme for BearCom website redesign.'
+core_version_requirement: ^10 || ^11
+base theme: false
+
+regions:
+  header: Header
+  primary_menu: Primary Menu
+  content: Content
+  sidebar: Sidebar
+  footer: Footer
+  footer_minimal: Footer Minimal
+
+libraries:
+  - bearcom/global
+
+libraries-override:
+  claro/global-styling: false

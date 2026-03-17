@@ -1,0 +1,132 @@
+{#
+/**
+ * @file
+ * Site footer — full variant.
+ * For minimal footer see footer--minimal.html.twig.
+ */
+#}
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <div class="site-footer__logo">
+          {# TODO: Replace with actual BearCom logo SVG (white) #}
+          <span class="site-footer__logo-text">BEAR<span class="site-footer__logo-icon">C&gt;M</span></span>
+          <span class="site-footer__tagline">Always On</span>
+        </div>
+
+        <div class="site-footer__addresses">
+          <div class="site-footer__address">
+            <strong>BearCom Canada Headquarters</strong><br>
+            1 Yonge Street, Suite 1801<br>
+            Toronto, Ontario M5E 1W7<br>
+            Canada<br>
+            <a href="tel:8005271670" class="site-footer__phone">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              (800) 527-1670
+            </a>
+          </div>
+
+          <div class="site-footer__address">
+            <strong>BearCom Headquarters</strong><br>
+            P.O. Box 493017<br>
+            Dallas, TX 75201<br>
+            <a href="tel:8005271670" class="site-footer__phone">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              (800) 527-1670
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-footer__nav">
+        <div class="site-footer__column">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="/solutions/voice">Solutions</a></li>
+            <li><a href="/solutions/security">Security</a></li>
+            <li><a href="/solutions/data">Data Solutions</a></li>
+            <li><a href="/rentals">Rentals</a></li>
+            <li><a href="/catalog">The Big Game</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__column">
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="/about">Who We Are</a></li>
+            <li><a href="/about/management">Management</a></li>
+            <li><a href="/about/acquisitions">Acquisitions</a></li>
+            <li><a href="/about/careers">Careers</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/resources/blog">Blog</a></li>
+            <li><a href="/resources/employee-access">Employee Access</a></li>
+            <li><a href="/resources/policy">Policy Updates</a></li>
+            <li><a href="/resources/amazon-support">Amazon Support</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__column">
+          <h4>News</h4>
+          <ul>
+            <li><a href="/news/press">Press/Trade</a></li>
+            <li><a href="/resources/blog">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__legal">
+      <div class="site-footer__legal-links">
+        <a href="/terms-of-sale">Terms of Sale</a>
+        <a href="/rental-equipment">Rental Equipment</a>
+        <a href="/loss-protection">Loss Protection</a>
+        <a href="/program-guide">Program Guide</a>
+        <a href="/locator-numbers">Locator Numbers</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/code-of-conduct">Code of Conduct</a>
+        <a href="/website-subscribers">Website Subscribers</a>
+        <a href="/terms-subscription">Terms Subscription</a>
+        <a href="/terms-privacy-settings">Terms Privacy Settings</a>
+      </div>
+      <p class="site-footer__patent">
+        Always&trade; Motorola is owned by G.S. Patent No. US 2010/0491 67. Kenwood Voice Imprint&trade; is owned by G.S. Patent No. 11,671,796. The remaining Always&trade; Integrated Solutions are patent pending.
+      </p>
+    </div>
+
+    <div class="site-footer__bottom">
+      <span>&copy; {{ 'now'|date('Y') }} BearCom. All rights reserved.</span>
+    </div>
+  </div>
+
+  <div class="site-footer__wave">
+    <div class="container">
+      {# Soundwave branding graphic #}
+      <div class="site-footer__wave-graphic">
+        <svg viewBox="0 0 120 40" fill="white" aria-hidden="true">
+          <rect x="0" y="12" width="4" height="16" rx="2"/>
+          <rect x="8" y="6" width="4" height="28" rx="2"/>
+          <rect x="16" y="0" width="4" height="40" rx="2"/>
+          <rect x="24" y="4" width="4" height="32" rx="2"/>
+          <rect x="32" y="8" width="4" height="24" rx="2"/>
+          <rect x="40" y="14" width="4" height="12" rx="2"/>
+          <rect x="48" y="10" width="4" height="20" rx="2"/>
+          <rect x="56" y="2" width="4" height="36" rx="2"/>
+          <rect x="64" y="6" width="4" height="28" rx="2"/>
+          <rect x="72" y="12" width="4" height="16" rx="2"/>
+          <rect x="80" y="4" width="4" height="32" rx="2"/>
+          <rect x="88" y="0" width="4" height="40" rx="2"/>
+          <rect x="96" y="8" width="4" height="24" rx="2"/>
+          <rect x="104" y="14" width="4" height="12" rx="2"/>
+          <rect x="112" y="10" width="4" height="20" rx="2"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</footer>

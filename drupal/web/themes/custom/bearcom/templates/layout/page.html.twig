@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * BearCom base page template.
+ */
+#}
+
+{% include '@bearcom/layout/header.html.twig' %}
+
+<main role="main" class="main-content">
+  <div class="container">
+    {{ page.content }}
+  </div>
+</main>
+
+{% include '@bearcom/layout/footer.html.twig' %}
