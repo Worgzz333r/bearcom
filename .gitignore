@@ -59,3 +59,5 @@ desktop.ini
 
 # Node (if using build tools for theme)
 node_modules/
+package.json
+package-lock.json
