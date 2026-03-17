@@ -1,0 +1,42 @@
+# Force LF line endings for all text files (cross-platform: Windows + Linux)
+* text=auto eol=lf
+
+# Explicitly mark binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.pdf binary
+
+# Drupal config files - always LF
+*.yml text eol=lf
+*.yaml text eol=lf
+*.twig text eol=lf
+*.php text eol=lf
+*.module text eol=lf
+*.theme text eol=lf
+*.inc text eol=lf
+*.install text eol=lf
+*.info text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.html text eol=lf
+*.htm text eol=lf
+*.xml text eol=lf
+*.sh text eol=lf
+*.bash text eol=lf
+*.conf text eol=lf
+*.env text eol=lf
+
+# Docker
+Dockerfile text eol=lf
+docker-compose*.yml text eol=lf

@@ -1,0 +1,34 @@
+# Drupal
+drupal/web/core/
+drupal/web/modules/contrib/
+drupal/web/themes/contrib/
+drupal/web/profiles/contrib/
+drupal/web/libraries/
+drupal/vendor/
+drupal/web/sites/default/files/
+drupal/web/sites/default/settings.local.php
+
+# Composer
+/drupal/vendor/
+
+# Docker
+docker/db-data/
+
+# Environment
+.env
+.env.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node (if using build tools for theme)
+node_modules/
