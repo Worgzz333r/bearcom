@@ -1,0 +1,9 @@
+uuid: 2262777c-3c43-4b25-8c4e-3f74f345965d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Product Category'
+vid: product_category
+description: 'Category Page filters'
+weight: 0
+new_revision: false

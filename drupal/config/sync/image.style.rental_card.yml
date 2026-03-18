@@ -1,12 +1,12 @@
-uuid: ec96353e-6590-433b-9124-f875a6dbe322
+uuid: 79f70554-9810-44fd-9376-39fcccc847bf
 langcode: en
 status: true
 dependencies: {  }
 name: rental_card
 label: 'Rental Card'
 effects:
-  33efe87d-b4b9-4bff-bd62-549e78a992bc:
-    uuid: 33efe87d-b4b9-4bff-bd62-549e78a992bc
+  44e2898a-120e-4e35-b383-e376c411f00c:
+    uuid: 44e2898a-120e-4e35-b383-e376c411f00c
     id: image_scale_and_crop
     weight: null
     data:

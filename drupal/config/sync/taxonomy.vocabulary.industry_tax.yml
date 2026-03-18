@@ -1,0 +1,9 @@
+uuid: 59e2b632-b071-41ce-b78a-d379e081f3eb
+langcode: en
+status: true
+dependencies: {  }
+name: Industry
+vid: industry_tax
+description: 'Tag industries'
+weight: 0
+new_revision: false

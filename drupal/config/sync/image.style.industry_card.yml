@@ -1,12 +1,12 @@
-uuid: 88418316-e500-4609-b69e-f7addc529ca9
+uuid: 99570e19-a865-4575-9b72-a1c15f10c442
 langcode: en
 status: true
 dependencies: {  }
 name: industry_card
 label: 'Industry Card'
 effects:
-  5038e93b-f28e-48f5-a434-babacd41853b:
-    uuid: 5038e93b-f28e-48f5-a434-babacd41853b
+  aa32ecbe-71db-46d0-90ac-55fa808bc442:
+    uuid: aa32ecbe-71db-46d0-90ac-55fa808bc442
     id: image_scale_and_crop
     weight: null
     data:

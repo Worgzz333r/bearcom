@@ -1,15 +1,15 @@
-uuid: 0f054167-da85-4259-9370-111aee220645
+uuid: bdcbfb98-c5d3-43f1-b5b5-a06f6cc6ea6c
 langcode: en
 status: true
 dependencies: {  }
 name: logo_icon
 label: 'Logo Icon'
 effects:
-  f9977420-cd72-4a40-8d70-d96d11cd29de:
-    uuid: f9977420-cd72-4a40-8d70-d96d11cd29de
-    id: image_scale
+  069691e6-8e6f-490f-9b35-50652c3857a5:
+    uuid: 069691e6-8e6f-490f-9b35-50652c3857a5
+    id: image_scale_and_crop
     weight: null
     data:
       width: 80
       height: 80
-      upscale: false
+      anchor: center-center

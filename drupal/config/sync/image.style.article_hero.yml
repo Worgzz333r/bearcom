@@ -1,12 +1,12 @@
-uuid: cfa33c84-75df-4ed7-a752-37b769a54453
+uuid: c912b969-2618-4c81-b5e9-06f008d7ec84
 langcode: en
 status: true
 dependencies: {  }
 name: article_hero
 label: 'Article Hero'
 effects:
-  28164539-78c5-41ad-8b1b-1bc43592d422:
-    uuid: 28164539-78c5-41ad-8b1b-1bc43592d422
+  a9c677b7-9a3c-4e56-b9de-40484d9c98b9:
+    uuid: a9c677b7-9a3c-4e56-b9de-40484d9c98b9
     id: image_scale_and_crop
     weight: null
     data:

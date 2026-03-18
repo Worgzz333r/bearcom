@@ -1,12 +1,12 @@
-uuid: b0343edf-4f91-4e94-ae21-3c2823a5d22d
+uuid: 0db3e6a0-f82f-47e3-b746-d8ffc3a29eb7
 langcode: en
 status: true
 dependencies: {  }
 name: content_block
 label: 'Content Block'
 effects:
-  a139abbc-3ee2-4539-b930-996296fa9eec:
-    uuid: a139abbc-3ee2-4539-b930-996296fa9eec
+  ac40e928-3164-4dc4-9af9-3cae24e6f1a7:
+    uuid: ac40e928-3164-4dc4-9af9-3cae24e6f1a7
     id: image_scale_and_crop
     weight: null
     data:

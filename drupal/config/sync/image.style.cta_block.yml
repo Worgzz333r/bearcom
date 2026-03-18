@@ -1,12 +1,12 @@
-uuid: 80d60fc6-b6a4-4e14-9c03-c75e375d282c
+uuid: f53fe042-1680-4c05-83bc-a62633e40c55
 langcode: en
 status: true
 dependencies: {  }
 name: cta_block
 label: 'CTA Block'
 effects:
-  e19cf2c0-2325-458e-88cb-94a7bf07e9ad:
-    uuid: e19cf2c0-2325-458e-88cb-94a7bf07e9ad
+  7c659a5d-d4aa-486e-8b6a-f5408c9d6e21:
+    uuid: 7c659a5d-d4aa-486e-8b6a-f5408c9d6e21
     id: image_scale_and_crop
     weight: null
     data:

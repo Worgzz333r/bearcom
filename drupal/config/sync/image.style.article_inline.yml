@@ -1,12 +1,12 @@
-uuid: a640f272-2382-487a-933d-e622b1a31371
+uuid: a6861301-db56-449c-b301-7881dffeeb41
 langcode: en
 status: true
 dependencies: {  }
 name: article_inline
 label: 'Article Inline'
 effects:
-  217224cc-0bcf-4d60-8dc0-4fe4a6837419:
-    uuid: 217224cc-0bcf-4d60-8dc0-4fe4a6837419
+  1dc1be33-47cc-4887-b6fe-bd8bc35dddf5:
+    uuid: 1dc1be33-47cc-4887-b6fe-bd8bc35dddf5
     id: image_scale
     weight: null
     data:
