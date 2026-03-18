@@ -1,19 +1,20 @@
 /* Top Bar */
 .top-bar {
-  background-color: var(--color-dark-blue);
+  background-color: var(--color-footer-bg);
   color: var(--color-white);
   font-size: 14px;
-  padding: 8px 0;
+  padding: 10px 0;
 }
 
 .top-bar__inner {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
 }
 
-.top-bar a {
+.top-bar a,
+.top-bar button {
   color: var(--color-white);
   display: inline-flex;
   align-items: center;
@@ -37,17 +38,22 @@
 .top-bar__country-switch {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+}
+
+.top-bar__country-switch span {
+  cursor: pointer;
 }
 
 .top-bar__country-switch img {
-  width: 20px;
-  height: 14px;
+  width: 28px;
+  height: 20px;
+  border-radius: 2px;
 }
 
 /* Header / Navigation */
 .site-header {
-  background-color: var(--color-white);
+  background-color: var(--color-background);
   border-bottom: 1px solid var(--color-background-alt);
   position: sticky;
   top: 0;
@@ -62,14 +68,42 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 0;
+  padding: 14px 0;
+}
+
+/* Logo */
+.site-header__logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.site-header__logo-text {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-dark-blue);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.site-header__logo-icon {
+  color: var(--color-primary);
+}
+
+.site-header__logo-tagline {
+  font-size: 12px;
+  color: var(--color-primary);
+  font-style: italic;
+  letter-spacing: 1px;
 }
 
 .site-header__logo img {
-  height: 40px;
+  height: 44px;
   width: auto;
 }
 
+/* Nav */
 .site-header__nav {
   display: flex;
   align-items: center;
@@ -85,8 +119,11 @@
   padding: 10px 24px;
   background-color: var(--color-primary);
   color: var(--color-white);
+  font-size: 14px;
   font-weight: var(--font-weight-semibold);
-  border-radius: var(--radius-button);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 20px;
   transition: background-color var(--transition-fast);
   white-space: nowrap;
 }
