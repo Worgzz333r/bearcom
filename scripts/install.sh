@@ -1,6 +1,6 @@
 #!/bin/bash
 # BearCom Drupal — First-time install script
-# Run inside the PHP container: docker compose exec php bash scripts/install.sh
+# Run: docker compose exec php bash /var/www/scripts/install.sh
 
 set -e
 
@@ -11,11 +11,11 @@ echo "========================================="
 cd /var/www
 
 # 1. Install Composer dependencies
-echo "[1/6] Installing Composer dependencies..."
+echo "[1/7] Installing Composer dependencies..."
 COMPOSER_PROCESS_TIMEOUT=600 composer install --no-interaction --prefer-dist
 
 # 2. Install Drupal
-echo "[2/6] Installing Drupal..."
+echo "[2/7] Installing Drupal..."
 cd web
 ../vendor/bin/drush site:install standard \
     --db-url="mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@${MYSQL_HOST}/${MYSQL_DATABASE}" \
@@ -26,30 +26,24 @@ cd web
     -y
 
 # 3. Set file permissions
-echo "[3/6] Setting file permissions..."
+echo "[3/7] Setting file permissions..."
 chmod -R 775 sites/default/files
 chown -R www-data:www-data sites/default/files
 chmod 644 sites/default/settings.php
 
-# 4. Configure settings.php (config sync + Redis)
-echo "[4/6] Configuring settings.php..."
+# 4. Configure settings.php — config sync directory only (Redis added later)
+echo "[4/7] Configuring settings.php..."
 php -r '
 $f = "sites/default/settings.php";
 $c = file_get_contents($f);
 $c .= "\n";
 $c .= "\$settings[\"config_sync_directory\"] = \"../config/sync\";\n";
-$c .= "\n";
-$c .= "// Redis cache backend.\n";
-$c .= "\$settings[\"redis.connection\"][\"host\"] = \"redis\";\n";
-$c .= "\$settings[\"redis.connection\"][\"port\"] = \"6379\";\n";
-$c .= "\$settings[\"cache\"][\"default\"] = \"cache.backend.redis\";\n";
-$c .= "\$settings[\"container_yamls\"][] = \"modules/contrib/redis/example.services.yml\";\n";
 file_put_contents($f, $c);
-echo "  settings.php updated.\n";
+echo "  Config sync directory set.\n";
 '
 
-# 5. Import config from git (if exists)
-echo "[5/6] Importing configuration..."
+# 5. Import config from git
+echo "[5/7] Importing configuration..."
 ../vendor/bin/drush cr
 if [ -f "../config/sync/core.extension.yml" ]; then
     ../vendor/bin/drush cim -y
@@ -81,19 +75,36 @@ else
 fi
 
 # 6. Set themes
-echo "[6/6] Setting up themes..."
+echo "[6/7] Setting up themes..."
 ../vendor/bin/drush theme:enable bearcom -y
 ../vendor/bin/drush config:set system.theme default bearcom -y
 ../vendor/bin/drush config:set system.theme admin claro -y
 ../vendor/bin/drush config:set node.settings use_admin_theme 1 -y
+
+# 7. Now enable Redis cache backend (modules are available after cim)
+echo "[7/7] Enabling Redis cache..."
+php -r '
+$f = "sites/default/settings.php";
+$c = file_get_contents($f);
+$c .= "\n";
+$c .= "// Redis cache backend.\n";
+$c .= "\$settings[\"redis.connection\"][\"host\"] = \"redis\";\n";
+$c .= "\$settings[\"redis.connection\"][\"port\"] = \"6379\";\n";
+$c .= "\$settings[\"cache\"][\"default\"] = \"cache.backend.redis\";\n";
+$c .= "\$settings[\"container_yamls\"][] = \"modules/contrib/redis/example.services.yml\";\n";
+file_put_contents($f, $c);
+echo "  Redis enabled.\n";
+'
 
 # Clear cache
 ../vendor/bin/drush cr
 
 echo ""
 echo "========================================="
-echo "  Done! Site is ready at http://localhost"
-echo "  Admin: admin / admin"
+echo "  Done! Site is ready."
+echo "  Admin: admin / admin (change immediately!)"
 echo ""
-echo "  Next: bash scripts/create-menu.sh"
+echo "  Next steps:"
+echo "  1. bash /var/www/scripts/create-menu.sh"
+echo "  2. drush user:password admin 'new_password'"
 echo "========================================="
