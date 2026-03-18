@@ -1175,7 +1175,7 @@ Font: **Roboto Condensed** (Google Fonts)
 - **Breakpoints:** Desktop (≥1024px), Tablet (768–1023px), Mobile (<768px). CSS breakpoints: `1023px` and `767px` (see §0 Правила розробки)
 - **Hover/focus/active states:** Our discretion, consistent with design language
 - **Empty states:** Simple text message ("No results found", "No products match your filters", etc.)
-- **Git:** Local Git for now, Bitbucket likely later
+- **Git:** GitHub (`Worgzz333r/bearcom`), deploy key on production server
 - **Local domain:** `localhost` (Docker default, port 80)
 - **Content volume:** Unknown, design for scalability (Views with pager, lazy loading)
 
@@ -1185,9 +1185,9 @@ Font: **Roboto Condensed** (Google Fonts)
 - [ ] Analytics — Google Analytics / Tag Manager?
 - [ ] Cookie consent banner needed?
 - [ ] Content migration from current bearcom.com?
-- [ ] Hosting environment for production
+- [x] ~~Hosting environment for production~~ → Server set up, deploy key added, `scripts/deploy.sh` ready
 - [ ] CI/CD pipeline (auto-deploy on git push — can set up later if needed)
-- [ ] Bitbucket repository setup
+- [x] ~~Bitbucket repository setup~~ → Using GitHub: `Worgzz333r/bearcom`
 
 ---
 
@@ -1195,7 +1195,7 @@ Font: **Roboto Condensed** (Google Fonts)
 
 - Figma mockups: *(add link here)*
 - Staging URL: *(TBD)*
-- Git repository: *(TBD)*
+- Git repository: [github.com/Worgzz333r/bearcom](https://github.com/Worgzz333r/bearcom)
 - Current site: [bearcom.com](https://www.bearcom.com)
 
 ---
