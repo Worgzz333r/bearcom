@@ -45,7 +45,14 @@ echo "  Config sync directory set.\n";
 # 5. Import config from git
 echo "[5/7] Importing configuration..."
 ../vendor/bin/drush cr
-if [ -f "../config/sync/core.extension.yml" ]; then
+if [ -f "../config/sync/system.site.yml" ]; then
+    # Match site UUID to config so drush cim doesn't reject the import
+    CONFIG_UUID=$(grep "^uuid:" ../config/sync/system.site.yml | awk '{print $2}')
+    ../vendor/bin/drush config:set system.site uuid "$CONFIG_UUID" -y
+
+    # Remove default shortcuts that block config import
+    ../vendor/bin/drush ev '\Drupal::entityTypeManager()->getStorage("shortcut")->delete(\Drupal::entityTypeManager()->getStorage("shortcut")->loadMultiple());'
+
     ../vendor/bin/drush cim -y
     echo "  Config imported."
 else
