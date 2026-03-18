@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 226 76" fill="none">
+  <!-- BEARCOM logo placeholder - white version -->
+  <text x="0" y="45" font-family="'Roboto Condensed', Arial, sans-serif" font-weight="700" font-size="40" fill="white" letter-spacing="2">
+    BEARC<tspan fill="#FC5000">•||•</tspan>M
+  </text>
+  <text x="0" y="45" font-family="'Roboto Condensed', Arial, sans-serif" font-weight="700" font-size="40" fill="white" letter-spacing="2">
+    BEARC</text>
+  <text x="125" y="45" font-family="'Roboto Condensed', Arial, sans-serif" font-weight="700" font-size="40" fill="#FC5000" letter-spacing="0">
+    •||•</text>
+  <text x="172" y="45" font-family="'Roboto Condensed', Arial, sans-serif" font-weight="700" font-size="40" fill="white" letter-spacing="2">
+    M</text>
+  <text x="0" y="66" font-family="'Roboto Condensed', Arial, sans-serif" font-weight="400" font-size="14" fill="white" letter-spacing="3" opacity="0.8">
+    AlwaysOn</text>
+  <!-- Trademark -->
+  <text x="197" y="28" font-family="'Roboto Condensed', Arial, sans-serif" font-weight="400" font-size="10" fill="white">®</text>
+</svg>
