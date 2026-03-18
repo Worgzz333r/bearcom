@@ -1,1 +1,33 @@
-/* TODO: Implement */
+/* Search expand — inline slide-out in top bar */
+.top-bar__search-field {
+  display: inline-block;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-width var(--transition-base), opacity var(--transition-base);
+  vertical-align: middle;
+}
+
+.top-bar__search-field.is-open {
+  max-width: 250px;
+  opacity: 1;
+}
+
+.top-bar__search-field input {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-button);
+  color: var(--color-white);
+  padding: 4px 12px;
+  font-size: 14px;
+  width: 200px;
+  outline: none;
+}
+
+.top-bar__search-field input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.top-bar__search-field input:focus {
+  border-color: var(--color-primary);
+}

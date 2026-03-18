@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Site header: top bar + navigation + mega menu.
+ * Site header: top bar + navigation + mega menu + mobile menu.
  */
 #}
 
@@ -44,7 +44,7 @@
       </a>
 
       <nav class="site-header__nav" aria-label="Main navigation">
-        {{ drupal_menu('main') }}
+        {{ drupal_menu('main', 1, 0, true) }}
         <a href="/contact-us" class="site-header__cta">Contact Us</a>
       </nav>
 
@@ -56,3 +56,53 @@
     </div>
   </div>
 </header>
+
+{# Mobile Menu — full-screen overlay #}
+<div class="mobile-menu" data-mobile-menu>
+  {# Header with logo + close button #}
+  <div class="mobile-menu__header">
+    <a href="/" class="mobile-menu__logo" aria-label="BearCom Home">
+      <span style="font-size: 20px; font-weight: 600; color: var(--color-dark-blue);">BearCom</span>
+    </a>
+    <button class="mobile-menu__close" aria-label="Close menu" data-mobile-menu-close>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  {# Secondary bar #}
+  <div class="mobile-menu__bar">
+    <a href="tel:8005271670" class="mobile-menu__bar-item" aria-label="Call">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </a>
+    <a href="/locations" class="mobile-menu__bar-item" aria-label="Locations">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    </a>
+    <span class="mobile-menu__bar-item">US</span>
+    <span class="mobile-menu__bar-item">Canada</span>
+  </div>
+
+  {# Accordion nav — rendered from same Drupal menu #}
+  <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+    {% set menu_tree = drupal_menu('main', 1, 0, true) %}
+    {{ menu_tree }}
+  </nav>
+
+  {# Bottom CTA block #}
+  <div class="mobile-menu__cta">
+    <a href="/about" class="mobile-menu__cta-link">
+      <strong>BearCom overview</strong>
+      <span>&rsaquo;</span>
+    </a>
+    <a href="/contact-us" class="mobile-menu__cta-link">
+      <strong>Request a quote</strong>
+      <span>&rsaquo;</span>
+    </a>
+    <a href="/contact-us" class="mobile-menu__cta-link">
+      <strong>Request a consultation</strong>
+      <span>&rsaquo;</span>
+    </a>
+  </div>
+</div>

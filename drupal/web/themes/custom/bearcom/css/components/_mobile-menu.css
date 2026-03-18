@@ -1,1 +1,273 @@
-/* TODO: Implement */
+/* Mobile Menu — full-screen overlay */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-white);
+  z-index: 2000;
+  overflow-y: auto;
+  flex-direction: column;
+  padding-top: 0;
+}
+
+.mobile-menu.is-open {
+  display: flex;
+}
+
+/* Header — logo + close */
+.mobile-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px var(--spacing-sm);
+  border-bottom: 1px solid var(--color-background-alt);
+}
+
+.mobile-menu__close {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-dark-blue);
+}
+
+/* Secondary bar (phone, locations, flags) */
+.mobile-menu__bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  background-color: var(--color-dark-blue);
+  padding: 10px var(--spacing-sm);
+}
+
+.mobile-menu__bar-item {
+  color: var(--color-white);
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.mobile-menu__bar-item svg {
+  fill: var(--color-white);
+}
+
+/* ===========================
+   Override mega-menu inside mobile
+   =========================== */
+
+/* Top-level list — vertical instead of horizontal */
+.mobile-menu__nav .mega-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+}
+
+.mobile-menu__nav .mega-menu__item {
+  border-bottom: 1px solid var(--color-background-alt);
+}
+
+/* Top-level links — full width with chevron */
+.mobile-menu__nav .mega-menu__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px var(--spacing-sm);
+  color: var(--color-dark-blue);
+  font-size: 16px;
+  font-weight: var(--font-weight-semibold);
+}
+
+.mobile-menu__nav .mega-menu__item--has-children .mega-menu__link::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.mobile-menu__nav .mega-menu__item.is-expanded .mega-menu__link {
+  color: var(--color-primary);
+}
+
+.mobile-menu__nav .mega-menu__item.is-expanded .mega-menu__link::after {
+  transform: rotate(-135deg);
+}
+
+/* Panels — block flow instead of absolute dropdown */
+.mobile-menu__nav .mega-menu__panel {
+  display: none;
+  position: static;
+  box-shadow: none;
+  border-top: none;
+  background: var(--color-background);
+}
+
+.mobile-menu__nav .mega-menu__item.is-expanded .mega-menu__panel {
+  display: block;
+}
+
+.mobile-menu__nav .mega-menu__panel-inner {
+  flex-direction: column;
+  padding: 0;
+}
+
+.mobile-menu__nav .mega-menu__panel .container {
+  padding: 0;
+  max-width: none;
+}
+
+/* Hide orange sidebar in mobile */
+.mobile-menu__nav .mega-menu__sidebar {
+  display: none;
+}
+
+/* Content area — no left padding */
+.mobile-menu__nav .mega-menu__content {
+  padding-left: 0;
+}
+
+/* Solutions columns — vertical stack */
+.mobile-menu__nav .mega-menu__columns {
+  flex-direction: column;
+  gap: 0;
+}
+
+.mobile-menu__nav .mega-menu__column {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.mobile-menu__nav .mega-menu__column-title {
+  padding: 12px var(--spacing-sm) 12px var(--spacing-md);
+  margin-bottom: 0;
+  border-bottom: none;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Chevron for column titles */
+.mobile-menu__nav .mega-menu__column-title::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.mobile-menu__nav .mega-menu__column.is-expanded .mega-menu__column-title::after {
+  transform: rotate(-135deg);
+}
+
+.mobile-menu__nav .mega-menu__column.is-expanded .mega-menu__column-title {
+  color: var(--color-primary);
+}
+
+/* Hide lists by default, show on expand */
+.mobile-menu__nav .mega-menu__list {
+  display: none;
+  padding: 0 var(--spacing-sm) var(--spacing-sm) calc(var(--spacing-md) + var(--spacing-sm));
+  gap: 4px;
+}
+
+.mobile-menu__nav .mega-menu__column.is-expanded .mega-menu__list {
+  display: flex;
+}
+
+.mobile-menu__nav .mega-menu__list a {
+  font-size: 14px;
+  padding: 6px 0;
+}
+
+/* Industries grid — single column */
+.mobile-menu__nav .mega-menu__grid--industries {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.mobile-menu__nav .mega-menu__grid-item {
+  padding: 12px var(--spacing-sm) 12px var(--spacing-md);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 0;
+}
+
+/* Cards — single column, no images */
+.mobile-menu__nav .mega-menu__grid--cards {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.mobile-menu__nav .mega-menu__card {
+  flex-direction: row;
+  padding: 12px var(--spacing-sm) 12px var(--spacing-md);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 0;
+}
+
+.mobile-menu__nav .mega-menu__card-image {
+  display: none;
+}
+
+.mobile-menu__nav .mega-menu__card-title {
+  padding: 0;
+}
+
+/* About layout — vertical */
+.mobile-menu__nav .mega-menu__about-layout {
+  flex-direction: column;
+  gap: 0;
+}
+
+.mobile-menu__nav .mega-menu__about-list {
+  gap: 0;
+}
+
+.mobile-menu__nav .mega-menu__about-link {
+  padding: 12px var(--spacing-sm) 12px var(--spacing-md);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Bottom CTA block */
+.mobile-menu__cta {
+  background-color: var(--color-primary);
+  padding: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.mobile-menu__cta-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px var(--spacing-sm);
+  color: var(--color-white);
+  border-radius: var(--radius-button);
+  transition: background-color var(--transition-fast);
+}
+
+.mobile-menu__cta-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-white);
+}
+
+/* Only visible on mobile */
+@media (min-width: 1024px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}

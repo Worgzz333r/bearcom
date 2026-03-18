@@ -1,0 +1,110 @@
+{#
+/**
+ * @file
+ * Main navigation mega-menu template.
+ * Overrides core menu.html.twig for the "main" menu.
+ */
+#}
+
+<ul class="mega-menu">
+  {% for item in items %}
+    {% set slug = item.title|lower|replace({' ': '-'}) %}
+    {% set has_children = item.below is not empty %}
+
+    <li class="mega-menu__item {{ has_children ? 'mega-menu__item--has-children' : '' }}" {{ has_children ? 'data-mega-menu-trigger' : '' }}>
+      <a href="{{ item.url }}" class="mega-menu__link {{ item.in_active_trail ? 'mega-menu__link--active' : '' }}">
+        {{ item.title }}
+      </a>
+
+      {% if has_children %}
+        <div class="mega-menu__panel mega-menu__panel--{{ slug }}" data-mega-menu-panel>
+          <div class="container">
+            <div class="mega-menu__panel-inner">
+
+              {# Orange sidebar — left for most, center for About #}
+              {% if slug != 'about' %}
+                <div class="mega-menu__sidebar">
+                  <a href="/about" class="mega-menu__sidebar-link">BearCom overview <span>&rsaquo;</span></a>
+                  <a href="/contact-us" class="mega-menu__sidebar-link">Request a quote <span>&rsaquo;</span></a>
+                  <a href="/contact-us" class="mega-menu__sidebar-link">Request a consultation <span>&rsaquo;</span></a>
+                </div>
+              {% endif %}
+
+              <div class="mega-menu__content">
+
+                {# === SOLUTIONS: 3 columns (Voice, Security, Data) === #}
+                {% if slug == 'solutions' %}
+                  <div class="mega-menu__columns">
+                    {% for child in item.below %}
+                      <div class="mega-menu__column">
+                        <h4 class="mega-menu__column-title">{{ child.title }}</h4>
+                        {% if child.below %}
+                          <ul class="mega-menu__list">
+                            {% for grandchild in child.below %}
+                              <li><a href="{{ grandchild.url }}">{{ grandchild.title }}</a></li>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
+                      </div>
+                    {% endfor %}
+                  </div>
+
+                {# === INDUSTRIES: grid === #}
+                {% elseif slug == 'industries' %}
+                  <div class="mega-menu__grid mega-menu__grid--industries">
+                    {% for child in item.below %}
+                      <a href="{{ child.url }}" class="mega-menu__grid-item">
+                        {{ child.title }}
+                      </a>
+                    {% endfor %}
+                  </div>
+
+                {# === RENTALS: 4 cards === #}
+                {% elseif slug == 'rentals' %}
+                  <div class="mega-menu__grid mega-menu__grid--cards">
+                    {% for child in item.below %}
+                      <a href="{{ child.url }}" class="mega-menu__card">
+                        <div class="mega-menu__card-image"></div>
+                        <span class="mega-menu__card-title">{{ child.title }}</span>
+                      </a>
+                    {% endfor %}
+                  </div>
+
+                {# === RESOURCES: 3 cards === #}
+                {% elseif slug == 'resources' %}
+                  <div class="mega-menu__grid mega-menu__grid--cards">
+                    {% for child in item.below %}
+                      <a href="{{ child.url }}" class="mega-menu__card">
+                        <div class="mega-menu__card-image"></div>
+                        <span class="mega-menu__card-title">{{ child.title }}</span>
+                      </a>
+                    {% endfor %}
+                  </div>
+
+                {# === ABOUT: list + sidebar in center === #}
+                {% elseif slug == 'about' %}
+                  <div class="mega-menu__about-layout">
+                    <div class="mega-menu__about-list">
+                      {% for child in item.below %}
+                        <a href="{{ child.url }}" class="mega-menu__about-link">
+                          {{ child.title }}
+                        </a>
+                      {% endfor %}
+                    </div>
+                    <div class="mega-menu__sidebar">
+                      <a href="/about" class="mega-menu__sidebar-link">BearCom overview <span>&rsaquo;</span></a>
+                      <a href="/contact-us" class="mega-menu__sidebar-link">Request a quote <span>&rsaquo;</span></a>
+                      <a href="/contact-us" class="mega-menu__sidebar-link">Request a consultation <span>&rsaquo;</span></a>
+                    </div>
+                  </div>
+
+                {% endif %}
+              </div>
+
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
