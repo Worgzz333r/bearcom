@@ -1,0 +1,15 @@
+uuid: c045451c-ebf8-4912-b7f7-226159e9e363
+langcode: en
+status: true
+dependencies: {  }
+name: product_gallery
+label: 'Product Gallery'
+effects:
+  50e3ad57-b93a-4559-bcd5-d45f0bf417cf:
+    uuid: 50e3ad57-b93a-4559-bcd5-d45f0bf417cf
+    id: image_scale
+    weight: null
+    data:
+      width: 800
+      height: 800
+      upscale: false

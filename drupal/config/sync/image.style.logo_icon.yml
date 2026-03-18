@@ -1,0 +1,15 @@
+uuid: 0f054167-da85-4259-9370-111aee220645
+langcode: en
+status: true
+dependencies: {  }
+name: logo_icon
+label: 'Logo Icon'
+effects:
+  f9977420-cd72-4a40-8d70-d96d11cd29de:
+    uuid: f9977420-cd72-4a40-8d70-d96d11cd29de
+    id: image_scale
+    weight: null
+    data:
+      width: 80
+      height: 80
+      upscale: false

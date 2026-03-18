@@ -1,0 +1,15 @@
+uuid: a640f272-2382-487a-933d-e622b1a31371
+langcode: en
+status: true
+dependencies: {  }
+name: article_inline
+label: 'Article Inline'
+effects:
+  217224cc-0bcf-4d60-8dc0-4fe4a6837419:
+    uuid: 217224cc-0bcf-4d60-8dc0-4fe4a6837419
+    id: image_scale
+    weight: null
+    data:
+      width: 800
+      height: null
+      upscale: false

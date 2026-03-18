@@ -1,0 +1,15 @@
+uuid: 80d60fc6-b6a4-4e14-9c03-c75e375d282c
+langcode: en
+status: true
+dependencies: {  }
+name: cta_block
+label: 'CTA Block'
+effects:
+  e19cf2c0-2325-458e-88cb-94a7bf07e9ad:
+    uuid: e19cf2c0-2325-458e-88cb-94a7bf07e9ad
+    id: image_scale_and_crop
+    weight: null
+    data:
+      width: 500
+      height: 350
+      anchor: center-center

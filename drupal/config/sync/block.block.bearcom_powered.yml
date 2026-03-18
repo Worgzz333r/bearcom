@@ -1,0 +1,22 @@
+uuid: db939942-6671-4198-82c2-600c4d30b2ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bearcom
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: bearcom_powered
+theme: bearcom
+region: header
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

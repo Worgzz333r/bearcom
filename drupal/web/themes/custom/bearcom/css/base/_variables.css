@@ -9,6 +9,10 @@
   --color-footer-bg: #4A4F55;
   --color-error-orange: #FB591F;
   --color-white: #FFFFFF;
+  --color-light-gray: #F5F5F5;
+  --color-medium-gray: #D9D9D9;
+  --color-blue: #0057A0;
+  --color-green: #28A745;
 
   /* Typography */
   --font-family: 'Roboto Condensed', sans-serif;

@@ -1,0 +1,20 @@
+uuid: 240b01c4-d3ec-494b-be35-f4753c6c36aa
+langcode: en
+status: true
+dependencies:
+  theme:
+    - bearcom
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: bearcom_page_title
+theme: bearcom
+region: header
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

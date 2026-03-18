@@ -1,0 +1,23 @@
+uuid: bf77f103-e9fe-4b86-b9bd-710a6b9eff8f
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - bearcom
+_core:
+  default_config_hash: yEBET0cqDbk8dkWzaJw-8CKft0961VBflsISoSR6Lj8
+id: bearcom_search_form_narrow
+theme: bearcom
+region: primary_menu
+weight: -4
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (narrow)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

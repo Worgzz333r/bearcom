@@ -1,0 +1,15 @@
+uuid: a808e92a-915d-4d39-b12f-697ecb88e05f
+langcode: en
+status: true
+dependencies: {  }
+name: product_card
+label: 'Product Card'
+effects:
+  8269f48d-5390-4249-9a75-bc7468aa47eb:
+    uuid: 8269f48d-5390-4249-9a75-bc7468aa47eb
+    id: image_scale_and_crop
+    weight: null
+    data:
+      width: 400
+      height: 400
+      anchor: center-center

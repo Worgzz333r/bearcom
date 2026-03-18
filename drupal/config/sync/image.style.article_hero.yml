@@ -1,0 +1,15 @@
+uuid: cfa33c84-75df-4ed7-a752-37b769a54453
+langcode: en
+status: true
+dependencies: {  }
+name: article_hero
+label: 'Article Hero'
+effects:
+  28164539-78c5-41ad-8b1b-1bc43592d422:
+    uuid: 28164539-78c5-41ad-8b1b-1bc43592d422
+    id: image_scale_and_crop
+    weight: null
+    data:
+      width: 1200
+      height: 500
+      anchor: center-center

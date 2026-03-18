@@ -1,0 +1,15 @@
+uuid: 88418316-e500-4609-b69e-f7addc529ca9
+langcode: en
+status: true
+dependencies: {  }
+name: industry_card
+label: 'Industry Card'
+effects:
+  5038e93b-f28e-48f5-a434-babacd41853b:
+    uuid: 5038e93b-f28e-48f5-a434-babacd41853b
+    id: image_scale_and_crop
+    weight: null
+    data:
+      width: 400
+      height: 300
+      anchor: center-center

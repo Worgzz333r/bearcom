@@ -1,0 +1,15 @@
+uuid: c9d22b9a-1085-4d78-9f08-0d025cef1cc3
+langcode: en
+status: true
+dependencies: {  }
+name: location_photo
+label: 'Location Photo'
+effects:
+  0615f55c-d7bd-4bad-9a4d-4913547e9aeb:
+    uuid: 0615f55c-d7bd-4bad-9a4d-4913547e9aeb
+    id: image_scale_and_crop
+    weight: null
+    data:
+      width: 600
+      height: 400
+      anchor: center-center

@@ -1,0 +1,15 @@
+uuid: b0343edf-4f91-4e94-ae21-3c2823a5d22d
+langcode: en
+status: true
+dependencies: {  }
+name: content_block
+label: 'Content Block'
+effects:
+  a139abbc-3ee2-4539-b930-996296fa9eec:
+    uuid: a139abbc-3ee2-4539-b930-996296fa9eec
+    id: image_scale_and_crop
+    weight: null
+    data:
+      width: 600
+      height: 400
+      anchor: center-center
