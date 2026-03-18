@@ -31,7 +31,7 @@ chmod -R 775 sites/default/files
 chown -R www-data:www-data sites/default/files
 chmod 644 sites/default/settings.php
 
-# 4. Configure settings.php — config sync directory only (Redis added later)
+# 4. Configure settings.php
 echo "[4/7] Configuring settings.php..."
 php -r '
 $f = "sites/default/settings.php";
@@ -44,6 +44,7 @@ echo "  Config sync directory set.\n";
 
 # 5. Import config from git
 echo "[5/7] Importing configuration..."
+
 ../vendor/bin/drush cr
 if [ -f "../config/sync/system.site.yml" ]; then
     # Match site UUID to config so drush cim doesn't reject the import
@@ -95,6 +96,7 @@ $f = "sites/default/settings.php";
 $c = file_get_contents($f);
 $c .= "\n";
 $c .= "// Redis cache backend.\n";
+$c .= "\$settings[\"redis.connection\"][\"interface\"] = \"PhpRedis\";\n";
 $c .= "\$settings[\"redis.connection\"][\"host\"] = \"redis\";\n";
 $c .= "\$settings[\"redis.connection\"][\"port\"] = \"6379\";\n";
 $c .= "\$settings[\"cache\"][\"default\"] = \"cache.backend.redis\";\n";
