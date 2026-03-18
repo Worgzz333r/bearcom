@@ -1,130 +1,198 @@
-/* Footer — Full */
+/* ==========================================================================
+   Footer — Full variant
+   Figma: 1440px canvas, container 1320px (60px padding each side)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+
 .site-footer {
-  background-color: var(--color-footer-bg);
-  color: var(--color-white);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
 }
 
 .site-footer a {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-white);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
 }
 
 .site-footer a:hover {
-  color: var(--color-white);
-}
-
-/* Top section: brand + nav columns */
-.site-footer__top {
-  display: flex;
-  gap: var(--spacing-xl);
-  padding: var(--spacing-xl) 0 var(--spacing-lg);
-}
-
-.site-footer__brand {
-  flex: 0 0 320px;
-}
-
-.site-footer__logo {
-  margin-bottom: var(--spacing-md);
-}
-
-.site-footer__logo-text {
-  font-size: 22px;
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-white);
-  letter-spacing: 1px;
-}
-
-.site-footer__logo-icon {
-  color: var(--color-primary);
-}
-
-.site-footer__tagline {
-  display: block;
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
   opacity: 0.7;
-  margin-top: 2px;
 }
 
+/* --------------------------------------------------------------------------
+   Main section — single background #4A4F55
+   -------------------------------------------------------------------------- */
+
+.site-footer__main {
+  background-color: var(--color-footer-bg);
+  color: var(--color-white);
+  padding-top: var(--section-padding); /* 80px */
+}
+
+/* --------------------------------------------------------------------------
+   Top row: Logo + Social icons
+   Figma: logo 226×76 at left:60, social at right, top ~160px
+   -------------------------------------------------------------------------- */
+
+.site-footer__top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.site-footer__logo img {
+  display: block;
+  width: 226px;
+  height: auto;
+}
+
+.site-footer__social {
+  display: flex;
+  gap: var(--spacing-xs); /* 8px */
+}
+
+.site-footer__social-icon {
+  display: block;
+  width: 27px;
+  height: 27px;
+  background-color: var(--color-white);
+  border-radius: 50%;
+}
+
+.site-footer__social-link:hover .site-footer__social-icon {
+  opacity: 0.7;
+}
+
+/* --------------------------------------------------------------------------
+   Content row: Addresses (left) + Nav columns (right)
+   Figma: addresses 226×240 at left:60 / menu 660×208 at left:720
+   Gap between logo and addresses: 24px
+   Gap addresses→menu filled by space-between
+   -------------------------------------------------------------------------- */
+
+.site-footer__content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--spacing-md); /* 24px — gap after logo */
+}
+
+/* Addresses — left side */
 .site-footer__addresses {
+  flex: 0 0 207px;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg); /* 40px between two address blocks */
 }
 
-.site-footer__address {
-  font-size: 14px;
-  line-height: 1.7;
-  opacity: 0.85;
-}
-
-.site-footer__address strong {
+.site-footer__address-title {
   display: block;
   font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  opacity: 1;
-  margin-bottom: 4px;
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-sm); /* 16px — per Figma gap within address block */
+}
+
+.site-footer__address-text {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.85;
+  margin: 0 0 var(--spacing-sm); /* 16px gap */
 }
 
 .site-footer__phone {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 4px;
-  color: var(--color-white);
-  opacity: 1;
+  font-size: 14px;
 }
 
-.site-footer__phone svg {
+.site-footer__phone-icon {
   flex-shrink: 0;
 }
 
-/* Nav columns */
+/* --------------------------------------------------------------------------
+   Navigation columns — right side
+   Figma: 660px fixed, 4 columns (each 108px), justify space-between
+   Column: flow vertical, gap 20px
+   Title: Desktop/H4 — 26px / 28px, SemiBold, uppercase, #FFFFFF
+   -------------------------------------------------------------------------- */
+
 .site-footer__nav {
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--spacing-lg);
+  flex: 0 0 660px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.site-footer__column h4 {
-  color: var(--color-white);
-  font-size: 14px;
+/* Figma: products & about = 108px (titles wrap), resources & news = auto */
+.site-footer__column {
+  flex: 0 0 auto;
+}
+
+.site-footer__column:nth-child(1),
+.site-footer__column:nth-child(2) {
+  flex: 0 0 85px;
+  width: 85px;
+}
+
+.site-footer__column-title {
+  font-size: var(--h4-size); /* 26px */
+  line-height: var(--h4-lh); /* 28px */
   font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: var(--spacing-sm);
+  letter-spacing: 0;
+  color: var(--color-white);
+  margin: 0 0 20px;
+  overflow-wrap: anywhere;
 }
 
-.site-footer__column ul {
+.site-footer__column-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--spacing-xs); /* 8px — per Figma */
 }
 
-.site-footer__column a {
-  font-size: 14px;
+.site-footer__column-list a {
+  font-size: 16px;
+  line-height: 20px;
+  opacity: 0.85;
 }
 
-/* Legal section */
-.site-footer__legal {
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  padding: var(--spacing-md) 0;
+.site-footer__column-list a:hover {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Bottom: Legal links + Patent text
+   Figma: 1320×Hug(60), flow vertical, gap 24px
+   Margin-top ~176px from menu to bottom (but we use margin for spacing)
+   -------------------------------------------------------------------------- */
+
+.site-footer__bottom {
+  margin-top: var(--spacing-xl); /* 60px */
+  padding: var(--spacing-md) 0; /* 24px top/bottom */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-md); /* 24px */
 }
 
 .site-footer__legal-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 16px;
-  font-size: 12px;
-  margin-bottom: var(--spacing-sm);
+  justify-content: center;
+  gap: 4px var(--spacing-sm); /* 16px horizontal gap */
 }
 
 .site-footer__legal-links a {
-  opacity: 0.6;
   font-size: 12px;
+  opacity: 0.6;
 }
 
 .site-footer__legal-links a:hover {
@@ -135,34 +203,41 @@
   font-size: 11px;
   opacity: 0.5;
   line-height: 1.5;
+  margin: 0;
 }
 
-/* Bottom bar */
-.site-footer__bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  padding: var(--spacing-sm) 0;
-  font-size: 13px;
-  opacity: 0.6;
-}
+/* --------------------------------------------------------------------------
+   Soundwave watermark
+   Figma: 291×234px, centered, #FAFAFA fill, same bg as footer
+   Spacing: ~120px from bottom section
+   -------------------------------------------------------------------------- */
 
-/* Soundwave branding */
 .site-footer__wave {
-  background-color: var(--color-dark-blue);
-  padding: var(--spacing-lg) 0;
-  text-align: center;
+  background-color: var(--color-footer-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0 var(--section-padding); /* 120px top (Figma) + 80px bottom */
+}
+
+.site-footer__wave-graphic {
+  color: #555D64; /* subtle watermark — lighter than footer bg */
 }
 
 .site-footer__wave-graphic svg {
-  width: 180px;
-  height: 60px;
+  width: 291px;
+  height: 234px;
 }
 
-/* Footer — Minimal */
+/* --------------------------------------------------------------------------
+   Footer — Minimal variant
+   Used on: Paid Search Landing Page, 403, 404
+   -------------------------------------------------------------------------- */
+
 .site-footer--minimal {
-  background-color: var(--color-footer-bg);
+  background-color: var(--color-primary);
   color: var(--color-white);
   padding: var(--spacing-md) 0;
-  text-align: center;
 }
 
 .site-footer--minimal .container {
@@ -171,33 +246,143 @@
   justify-content: space-between;
 }
 
-.site-footer--minimal__phone {
-  font-weight: var(--font-weight-semibold);
+.site-footer--minimal__logo img {
+  height: 40px;
+  width: auto;
 }
 
-/* Responsive */
+.site-footer--minimal__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — Tablet (≤ 1023px)
+   -------------------------------------------------------------------------- */
+
 @media (max-width: 1023px) {
-  .site-footer__top {
+  .site-footer__content {
     flex-direction: column;
     gap: var(--spacing-lg);
   }
 
-  .site-footer__brand {
+  .site-footer__addresses {
     flex: none;
+    flex-direction: row;
+    gap: var(--spacing-xl);
   }
 
   .site-footer__nav {
-    grid-template-columns: repeat(2, 1fr);
+    flex: none;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+  }
+
+  .site-footer__column {
+    width: auto;
+    flex: 0 0 calc(50% - var(--spacing-lg) / 2);
+  }
+
+  .site-footer__column:nth-child(1),
+  .site-footer__column:nth-child(2) {
+    flex: 0 0 calc(50% - var(--spacing-lg) / 2);
+    width: auto;
   }
 }
 
+/* --------------------------------------------------------------------------
+   Responsive — Mobile (≤ 767px)
+   Figma 375px: orange bg, everything centered, white wave
+   -------------------------------------------------------------------------- */
+
 @media (max-width: 767px) {
-  .site-footer__nav {
-    grid-template-columns: 1fr;
+
+  /* --- Color switch: dark → orange --- */
+  .site-footer__main {
+    background-color: var(--color-primary);
+    padding-top: var(--spacing-lg);
   }
 
-  .site-footer__legal-links {
+  .site-footer__wave {
+    background-color: var(--color-primary);
+  }
+
+  .site-footer__wave-graphic {
+    color: var(--color-white);
+  }
+
+  /* --- Layout: everything centered --- */
+  .site-footer__top-row {
     flex-direction: column;
-    gap: 8px;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .site-footer__content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* --- Addresses: stacked, centered --- */
+  .site-footer__addresses {
+    flex: none;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .site-footer__address {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .site-footer__phone {
+    justify-content: center;
+  }
+
+  /* --- Nav: 2 columns, centered --- */
+  .site-footer__nav {
+    flex: none;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg) var(--spacing-md);
+    justify-content: center;
+  }
+
+  .site-footer__column,
+  .site-footer__column:nth-child(1),
+  .site-footer__column:nth-child(2) {
+    flex: 0 0 calc(50% - var(--spacing-md) / 2);
+    width: auto;
+    text-align: center;
+  }
+
+  .site-footer__column-list {
+    align-items: center;
+  }
+
+  /* --- Bottom: centered wrap --- */
+  .site-footer__legal-links {
+    justify-content: center;
+    gap: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  /* --- Wave: smaller on mobile --- */
+  .site-footer__wave {
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+  }
+
+  .site-footer__wave-graphic svg {
+    width: 200px;
+    height: auto;
   }
 }
