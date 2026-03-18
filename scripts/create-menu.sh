@@ -1,6 +1,6 @@
 #!/bin/bash
 # BearCom — Create main menu structure
-# Run: docker compose exec php bash scripts/create-menu.sh
+# Run: docker compose exec php bash /var/www/scripts/create-menu.sh
 
 set -e
 

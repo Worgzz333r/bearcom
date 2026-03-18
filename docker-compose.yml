@@ -18,6 +18,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./drupal:/var/www:cached
+      - ./scripts:/var/www/scripts:cached
       - ./docker/php/php.ini:/usr/local/etc/php/conf.d/custom.ini:ro
     depends_on:
       - db
