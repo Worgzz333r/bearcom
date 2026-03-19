@@ -47,6 +47,10 @@
   --radius-button: 4px;
   --radius-card: 8px;
 
+  /* Z-index */
+  --z-header: 490;
+  --z-mobile-menu: 2000;
+
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-base: 250ms ease;
