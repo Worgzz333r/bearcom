@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.guided_journey.field_subtitle
     - field.field.paragraph.guided_journey.field_tabs
     - field.field.paragraph.guided_journey.field_title
     - paragraphs.paragraphs_type.guided_journey
@@ -13,6 +14,14 @@ targetEntityType: paragraph
 bundle: guided_journey
 mode: default
 content:
+  field_subtitle:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_tabs:
     type: paragraphs
     weight: 1
@@ -20,7 +29,7 @@ content:
     settings:
       title: Tab
       title_plural: Tabs
-      edit_mode: open
+      edit_mode: closed
       closed_mode: summary
       autocollapse: none
       closed_mode_threshold: 0

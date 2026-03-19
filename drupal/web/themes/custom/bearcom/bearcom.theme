@@ -107,6 +107,9 @@ function bearcom_page_attachments_alter(array &$attachments) {
   if ($node instanceof NodeInterface) {
     if ($node->bundle() === 'flexible_page') {
       $attachments['#attached']['library'][] = 'bearcom/homepage';
+      $attachments['#attached']['library'][] = 'bearcom/tabs';
+      $attachments['#attached']['library'][] = 'bearcom/stats-counter';
+      $attachments['#attached']['library'][] = 'bearcom/accordion';
     }
   }
 }

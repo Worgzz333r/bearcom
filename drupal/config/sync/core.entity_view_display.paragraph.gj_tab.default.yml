@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.gj_tab.field_body
-    - field.field.paragraph.gj_tab.field_checklist
+    - field.field.paragraph.gj_tab.field_description
     - field.field.paragraph.gj_tab.field_image
     - field.field.paragraph.gj_tab.field_tab_title
     - paragraphs.paragraphs_type.gj_tab
@@ -22,11 +22,10 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_checklist:
-    type: string
+  field_description:
+    type: text_default
     label: hidden
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
@@ -48,4 +47,5 @@ content:
     weight: 0
     region: content
 hidden:
+  field_checklist: true
   search_api_excerpt: true

@@ -1,0 +1,22 @@
+uuid: 213a59a1-a09f-41a0-bd1d-8e617e492e0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.gj_tab
+  module:
+    - text
+id: paragraph.gj_tab.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: gj_tab
+label: Checklist
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

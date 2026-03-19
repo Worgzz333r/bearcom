@@ -1,17 +1,17 @@
-uuid: dfe51019-d3f5-4a6a-b146-c72bf8d187a0
+uuid: 15a28e23-6fc0-4320-855c-c88979407047
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_cta_url
+    - field.storage.paragraph.field_secondary_url
     - paragraphs.paragraphs_type.hero_banner
   module:
     - link
-id: paragraph.hero_banner.field_cta_url
-field_name: field_cta_url
+id: paragraph.hero_banner.field_secondary_url
+field_name: field_secondary_url
 entity_type: paragraph
 bundle: hero_banner
-label: 'Primary Button'
+label: 'Secondary Button'
 description: ''
 required: false
 translatable: true
