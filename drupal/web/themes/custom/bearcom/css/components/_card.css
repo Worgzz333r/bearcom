@@ -1,31 +1,88 @@
-/* ==========================================================================
-   Card — base pattern
-   Used by: industry-card, product-card, location-card, mega-menu card
-   ========================================================================== */
-
+/* Card — shared base for product, industry, location, generic cards */
 .card {
+  background: var(--color-white);
   border-radius: var(--radius-card);
   overflow: hidden;
   transition: box-shadow var(--transition-base);
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card__icon {
+  padding: var(--spacing-md) var(--spacing-md) 0;
+}
+
+.card__icon img {
+  width: 48px;
+  height: 48px;
 }
 
 .card__image {
   width: 100%;
-  aspect-ratio: 4 / 3;
   overflow: hidden;
 }
 
 .card__image img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   display: block;
 }
 
 .card__body {
-  padding: var(--spacing-sm);
+  padding: var(--spacing-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__title {
+  font-size: var(--h4-size);
+  line-height: var(--h4-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark-blue);
+  margin: 0 0 var(--spacing-xs);
+}
+
+.card__description {
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-sm);
+  flex: 1;
+}
+
+.card__link {
+  font-size: var(--p-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.card__link:hover {
+  color: var(--color-primary-dark);
+}
+
+/* Card Grid section */
+.card-grid {
+  padding: var(--section-padding) 0;
+}
+
+/* Modifiers */
+.card--product .card__image {
+  aspect-ratio: 1;
+}
+
+.card--industry .card__image {
+  aspect-ratio: 4 / 3;
+}
+
+.card--location {
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0;
 }

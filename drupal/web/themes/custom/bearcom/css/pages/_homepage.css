@@ -1,1 +1,12 @@
-/* TODO: Implement */
+/* Flexible Page — ensure full width through all Drupal wrappers */
+.flexible-page,
+.flexible-page > div,
+.flexible-page > div > div,
+.flexible-page > div > div > div {
+  max-width: none;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}

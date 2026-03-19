@@ -112,25 +112,9 @@
 
 /* Menu styles are in _mega-menu.css */
 
-/* CTA button */
+/* CTA button — extends .btn .btn--primary */
 .site-header__cta {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 24px;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  font-size: 14px;
-  font-weight: var(--font-weight-semibold);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-radius: 20px;
-  transition: background-color var(--transition-fast);
   white-space: nowrap;
-}
-
-.site-header__cta:hover {
-  background-color: var(--color-primary-dark);
-  color: var(--color-white);
 }
 
 /* Hamburger */

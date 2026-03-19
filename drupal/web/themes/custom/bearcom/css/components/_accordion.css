@@ -1,1 +1,52 @@
-/* TODO: Implement */
+/* Accordion — shared pattern for FAQ, specs, product tabs */
+.accordion__item {
+  border-bottom: 1px solid var(--color-medium-gray);
+}
+
+.accordion__trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: var(--spacing-sm) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.accordion__title {
+  font-size: var(--h5-size);
+  line-height: var(--h5-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark-blue);
+}
+
+.accordion__icon {
+  font-size: var(--h4-size);
+  color: var(--color-primary);
+  transition: transform var(--transition-base);
+  flex-shrink: 0;
+  margin-left: var(--spacing-sm);
+}
+
+.accordion__item.is-open .accordion__icon {
+  transform: rotate(45deg);
+}
+
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-base);
+}
+
+.accordion__item.is-open .accordion__content {
+  max-height: 1000px;
+}
+
+.accordion__body {
+  padding: 0 0 var(--spacing-md);
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  color: var(--color-text-primary);
+}

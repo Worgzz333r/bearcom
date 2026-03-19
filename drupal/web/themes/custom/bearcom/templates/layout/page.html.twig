@@ -8,9 +8,13 @@
 {% include '@bearcom/layout/header.html.twig' %}
 
 <main role="main" class="main-content">
-  <div class="container">
+  {% if node_type is defined and node_type == 'flexible_page' %}
     {{ page.content }}
-  </div>
+  {% else %}
+    <div class="container">
+      {{ page.content }}
+    </div>
+  {% endif %}
 </main>
 
 {% include '@bearcom/layout/footer.html.twig' %}

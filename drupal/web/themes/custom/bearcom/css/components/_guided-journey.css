@@ -1,0 +1,117 @@
+/* Guided Journey — tabs */
+.guided-journey {
+  padding: var(--section-padding) 0;
+  background-color: var(--color-background);
+}
+
+/* Tab navigation */
+.guided-journey__nav {
+  display: flex;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--color-medium-gray);
+}
+
+.guided-journey__tab {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--h5-size);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+  margin-bottom: -2px;
+}
+
+.guided-journey__tab:hover {
+  color: var(--color-primary);
+}
+
+.guided-journey__tab.is-active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* Panels */
+.guided-journey__panel {
+  display: none;
+}
+
+.guided-journey__panel.is-active {
+  display: block;
+}
+
+.guided-journey__panel-inner {
+  display: flex;
+  gap: var(--spacing-xl);
+  align-items: flex-start;
+}
+
+.guided-journey__panel-content {
+  flex: 1;
+}
+
+.guided-journey__body {
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.guided-journey__checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.guided-journey__check-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--p-size);
+  color: var(--color-text-primary);
+}
+
+.guided-journey__check-item::before {
+  content: '✓';
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  flex-shrink: 0;
+}
+
+.guided-journey__panel-image {
+  flex: 0 0 45%;
+}
+
+.guided-journey__panel-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-card);
+}
+
+@media (max-width: 767px) {
+  .guided-journey__nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .guided-journey__tab {
+    white-space: nowrap;
+    font-size: var(--p-size);
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .guided-journey__panel-inner {
+    flex-direction: column;
+  }
+
+  .guided-journey__panel-image {
+    flex: none;
+    width: 100%;
+  }
+}

@@ -101,4 +101,12 @@ function bearcom_page_attachments_alter(array &$attachments) {
   $attachments['#attached']['library'][] = 'bearcom/mega-menu';
   $attachments['#attached']['library'][] = 'bearcom/mobile-menu';
   $attachments['#attached']['library'][] = 'bearcom/search-expand';
+
+  // Attach page-specific libraries based on node type.
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof NodeInterface) {
+    if ($node->bundle() === 'flexible_page') {
+      $attachments['#attached']['library'][] = 'bearcom/homepage';
+    }
+  }
 }
