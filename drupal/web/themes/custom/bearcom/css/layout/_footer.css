@@ -1,6 +1,6 @@
 /* ==========================================================================
    Footer — Full variant
-   Figma: 1440px canvas, container 1320px (60px padding each side)
+   Figma: 1440px canvas, container 1320px
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -11,6 +11,9 @@
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   line-height: 1.5;
+  background-color: var(--color-footer-bg);
+  border-radius: var(--footer-radius) var(--footer-radius) 0 0;
+  overflow: hidden;
 }
 
 .site-footer a {
@@ -24,18 +27,17 @@
 }
 
 /* --------------------------------------------------------------------------
-   Main section — single background #4A4F55
+   Main section
    -------------------------------------------------------------------------- */
 
 .site-footer__main {
   background-color: var(--color-footer-bg);
   color: var(--color-white);
-  padding-top: var(--section-padding); /* 80px */
+  padding-top: var(--section-padding);
 }
 
 /* --------------------------------------------------------------------------
    Top row: Logo + Social icons
-   Figma: logo 226×76 at left:60, social at right, top ~160px
    -------------------------------------------------------------------------- */
 
 .site-footer__top-row {
@@ -52,7 +54,7 @@
 
 .site-footer__social {
   display: flex;
-  gap: var(--spacing-xs); /* 8px */
+  gap: var(--spacing-xs);
 }
 
 .site-footer__social-icon {
@@ -69,15 +71,12 @@
 
 /* --------------------------------------------------------------------------
    Content row: Addresses (left) + Nav columns (right)
-   Figma: addresses 226×240 at left:60 / menu 660×208 at left:720
-   Gap between logo and addresses: 24px
-   Gap addresses→menu filled by space-between
    -------------------------------------------------------------------------- */
 
 .site-footer__content {
   display: flex;
   justify-content: space-between;
-  margin-top: var(--spacing-md); /* 24px — gap after logo */
+  margin-top: var(--spacing-md);
 }
 
 /* Addresses — left side */
@@ -85,21 +84,22 @@
   flex: 0 0 207px;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg); /* 40px between two address blocks */
+  gap: var(--spacing-lg);
 }
 
 .site-footer__address-title {
   display: block;
-  font-size: 13px;
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--spacing-sm); /* 16px — per Figma gap within address block */
+  font-size: var(--p-size);
+  font-weight: 700;
+  line-height: var(--p-lh);
+  margin-bottom: 4px;
 }
 
 .site-footer__address-text {
-  font-size: 14px;
-  line-height: 1.6;
-  opacity: 0.85;
-  margin: 0 0 var(--spacing-sm); /* 16px gap */
+  font-size: var(--p-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--p-lh);
+  margin: 0 0 var(--spacing-sm);
 }
 
 .site-footer__phone {
@@ -115,9 +115,7 @@
 
 /* --------------------------------------------------------------------------
    Navigation columns — right side
-   Figma: 660px fixed, 4 columns (each 108px), justify space-between
-   Column: flow vertical, gap 20px
-   Title: Desktop/H4 — 26px / 28px, SemiBold, uppercase, #FFFFFF
+   Figma: 660px fixed, 4 columns, justify space-between
    -------------------------------------------------------------------------- */
 
 .site-footer__nav {
@@ -126,20 +124,18 @@
   justify-content: space-between;
 }
 
-/* Figma: products & about = 108px (titles wrap), resources & news = auto */
 .site-footer__column {
   flex: 0 0 auto;
 }
 
-.site-footer__column:nth-child(1),
-.site-footer__column:nth-child(2) {
-  flex: 0 0 85px;
-  width: 85px;
+.site-footer__column:nth-child(1) .site-footer__column-title,
+.site-footer__column:nth-child(2) .site-footer__column-title {
+  max-width: 85px;
 }
 
 .site-footer__column-title {
-  font-size: var(--h4-size); /* 26px */
-  line-height: var(--h4-lh); /* 28px */
+  font-size: var(--h4-size);
+  line-height: var(--h4-lh);
   font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
   letter-spacing: 0;
@@ -154,13 +150,14 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs); /* 8px — per Figma */
+  gap: var(--spacing-xs);
 }
 
 .site-footer__column-list a {
-  font-size: 16px;
-  line-height: 20px;
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
   opacity: 0.85;
+  white-space: nowrap;
 }
 
 .site-footer__column-list a:hover {
@@ -169,47 +166,44 @@
 
 /* --------------------------------------------------------------------------
    Bottom: Legal links + Patent text
-   Figma: 1320×Hug(60), flow vertical, gap 24px
-   Margin-top ~176px from menu to bottom (but we use margin for spacing)
    -------------------------------------------------------------------------- */
 
 .site-footer__bottom {
-  margin-top: var(--spacing-xl); /* 60px */
-  padding: var(--spacing-md) 0; /* 24px top/bottom */
+  margin-top: var(--footer-bottom-gap);
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: var(--spacing-md); /* 24px */
+  gap: var(--spacing-md);
 }
 
 .site-footer__legal-links {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 4px var(--spacing-sm); /* 16px horizontal gap */
+  justify-content: space-between;
+  width: 100%;
 }
 
 .site-footer__legal-links a {
-  font-size: 12px;
-  opacity: 0.6;
+  font-size: var(--details-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--details-lh);
 }
 
 .site-footer__legal-links a:hover {
-  opacity: 1;
+  opacity: 0.7;
 }
 
 .site-footer__patent {
-  font-size: 11px;
-  opacity: 0.5;
-  line-height: 1.5;
+  font-size: var(--details-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--details-lh);
   margin: 0;
 }
 
 /* --------------------------------------------------------------------------
    Soundwave watermark
-   Figma: 291×234px, centered, #FAFAFA fill, same bg as footer
-   Spacing: ~120px from bottom section
    -------------------------------------------------------------------------- */
 
 .site-footer__wave {
@@ -217,21 +211,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 0 var(--section-padding); /* 120px top (Figma) + 80px bottom */
+  padding: var(--footer-wave-top) 0 var(--section-padding);
 }
 
 .site-footer__wave-graphic {
-  color: #555D64; /* subtle watermark — lighter than footer bg */
+  color: #555D64;
 }
 
-.site-footer__wave-graphic svg {
+.site-footer__wave-graphic svg,
+.site-footer__wave-graphic img {
   width: 291px;
   height: 234px;
 }
 
 /* --------------------------------------------------------------------------
    Footer — Minimal variant
-   Used on: Paid Search Landing Page, 403, 404
    -------------------------------------------------------------------------- */
 
 .site-footer--minimal {
@@ -288,54 +282,71 @@
     width: auto;
     flex: 0 0 calc(50% - var(--spacing-lg) / 2);
   }
-
-  .site-footer__column:nth-child(1),
-  .site-footer__column:nth-child(2) {
-    flex: 0 0 calc(50% - var(--spacing-lg) / 2);
-    width: auto;
-  }
 }
 
 /* --------------------------------------------------------------------------
    Responsive — Mobile (≤ 767px)
-   Figma 375px: orange bg, everything centered, white wave
    -------------------------------------------------------------------------- */
 
 @media (max-width: 767px) {
 
-  /* --- Color switch: dark → orange --- */
+  /* --- Background: orange, rounded top --- */
+  .site-footer {
+    background-color: var(--color-footer-mobile-bg);
+  }
+
   .site-footer__main {
-    background-color: var(--color-primary);
-    padding-top: var(--spacing-lg);
+    background-color: var(--color-footer-mobile-bg);
+    padding-top: var(--section-padding);
   }
 
   .site-footer__wave {
-    background-color: var(--color-primary);
+    background-color: var(--color-footer-mobile-bg);
   }
 
   .site-footer__wave-graphic {
     color: var(--color-white);
   }
 
-  /* --- Layout: everything centered --- */
+  /* --- Logo: 155×52, centered --- */
+  .site-footer__logo img {
+    width: 155px;
+    height: 52px;
+  }
+
+  /* --- Top row: stacked vertically, centered --- */
   .site-footer__top-row {
     flex-direction: column;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
   }
 
+  /* --- Social icons --- */
+  .site-footer__social {
+    gap: 10px;
+  }
+
+  .site-footer__social-icon {
+    width: 27px;
+    height: 26px;
+  }
+
+  /* --- Content: stacked, centered --- */
   .site-footer__content {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-top: var(--spacing-xl);
+    gap: 0;
   }
 
-  /* --- Addresses: stacked, centered --- */
+  /* --- Addresses: stacked, centered, full width --- */
   .site-footer__addresses {
     flex: none;
     flex-direction: column;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
+    width: 100%;
   }
 
   .site-footer__address {
@@ -345,44 +356,95 @@
     align-items: center;
   }
 
+  /* --- Phone: body size, gap 12px --- */
   .site-footer__phone {
     justify-content: center;
+    font-size: var(--p-size);
+    line-height: var(--p-lh);
+    gap: 12px;
   }
 
-  /* --- Nav: 2 columns, centered --- */
+  .site-footer__phone-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* --- Nav: 2×2 grid, centered --- */
   .site-footer__nav {
     flex: none;
     width: 100%;
     flex-wrap: wrap;
-    gap: var(--spacing-lg) var(--spacing-md);
-    justify-content: center;
+    gap: var(--spacing-lg) 0;
+    justify-content: space-between;
+    padding: 0 var(--container-padding);
+    box-sizing: border-box;
+    margin-top: var(--spacing-xl);
   }
 
   .site-footer__column,
   .site-footer__column:nth-child(1),
   .site-footer__column:nth-child(2) {
-    flex: 0 0 calc(50% - var(--spacing-md) / 2);
+    flex: 0 0 48%;
     width: auto;
     text-align: center;
   }
 
+  .site-footer__column:nth-child(1) .site-footer__column-title,
+  .site-footer__column:nth-child(2) .site-footer__column-title {
+    max-width: none;
+  }
+
+  .site-footer__column-title {
+    font-size: var(--h4-size);
+    line-height: var(--h4-lh);
+    margin-bottom: 14px;
+    overflow-wrap: normal;
+  }
+
   .site-footer__column-list {
     align-items: center;
+    gap: 14px;
   }
 
-  /* --- Bottom: centered wrap --- */
+  .site-footer__column-list a {
+    white-space: normal;
+    font-size: var(--p-size);
+    line-height: var(--p-lh);
+    color: var(--color-white);
+    opacity: 1;
+  }
+
+  /* --- Bottom: centered --- */
+  .site-footer__bottom {
+    margin-top: var(--footer-wave-top);
+    padding: 0;
+  }
+
   .site-footer__legal-links {
     justify-content: center;
-    gap: var(--spacing-xs) var(--spacing-sm);
+    flex-wrap: wrap;
+    gap: 6px 12px;
   }
 
-  /* --- Wave: smaller on mobile --- */
+  .site-footer__legal-links a {
+    font-size: var(--details-size);
+    line-height: var(--details-lh);
+  }
+
+  .site-footer__patent {
+    font-size: var(--details-size);
+    line-height: var(--details-lh);
+    text-align: center;
+  }
+
+  /* --- Wave: smaller, white --- */
   .site-footer__wave {
-    padding: var(--spacing-xl) 0 var(--spacing-lg);
+    padding: 12px 0 var(--section-padding);
   }
 
-  .site-footer__wave-graphic svg {
-    width: 200px;
-    height: auto;
+  .site-footer__wave-graphic svg,
+  .site-footer__wave-graphic img {
+    width: 148px;
+    height: 119px;
   }
 }

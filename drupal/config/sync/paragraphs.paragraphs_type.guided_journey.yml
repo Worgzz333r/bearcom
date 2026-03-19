@@ -1,0 +1,10 @@
+uuid: b7a4dd4e-cd34-4392-8434-d306650d0a91
+langcode: en
+status: true
+dependencies: {  }
+id: guided_journey
+label: 'Guided Journey'
+icon_uuid: null
+icon_default: null
+description: null
+behavior_plugins: {  }

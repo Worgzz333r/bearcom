@@ -1,0 +1,22 @@
+uuid: 9db59da4-97b1-4d1b-b61b-a67ee3af539f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.cta_block
+  module:
+    - text
+id: paragraph.cta_block.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: cta_block
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

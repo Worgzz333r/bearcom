@@ -1,0 +1,19 @@
+uuid: 2f6022e7-c3d2-4058-a0b1-a28f7aa5bc88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tab_title
+    - paragraphs.paragraphs_type.gj_tab
+id: paragraph.gj_tab.field_tab_title
+field_name: field_tab_title
+entity_type: paragraph
+bundle: gj_tab
+label: 'Tab Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,11 @@
+uuid: 66a6ca9e-f420-4b1c-beeb-f51353173f40
+langcode: en
+status: true
+dependencies: {  }
+name: 'Flexible Page'
+type: flexible_page
+description: 'For Homepage, Location Parent, Contact Us — each page uses the fields it needs.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

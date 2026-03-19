@@ -92,8 +92,9 @@ mockups/
 ```
 1. Both devs work on the same `main` branch (or feature branches if needed)
 2. Drupal config sync:
-   - After making changes in Drupal admin: `drush cex` (config export to config/sync/)
-   - After pulling changes: `drush cim` (config import from config/sync/)
+   - Before export: `drush export:all -y` (saves taxonomies/menus/blocks to structure_sync.data.yml)
+   - After making changes in Drupal admin: `drush export:all -y && drush cex -y` (config export to config/sync/)
+   - After pulling changes: `drush cim -y` (imports config + auto-imports structure via bearcom_sync module)
    - ALWAYS commit config/sync/ YAML files to Git
 3. Never edit the same content type simultaneously — communicate before making config changes
 4. Frontend dev can work on Twig/CSS/JS independently (these are file-based, no config conflicts)
@@ -105,14 +106,50 @@ mockups/
 
 #### CSS
 
-1. **Тільки CSS-змінні** — всі кольори, шрифти, розміри, відступи, радіуси, transition беруться з `var(--...)` (файл `_variables.css`). Хардкод значень заборонений. Якщо токену немає — спочатку додай його в `_variables.css`.
-2. **BEM-подібне іменування** — `.block__element--modifier` (приклад: `.site-header__nav`, `.btn--primary`, `.hero-banner__title--large`).
-3. **Без `!important`** — якщо потрібен `!important`, значить щось зроблено неправильно вище по каскаду. Виправ причину.
-4. **Без inline styles** — ніяких `style="..."` в Twig-шаблонах. Всі стилі — у відповідному CSS-файлі.
-5. **Кожен компонент = окремий CSS-файл** — не змішувати стилі різних компонентів в одному файлі.
-6. **Mobile-first не потрібен** — верстаємо desktop-first (базові стилі = desktop), адаптив через `@media (max-width: ...)`.
-7. **Breakpoints**: `1023px` (tablet), `767px` (mobile). Використовувати тільки ці два.
-8. **Контейнер** — завжди `.container` (max-width: 1320px + padding 20px). Не створювати кастомні контейнери.
+1. **Vanilla CSS** — без SCSS/Sass. CSS custom properties покривають всі потреби. Без build tools.
+2. **Тільки CSS-змінні** — всі кольори, шрифти, розміри, відступи, радіуси, transition беруться з `var(--...)` (файл `_variables.css`). Хардкод значень заборонений. Якщо токену немає — спочатку додай його в `_variables.css`.
+3. **BEM-подібне іменування** — `.block__element--modifier` (приклад: `.site-header__nav`, `.btn--primary`, `.hero-banner__title--large`).
+4. **Без `!important`** — якщо потрібен `!important`, значить щось зроблено неправильно вище по каскаду. Виправ причину.
+5. **Без inline styles** — ніяких `style="..."` в Twig-шаблонах. Всі стилі — у відповідному CSS-файлі.
+6. **Кожен компонент = окремий CSS-файл** — не змішувати стилі різних компонентів в одному файлі.
+7. **Mobile-first не потрібен** — верстаємо desktop-first (базові стилі = desktop), адаптив через `@media (max-width: ...)`.
+8. **Breakpoints**: `1023px` (tablet), `767px` (mobile). Використовувати тільки ці два.
+9. **Контейнер** — завжди `.container` (max-width: 1320px + padding 20px). Не створювати кастомні контейнери.
+
+#### CSS — спільні патерни (обов'язково використовувати)
+
+Щоб уникнути дублювання коду між девами, використовуємо спільні базові класи:
+
+**Акордеон (`_accordion.css`)** — єдиний патерн для FAQ, specs table, product tabs, mobile menu:
+```css
+.accordion__trigger — кнопка відкриття (flex, space-between, cursor pointer)
+.accordion__content — прихований контент (max-height: 0, overflow: hidden, transition)
+.accordion__item.is-open — відкритий стан (max-height, rotate іконки)
+```
+Кожен компонент (FAQ, specs) додає тільки візуальні відмінності поверх базового патерну.
+
+**Картка (`_card.css`)** — база для product card, industry card, location card, mega-menu card:
+```css
+.card — radius, overflow, hover shadow, transition
+.card__image — width 100%, object-fit cover
+.card__body — padding
+Модифікатори: .card--product (aspect-ratio 1), .card--industry (aspect-ratio 4/3), .card--location (orange left border)
+```
+
+**Секція (`_grid.css`)** — багато сторінок мають однаковий патерн секцій:
+```css
+.section — padding (section-padding)
+.section__header — text-align center, margin-bottom
+.section__title, .section__subtitle
+.section--alt (light grey bg), .section--dark (dark blue bg, white text)
+```
+
+**Варіації компонентів** — реалізовувати через BEM-модифікатори, не через окремі класи:
+- Hero: `.hero--product`, `.hero--image`, `.hero--solid` (різниця: фон, layout)
+- CTA: `.cta-block--default`, `.cta-block--orange` (різниця: background, color)
+- Content block: `.content-block--image-left`, `.content-block--image-right` (різниця: flex-direction)
+- Article: `.article-hero--image`, `.article-hero--blue` (різниця: background)
+- Location: `.location--orange`, `.location--grey` (різниця: accent color)
 
 #### Twig
 
@@ -132,16 +169,17 @@ mockups/
 #### Backend (Drupal config)
 
 1. **Machine names** — строго за `PROJECT_PLAN.md` (секція §5–§7). Не вигадувати свої назви.
-2. **Config export після кожної зміни** — змінив щось в адміні → `drush cex` → git commit. Не накопичувати зміни.
+2. **Config export після кожної зміни** — змінив щось в адміні → `drush export:all -y && drush cex -y` → git commit. Не накопичувати зміни.
 3. **Paragraph types** — використовувати існуючі перед створенням нових. Список спільних параграфів: `cta_block`, `content_block`, `faq_item`, `checklist_item`.
 4. **Image styles** — тільки 15 визначених у §7.7. Не створювати додаткових без узгодження.
 5. **Pathauto patterns** — налаштувати одразу при створенні CT (формати URL з §6).
 6. **Metatag defaults** — налаштувати для кожного CT одразу при створенні.
+7. **Form/View display** — при створенні нового CT, параграфа або поля обов'язково налаштувати Entity Form Display (віджети, порядок полів) та Entity View Display (формат виводу). Без цього поля не з'являться на формі і на сторінці. Після налаштування — `drush cex -y`, щоб display конфіги потрапили в git і були доступні для мануального налаштування з адмінки.
 
 #### Загальне
 
 1. **Не комітити** зламаний код — перед комітом перевірити що сайт працює (`drush cr`, перезавантажити сторінку).
-2. **Щоденний ритуал**: `git pull` → `drush cim` → працюєш → `drush cex` → `git push`.
+2. **Щоденний ритуал**: `git pull` → `drush cim -y` → працюєш → `drush export:all -y && drush cex -y` → `git push`.
 3. **Конфлікт в конфігах** — НІКОЛИ не вирішувати вручну. Відкотити, домовитись хто перший пушить, потім другий імпортує і робить свої зміни поверх.
 4. **Тестовий контент** — створювати 2–3 ноди одразу після CT, з усіма заповненими полями (включно з необов'язковими). Це потрібно фронтенду для верстки.
 5. **Перед закриттям таски** — перевірити на desktop (1920px) і mobile (375px). Якщо не виглядає як макет — не закривати.
@@ -170,10 +208,11 @@ docker compose exec php bash scripts/install.sh
 docker compose exec php bash -c "cd web && ../vendor/bin/drush cim -y"
 
 # Useful commands:
-docker compose exec php bash -c "cd web && ../vendor/bin/drush cr"    # Clear cache
-docker compose exec php bash -c "cd web && ../vendor/bin/drush cex"   # Export config
-docker compose exec php bash -c "cd web && ../vendor/bin/drush cim"   # Import config
-docker compose exec php bash -c "cd web && ../vendor/bin/drush uli"   # One-time login link
+docker compose exec php bash -c "cd web && ../vendor/bin/drush cr"                        # Clear cache
+docker compose exec php bash -c "cd web && ../vendor/bin/drush export:all -y"             # Export taxonomies/menus/blocks
+docker compose exec php bash -c "cd web && ../vendor/bin/drush cex -y"                    # Export config
+docker compose exec php bash -c "cd web && ../vendor/bin/drush cim -y"                    # Import config + structure (auto)
+docker compose exec php bash -c "cd web && ../vendor/bin/drush uli"                       # One-time login link
 ```
 
 ---

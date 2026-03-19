@@ -43,6 +43,12 @@
   --container-max-width: 1320px;
   --container-padding: 20px;
 
+  /* Footer */
+  --color-footer-mobile-bg: #FB591F;
+  --footer-radius: 24px;
+  --footer-bottom-gap: 144px;
+  --footer-wave-top: 120px;
+
   /* Border Radius */
   --radius-button: 4px;
   --radius-card: 8px;

@@ -1,0 +1,25 @@
+uuid: 496116bd-a030-4166-8a6b-647ccd2bfc98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.stats_counter.field_items
+    - paragraphs.paragraphs_type.stats_counter
+  module:
+    - entity_reference_revisions
+id: paragraph.stats_counter.default
+targetEntityType: paragraph
+bundle: stats_counter
+mode: default
+content:
+  field_items:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,24 @@
+uuid: dfee28ac-428c-4a20-874a-1cb6d34e6fe4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card_1_image
+    - media.type.image
+    - paragraphs.paragraphs_type.rentals_connected
+id: paragraph.rentals_connected.field_card_1_image
+field_name: field_card_1_image
+entity_type: paragraph
+bundle: rentals_connected
+label: 'Card 1 Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+field_type: entity_reference

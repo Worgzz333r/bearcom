@@ -1,0 +1,24 @@
+uuid: 36e7caa3-45b6-48a5-8a2a-a18782886565
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_product_image
+    - media.type.image
+    - paragraphs.paragraphs_type.hero_banner
+id: paragraph.hero_banner.field_product_image
+field_name: field_product_image
+entity_type: paragraph
+bundle: hero_banner
+label: 'Product Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+field_type: entity_reference

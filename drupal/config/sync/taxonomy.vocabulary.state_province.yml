@@ -1,9 +1,9 @@
-uuid: f7d5583c-77cb-4f38-9c2d-2c472494dc16
+uuid: 1a2364da-257f-4b17-94e3-9dea1712e09c
 langcode: en
 status: true
 dependencies: {  }
 name: 'State / Province'
 vid: state_province
-description: 'Location grouping (directory + Location node field)'
+description: 'US states and Canadian provinces'
 weight: 0
 new_revision: false

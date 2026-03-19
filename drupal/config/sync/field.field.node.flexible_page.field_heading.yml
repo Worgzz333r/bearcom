@@ -1,0 +1,19 @@
+uuid: e5898f97-be64-4f79-a266-6f0b501b7358
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_heading
+    - node.type.flexible_page
+id: node.flexible_page.field_heading
+field_name: field_heading
+entity_type: node
+bundle: flexible_page
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

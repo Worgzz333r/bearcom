@@ -1,0 +1,10 @@
+uuid: dd867abe-b512-41f5-b591-94f19a631e03
+langcode: en
+status: true
+dependencies: {  }
+id: content_block
+label: 'Content Block'
+icon_uuid: null
+icon_default: null
+description: null
+behavior_plugins: {  }

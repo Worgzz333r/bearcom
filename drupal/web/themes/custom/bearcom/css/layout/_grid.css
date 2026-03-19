@@ -1,9 +1,9 @@
 .container {
-  max-width: 1440px;
+  max-width: var(--container-max-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
 }
 
 .container--narrow {

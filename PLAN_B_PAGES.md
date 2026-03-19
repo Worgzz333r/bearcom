@@ -350,10 +350,31 @@ Config sync: перед роботою git pull → drush cim, після — dr
 Оскільки обидва створюєте CT/параграфи:
 
 1. **Перед роботою:** `git pull` → `drush cim -y`
-2. **Після роботи:** `drush cex -y` → `git add config/` → commit → push
+2. **Після роботи:** `drush export:all -y` → `drush cex -y` → `git add .` → commit → push
 3. **Хто першим запушив** — того конфіг. Другий мерджить
 4. **Не чіпай чужі CT/параграфи** без домовленості
 5. **Спільні параграфи** (`faq_item`, `cta_block`, `checklist_item`, `content_block`): хто створив першим — відразу пушить, другий робить `drush cim`
+
+### Structure Sync (таксономії, меню, блоки)
+
+Таксономічні терми, меню і блоки — це контент, а не конфігурація. Drupal їх не експортує через `drush cex`.
+Для синхронізації використовуємо модуль **Structure Sync** + кастомний модуль **bearcom_sync**.
+
+**Як це працює:**
+- `drush export:all -y` — зберігає терми/меню/блоки у файл `config/sync/structure_sync.data.yml`
+- `drush cex -y` — експортує цей файл разом з рештою конфігурації
+- `drush cim -y` — на іншій машині/сервері імпортує конфігурацію, а модуль `bearcom_sync` автоматично запускає імпорт термів/меню/блоків
+
+**Тому завжди перед пушем:**
+```bash
+drush export:all -y && drush cex -y
+git add . && git commit -m "..." && git push
+```
+
+**Після git pull / на сервері:**
+```bash
+drush cim -y    # все підтягнеться автоматично
+```
 
 ---
 

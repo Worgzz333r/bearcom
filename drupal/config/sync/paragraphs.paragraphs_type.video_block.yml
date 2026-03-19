@@ -1,0 +1,10 @@
+uuid: a221120a-a5f4-4875-8034-f62745546145
+langcode: en
+status: true
+dependencies: {  }
+id: video_block
+label: 'Video Block'
+icon_uuid: null
+icon_default: null
+description: null
+behavior_plugins: {  }

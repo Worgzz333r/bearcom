@@ -1,0 +1,40 @@
+uuid: 108b9081-a5da-4811-b042-a00102448a82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.product_grid.field_limit
+    - field.field.paragraph.product_grid.field_title
+    - field.field.paragraph.product_grid.field_view_id
+    - paragraphs.paragraphs_type.product_grid
+id: paragraph.product_grid.default
+targetEntityType: paragraph
+bundle: product_grid
+mode: default
+content:
+  field_limit:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_view_id:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

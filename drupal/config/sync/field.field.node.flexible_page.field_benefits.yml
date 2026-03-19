@@ -1,0 +1,27 @@
+uuid: aee50015-d19f-4917-89f9-55a61679e6cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_benefits
+    - node.type.flexible_page
+    - paragraphs.paragraphs_type.checklist_item
+  module:
+    - entity_reference_revisions
+id: node.flexible_page.field_benefits
+field_name: field_benefits
+entity_type: node
+bundle: flexible_page
+label: Benefits
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      checklist_item: checklist_item
+    negate: 0
+field_type: entity_reference_revisions

@@ -1,0 +1,19 @@
+uuid: 8a75012b-82f1-4e9f-8326-2a034e409d9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.rentals_connected
+id: paragraph.rentals_connected.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: rentals_connected
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

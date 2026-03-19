@@ -1,0 +1,52 @@
+uuid: fc697d38-d361-4858-a1b2-64233e9d2966
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.gj_tab.field_body
+    - field.field.paragraph.gj_tab.field_checklist
+    - field.field.paragraph.gj_tab.field_image
+    - field.field.paragraph.gj_tab.field_tab_title
+    - paragraphs.paragraphs_type.gj_tab
+  module:
+    - media_library
+    - text
+id: paragraph.gj_tab.default
+targetEntityType: paragraph
+bundle: gj_tab
+mode: default
+content:
+  field_body:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_checklist:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_tab_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

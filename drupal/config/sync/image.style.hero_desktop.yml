@@ -1,12 +1,12 @@
-uuid: 99c608a8-1806-4aa3-9ad2-d76a61fd0d67
+uuid: 5524105f-2b0c-4bf5-9517-3c864b2362ef
 langcode: en
 status: true
 dependencies: {  }
 name: hero_desktop
 label: 'Hero Desktop'
 effects:
-  dbcbc925-cebf-4377-b934-dcf33fbae2b8:
-    uuid: dbcbc925-cebf-4377-b934-dcf33fbae2b8
+  aaaa2dac-aa6e-448b-85a5-2f98caa61f0e:
+    uuid: aaaa2dac-aa6e-448b-85a5-2f98caa61f0e
     id: image_scale_and_crop
     weight: null
     data:
