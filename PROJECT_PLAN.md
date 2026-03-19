@@ -92,8 +92,9 @@ mockups/
 ```
 1. Both devs work on the same `main` branch (or feature branches if needed)
 2. Drupal config sync:
-   - After making changes in Drupal admin: `drush cex` (config export to config/sync/)
-   - After pulling changes: `drush cim` (config import from config/sync/)
+   - Before export: `drush export:all -y` (saves taxonomies/menus/blocks to structure_sync.data.yml)
+   - After making changes in Drupal admin: `drush export:all -y && drush cex -y` (config export to config/sync/)
+   - After pulling changes: `drush cim -y` (imports config + auto-imports structure via bearcom_sync module)
    - ALWAYS commit config/sync/ YAML files to Git
 3. Never edit the same content type simultaneously — communicate before making config changes
 4. Frontend dev can work on Twig/CSS/JS independently (these are file-based, no config conflicts)
@@ -132,7 +133,7 @@ mockups/
 #### Backend (Drupal config)
 
 1. **Machine names** — строго за `PROJECT_PLAN.md` (секція §5–§7). Не вигадувати свої назви.
-2. **Config export після кожної зміни** — змінив щось в адміні → `drush cex` → git commit. Не накопичувати зміни.
+2. **Config export після кожної зміни** — змінив щось в адміні → `drush export:all -y && drush cex -y` → git commit. Не накопичувати зміни.
 3. **Paragraph types** — використовувати існуючі перед створенням нових. Список спільних параграфів: `cta_block`, `content_block`, `faq_item`, `checklist_item`.
 4. **Image styles** — тільки 15 визначених у §7.7. Не створювати додаткових без узгодження.
 5. **Pathauto patterns** — налаштувати одразу при створенні CT (формати URL з §6).
@@ -141,7 +142,7 @@ mockups/
 #### Загальне
 
 1. **Не комітити** зламаний код — перед комітом перевірити що сайт працює (`drush cr`, перезавантажити сторінку).
-2. **Щоденний ритуал**: `git pull` → `drush cim` → працюєш → `drush cex` → `git push`.
+2. **Щоденний ритуал**: `git pull` → `drush cim -y` → працюєш → `drush export:all -y && drush cex -y` → `git push`.
 3. **Конфлікт в конфігах** — НІКОЛИ не вирішувати вручну. Відкотити, домовитись хто перший пушить, потім другий імпортує і робить свої зміни поверх.
 4. **Тестовий контент** — створювати 2–3 ноди одразу після CT, з усіма заповненими полями (включно з необов'язковими). Це потрібно фронтенду для верстки.
 5. **Перед закриттям таски** — перевірити на desktop (1920px) і mobile (375px). Якщо не виглядає як макет — не закривати.
@@ -170,10 +171,11 @@ docker compose exec php bash scripts/install.sh
 docker compose exec php bash -c "cd web && ../vendor/bin/drush cim -y"
 
 # Useful commands:
-docker compose exec php bash -c "cd web && ../vendor/bin/drush cr"    # Clear cache
-docker compose exec php bash -c "cd web && ../vendor/bin/drush cex"   # Export config
-docker compose exec php bash -c "cd web && ../vendor/bin/drush cim"   # Import config
-docker compose exec php bash -c "cd web && ../vendor/bin/drush uli"   # One-time login link
+docker compose exec php bash -c "cd web && ../vendor/bin/drush cr"                        # Clear cache
+docker compose exec php bash -c "cd web && ../vendor/bin/drush export:all -y"             # Export taxonomies/menus/blocks
+docker compose exec php bash -c "cd web && ../vendor/bin/drush cex -y"                    # Export config
+docker compose exec php bash -c "cd web && ../vendor/bin/drush cim -y"                    # Import config + structure (auto)
+docker compose exec php bash -c "cd web && ../vendor/bin/drush uli"                       # One-time login link
 ```
 
 ---
