@@ -1,14 +1,15 @@
 {# Product Grid — embeds a View by machine name #}
-<section class="product-grid">
-  <div class="container">
-    {% if paragraph.field_title.value %}
-      <div class="section__header">
-        <h2 class="section__title">{{ paragraph.field_title.value }}</h2>
-      </div>
-    {% endif %}
+{% set view_id = paragraph.field_view_id.value %}
+{% set display_id = 'block_1' %}
 
-    <div class="product-grid__content">
-      {{ drupal_view(paragraph.field_view_id.value, 'default') }}
+<section class="product-grid">
+  {% if paragraph.field_title.value %}
+    <div class="section__header">
+      <h2 class="section__title">{{ paragraph.field_title.value }}</h2>
     </div>
+  {% endif %}
+
+  <div class="product-grid__content">
+    {{ drupal_view(view_id, display_id) }}
   </div>
 </section>

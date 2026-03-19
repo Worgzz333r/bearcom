@@ -98,6 +98,34 @@
   color: var(--color-white);
 }
 
+/* Style: solid grey — light grey bg, centered text, dark color */
+.hero--solid {
+  background-color: var(--color-background);
+  min-height: auto;
+}
+
+.hero--solid .container {
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.hero--solid .hero__title {
+  font-size: var(--h1-size);
+  line-height: var(--h1-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark-blue);
+}
+
+.hero--solid .hero__subtitle {
+  color: var(--color-text-primary);
+  max-width: 800px;
+}
+
+.hero--solid .hero__buttons {
+  justify-content: center;
+}
+
 @media (max-width: 1023px) {
   .hero {
     min-height: 400px;

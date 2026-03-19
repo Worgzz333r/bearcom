@@ -8,15 +8,11 @@
 #}
 
 <div{{ attributes.addClass('industries-section') }}>
-  <div class="container">
-    <h2 class="industries-section__title">Posuere ex mattis phasellus</h2>
-
-    <div class="industries-grid">
-      {{ rows }}
-    </div>
-
-    {% if pager %}
-      {{ pager }}
-    {% endif %}
+  <div class="industries-grid">
+    {{ rows }}
   </div>
+
+  {% if pager %}
+    {{ pager }}
+  {% endif %}
 </div>

@@ -1,4 +1,11 @@
-{# Flexible Page — renders paragraphs without wrapper container (each paragraph has its own) #}
+{#
+/**
+ * @file
+ * Flexible Page — renders paragraphs sequentially.
+ * Views are embedded via product_grid paragraph type.
+ */
+#}
+
 <article{{ attributes.addClass('flexible-page') }}>
   {{ content.field_paragraphs }}
 </article>

@@ -21,6 +21,9 @@ settings:
       value: color
       label: 'Solid Color'
     -
+      value: solid
+      label: 'Solid Grey'
+    -
       value: default
       label: Default
     -

@@ -94,15 +94,15 @@
    -------------------------------------------------------------------------- */
 
 .industries-section {
-  padding: var(--section-padding) 0;
+  padding: 0;
 }
 
-.industries-section .container {
-  padding-left: var(--spacing-xl);
-  padding-right: var(--spacing-xl);
+/* Product grid wrapper for industries */
+.product-grid:has(.industries-section) {
+  padding: var(--section-padding) var(--spacing-xl);
 }
 
-.industries-section__title {
+.product-grid:has(.industries-section) .section__title {
   font-size: var(--h2-size);
   line-height: var(--h2-lh);
   font-weight: var(--font-weight-semibold);
