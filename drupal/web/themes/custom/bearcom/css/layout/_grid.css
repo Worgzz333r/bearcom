@@ -6,6 +6,20 @@
   padding-right: var(--container-padding);
 }
 
+@media (max-width: 1023px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
+}
+
 .container--narrow {
   max-width: var(--container-max-width);
   padding-left: 0;
@@ -53,6 +67,36 @@
   .grid--5 {
     grid-template-columns: 1fr;
   }
+}
+
+/* Section header — centered title + subtitle pattern */
+.section__header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.section__title {
+  font-size: var(--h2-size);
+  line-height: var(--h2-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark-blue);
+  margin: 0;
+}
+
+.section__subtitle {
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  color: var(--color-text-primary);
+  margin: var(--spacing-sm) 0 0;
+}
+
+.section--alt {
+  background-color: var(--color-background);
+}
+
+.section--dark {
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
 }
 
 /* Flexbox utilities */

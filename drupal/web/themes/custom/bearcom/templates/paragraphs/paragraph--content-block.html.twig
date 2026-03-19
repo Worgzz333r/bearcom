@@ -1,0 +1,24 @@
+{# Content Block — image left/right + title + body (shared paragraph) #}
+{% set layout = paragraph.field_layout.value|default('image-left') %}
+
+<section class="content-block content-block--{{ layout }}">
+  <div class="container">
+    <div class="content-block__inner">
+      {% if paragraph.field_image.entity %}
+        <div class="content-block__image">
+          {{ content.field_image }}
+        </div>
+      {% endif %}
+
+      <div class="content-block__content">
+        {% if paragraph.field_title.value %}
+          <h2 class="content-block__title">{{ paragraph.field_title.value }}</h2>
+        {% endif %}
+
+        {% if paragraph.field_body.value %}
+          <div class="content-block__body">{{ content.field_body }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

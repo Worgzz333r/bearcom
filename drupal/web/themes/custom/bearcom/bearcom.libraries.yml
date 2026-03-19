@@ -12,6 +12,10 @@ global:
       css/components/_button.css: {}
       css/components/_hero.css: {}
       css/components/_card.css: {}
+      css/components/_cta-block.css: {}
+      css/components/_content-block.css: {}
+      css/components/_checklist.css: {}
+      css/components/_rentals.css: {}
       css/components/_pagination.css: {}
       css/components/_breadcrumbs.css: {}
       css/components/_form.css: {}
@@ -62,6 +66,7 @@ tabs:
   css:
     component:
       css/components/_tabs.css: {}
+      css/components/_guided-journey.css: {}
   dependencies:
     - core/drupal
     - core/once
@@ -129,6 +134,8 @@ homepage:
   css:
     theme:
       css/pages/_homepage.css: {}
+  dependencies:
+    - bearcom/global
 
 category:
   css:

@@ -1,0 +1,24 @@
+{# Card Item — icon + title + description + link #}
+<div class="card">
+  {% if paragraph.field_icon.entity %}
+    <div class="card__icon">
+      {{ content.field_icon }}
+    </div>
+  {% endif %}
+
+  <div class="card__body">
+    {% if paragraph.field_title.value %}
+      <h3 class="card__title">{{ paragraph.field_title.value }}</h3>
+    {% endif %}
+
+    {% if paragraph.field_description.value %}
+      <div class="card__description">{{ content.field_description }}</div>
+    {% endif %}
+
+    {% if paragraph.field_link.0.url %}
+      <a href="{{ paragraph.field_link.0.url }}" class="card__link">
+        {{ paragraph.field_link.0.title|default('Learn More') }} →
+      </a>
+    {% endif %}
+  </div>
+</div>

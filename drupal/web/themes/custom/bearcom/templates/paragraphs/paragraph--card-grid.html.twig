@@ -1,0 +1,19 @@
+{# Card Grid — title + subtitle + nested card_item paragraphs #}
+<section class="card-grid">
+  <div class="container">
+    {% if paragraph.field_title.value or paragraph.field_subtitle.value %}
+      <div class="section__header">
+        {% if paragraph.field_title.value %}
+          <h2 class="section__title">{{ paragraph.field_title.value }}</h2>
+        {% endif %}
+        {% if paragraph.field_subtitle.value %}
+          <p class="section__subtitle">{{ paragraph.field_subtitle.value }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="card-grid__items grid grid--3">
+      {{ content.field_cards }}
+    </div>
+  </div>
+</section>

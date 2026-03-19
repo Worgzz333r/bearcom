@@ -1,0 +1,20 @@
+/* Checklist Item */
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xs);
+}
+
+.checklist-item__icon {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--p-size);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.checklist-item__text {
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  color: var(--color-text-primary);
+}

@@ -1,0 +1,14 @@
+{# Product Grid — embeds a View by machine name #}
+<section class="product-grid">
+  <div class="container">
+    {% if paragraph.field_title.value %}
+      <div class="section__header">
+        <h2 class="section__title">{{ paragraph.field_title.value }}</h2>
+      </div>
+    {% endif %}
+
+    <div class="product-grid__content">
+      {{ drupal_view(paragraph.field_view_id.value, 'default') }}
+    </div>
+  </div>
+</section>

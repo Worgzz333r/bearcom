@@ -1,0 +1,34 @@
+{# Rentals Connected — title + 2 cards side by side #}
+<section class="rentals-connected">
+  <div class="container">
+    {% if paragraph.field_title.value %}
+      <div class="section__header">
+        <h2 class="section__title">{{ paragraph.field_title.value }}</h2>
+      </div>
+    {% endif %}
+
+    <div class="rentals-connected__cards">
+      <a href="{{ paragraph.field_card_1_link.0.url|default('#') }}" class="rentals-connected__card">
+        {% if paragraph.field_card_1_image.entity %}
+          <div class="rentals-connected__card-image">
+            <img src="{{ file_url(paragraph.field_card_1_image.entity.field_media_image.entity.uri.value) }}" alt="{{ paragraph.field_card_1_title.value }}">
+          </div>
+        {% endif %}
+        {% if paragraph.field_card_1_title.value %}
+          <h3 class="rentals-connected__card-title">{{ paragraph.field_card_1_title.value }}</h3>
+        {% endif %}
+      </a>
+
+      <a href="{{ paragraph.field_card_2_link.0.url|default('#') }}" class="rentals-connected__card">
+        {% if paragraph.field_card_2_image.entity %}
+          <div class="rentals-connected__card-image">
+            <img src="{{ file_url(paragraph.field_card_2_image.entity.field_media_image.entity.uri.value) }}" alt="{{ paragraph.field_card_2_title.value }}">
+          </div>
+        {% endif %}
+        {% if paragraph.field_card_2_title.value %}
+          <h3 class="rentals-connected__card-title">{{ paragraph.field_card_2_title.value }}</h3>
+        {% endif %}
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+{# Guided Journey — tabs component #}
+<section class="guided-journey" data-tabs>
+  <div class="container">
+    {% if paragraph.field_title.value %}
+      <div class="section__header">
+        <h2 class="section__title">{{ paragraph.field_title.value }}</h2>
+      </div>
+    {% endif %}
+
+    {# Tab navigation #}
+    <div class="guided-journey__nav">
+      {% for item in paragraph.field_tabs %}
+        <button class="guided-journey__tab{% if loop.first %} is-active{% endif %}" data-tab-trigger="{{ loop.index0 }}">
+          {{ item.entity.field_tab_title.value }}
+        </button>
+      {% endfor %}
+    </div>
+
+    {# Tab panels #}
+    <div class="guided-journey__panels">
+      {% for item in paragraph.field_tabs %}
+        {% set tab = item.entity %}
+        <div class="guided-journey__panel{% if loop.first %} is-active{% endif %}" data-tab-panel="{{ loop.index0 }}">
+          <div class="guided-journey__panel-inner">
+            <div class="guided-journey__panel-content">
+              {% if tab.field_body.value %}
+                <div class="guided-journey__body">{{ tab.field_body.value|raw }}</div>
+              {% endif %}
+
+              {% if tab.field_checklist|length > 0 %}
+                <ul class="guided-journey__checklist">
+                  {% for check in tab.field_checklist %}
+                    <li class="guided-journey__check-item">{{ check.value }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+
+            {% if tab.field_image.entity %}
+              <div class="guided-journey__panel-image">
+                <img src="{{ file_url(tab.field_image.entity.field_media_image.entity.uri.value) }}" alt="{{ tab.field_tab_title.value }}">
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
