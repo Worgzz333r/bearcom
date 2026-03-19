@@ -1,0 +1,19 @@
+uuid: bb29fcf2-402b-42b2-9849-129de229936b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_secondary_text
+    - paragraphs.paragraphs_type.hero_banner
+id: paragraph.hero_banner.field_secondary_text
+field_name: field_secondary_text
+entity_type: paragraph
+bundle: hero_banner
+label: 'Secondary Button Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

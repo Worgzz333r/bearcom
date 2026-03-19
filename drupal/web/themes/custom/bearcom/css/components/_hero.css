@@ -1,9 +1,7 @@
-/* Hero Banner — base */
+/* Hero Banner */
 .hero {
   position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: var(--color-white);
   padding: var(--spacing-xxl) 0;
   min-height: 500px;
   display: flex;
@@ -12,10 +10,9 @@
 
 .hero .container {
   position: relative;
-  z-index: 1;
   display: flex;
   align-items: center;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
   width: 100%;
 }
 
@@ -48,9 +45,9 @@
   display: inline-flex;
 }
 
-/* Product image (left side per mockup) */
+/* Product image (left side) */
 .hero__product-image {
-  flex: 0 0 calc(50% - var(--spacing-xl) / 2);
+  flex: 0 0 calc(50% - var(--spacing-lg) / 2 - 10px);
 }
 
 .hero__product-image img {
@@ -125,7 +122,6 @@
 .hero--solid .hero__buttons {
   justify-content: center;
 }
-
 @media (max-width: 1023px) {
   .hero {
     min-height: 400px;
@@ -141,8 +137,13 @@
     max-width: 100%;
   }
 
-  .hero__product-image img {
-    max-height: 300px;
+  .hero__buttons {
+    justify-content: center;
+  }
+
+  .hero__product-image {
+    flex: none;
+    width: 100%;
   }
 }
 
@@ -150,9 +151,5 @@
   .hero {
     min-height: auto;
     padding: var(--spacing-lg) 0;
-  }
-
-  .hero__product-image img {
-    max-height: 220px;
   }
 }

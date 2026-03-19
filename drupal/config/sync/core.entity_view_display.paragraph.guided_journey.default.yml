@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.guided_journey.field_subtitle
     - field.field.paragraph.guided_journey.field_tabs
     - field.field.paragraph.guided_journey.field_title
     - paragraphs.paragraphs_type.guided_journey
@@ -31,4 +32,5 @@ content:
     weight: 0
     region: content
 hidden:
+  field_subtitle: true
   search_api_excerpt: true

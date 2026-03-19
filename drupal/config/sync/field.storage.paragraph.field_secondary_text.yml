@@ -1,11 +1,11 @@
-uuid: 2867b31c-c1d4-4a65-a034-c6de4519a83b
+uuid: 58b6a811-2076-477d-a825-103161cc501e
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.field_checklist
-field_name: field_checklist
+id: paragraph.field_secondary_text
+field_name: field_secondary_text
 entity_type: paragraph
 type: string
 settings:
@@ -14,7 +14,7 @@ settings:
   is_ascii: false
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

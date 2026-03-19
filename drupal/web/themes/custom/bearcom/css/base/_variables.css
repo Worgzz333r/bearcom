@@ -3,6 +3,7 @@
   --color-primary: #FC5000;
   --color-primary-dark: #D4551A;
   --color-dark-blue: #22262C;
+  --color-text-dark: #262626;
   --color-text-primary: #4A4F55;
   --color-background: #FAFAFA;
   --color-background-alt: #EFEFEF;
@@ -33,6 +34,7 @@
   --spacing-xs: 8px;
   --spacing-sm: 16px;
   --spacing-md: 24px;
+  --spacing-30: 30px;
   --spacing-lg: 40px;
   --spacing-xl: 60px;
   --spacing-xxl: 80px;

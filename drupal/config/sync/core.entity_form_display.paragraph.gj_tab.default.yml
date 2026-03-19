@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.gj_tab.field_body
-    - field.field.paragraph.gj_tab.field_checklist
+    - field.field.paragraph.gj_tab.field_description
     - field.field.paragraph.gj_tab.field_image
     - field.field.paragraph.gj_tab.field_tab_title
     - paragraphs.paragraphs_type.gj_tab
@@ -24,12 +24,12 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_checklist:
-    type: string_textfield
+  field_description:
+    type: text_textarea
     weight: 2
     region: content
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_image:
@@ -49,4 +49,5 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_checklist: true
   status: true

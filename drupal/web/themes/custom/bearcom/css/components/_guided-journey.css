@@ -1,37 +1,70 @@
 /* Guided Journey — tabs */
 .guided-journey {
   padding: var(--section-padding) 0;
-  background-color: var(--color-background);
+  background-color: var(--color-white);
 }
 
 /* Tab navigation */
 .guided-journey__nav {
   display: flex;
-  gap: var(--spacing-xs);
-  margin-bottom: var(--spacing-lg);
-  border-bottom: 2px solid var(--color-medium-gray);
+  max-width: fit-content;
+  min-width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+}
+
+.guided-journey__nav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: var(--slider-left, 0);
+  width: var(--slider-width, 0);
+  height: 3px;
+  background-color: var(--color-primary);
+  transition: left var(--transition-base), width var(--transition-base);
 }
 
 .guided-journey__tab {
-  padding: var(--spacing-sm) var(--spacing-md);
+  flex: 1;
+  padding: 0 0 12px 0;
+  font-family: var(--font-family);
   font-size: var(--h5-size);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
+  line-height: var(--h5-lh);
+  font-weight: var(--font-weight-regular);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-dark-blue);
   background: none;
   border: none;
-  border-bottom: 3px solid transparent;
+  border-bottom: 2px solid transparent;
   cursor: pointer;
-  transition: color var(--transition-fast), border-color var(--transition-fast);
-  margin-bottom: -2px;
+  transition: color var(--transition-base), border-color var(--transition-base);
+  text-align: center;
+}
+
+.guided-journey__tab:first-child {
+  text-align: left;
+  padding-left: 6px;
+}
+
+.guided-journey__tab:not(:first-child):not(:last-child) {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.guided-journey__tab:last-child {
+  text-align: right;
+  padding-right: 6px;
 }
 
 .guided-journey__tab:hover {
-  color: var(--color-primary);
+  color: var(--color-dark-blue);
 }
 
 .guided-journey__tab.is-active {
-  color: var(--color-primary);
-  border-bottom-color: var(--color-primary);
+  color: var(--color-dark-blue);
 }
 
 /* Panels */
@@ -45,12 +78,32 @@
 
 .guided-journey__panel-inner {
   display: flex;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-30);
   align-items: flex-start;
 }
 
 .guided-journey__panel-content {
   flex: 1;
+}
+
+/* Caption */
+.guided-journey__caption {
+  display: block;
+  font-size: var(--p-size);
+  line-height: var(--details-lh);
+  font-weight: var(--font-weight-regular);
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Panel title */
+.guided-journey__panel-title {
+  font-size: var(--h4-size);
+  line-height: var(--h4-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark-blue);
+  margin: 0 0 var(--spacing-sm);
 }
 
 .guided-journey__body {
@@ -60,50 +113,61 @@
   margin-bottom: var(--spacing-md);
 }
 
-.guided-journey__checklist {
+/* Checklist — ul with orange pointer */
+.guided-journey__checklist ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-sm);
 }
 
-.guided-journey__check-item {
+.guided-journey__checklist li {
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-30);
   font-size: var(--p-size);
-  color: var(--color-text-primary);
+  color: var(--color-text-dark);
 }
 
-.guided-journey__check-item::before {
-  content: '✓';
-  color: var(--color-primary);
-  font-weight: var(--font-weight-semibold);
+.guided-journey__checklist li::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url('../../images/orange-list-pointer.svg') no-repeat center / contain;
   flex-shrink: 0;
 }
 
+/* Panel image */
 .guided-journey__panel-image {
-  flex: 0 0 45%;
+  flex: 0 0 50%;
 }
 
 .guided-journey__panel-image img {
   width: 100%;
   height: auto;
   border-radius: var(--radius-card);
+  object-fit: cover;
+}
+
+@media (max-width: 1023px) {
+  .guided-journey__nav {
+    gap: var(--spacing-lg);
+  }
 }
 
 @media (max-width: 767px) {
   .guided-journey__nav {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    gap: var(--spacing-lg);
   }
 
   .guided-journey__tab {
     white-space: nowrap;
-    font-size: var(--p-size);
-    padding: var(--spacing-xs) var(--spacing-sm);
   }
 
   .guided-journey__panel-inner {
