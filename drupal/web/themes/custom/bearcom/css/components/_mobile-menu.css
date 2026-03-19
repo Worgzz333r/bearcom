@@ -7,7 +7,7 @@
   right: 0;
   bottom: 0;
   background: var(--color-white);
-  z-index: 2000;
+  z-index: var(--z-mobile-menu);
   overflow-y: auto;
   flex-direction: column;
   padding-top: 0;

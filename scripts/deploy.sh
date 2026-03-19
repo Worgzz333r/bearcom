@@ -2,6 +2,8 @@
 # BearCom Drupal — Deploy script
 # Run on the server: cd /var/www/html && bash scripts/deploy.sh
 # Or from local: ssh user@server "cd /var/www/html && bash scripts/deploy.sh"
+#
+# bearcom_sync module auto-imports structure (taxonomies, menus, blocks) on drush cim
 
 set -e
 
@@ -26,8 +28,8 @@ $COMPOSE exec -T php composer install --no-dev --no-interaction --prefer-dist --
 echo "[3/5] Running database updates..."
 $DRUSH updb -y
 
-# 4. Import config
-echo "[4/5] Importing configuration..."
+# 4. Import config + structure (taxonomies, menus, blocks auto-imported by bearcom_sync)
+echo "[4/5] Importing configuration + structure..."
 $DRUSH cim -y
 
 # 5. Clear cache
