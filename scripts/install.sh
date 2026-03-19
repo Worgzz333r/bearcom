@@ -43,7 +43,8 @@ echo "  Config sync directory set.\n";
 '
 
 # 5. Import config from git
-echo "[5/7] Importing configuration..."
+# bearcom_sync module auto-imports structure (taxonomies, menus, blocks) on cim
+echo "[5/7] Importing configuration + structure..."
 
 ../vendor/bin/drush cr
 if [ -f "../config/sync/system.site.yml" ]; then
@@ -55,7 +56,7 @@ if [ -f "../config/sync/system.site.yml" ]; then
     ../vendor/bin/drush ev '\Drupal::entityTypeManager()->getStorage("shortcut")->delete(\Drupal::entityTypeManager()->getStorage("shortcut")->loadMultiple());'
 
     ../vendor/bin/drush cim -y
-    echo "  Config imported."
+    echo "  Config + structure imported."
 else
     echo "  No config found, enabling modules manually..."
     ../vendor/bin/drush en -y \
@@ -79,7 +80,9 @@ else
         captcha \
         recaptcha \
         better_exposed_filters \
-        views_ajax_history
+        views_ajax_history \
+        structure_sync \
+        bearcom_sync
 fi
 
 # 6. Set themes

@@ -1,0 +1,6 @@
+name: BearCom Sync
+type: module
+description: Auto-imports structure_sync data (taxonomies, menus, blocks) after drush cim.
+core_version_requirement: ^10 || ^11
+dependencies:
+  - structure_sync:structure_sync

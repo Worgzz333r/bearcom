@@ -6,6 +6,7 @@ module:
   admin_toolbar_tools: 0
   announcements_feed: 0
   automated_cron: 0
+  bearcom_sync: 0
   better_exposed_filters: 0
   big_pipe: 0
   block: 0
@@ -52,6 +53,7 @@ module:
   search: 0
   search_api: 0
   shortcut: 0
+  structure_sync: 0
   system: 0
   taxonomy: 0
   text: 0

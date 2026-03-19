@@ -1,0 +1,5 @@
+services:
+  bearcom_sync.config_import_subscriber:
+    class: Drupal\bearcom_sync\EventSubscriber\ConfigImportSubscriber
+    tags:
+      - { name: event_subscriber }
