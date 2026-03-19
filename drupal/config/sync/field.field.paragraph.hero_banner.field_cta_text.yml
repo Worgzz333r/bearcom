@@ -1,0 +1,19 @@
+uuid: ea3ea0a8-f354-431c-bdd7-ae99bcd7dafb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_text
+    - paragraphs.paragraphs_type.hero_banner
+id: paragraph.hero_banner.field_cta_text
+field_name: field_cta_text
+entity_type: paragraph
+bundle: hero_banner
+label: 'CTA Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

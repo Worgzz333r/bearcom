@@ -1,0 +1,23 @@
+uuid: a9686246-ccd3-4294-8e16-0a59187c72df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.checklist_item.field_text
+    - paragraphs.paragraphs_type.checklist_item
+  module:
+    - text
+id: paragraph.checklist_item.default
+targetEntityType: paragraph
+bundle: checklist_item
+mode: default
+content:
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

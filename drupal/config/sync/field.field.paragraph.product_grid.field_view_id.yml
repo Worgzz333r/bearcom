@@ -1,0 +1,19 @@
+uuid: fef4ba3f-5b4a-4a83-bbd2-7fa0b766ee28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_view_id
+    - paragraphs.paragraphs_type.product_grid
+id: paragraph.product_grid.field_view_id
+field_name: field_view_id
+entity_type: paragraph
+bundle: product_grid
+label: 'View Machine Name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

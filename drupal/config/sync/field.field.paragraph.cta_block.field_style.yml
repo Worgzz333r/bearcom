@@ -1,0 +1,21 @@
+uuid: 58dceb80-f00c-433c-922d-49d18174ce47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_style
+    - paragraphs.paragraphs_type.cta_block
+  module:
+    - options
+id: paragraph.cta_block.field_style
+field_name: field_style
+entity_type: paragraph
+bundle: cta_block
+label: Style
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,12 +1,12 @@
-uuid: 26772e04-0752-4a6b-8399-bdcdb20c1bd0
+uuid: 0d18104a-f692-441f-81e3-2a6e1714cb87
 langcode: en
 status: true
 dependencies: {  }
 name: product_thumb
 label: 'Product Thumbnail'
 effects:
-  e6449059-a81b-4687-97cc-8ac55196ea2d:
-    uuid: e6449059-a81b-4687-97cc-8ac55196ea2d
+  f65780c5-ac1d-42b5-8e84-96e788d5daec:
+    uuid: f65780c5-ac1d-42b5-8e84-96e788d5daec
     id: image_scale_and_crop
     weight: null
     data:

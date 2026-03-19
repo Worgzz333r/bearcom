@@ -1,0 +1,21 @@
+uuid: a6a220fe-272f-410b-be6b-b2f7ca1708e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_layout
+    - paragraphs.paragraphs_type.content_block
+  module:
+    - options
+id: paragraph.content_block.field_layout
+field_name: field_layout
+entity_type: paragraph
+bundle: content_block
+label: Layout
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

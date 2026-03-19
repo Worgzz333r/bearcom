@@ -1,12 +1,12 @@
-uuid: f527e4de-1979-49f0-b714-5fa49259d6db
+uuid: 2ce43c2c-fd89-4782-a573-73353f7c9d12
 langcode: en
 status: true
 dependencies: {  }
 name: hero_mobile
 label: 'Hero Mobile'
 effects:
-  9cc40e48-0b91-48ff-accb-495c12b04a27:
-    uuid: 9cc40e48-0b91-48ff-accb-495c12b04a27
+  dd4c428d-6c0a-4215-bb2c-a5503224cfe7:
+    uuid: dd4c428d-6c0a-4215-bb2c-a5503224cfe7
     id: image_scale_and_crop
     weight: null
     data:

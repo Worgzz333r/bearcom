@@ -1,0 +1,22 @@
+uuid: eaf91943-035e-4d69-9298-64da3e32f921
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.gj_tab
+  module:
+    - text
+id: paragraph.gj_tab.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: gj_tab
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

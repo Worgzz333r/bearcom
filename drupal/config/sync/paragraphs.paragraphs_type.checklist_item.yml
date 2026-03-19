@@ -1,0 +1,10 @@
+uuid: 6604ff38-8d0d-4150-826a-c9d4d37bedad
+langcode: en
+status: true
+dependencies: {  }
+id: checklist_item
+label: 'Checklist Item'
+icon_uuid: null
+icon_default: null
+description: null
+behavior_plugins: {  }

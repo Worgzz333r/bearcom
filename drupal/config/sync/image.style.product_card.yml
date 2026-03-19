@@ -1,12 +1,12 @@
-uuid: a0d8c561-475e-4771-b973-c75e8723a537
+uuid: a808e92a-915d-4d39-b12f-697ecb88e05f
 langcode: en
 status: true
 dependencies: {  }
 name: product_card
 label: 'Product Card'
 effects:
-  928df0f9-132b-4bd0-9970-2b38b1c191a4:
-    uuid: 928df0f9-132b-4bd0-9970-2b38b1c191a4
+  8269f48d-5390-4249-9a75-bc7468aa47eb:
+    uuid: 8269f48d-5390-4249-9a75-bc7468aa47eb
     id: image_scale_and_crop
     weight: null
     data:

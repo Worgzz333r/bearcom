@@ -1,0 +1,24 @@
+uuid: 2e823205-ad8a-4cb7-b559-e4fc00209a62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image
+    - media.type.image
+    - paragraphs.paragraphs_type.gj_tab
+id: paragraph.gj_tab.field_image
+field_name: field_image
+entity_type: paragraph
+bundle: gj_tab
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+field_type: entity_reference

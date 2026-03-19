@@ -1,0 +1,23 @@
+uuid: efe03afe-5e6e-4c5d-98ab-3a2db23f9e47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_webform
+    - node.type.flexible_page
+  module:
+    - webform
+id: node.flexible_page.field_webform
+field_name: field_webform
+entity_type: node
+bundle: flexible_page
+label: Webform
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings: {  }
+field_type: webform

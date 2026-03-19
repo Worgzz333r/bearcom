@@ -1,15 +1,15 @@
-uuid: 0e436b33-c7e5-4097-ad72-3ba8eeef8a9e
+uuid: c045451c-ebf8-4912-b7f7-226159e9e363
 langcode: en
 status: true
 dependencies: {  }
 name: product_gallery
 label: 'Product Gallery'
 effects:
-  66b7b8fb-4c75-468f-b135-42ee15b8c91d:
-    uuid: 66b7b8fb-4c75-468f-b135-42ee15b8c91d
-    id: image_scale_and_crop
+  50e3ad57-b93a-4559-bcd5-d45f0bf417cf:
+    uuid: 50e3ad57-b93a-4559-bcd5-d45f0bf417cf
+    id: image_scale
     weight: null
     data:
       width: 800
       height: 800
-      anchor: center-center
+      upscale: false

@@ -823,7 +823,7 @@ taxonomies:
   product_category:
     -
       vid: product_category
-      tid: '2'
+      tid: '83'
       langcode: en
       name: Accessories
       description__value: null
@@ -833,7 +833,7 @@ taxonomies:
       uuid: 6ab6985e-aa04-41a3-a301-ac1744d0f978
     -
       vid: product_category
-      tid: '5'
+      tid: '86'
       langcode: en
       name: Antennas
       description__value: null
@@ -843,7 +843,7 @@ taxonomies:
       uuid: 6c108676-228c-493c-8ab4-b150489da02a
     -
       vid: product_category
-      tid: '6'
+      tid: '87'
       langcode: en
       name: Batteries
       description__value: null
@@ -853,7 +853,7 @@ taxonomies:
       uuid: cbde5c9c-664b-49d9-a346-f23b65243036
     -
       vid: product_category
-      tid: '7'
+      tid: '88'
       langcode: en
       name: Cases
       description__value: null
@@ -863,7 +863,7 @@ taxonomies:
       uuid: d7f056b6-6da8-481f-9845-f8d4f7bb0714
     -
       vid: product_category
-      tid: '3'
+      tid: '84'
       langcode: en
       name: Chargers
       description__value: null
@@ -873,7 +873,7 @@ taxonomies:
       uuid: fa41add6-4e07-4c69-95cf-c15effde35f7
     -
       vid: product_category
-      tid: '4'
+      tid: '85'
       langcode: en
       name: Earpieces
       description__value: null
@@ -883,7 +883,7 @@ taxonomies:
       uuid: 0834f376-5bf4-42a3-aafa-77903533b036
     -
       vid: product_category
-      tid: '9'
+      tid: '90'
       langcode: en
       name: Headsets
       description__value: null
@@ -893,7 +893,7 @@ taxonomies:
       uuid: fb058165-b143-4725-86d4-977ecc986586
     -
       vid: product_category
-      tid: '8'
+      tid: '89'
       langcode: en
       name: Microphones
       description__value: null
@@ -903,7 +903,7 @@ taxonomies:
       uuid: 454e290f-1c55-49c1-8e37-de50a0b9d09d
     -
       vid: product_category
-      tid: '1'
+      tid: '82'
       langcode: en
       name: 'Two-Way Radios'
       description__value: null

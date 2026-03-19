@@ -1,0 +1,23 @@
+uuid: 18d763b1-b3f8-4197-b7e8-edef37820e32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_limit
+    - paragraphs.paragraphs_type.product_grid
+id: paragraph.product_grid.field_limit
+field_name: field_limit
+entity_type: paragraph
+bundle: product_grid
+label: 'Max Items'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

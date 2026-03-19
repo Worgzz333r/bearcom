@@ -1,0 +1,10 @@
+uuid: e3bef070-b50a-4de7-ae35-4abee33ccb17
+langcode: en
+status: true
+dependencies: {  }
+id: gj_tab
+label: 'GJ Tab'
+icon_uuid: null
+icon_default: null
+description: null
+behavior_plugins: {  }

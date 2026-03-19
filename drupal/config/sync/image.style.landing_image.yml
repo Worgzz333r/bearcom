@@ -1,0 +1,15 @@
+uuid: 489e7a19-25ee-4844-a75f-868fcb8feec3
+langcode: en
+status: true
+dependencies: {  }
+name: landing_image
+label: 'Landing Image'
+effects:
+  c69683e3-281e-4176-94b0-764038a17bad:
+    uuid: c69683e3-281e-4176-94b0-764038a17bad
+    id: image_scale
+    weight: null
+    data:
+      width: 600
+      height: null
+      upscale: false
