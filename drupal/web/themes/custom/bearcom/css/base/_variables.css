@@ -45,13 +45,14 @@
 
   /* Footer */
   --color-footer-mobile-bg: #FB591F;
-  --footer-radius: 24px;
+  --footer-radius: 32px;
   --footer-bottom-gap: 144px;
   --footer-wave-top: 120px;
 
   /* Border Radius */
   --radius-button: 4px;
   --radius-card: 8px;
+  --radius-card-lg: 16px;
 
   /* Z-index */
   --z-header: 490;

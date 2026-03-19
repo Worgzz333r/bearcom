@@ -12,6 +12,7 @@ global:
       css/components/_button.css: {}
       css/components/_hero.css: {}
       css/components/_card.css: {}
+      css/components/_industry-card.css: {}
       css/components/_pagination.css: {}
       css/components/_breadcrumbs.css: {}
       css/components/_form.css: {}
