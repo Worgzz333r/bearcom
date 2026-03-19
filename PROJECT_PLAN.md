@@ -106,14 +106,50 @@ mockups/
 
 #### CSS
 
-1. **Тільки CSS-змінні** — всі кольори, шрифти, розміри, відступи, радіуси, transition беруться з `var(--...)` (файл `_variables.css`). Хардкод значень заборонений. Якщо токену немає — спочатку додай його в `_variables.css`.
-2. **BEM-подібне іменування** — `.block__element--modifier` (приклад: `.site-header__nav`, `.btn--primary`, `.hero-banner__title--large`).
-3. **Без `!important`** — якщо потрібен `!important`, значить щось зроблено неправильно вище по каскаду. Виправ причину.
-4. **Без inline styles** — ніяких `style="..."` в Twig-шаблонах. Всі стилі — у відповідному CSS-файлі.
-5. **Кожен компонент = окремий CSS-файл** — не змішувати стилі різних компонентів в одному файлі.
-6. **Mobile-first не потрібен** — верстаємо desktop-first (базові стилі = desktop), адаптив через `@media (max-width: ...)`.
-7. **Breakpoints**: `1023px` (tablet), `767px` (mobile). Використовувати тільки ці два.
-8. **Контейнер** — завжди `.container` (max-width: 1320px + padding 20px). Не створювати кастомні контейнери.
+1. **Vanilla CSS** — без SCSS/Sass. CSS custom properties покривають всі потреби. Без build tools.
+2. **Тільки CSS-змінні** — всі кольори, шрифти, розміри, відступи, радіуси, transition беруться з `var(--...)` (файл `_variables.css`). Хардкод значень заборонений. Якщо токену немає — спочатку додай його в `_variables.css`.
+3. **BEM-подібне іменування** — `.block__element--modifier` (приклад: `.site-header__nav`, `.btn--primary`, `.hero-banner__title--large`).
+4. **Без `!important`** — якщо потрібен `!important`, значить щось зроблено неправильно вище по каскаду. Виправ причину.
+5. **Без inline styles** — ніяких `style="..."` в Twig-шаблонах. Всі стилі — у відповідному CSS-файлі.
+6. **Кожен компонент = окремий CSS-файл** — не змішувати стилі різних компонентів в одному файлі.
+7. **Mobile-first не потрібен** — верстаємо desktop-first (базові стилі = desktop), адаптив через `@media (max-width: ...)`.
+8. **Breakpoints**: `1023px` (tablet), `767px` (mobile). Використовувати тільки ці два.
+9. **Контейнер** — завжди `.container` (max-width: 1320px + padding 20px). Не створювати кастомні контейнери.
+
+#### CSS — спільні патерни (обов'язково використовувати)
+
+Щоб уникнути дублювання коду між девами, використовуємо спільні базові класи:
+
+**Акордеон (`_accordion.css`)** — єдиний патерн для FAQ, specs table, product tabs, mobile menu:
+```css
+.accordion__trigger — кнопка відкриття (flex, space-between, cursor pointer)
+.accordion__content — прихований контент (max-height: 0, overflow: hidden, transition)
+.accordion__item.is-open — відкритий стан (max-height, rotate іконки)
+```
+Кожен компонент (FAQ, specs) додає тільки візуальні відмінності поверх базового патерну.
+
+**Картка (`_card.css`)** — база для product card, industry card, location card, mega-menu card:
+```css
+.card — radius, overflow, hover shadow, transition
+.card__image — width 100%, object-fit cover
+.card__body — padding
+Модифікатори: .card--product (aspect-ratio 1), .card--industry (aspect-ratio 4/3), .card--location (orange left border)
+```
+
+**Секція (`_grid.css`)** — багато сторінок мають однаковий патерн секцій:
+```css
+.section — padding (section-padding)
+.section__header — text-align center, margin-bottom
+.section__title, .section__subtitle
+.section--alt (light grey bg), .section--dark (dark blue bg, white text)
+```
+
+**Варіації компонентів** — реалізовувати через BEM-модифікатори, не через окремі класи:
+- Hero: `.hero--product`, `.hero--image`, `.hero--solid` (різниця: фон, layout)
+- CTA: `.cta-block--default`, `.cta-block--orange` (різниця: background, color)
+- Content block: `.content-block--image-left`, `.content-block--image-right` (різниця: flex-direction)
+- Article: `.article-hero--image`, `.article-hero--blue` (різниця: background)
+- Location: `.location--orange`, `.location--grey` (різниця: accent color)
 
 #### Twig
 
