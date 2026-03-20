@@ -2,7 +2,7 @@
 {% set style = paragraph.field_style.value|default('product') %}
 <section class="hero hero--{{ style }}">
   <div class="container">
-    {% if paragraph.field_product_image.entity %}
+    {% if style != 'solid' and paragraph.field_product_image.entity %}
       <div class="hero__product-image">
         {% set media = paragraph.field_product_image.entity %}
         <img src="/sites/default/files/{{ media.field_media_image.entity.uri.value|replace({'public://': ''}) }}" alt="{{ paragraph.field_title.value }}">
