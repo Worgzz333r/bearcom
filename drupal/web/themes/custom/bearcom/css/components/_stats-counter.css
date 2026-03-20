@@ -30,15 +30,19 @@
   padding: var(--container-padding) 0 0;
 }
 
-/* Items — flexbox for centering last row */
+/* Items grid — 3 columns */
 .stats-counter__items > div {
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-xl);
   max-width: 1080px;
   margin: 0 auto;
+}
+
+/* Center single item in last row (4, 7, 10... items total) */
+.stats-counter__items > div > div:last-child:nth-child(3n+1) {
+  grid-column: 2;
 }
 
 /* Row 1 wave — always visible */
@@ -75,9 +79,8 @@
   z-index: 0;
 }
 
-/* Drupal item wrapper — fixed width, 3 per row */
+/* Drupal item wrapper — stretch to fill grid cell */
 .stats-counter__items > div > div {
-  flex: 0 0 calc((100% - 2 * var(--spacing-xl)) / 3);
   display: flex;
 }
 
@@ -111,14 +114,40 @@
   letter-spacing: 1px;
 }
 
+/* Centered style — vertical cards */
+.stats-counter--centered .stats-counter__items > div {
+  align-items: center;
+}
+
+.stats-counter--centered .stats-counter__items > div > div {
+  display: block;
+}
+
+.stats-counter--centered .stats-counter__item {
+  flex-direction: column;
+  text-align: center;
+  padding: var(--spacing-md);
+  box-shadow: none;
+  border: 1px solid #FB591F4D;
+  flex: none;
+}
+
+.stats-counter--centered .stats-counter__number {
+  font-size: var(--h1-size);
+  line-height: var(--h1-lh);
+}
+
 @media (max-width: 767px) {
   .stats-counter__items > div {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 
-  .stats-counter__items > div > div {
-    flex: 0 0 auto;
+  .stats-counter__items > div > div:last-child:nth-child(3n+1) {
+    grid-column: auto;
+  }
+
+  .stats-counter__item {
     width: 100%;
     max-width: 320px;
   }

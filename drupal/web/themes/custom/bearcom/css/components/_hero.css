@@ -64,10 +64,7 @@
 }
 
 .hero--image::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  content: none;
 }
 
 .hero--image .hero__title {
@@ -79,9 +76,8 @@
   opacity: 0.9;
 }
 
-/* Style: solid color — colored bg, white text */
+/* Style: solid color — white text */
 .hero--color {
-  background-color: var(--color-primary);
   color: var(--color-white);
 }
 
@@ -95,7 +91,6 @@
 
 /* Style: solid grey — light grey bg, centered text, dark color */
 .hero--solid {
-  background-color: var(--color-background);
   min-height: auto;
   padding: var(--section-padding) 0;
 }

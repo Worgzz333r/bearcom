@@ -32,6 +32,9 @@ settings:
     -
       value: credibility
       label: Credibility
+    -
+      value: centered
+      label: Centered
   allowed_values_function: ''
 module: options
 locked: false

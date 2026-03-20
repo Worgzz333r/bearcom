@@ -1,0 +1,21 @@
+uuid: 2e1f006a-f397-4cab-93fe-a25d92b74c0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_style
+    - paragraphs.paragraphs_type.stats_counter
+  module:
+    - options
+id: paragraph.stats_counter.field_style
+field_name: field_style
+entity_type: paragraph
+bundle: stats_counter
+label: Style
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

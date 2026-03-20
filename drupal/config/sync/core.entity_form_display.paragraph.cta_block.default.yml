@@ -43,9 +43,16 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_image:
+    type: media_library_widget
+    weight: 5
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   field_style:
     type: options_select
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -59,5 +66,4 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_image: true
   status: true
