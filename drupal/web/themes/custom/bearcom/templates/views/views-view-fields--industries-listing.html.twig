@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * View row: Industries Listing — fields mode.
+ * Renders each industry as an industry-card.
+ */
+#}
+
+<article class="industry-card">
+  <div class="industry-card__image">
+    {{ fields.field_icon.content }}
+  </div>
+
+  <div class="industry-card__body">
+    <h3 class="industry-card__title">
+      <a href="{{ fields.view_node.content|striptags|trim }}">{{ fields.title.content }}</a>
+    </h3>
+
+    <div class="industry-card__description">
+      {{ fields.field_description.content }}
+    </div>
+
+    <a href="{{ fields.view_node.content|striptags|trim }}" class="industry-card__link">Learn More</a>
+  </div>
+</article>

@@ -1,9 +1,20 @@
-{# CTA Block — styles: default (blue), orange #}
+{# CTA Block — styles: default, orange, blue #}
 {% set style = paragraph.field_style.value|default('default') %}
 
 <section class="cta-block cta-block--{{ style }}">
-  <div class="container">
     <div class="cta-block__inner">
+      {% if paragraph.field_image.entity %}
+        <div class="cta-block__image">
+          {% set media = paragraph.field_image.entity %}
+          {% if media.field_media_image.entity %}
+            <img src="{{ file_url(media.field_media_image.entity.uri.value) }}"
+                 alt="{{ media.field_media_image.alt }}"
+                 loading="lazy">
+            <img src="/{{ directory }}/images/soundwave-cta.svg" alt="" class="cta-block__overlay" aria-hidden="true">
+          {% endif %}
+        </div>
+      {% endif %}
+
       <div class="cta-block__content">
         {% if paragraph.field_title.value %}
           <h2 class="cta-block__title">{{ paragraph.field_title.value }}</h2>
@@ -14,17 +25,10 @@
         {% endif %}
 
         {% if paragraph.field_button_text.value %}
-          <a href="{{ paragraph.field_button_url.0.url }}" class="btn btn--white cta-block__btn">
+          <a href="{{ paragraph.field_button_url.0.url|default('#') }}" class="btn btn--primary cta-block__btn">
             {{ paragraph.field_button_text.value }}
           </a>
         {% endif %}
       </div>
-
-      {% if paragraph.field_image.entity %}
-        <div class="cta-block__image">
-          {{ content.field_image }}
-        </div>
-      {% endif %}
     </div>
-  </div>
 </section>

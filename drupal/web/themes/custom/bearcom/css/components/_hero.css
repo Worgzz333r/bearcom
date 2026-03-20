@@ -99,12 +99,14 @@
 .hero--solid {
   background-color: var(--color-background);
   min-height: auto;
+  padding: var(--section-padding) 0;
 }
 
 .hero--solid .container {
   flex-direction: column;
   text-align: center;
   align-items: center;
+  gap: 0;
 }
 
 .hero--solid .hero__title {
@@ -112,11 +114,16 @@
   line-height: var(--h1-lh);
   font-weight: var(--font-weight-semibold);
   color: var(--color-dark-blue);
+  margin: 0 0 var(--spacing-sm);
 }
 
 .hero--solid .hero__subtitle {
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
   color: var(--color-text-primary);
-  max-width: 800px;
+  max-width: 1000px;
+  margin: 0 0 56px;
 }
 
 .hero--solid .hero__buttons {
@@ -151,5 +158,13 @@
   .hero {
     min-height: auto;
     padding: var(--spacing-lg) 0;
+  }
+
+  .hero--solid {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .hero--solid .hero__subtitle {
+    margin: 0 0 32px;
   }
 }

@@ -8,7 +8,7 @@
 
 .industry-card__image {
   width: 100%;
-  aspect-ratio: 400 / 160;
+  height: 160px;
   overflow: hidden;
   background-color: var(--color-background-alt);
   border-radius: var(--radius-card-lg);
@@ -16,9 +16,10 @@
 
 .industry-card__image img {
   width: 100%;
-  height: 100%;
+  height: 160px;
   object-fit: cover;
   display: block;
+  border-radius: var(--radius-card-lg);
 }
 
 .industry-card__body {
@@ -85,7 +86,8 @@
 
 .industries-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 400px);
+  justify-content: center;
   gap: var(--spacing-xl);
 }
 
@@ -93,22 +95,25 @@
    Industries section
    -------------------------------------------------------------------------- */
 
+.product-grid {
+  padding: var(--section-padding) var(--spacing-xl);
+}
+
 .industries-section {
   padding: 0;
 }
 
-/* Product grid wrapper for industries */
-.product-grid:has(.industries-section) {
-  padding: var(--section-padding) var(--spacing-xl);
+.product-grid .section__header {
+  margin-bottom: 56px;
 }
 
-.product-grid:has(.industries-section) .section__title {
+.product-grid .section__title {
   font-size: var(--h2-size);
   line-height: var(--h2-lh);
   font-weight: var(--font-weight-semibold);
   color: var(--color-dark-blue);
   text-align: center;
-  margin: 0 0 56px;
+  margin: 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -126,7 +131,76 @@
    -------------------------------------------------------------------------- */
 
 @media (max-width: 767px) {
+
+  /* Section background with rounded top (arc), continues to CTA */
+  .product-grid {
+    background-color: var(--color-background-alt);
+    border-radius: 50% 50% 0 0 / 40px 40px 0 0;
+    padding: var(--spacing-xl) var(--container-padding) var(--spacing-lg);
+    margin-bottom: 0;
+  }
+
+  .product-grid .section__title {
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    max-width: 255px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .industries-section {
+    padding: 0;
+  }
+
   .industries-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* Card with white wrapper */
+  .industry-card {
+    text-align: left;
+    background-color: var(--color-background);
+    border-radius: var(--radius-card-lg);
+    padding-bottom: var(--container-padding);
+  }
+
+  .industry-card__image {
+    height: 160px;
+    border-radius: var(--radius-card-lg) var(--radius-card-lg) 0 0;
+  }
+
+  .industry-card__image img {
+    height: 160px;
+    border-radius: var(--radius-card-lg) var(--radius-card-lg) 0 0;
+  }
+
+  .industry-card__title {
+    font-size: var(--h4-size);
+    line-height: var(--h4-lh);
+    font-weight: 700;
+    text-align: left;
+  }
+
+  .industry-card__description {
+    text-align: left;
+  }
+
+  .industry-card__body {
+    max-width: none;
+    padding: 0 var(--spacing-sm);
+  }
+
+  .industry-card__title {
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .industry-card__description {
+    margin-bottom: var(--spacing-md);
   }
 }

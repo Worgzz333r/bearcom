@@ -8,11 +8,13 @@
 
 <article{{ attributes.addClass('industry-card') }}>
 
-  {% if content.field_icon|render|trim %}
-    <div class="industry-card__image">
-      {{ content.field_icon }}
-    </div>
-  {% endif %}
+  <div class="industry-card__image">
+    {% if node.field_icon.entity and node.field_icon.entity.field_media_image.entity %}
+      <img src="{{ file_url(node.field_icon.entity.field_media_image.entity.uri.value) }}"
+           alt="{{ node.field_icon.entity.field_media_image.alt }}"
+           loading="lazy">
+    {% endif %}
+  </div>
 
   <div class="industry-card__body">
     <h3 class="industry-card__title">

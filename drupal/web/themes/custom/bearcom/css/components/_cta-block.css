@@ -1,4 +1,10 @@
-/* CTA Block */
+/* ==========================================================================
+   CTA Block — base styles
+   Styles: default, orange, blue (Dev 1)
+           credibility (Dev 2 — image left, title centered, description left)
+   ========================================================================== */
+
+/* Base */
 .cta-block {
   padding: var(--spacing-xl) 0;
 }
@@ -7,10 +13,9 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-xl);
-  padding: var(--spacing-lg);
-  border-radius: var(--radius-card-lg);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-card);
   overflow: hidden;
-  background-color: var(--color-background);
 }
 
 .cta-block__content {
@@ -21,44 +26,45 @@
   font-size: var(--h2-size);
   line-height: var(--h2-lh);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-dark-blue);
   margin: 0 0 var(--spacing-sm);
 }
 
 .cta-block__description {
   font-size: var(--p-size);
   line-height: var(--p-lh);
-  color: var(--color-text-primary);
   margin: 0 0 var(--spacing-md);
 }
 
-/* Image with soundwave overlay */
+.cta-block__description p {
+  margin: 0;
+}
+
 .cta-block__image {
-  flex: 0 0 45%;
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius-card-lg);
+  flex: 0 0 auto;
 }
 
-.cta-block__image img:first-child {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  border-radius: var(--radius-card-lg);
+.cta-block__image img {
+  max-height: 200px;
+  width: auto;
 }
 
-.cta-block__overlay {
-  position: absolute;
-  right: -10px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 98px;
-  height: 79px;
-  pointer-events: none;
+/* --------------------------------------------------------------------------
+   Style: Default (Dev 1 — blue bg)
+   -------------------------------------------------------------------------- */
+
+.cta-block--default .cta-block__inner {
+  background-color: var(--color-blue);
+  color: var(--color-white);
 }
 
-/* Orange style */
+.cta-block--default .cta-block__title {
+  color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   Style: Orange (Dev 1)
+   -------------------------------------------------------------------------- */
+
 .cta-block--orange .cta-block__inner {
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -72,7 +78,10 @@
   color: var(--color-white);
 }
 
-/* Blue style */
+/* --------------------------------------------------------------------------
+   Style: Blue (Dev 1)
+   -------------------------------------------------------------------------- */
+
 .cta-block--blue .cta-block__inner {
   background-color: var(--color-blue);
   color: var(--color-white);
@@ -83,7 +92,74 @@
 }
 
 /* --------------------------------------------------------------------------
-   Responsive
+   Style: Credibility Block (Dev 2)
+   Image left (659×325) + soundwave overlay, title centered, description left
+   Figma: 1440×405, padding 40px 60px, gap 30px, bg #FAFAFA
+   -------------------------------------------------------------------------- */
+
+.cta-block--credibility {
+  padding: 0;
+  margin-bottom: var(--section-padding);
+}
+
+.cta-block--credibility .cta-block__inner {
+  gap: 30px;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  background-color: var(--color-background);
+  border-radius: 0;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.cta-block--credibility .cta-block__title {
+  color: var(--color-dark-blue);
+  text-align: center;
+}
+
+.cta-block--credibility .cta-block__description {
+  color: #262626;
+  text-align: left;
+  margin: 0 0 46px;
+}
+
+.cta-block--credibility .cta-block__image {
+  flex: 0 0 659px;
+  height: 325px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card-lg);
+}
+
+.cta-block--credibility .cta-block__image img:first-child {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  max-height: none;
+}
+
+.cta-block--credibility .cta-block__overlay {
+  position: absolute;
+  left: 281px;
+  top: 124px;
+  width: 98px;
+  height: 79px;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — Tablet
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1023px) {
+  .cta-block--credibility .cta-block__image {
+    flex: 0 0 50%;
+    height: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — Mobile
    -------------------------------------------------------------------------- */
 
 @media (max-width: 767px) {
@@ -95,7 +171,51 @@
 
   .cta-block__image {
     order: -1;
+  }
+
+  /* Credibility block mobile — stacked, text left, title uppercase */
+  .cta-block--credibility {
+    margin-bottom: 0;
+    padding-bottom: 36px;
+    background-color: var(--color-background-alt);
+  }
+
+  .cta-block--credibility .cta-block__inner {
+    flex-direction: column;
+    text-align: left;
+    padding: var(--spacing-lg) var(--container-padding);
+    gap: 0;
+    background-color: var(--color-background-alt);
+  }
+
+  .cta-block--credibility .cta-block__image {
     flex: none;
     width: 100%;
+    height: 165px;
+    order: -1;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .cta-block--credibility .cta-block__image img:first-child {
+    height: 165px;
+  }
+
+  .cta-block.cta-block--credibility .cta-block__title {
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 28px;
+    max-width: 255px;
+  }
+
+  .cta-block--credibility .cta-block__description {
+    text-align: left;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .cta-block--credibility .cta-block__overlay {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
