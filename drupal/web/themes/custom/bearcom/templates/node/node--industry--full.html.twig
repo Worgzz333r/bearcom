@@ -22,7 +22,7 @@
         <h1 class="hero__title">{{ node.title.value }}</h1>
 
         {% if node.field_description.value %}
-          <p class="hero__subtitle">{{ node.field_description.value }}</p>
+          <div class="hero__subtitle">{{ node.field_description.value|striptags }}</div>
         {% endif %}
 
         <div class="hero__buttons">
