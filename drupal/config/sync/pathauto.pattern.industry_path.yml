@@ -1,0 +1,21 @@
+uuid: 048a902a-cd1c-4595-a1ab-4e13f6df24ad
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: industry_path
+label: Industry
+type: 'canonical_entities:node'
+pattern: '/industries/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      industry: industry
+selection_logic: and
+weight: 0
+relationships: {  }

@@ -1,0 +1,26 @@
+uuid: 810e82e9-42ed-49dd-8d98-1806948c946c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_solutions
+    - node.type.industry
+  module:
+    - entity_reference_revisions
+id: node.industry.field_solutions
+field_name: field_solutions
+entity_type: node
+bundle: industry
+label: Solutions
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      card_grid: card_grid
+    negate: 0
+field_type: entity_reference_revisions

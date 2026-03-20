@@ -1,0 +1,11 @@
+uuid: 0e632ee8-31eb-4bf9-9f6d-11a60cb83cde
+langcode: en
+status: true
+dependencies: {  }
+name: Industry
+type: industry
+description: 'Industry pages — card/teaser with icon + hero detail page.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

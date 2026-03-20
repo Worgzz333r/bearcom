@@ -1,0 +1,62 @@
+uuid: fcbeb04f-0209-4c15-ace0-d4a14c7722a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.industry.field_cta
+    - field.field.node.industry.field_description
+    - field.field.node.industry.field_hero_image
+    - field.field.node.industry.field_icon
+    - field.field.node.industry.field_solutions
+    - node.type.industry
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.industry.default
+targetEntityType: node
+bundle: industry
+mode: default
+content:
+  field_cta:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_hero_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_solutions:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_icon: true
+  search_api_excerpt: true

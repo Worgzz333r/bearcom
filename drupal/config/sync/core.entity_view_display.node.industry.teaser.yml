@@ -1,0 +1,46 @@
+uuid: cf532bf5-9c35-4de4-bc35-0275da934ce4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.industry.field_cta
+    - field.field.node.industry.field_description
+    - field.field.node.industry.field_hero_image
+    - field.field.node.industry.field_icon
+    - field.field.node.industry.field_solutions
+    - node.type.industry
+  module:
+    - text
+    - user
+id: node.industry.teaser
+targetEntityType: node
+bundle: industry
+mode: teaser
+content:
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_icon:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_cta: true
+  field_hero_image: true
+  field_solutions: true
+  search_api_excerpt: true
