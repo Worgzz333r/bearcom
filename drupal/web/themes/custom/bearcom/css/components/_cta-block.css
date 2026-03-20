@@ -1,10 +1,4 @@
-/* ==========================================================================
-   CTA Block — base styles
-   Styles: default, orange, blue (Dev 1)
-           credibility (Dev 2 — image left, title centered, description left)
-   ========================================================================== */
-
-/* Base */
+/* CTA Block */
 .cta-block {
   --cta-wave-width: 480px;
   padding: var(--section-padding) 0;
@@ -38,7 +32,11 @@
   margin: 0 0 var(--spacing-lg);
 }
 
-/* Image with soundwave overlay (Dev 2) */
+.cta-block__description p {
+  margin: 0;
+}
+
+/* Image */
 .cta-block__image {
   flex: 0 0 45%;
   position: relative;
@@ -126,8 +124,7 @@
 
 /* --------------------------------------------------------------------------
    Style: Credibility Block (Dev 2)
-   Image left (659×325) + soundwave overlay, title centered, description left
-   Figma: 1440×405, padding 40px 60px, gap 30px, bg #FAFAFA
+   Image left (659×325), title centered, description left
    -------------------------------------------------------------------------- */
 
 .cta-block--credibility {
@@ -147,10 +144,14 @@
 .cta-block--credibility .cta-block__image {
   flex: 0 0 659px;
   height: 325px;
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius-card-lg);
   order: -1;
+}
+
+.cta-block--credibility .cta-block__image img:first-child {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: none;
 }
 
 .cta-block--credibility .cta-block__title {
@@ -164,36 +165,12 @@
   margin: 0 0 46px;
 }
 
-.cta-block--credibility .cta-block__image img:first-child {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  max-height: none;
-}
-
-.cta-block--credibility .cta-block__overlay {
-  position: absolute;
-  left: 281px;
-  top: 124px;
-  width: 98px;
-  height: 79px;
-  pointer-events: none;
+.cta-block--credibility .cta-block__decoration {
+  display: none;
 }
 
 /* --------------------------------------------------------------------------
-   Responsive — Tablet
-   -------------------------------------------------------------------------- */
-
-@media (max-width: 1023px) {
-  .cta-block--credibility .cta-block__image {
-    flex: 0 0 50%;
-    height: auto;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   Responsive — Mobile
+   Responsive — Dev 1 base
    -------------------------------------------------------------------------- */
 
 @media (max-width: 767px) {
@@ -209,9 +186,11 @@
 
   .cta-block__image {
     order: -1;
+    flex: none;
+    width: 100%;
   }
 
-  /* Credibility block mobile — stacked, text left, title uppercase */
+  /* Credibility mobile */
   .cta-block--credibility {
     margin-bottom: 0;
     padding-bottom: 36px;
@@ -219,7 +198,6 @@
   }
 
   .cta-block--credibility .cta-block__inner {
-    flex-direction: column;
     text-align: left;
     padding: var(--spacing-lg) var(--container-padding);
     gap: 0;
@@ -227,10 +205,7 @@
   }
 
   .cta-block--credibility .cta-block__image {
-    flex: none;
-    width: 100%;
     height: 165px;
-    order: -1;
     margin-bottom: var(--spacing-md);
   }
 
@@ -249,11 +224,5 @@
   .cta-block--credibility .cta-block__description {
     text-align: left;
     margin-bottom: var(--spacing-md);
-  }
-
-  .cta-block--credibility .cta-block__overlay {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
   }
 }

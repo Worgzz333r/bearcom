@@ -2,7 +2,7 @@
 {% set style = paragraph.field_style.value|default('image') %}
 <section class="hero hero--{{ style }}">
   <div class="container">
-    {% if style == 'product' and paragraph.field_product_image.entity %}
+    {% if paragraph.field_product_image.entity %}
       <div class="hero__product-image">
         {% set media = paragraph.field_product_image.entity %}
         <img src="/sites/default/files/{{ media.field_media_image.entity.uri.value|replace({'public://': ''}) }}" alt="{{ paragraph.field_title.value }}">
@@ -20,8 +20,8 @@
 
       {% if paragraph.field_cta_url.0.url or paragraph.field_secondary_url.0.url %}
         <div class="hero__buttons">
-          {% if paragraph.field_cta_url.0.url or paragraph.field_cta_text.value %}
-            <a href="{{ paragraph.field_cta_url.0.url|default('#') }}" class="btn btn--primary hero__cta">
+          {% if paragraph.field_cta_url.0.url %}
+            <a href="{{ paragraph.field_cta_url.0.url }}" class="btn btn--primary hero__cta">
               {{ paragraph.field_cta_text.value|default(paragraph.field_cta_url.0.title)|default('Learn More') }}
             </a>
           {% endif %}

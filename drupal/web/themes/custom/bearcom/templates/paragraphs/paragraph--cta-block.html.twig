@@ -2,6 +2,7 @@
 {% set style = paragraph.field_style.value|default('default') %}
 
 <section class="cta-block cta-block--{{ style }}">
+  <div class="container">
     <div class="cta-block__inner">
       <div class="cta-block__content">
         {% if paragraph.field_title.value %}
@@ -27,4 +28,5 @@
 
       <div class="cta-block__decoration" aria-hidden="true"></div>
     </div>
+  </div>
 </section>
