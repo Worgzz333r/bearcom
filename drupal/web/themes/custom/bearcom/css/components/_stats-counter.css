@@ -7,7 +7,7 @@
 /* Header — logo + subtitle */
 .stats-counter__header {
   text-align: center;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
 }
 
 .stats-counter__logo {
@@ -24,45 +24,90 @@
   margin: 0 auto;
 }
 
-/* Items row — target Drupal's field wrapper */
-.stats-counter__items > div {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-md);
-  background: url('../../images/orange-wave-segment.svg') repeat-x center center;
-  background-size: auto 80%;
-  padding: var(--spacing-md) 0;
+/* Wave background — full viewport width */
+.stats-counter__items {
+  position: relative;
+  padding: var(--container-padding) 0 0;
 }
 
-/* Single stat card — through Drupal's item wrapper */
+/* Items — flexbox for centering last row */
+.stats-counter__items > div {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* Row 1 wave — always visible */
+.stats-counter__items > div::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  background: url('../../images/orange-wave-segment.svg') repeat-x center center;
+  background-size: auto 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* When 4+ items: row 1 wave covers top half, row 2 wave via ::after */
+.stats-counter__items > div:has(> :nth-child(4))::before {
+  bottom: calc(50% + var(--spacing-xl) / 2);
+}
+
+.stats-counter__items > div:has(> :nth-child(4))::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  top: calc(50% + var(--spacing-xl) / 2);
+  bottom: 0;
+  background: url('../../images/orange-wave-segment.svg') repeat-x center center;
+  background-size: auto 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Drupal item wrapper — fixed width, 3 per row */
 .stats-counter__items > div > div {
-  flex: 0 1 auto;
+  flex: 0 0 calc((100% - 2 * var(--spacing-xl)) / 3);
+  display: flex;
 }
 
 .stats-counter__item {
   display: flex;
   align-items: center;
+  flex: 1;
   gap: var(--spacing-sm);
-  background-color: var(--color-white);
-  border-radius: var(--radius-card);
+  background-color: var(--color-background);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 10px #EAEAEA;
+  border-radius: var(--radius-card-lg);
   padding: var(--spacing-md) var(--spacing-lg);
-  min-width: 240px;
 }
 
 .stats-counter__number {
-  font-size: var(--h1-size);
-  line-height: var(--h1-lh);
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--h2-size);
+  line-height: var(--h2-lh);
+  font-weight: 700;
   color: var(--color-primary);
   white-space: nowrap;
 }
 
 .stats-counter__label {
-  font-size: var(--details-size);
-  line-height: var(--details-lh);
+  font-size: var(--h5-size);
+  line-height: var(--h5-lh);
   color: var(--color-text-dark);
   text-transform: uppercase;
-  font-weight: var(--font-weight-semibold);
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
@@ -70,11 +115,10 @@
   .stats-counter__items > div {
     flex-direction: column;
     align-items: center;
-    background-size: auto 50%;
   }
 
-  .stats-counter__item {
-    min-width: auto;
+  .stats-counter__items > div > div {
+    flex: 0 0 auto;
     width: 100%;
     max-width: 320px;
   }
