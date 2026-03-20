@@ -1,5 +1,5 @@
 {# Hero Banner — styles: product, image, color, solid #}
-{% set style = paragraph.field_style.value|default('image') %}
+{% set style = paragraph.field_style.value|default('product') %}
 <section class="hero hero--{{ style }}">
   <div class="container">
     {% if paragraph.field_product_image.entity %}
