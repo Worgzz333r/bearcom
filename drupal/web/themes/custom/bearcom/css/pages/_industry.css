@@ -49,12 +49,45 @@
 }
 
 /* --------------------------------------------------------------------------
-   Card grid sections — alternating backgrounds
-   Even sections (2nd, 4th) get dark bg
+   Card grid sections
    -------------------------------------------------------------------------- */
 
 .industry-page .card-grid {
   padding: var(--section-padding) 0;
+}
+
+/* Fix grid — Drupal wraps cards in extra divs */
+.industry-page .card-grid__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gap);
+}
+
+.industry-page .card-grid__items > div {
+  display: contents;
+}
+
+.industry-page .card {
+  text-align: center;
+}
+
+.industry-page .card__icon {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border-radius: var(--radius-card-lg);
+  padding: 0;
+}
+
+.industry-page .card__icon img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.industry-page .card__icon > div {
+  height: 100%;
 }
 
 .industry-page .card-grid .section__header {
@@ -78,36 +111,51 @@
   margin: 0 auto;
 }
 
-/* Dark section — every even card-grid */
-.industry-page .field--name-field-solutions > .field__item:nth-child(even) .card-grid {
+/* --------------------------------------------------------------------------
+   Dark section — 2nd card-grid (even)
+   -------------------------------------------------------------------------- */
+
+.industry-page .card-grid:nth-of-type(2) {
   background-color: var(--color-dark-blue);
   color: var(--color-white);
 }
 
-.industry-page .field--name-field-solutions > .field__item:nth-child(even) .section__title {
+.industry-page .card-grid:nth-of-type(2) .section__title {
   color: var(--color-white);
 }
 
-.industry-page .field--name-field-solutions > .field__item:nth-child(even) .section__subtitle {
-  color: var(--color-white);
-  opacity: 0.85;
-}
-
-.industry-page .field--name-field-solutions > .field__item:nth-child(even) .card__title {
-  color: var(--color-white);
-}
-
-.industry-page .field--name-field-solutions > .field__item:nth-child(even) .card__description {
+.industry-page .card-grid:nth-of-type(2) .section__subtitle {
   color: var(--color-white);
   opacity: 0.85;
 }
 
-.industry-page .field--name-field-solutions > .field__item:nth-child(even) .card__image {
+/* Cards on dark bg — white bg, rounded */
+.industry-page .card-grid:nth-of-type(2) .card {
+  background-color: var(--color-white);
   border-radius: var(--radius-card-lg);
+  overflow: hidden;
 }
 
-/* Orange divider line between last section and CTA */
-.industry-page .field--name-field-solutions > .field__item:last-child .card-grid::after {
+.industry-page .card-grid:nth-of-type(2) .card__title {
+  color: var(--color-dark-blue);
+}
+
+.industry-page .card-grid:nth-of-type(2) .card__description {
+  color: var(--color-text-primary);
+}
+
+/* White divider line on dark section */
+.industry-page .card-grid:nth-of-type(2)::after {
+  content: '';
+  display: block;
+  width: 240px;
+  height: 4px;
+  background-color: var(--color-white);
+  margin-top: var(--spacing-xl);
+}
+
+/* Orange divider line on last section */
+.industry-page .card-grid:last-of-type::after {
   content: '';
   display: block;
   width: 240px;
@@ -121,8 +169,13 @@
    -------------------------------------------------------------------------- */
 
 @media (max-width: 1023px) {
-  .industry-page .card-grid .grid--3 {
+  .industry-page .card-grid__items {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .industry-page .hero__product-image {
+    flex: 0 0 50%;
+    height: auto;
   }
 }
 
@@ -131,7 +184,17 @@
    -------------------------------------------------------------------------- */
 
 @media (max-width: 767px) {
-  .industry-page .card-grid .grid--3 {
+  .industry-page .card-grid__items {
     grid-template-columns: 1fr;
+  }
+
+  .industry-page .hero .container {
+    flex-direction: column;
+  }
+
+  .industry-page .hero__product-image {
+    flex: none;
+    width: 100%;
+    height: auto;
   }
 }

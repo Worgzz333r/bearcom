@@ -83,11 +83,14 @@ accordion:
     - core/once
 
 carousel:
-  js:
-    js/carousel.js: {}
   css:
+    base:
+      https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide-core.min.css: { type: external, minified: true }
     component:
       css/components/_carousel.css: {}
+  js:
+    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js: { type: external, minified: true }
+    js/carousel.js: {}
   dependencies:
     - core/drupal
     - core/once
