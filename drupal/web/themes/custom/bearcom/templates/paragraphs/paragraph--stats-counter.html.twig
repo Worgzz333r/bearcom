@@ -1,6 +1,10 @@
-{# Stats Counter — row of stat items with animated numbers #}
+{# Stats Counter — Always On branding + stat cards with wave background #}
 <section class="stats-counter" data-stats>
   <div class="container">
+    <div class="stats-counter__header">
+      <img src="/{{ directory }}/images/always-on-logo.svg" alt="Always On" class="stats-counter__logo" width="201" height="49">
+      <p class="stats-counter__subtitle">Keeping You Connected Through Personalized &amp; Customized Voice, Video, and Data Solutions</p>
+    </div>
     <div class="stats-counter__items">
       {{ content.field_items }}
     </div>

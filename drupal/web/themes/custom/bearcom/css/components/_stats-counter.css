@@ -1,22 +1,52 @@
 /* Stats Counter */
 .stats-counter {
-  background-color: var(--color-dark-blue);
-  color: var(--color-white);
-  padding: var(--spacing-xl) 0;
+  padding: var(--section-padding) 0;
+  background-color: var(--color-background);
 }
 
-.stats-counter__items {
-  display: flex;
-  justify-content: space-around;
+/* Header — logo + subtitle */
+.stats-counter__header {
   text-align: center;
-  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.stats-counter__logo {
+  display: block;
+  margin: 0 auto var(--spacing-sm);
+  height: auto;
+}
+
+.stats-counter__subtitle {
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  color: var(--color-text-primary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Items row — target Drupal's field wrapper */
+.stats-counter__items > div {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  background: url('../../images/orange-wave-segment.svg') repeat-x center center;
+  background-size: auto 80%;
+  padding: var(--spacing-md) 0;
+}
+
+/* Single stat card — through Drupal's item wrapper */
+.stats-counter__items > div > div {
+  flex: 0 1 auto;
 }
 
 .stats-counter__item {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-sm);
+  background-color: var(--color-white);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-md) var(--spacing-lg);
+  min-width: 240px;
 }
 
 .stats-counter__number {
@@ -24,23 +54,28 @@
   line-height: var(--h1-lh);
   font-weight: var(--font-weight-semibold);
   color: var(--color-primary);
+  white-space: nowrap;
 }
 
 .stats-counter__label {
-  font-size: var(--p-size);
-  line-height: var(--p-lh);
-  opacity: 0.85;
+  font-size: var(--details-size);
+  line-height: var(--details-lh);
+  color: var(--color-text-dark);
   text-transform: uppercase;
+  font-weight: var(--font-weight-semibold);
   letter-spacing: 1px;
 }
 
 @media (max-width: 767px) {
-  .stats-counter__items {
-    flex-wrap: wrap;
-    gap: var(--spacing-lg) var(--spacing-md);
+  .stats-counter__items > div {
+    flex-direction: column;
+    align-items: center;
+    background-size: auto 50%;
   }
 
   .stats-counter__item {
-    flex: 0 0 calc(50% - var(--spacing-md) / 2);
+    min-width: auto;
+    width: 100%;
+    max-width: 320px;
   }
 }

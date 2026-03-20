@@ -41,6 +41,10 @@
   border-radius: var(--radius-card-lg);
 }
 
+.cta-block__image:empty {
+  display: none;
+}
+
 .cta-block__image img:first-child {
   width: 100%;
   height: auto;

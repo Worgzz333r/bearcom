@@ -19,7 +19,7 @@ body {
   line-height: var(--p-lh);
   font-weight: var(--font-weight-regular);
   color: var(--color-text-primary);
-  background-color: var(--color-white);
+  background-color: var(--color-background);
 }
 
 img {

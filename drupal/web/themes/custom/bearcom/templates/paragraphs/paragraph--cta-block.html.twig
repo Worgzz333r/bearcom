@@ -20,7 +20,7 @@
         {% endif %}
       </div>
 
-      {% if paragraph.field_image.entity %}
+      {% if not paragraph.field_image.isEmpty %}
         <div class="cta-block__image">
           {{ content.field_image }}
         </div>
