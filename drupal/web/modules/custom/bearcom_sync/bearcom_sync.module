@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * BearCom Sync module hooks.
+ */
+
+/**
+ * Implements hook_field_widget_single_element_form_alter().
+ *
+ * Restricts field_style options per paragraph type.
+ */
+function bearcom_sync_field_widget_single_element_form_alter(array &$element, \Drupal\Core\Form\FormStateInterface $form_state, array $context) {
+  $field_definition = $context['items']->getFieldDefinition();
+  if ($field_definition->getName() !== 'field_style') {
+    return;
+  }
+
+  $entity = $context['items']->getEntity();
+  if ($entity->getEntityTypeId() !== 'paragraph') {
+    return;
+  }
+
+  $allowed = [
+    'cta_block' => ['_none', 'default', 'orange'],
+    'hero_banner' => ['_none', 'product', 'image', 'color'],
+  ];
+
+  $bundle = $entity->bundle();
+  if (isset($allowed[$bundle]) && isset($element['#options'])) {
+    $element['#options'] = array_intersect_key(
+      $element['#options'],
+      array_flip($allowed[$bundle])
+    );
+  }
+}
