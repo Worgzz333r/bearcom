@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Industry node — full view mode (Landing Page).
+ * Hero (image left + text right) + card grid sections + CTA block.
+ */
+#}
+
+<article{{ attributes.addClass('industry-page') }}>
+
+  {# Hero — product style: image left, text right #}
+  <section class="hero hero--product">
+    <div class="container">
+      {% if node.field_hero_image.entity %}
+        <div class="hero__product-image">
+          <img src="{{ file_url(node.field_hero_image.entity.field_media_image.entity.uri.value) }}"
+               alt="{{ node.title.value }}" loading="lazy">
+        </div>
+      {% endif %}
+
+      <div class="hero__content">
+        <h1 class="hero__title">{{ node.title.value }}</h1>
+
+        {% if node.field_description.value %}
+          <p class="hero__subtitle">{{ node.field_description.value }}</p>
+        {% endif %}
+
+        <div class="hero__buttons">
+          <a href="/contact-us" class="btn btn--primary hero__cta">CTA BUTTON</a>
+          <a href="/contact-us" class="btn btn--outline hero__cta">SECONDARY BUTTON</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Card grid sections — alternating white/dark bg #}
+  {% if content.field_solutions|render|trim %}
+    {{ content.field_solutions }}
+  {% endif %}
+
+  {# CTA Block #}
+  {% if content.field_cta|render|trim %}
+    {{ content.field_cta }}
+  {% endif %}
+
+</article>

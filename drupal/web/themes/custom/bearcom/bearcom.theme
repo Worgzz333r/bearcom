@@ -111,5 +111,8 @@ function bearcom_page_attachments_alter(array &$attachments) {
       $attachments['#attached']['library'][] = 'bearcom/stats-counter';
       $attachments['#attached']['library'][] = 'bearcom/accordion';
     }
+    if ($node->bundle() === 'industry') {
+      $attachments['#attached']['library'][] = 'bearcom/industry';
+    }
   }
 }
