@@ -1,0 +1,22 @@
+uuid: dc2e63eb-921c-4387-a91f-64c8eb8c1e23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.stats_counter
+  module:
+    - text
+id: paragraph.stats_counter.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: stats_counter
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

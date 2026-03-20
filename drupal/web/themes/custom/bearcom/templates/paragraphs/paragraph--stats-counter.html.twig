@@ -1,9 +1,12 @@
-{# Stats Counter — Always On branding + stat cards with wave background #}
-<section class="stats-counter" data-stats>
+{# Stats Counter — styles: default (horizontal), centered (vertical) #}
+{% set style = paragraph.field_style.value|default('default') %}
+<section class="stats-counter stats-counter--{{ style }}" data-stats>
   <div class="container">
     <div class="stats-counter__header">
       <img src="/{{ directory }}/images/always-on-logo.svg" alt="Always On" class="stats-counter__logo" width="201" height="49">
-      <p class="stats-counter__subtitle">Keeping You Connected Through Personalized &amp; Customized Voice, Video, and Data Solutions</p>
+      {% if paragraph.field_description.value %}
+        <p class="stats-counter__subtitle">{{ paragraph.field_description.value|striptags|raw }}</p>
+      {% endif %}
     </div>
     <div class="stats-counter__items">
       {{ content.field_items }}

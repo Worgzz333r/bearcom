@@ -1,0 +1,19 @@
+uuid: b6308fd7-86fa-4572-a870-5f45141b67cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.stats_counter
+id: paragraph.stats_counter.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: stats_counter
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

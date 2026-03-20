@@ -24,6 +24,7 @@ function bearcom_sync_field_widget_single_element_form_alter(array &$element, \D
   $allowed = [
     'cta_block' => ['_none', 'default', 'orange', 'credibility'],
     'hero_banner' => ['_none', 'product', 'image', 'color', 'solid'],
+    'stats_counter' => ['_none', 'default', 'centered'],
   ];
 
   $bundle = $entity->bundle();
