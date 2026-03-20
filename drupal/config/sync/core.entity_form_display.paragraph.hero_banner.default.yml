@@ -60,10 +60,15 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_style:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   field_cta_text: true
   field_image: true
   field_secondary_text: true
-  field_style: true
   status: true
