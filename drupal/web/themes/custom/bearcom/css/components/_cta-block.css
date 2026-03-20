@@ -6,20 +6,23 @@
 
 /* Base */
 .cta-block {
-  padding: var(--spacing-xl) 0;
+  --cta-wave-width: 480px;
+  padding: var(--section-padding) 0;
 }
 
 .cta-block__inner {
   display: flex;
   align-items: center;
-  gap: var(--spacing-xl);
-  padding: var(--spacing-xl);
-  border-radius: var(--radius-card);
+  padding: var(--spacing-xl) calc(var(--cta-wave-width) + 150px) var(--spacing-xl) var(--spacing-70);
+  border-radius: var(--radius-card-lg);
   overflow: hidden;
+  position: relative;
 }
 
 .cta-block__content {
   flex: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .cta-block__title {
@@ -32,62 +35,92 @@
 .cta-block__description {
   font-size: var(--p-size);
   line-height: var(--p-lh);
-  margin: 0 0 var(--spacing-md);
+  margin: 0 0 var(--spacing-lg);
 }
 
-.cta-block__description p {
-  margin: 0;
-}
-
+/* Image with soundwave overlay (Dev 2) */
 .cta-block__image {
-  flex: 0 0 auto;
+  flex: 0 0 45%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: var(--radius-card-lg);
 }
 
-.cta-block__image img {
-  max-height: 200px;
-  width: auto;
+.cta-block__image:empty {
+  display: none;
 }
 
-/* --------------------------------------------------------------------------
-   Style: Default (Dev 1 — blue bg)
-   -------------------------------------------------------------------------- */
+.cta-block__image img:first-child {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-card-lg);
+}
 
+/* Soundwave decoration */
+.cta-block__decoration {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--cta-wave-width);
+  background: url('../../images/cta-wave.png') right center / contain no-repeat;
+  pointer-events: none;
+}
+
+/* Default style — blue */
 .cta-block--default .cta-block__inner {
-  background-color: var(--color-blue);
+  background-color: var(--color-blue-light);
+}
+
+.cta-block--default .cta-block__title,
+.cta-block--default .cta-block__description {
   color: var(--color-white);
 }
 
-.cta-block--default .cta-block__title {
+.cta-block--default .btn.btn--outline {
+  background-color: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-primary);
+  box-shadow: none;
+}
+
+.cta-block--default .btn.btn--outline:hover {
+  background-color: transparent;
   color: var(--color-white);
 }
 
-/* --------------------------------------------------------------------------
-   Style: Orange (Dev 1)
-   -------------------------------------------------------------------------- */
-
+/* Orange style */
 .cta-block--orange .cta-block__inner {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  background-color: #FB591FE5;
 }
 
-.cta-block--orange .cta-block__title {
-  color: var(--color-white);
-}
-
+.cta-block--orange .cta-block__title,
 .cta-block--orange .cta-block__description {
   color: var(--color-white);
 }
 
-/* --------------------------------------------------------------------------
-   Style: Blue (Dev 1)
-   -------------------------------------------------------------------------- */
+.cta-block--orange .btn.btn--outline {
+  background-color: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-primary);
+  box-shadow: none;
+}
 
-.cta-block--blue .cta-block__inner {
-  background-color: var(--color-blue);
+.cta-block--orange .btn.btn--outline:hover {
+  background-color: transparent;
   color: var(--color-white);
 }
 
-.cta-block--blue .cta-block__title {
+/* Blue style */
+.cta-block--blue .cta-block__inner {
+  background-color: var(--color-blue);
+}
+
+.cta-block--blue .cta-block__title,
+.cta-block--blue .cta-block__description {
   color: var(--color-white);
 }
 
@@ -111,6 +144,15 @@
   margin: 0 auto;
 }
 
+.cta-block--credibility .cta-block__image {
+  flex: 0 0 659px;
+  height: 325px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card-lg);
+  order: -1;
+}
+
 .cta-block--credibility .cta-block__title {
   color: var(--color-dark-blue);
   text-align: center;
@@ -120,14 +162,6 @@
   color: #262626;
   text-align: left;
   margin: 0 0 46px;
-}
-
-.cta-block--credibility .cta-block__image {
-  flex: 0 0 659px;
-  height: 325px;
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius-card-lg);
 }
 
 .cta-block--credibility .cta-block__image img:first-child {
@@ -163,6 +197,10 @@
    -------------------------------------------------------------------------- */
 
 @media (max-width: 767px) {
+  .cta-block {
+    --cta-wave-width: 180px;
+  }
+
   .cta-block__inner {
     flex-direction: column;
     text-align: center;

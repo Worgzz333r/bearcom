@@ -1,7 +1,6 @@
 /* Hero Banner */
 .hero {
   position: relative;
-  background-color: var(--color-white);
   padding: var(--spacing-xxl) 0;
   min-height: 500px;
   display: flex;
@@ -57,7 +56,6 @@
 
 /* Style: product — light bg, image LEFT, text RIGHT */
 .hero--product {
-  background-color: var(--color-white);
 }
 
 /* Style: image — full bg image with dark overlay, white text */
