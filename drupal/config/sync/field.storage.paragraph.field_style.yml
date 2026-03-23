@@ -47,6 +47,9 @@ settings:
     -
       value: rentals
       label: 'Rentals (2 images, no crop)'
+    -
+      value: soundwave
+      label: 'Soundwave (grey bg, wave illustration)'
   allowed_values_function: ''
 module: options
 locked: false
