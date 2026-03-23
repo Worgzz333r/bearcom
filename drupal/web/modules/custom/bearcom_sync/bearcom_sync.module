@@ -23,7 +23,7 @@ function bearcom_sync_field_widget_single_element_form_alter(array &$element, \D
 
   $allowed = [
     'cta_block' => ['_none', 'default', 'orange', 'credibility'],
-    'hero_banner' => ['_none', 'product', 'image', 'color', 'solid'],
+    'hero_banner' => ['_none', 'product', 'image', 'color', 'solid', 'soundwave'],
     'stats_counter' => ['_none', 'default', 'centered'],
     'image_grid' => ['_none', 'plain', 'overlay', 'grey-panel', 'rentals'],
   ];

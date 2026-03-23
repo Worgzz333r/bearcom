@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Install and update hooks for BearCom Sync.
+ */
+
+/**
+ * Add 'soundwave' style to field_style allowed values.
+ */
+function bearcom_sync_update_10001() {
+  $storage = \Drupal\field\Entity\FieldStorageConfig::loadByName('paragraph', 'field_style');
+  if ($storage) {
+    $values = $storage->getSetting('allowed_values');
+    if (!isset($values['soundwave'])) {
+      $values['soundwave'] = 'Soundwave (grey bg, wave illustration)';
+      $storage->setSetting('allowed_values', $values);
+      $storage->save();
+      return 'Added soundwave style to field_style.';
+    }
+  }
+  return 'No changes needed.';
+}
