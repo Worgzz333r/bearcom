@@ -31,10 +31,22 @@ settings:
       label: Orange
     -
       value: credibility
-      label: 'Credibility Block'
+      label: Credibility
     -
-      value: soundwave
-      label: 'Soundwave (grey bg, wave illustration)'
+      value: centered
+      label: Centered
+    -
+      value: plain
+      label: 'Plain (images only)'
+    -
+      value: overlay
+      label: 'Overlay (blue gradient + text)'
+    -
+      value: grey-panel
+      label: 'Grey Panel (grey bar + text)'
+    -
+      value: rentals
+      label: 'Rentals (2 images, no crop)'
   allowed_values_function: ''
 module: options
 locked: false
