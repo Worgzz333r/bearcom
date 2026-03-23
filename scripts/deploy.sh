@@ -32,14 +32,8 @@ $DRUSH updb -y
 echo "[4/5] Importing configuration + structure..."
 $DRUSH cim -y
 
-# 5. Run custom post-import scripts
-echo "[5/6] Running post-import scripts..."
-for script in /var/www/web/scripts/post-deploy/*.php; do
-  [ -f "$script" ] && $DRUSH php-script "$script" && echo "  Executed: $(basename $script)"
-done
-
-# 6. Clear cache
-echo "[6/6] Clearing cache..."
+# 5. Clear cache
+echo "[5/5] Clearing cache..."
 $DRUSH cr
 
 echo ""
