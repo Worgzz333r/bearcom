@@ -7,13 +7,43 @@
       <div class="product-hero__inner">
 
         {# Gallery — left side #}
-        <div class="product-hero__gallery">
-          {% if node.field_images|length > 0 %}
-            <div class="product-hero__main-image">
-              {{ content.field_images }}
+        {% if node.field_images|length > 0 %}
+          <div class="product-hero__gallery" data-product-gallery>
+            {% if node.field_images|length > 4 %}
+              <div class="product-gallery__scrollbar" data-scrollbar>
+                <div class="product-gallery__scrollbar-thumb" data-scrollbar-thumb></div>
+              </div>
+            {% endif %}
+            <div class="product-gallery__thumbs">
+              {% for item in node.field_images %}
+                {% if item.entity %}
+                  <button class="product-gallery__thumb{{ loop.first ? ' is-active' : '' }}" data-slide="{{ loop.index0 }}">
+                    <img src="{{ file_url(item.entity.field_media_image.entity.uri.value) }}" alt="{{ item.entity.field_media_image.alt }}" loading="lazy">
+                  </button>
+                {% endif %}
+              {% endfor %}
             </div>
-          {% endif %}
-        </div>
+            <div class="product-gallery__main">
+              <div class="product-gallery__slides" data-slides>
+                {% for item in node.field_images %}
+                  {% if item.entity %}
+                    <div class="product-gallery__slide{{ loop.first ? ' is-active' : '' }}">
+                      <img src="{{ file_url(item.entity.field_media_image.entity.uri.value) }}" alt="{{ item.entity.field_media_image.alt }}">
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              {% if node.field_images|length > 1 %}
+                <button class="product-gallery__arrow product-gallery__arrow--prev" data-prev aria-label="Previous">
+                  <img src="/{{ directory }}/images/orange-list-pointer.svg" alt="Previous">
+                </button>
+                <button class="product-gallery__arrow product-gallery__arrow--next" data-next aria-label="Next">
+                  <img src="/{{ directory }}/images/orange-list-pointer.svg" alt="Next">
+                </button>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
 
         {# Info — right side #}
         <div class="product-hero__info">

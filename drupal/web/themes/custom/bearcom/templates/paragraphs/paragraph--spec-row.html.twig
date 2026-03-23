@@ -2,10 +2,10 @@
 <div class="spec-row">
   <div class="spec-row__label">
     <span class="spec-row__dot"></span>
-    <strong>{{ paragraph.field_label.value }}</strong>
+    <span>{{ paragraph.field_label.value }}</span>
     {% if paragraph.field_tooltip.value %}
       <span class="spec-row__tooltip" data-tooltip="{{ paragraph.field_tooltip.value }}">
-        <span class="spec-row__tooltip-icon">?</span>
+        <img class="spec-row__tooltip-icon" src="/{{ directory }}/images/tooltip.svg" alt="info">
       </span>
     {% endif %}
   </div>

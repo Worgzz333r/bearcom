@@ -150,9 +150,14 @@ category:
       css/pages/_category.css: {}
 
 product:
+  js:
+    js/product-gallery.js: {}
   css:
     theme:
       css/pages/_product.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
 
 article:
   css:
