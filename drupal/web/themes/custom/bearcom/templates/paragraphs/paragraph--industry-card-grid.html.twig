@@ -1,5 +1,7 @@
-{# Card Grid — title + subtitle + nested card_item paragraphs #}
-<section class="card-grid">
+{# Industry Card Grid — vertical cards with slider/grid modes #}
+{% set is_slider = paragraph.field_use_slider.value %}
+{% set style = paragraph.field_section_style.value|default('industry') %}
+<section class="card-grid {{ is_slider ? 'card-grid--slider' : 'card-grid--grid' }} card-grid--{{ style }}">
   <div class="container">
     {% if paragraph.field_title.value or paragraph.field_subtitle.value %}
       <div class="section__header">

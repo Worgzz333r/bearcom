@@ -1,23 +1,21 @@
-uuid: fe5dfee9-c474-4c7c-83d9-b52342089b14
+uuid: 2f3a6cab-efa9-4213-8a0c-b31c29e6ed76
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_section_style
-    - paragraphs.paragraphs_type.card_grid
+    - paragraphs.paragraphs_type.industry_card_grid
   module:
     - options
-id: paragraph.card_grid.field_section_style
+id: paragraph.industry_card_grid.field_section_style
 field_name: field_section_style
 entity_type: paragraph
-bundle: card_grid
-label: 'Section style'
+bundle: industry_card_grid
+label: 'Section Style'
 description: ''
 required: false
 translatable: true
-default_value:
-  -
-    value: default
+default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: list_string

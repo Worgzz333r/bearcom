@@ -20,6 +20,12 @@ settings:
     -
       value: orange
       label: 'Orange accent (orange scrollbar)'
+    -
+      value: industry
+      label: 'Industry (vertical cards, centered)'
+    -
+      value: industry_dark
+      label: 'Industry Dark (grey bg, vertical cards)'
   allowed_values_function: ''
 module: options
 locked: false

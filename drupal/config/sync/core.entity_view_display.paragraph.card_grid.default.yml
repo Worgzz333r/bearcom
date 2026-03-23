@@ -4,10 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.card_grid.field_cards
-    - field.field.paragraph.card_grid.field_section_style
     - field.field.paragraph.card_grid.field_subtitle
     - field.field.paragraph.card_grid.field_title
-    - field.field.paragraph.card_grid.field_use_slider
     - paragraphs.paragraphs_type.card_grid
     - swiper_formatter.swiper_formatter.industry_cards
   module:
@@ -47,6 +45,4 @@ content:
     weight: 0
     region: content
 hidden:
-  field_section_style: true
-  field_use_slider: true
   search_api_excerpt: true

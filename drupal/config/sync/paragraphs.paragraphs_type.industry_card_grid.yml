@@ -1,0 +1,10 @@
+uuid: 679c3a6a-e0ad-496f-9737-bedc763cc41e
+langcode: en
+status: true
+dependencies: {  }
+id: industry_card_grid
+label: 'Industry Card Grid'
+icon_uuid: null
+icon_default: null
+description: 'Card grid with vertical cards, centered text, slider/grid modes for industry pages'
+behavior_plugins: {  }

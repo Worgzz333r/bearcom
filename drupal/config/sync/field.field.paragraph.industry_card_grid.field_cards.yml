@@ -1,19 +1,18 @@
-uuid: 810e82e9-42ed-49dd-8d98-1806948c946c
+uuid: 29b5b999-4006-4c85-a431-da3e697590c7
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_solutions
-    - node.type.industry
-    - paragraphs.paragraphs_type.card_grid
+    - field.storage.paragraph.field_cards
+    - paragraphs.paragraphs_type.card_item
     - paragraphs.paragraphs_type.industry_card_grid
   module:
     - entity_reference_revisions
-id: node.industry.field_solutions
-field_name: field_solutions
-entity_type: node
-bundle: industry
-label: Solutions
+id: paragraph.industry_card_grid.field_cards
+field_name: field_cards
+entity_type: paragraph
+bundle: industry_card_grid
+label: Cards
 description: ''
 required: false
 translatable: true
@@ -23,7 +22,5 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      card_grid: card_grid
-      industry_card_grid: industry_card_grid
-    negate: 0
+      card_item: card_item
 field_type: entity_reference_revisions

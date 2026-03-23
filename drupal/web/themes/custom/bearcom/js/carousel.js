@@ -4,7 +4,7 @@
   Drupal.behaviors.industryCarouselFix = {
     attach: function (context) {
       // Destroy swiper on grids marked as non-slider
-      once('grid-no-swiper', '.card-grid--grid .swiper-container', context).forEach(function (el) {
+      once('grid-no-swiper', '.card-grid--industry.card-grid--grid .swiper-container', context).forEach(function (el) {
         var check = setInterval(function () {
           if (el.swiper) {
             clearInterval(check);
@@ -26,7 +26,7 @@
       });
 
       // Set slidesPerView=1 on mobile for slider card grids
-      once('mobile-slider', '.card-grid--slider .swiper-container', context).forEach(function (el) {
+      once('mobile-slider', '[class*="card-grid--industry"].card-grid--slider .swiper-container', context).forEach(function (el) {
         var check = setInterval(function () {
           if (el.swiper) {
             clearInterval(check);

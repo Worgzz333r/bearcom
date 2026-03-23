@@ -52,20 +52,23 @@
    Card grid sections — header
    -------------------------------------------------------------------------- */
 
-.industry-page .card-grid {
+.card-grid--industry,
+.card-grid--industry_dark {
   padding: 80px 0;
 }
 
-.industry-page .card-grid + .card-grid {
+.card-grid--industry + .card-grid--industry,
+.card-grid--industry + .card-grid--industry_dark,
+.card-grid--industry_dark + .card-grid--industry {
   margin-top: 88px;
 }
 
-.industry-page .card-grid .section__header {
+[class*="card-grid--industry"] .section__header {
   text-align: center;
   margin-bottom: 56px;
 }
 
-.industry-page .card-grid .section__title {
+[class*="card-grid--industry"] .section__title {
   font-size: var(--h2-size);
   line-height: var(--h2-lh);
   font-weight: var(--font-weight-semibold);
@@ -73,7 +76,7 @@
   margin: 0 0 18px;
 }
 
-.industry-page .card-grid .section__subtitle {
+[class*="card-grid--industry"] .section__subtitle {
   font-family: var(--font-family);
   font-size: 16px;
   line-height: 18px;
@@ -87,7 +90,7 @@
    Grid layout for first section (no slider)
    -------------------------------------------------------------------------- */
 
-.industry-page .card-grid__items {
+[class*="card-grid--industry"] .card-grid__items {
   display: block;
 }
 
@@ -97,7 +100,7 @@
    -------------------------------------------------------------------------- */
 
 /* Base card reset */
-.industry-page .card {
+[class*="card-grid--industry"] .card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,11 +116,11 @@
 }
 
 /* Kill ALL nth-child patterns */
-.industry-page .card-grid__items > div > div:nth-child(4n+1) .card,
-.industry-page .card-grid__items > div > div:nth-child(4n+2) .card,
-.industry-page .card-grid__items > div > div:nth-child(4n+3) .card,
-.industry-page .card-grid__items > div > div:nth-child(4n+4) .card,
-.industry-page .swiper-slide .card {
+[class*="card-grid--industry"] .card-grid__items > div > div:nth-child(4n+1) .card,
+[class*="card-grid--industry"] .card-grid__items > div > div:nth-child(4n+2) .card,
+[class*="card-grid--industry"] .card-grid__items > div > div:nth-child(4n+3) .card,
+[class*="card-grid--industry"] .card-grid__items > div > div:nth-child(4n+4) .card,
+[class*="card-grid--industry"] .swiper-slide .card {
   flex-direction: column;
   border-radius: 0;
   background: none;
@@ -128,21 +131,21 @@
 }
 
 /* Kill fade gradients */
-.industry-page .card-grid__items > div > div:nth-child(4n+1) .card__image::after,
-.industry-page .card-grid__items > div > div:nth-child(4n+2) .card__image::after,
-.industry-page .swiper-slide .card__image::after {
+[class*="card-grid--industry"] .card-grid__items > div > div:nth-child(4n+1) .card__image::after,
+[class*="card-grid--industry"] .card-grid__items > div > div:nth-child(4n+2) .card__image::after,
+[class*="card-grid--industry"] .swiper-slide .card__image::after {
   display: none;
 }
 
 /* Kill rounded shapes */
-.industry-page .card-grid__items > div > div:nth-child(4n+3) .card__image,
-.industry-page .card-grid__items > div > div:nth-child(4n+4) .card__image,
-.industry-page .swiper-slide .card__image {
+[class*="card-grid--industry"] .card-grid__items > div > div:nth-child(4n+3) .card__image,
+[class*="card-grid--industry"] .card-grid__items > div > div:nth-child(4n+4) .card__image,
+[class*="card-grid--industry"] .swiper-slide .card__image {
   border-radius: var(--radius-card-lg);
 }
 
 /* Image — fixed size */
-.industry-page .card__image {
+[class*="card-grid--industry"] .card__image {
   flex: none;
   width: 332px;
   height: 160px;
@@ -152,19 +155,19 @@
   position: relative;
 }
 
-.industry-page .card__image img {
+[class*="card-grid--industry"] .card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.industry-page .card__image > div {
+[class*="card-grid--industry"] .card__image > div {
   height: 100%;
 }
 
 /* Body */
-.industry-page .card__body {
+[class*="card-grid--industry"] .card__body {
   padding: 0 24px;
   text-align: center;
   flex: none;
@@ -177,7 +180,7 @@
 
 
 /* Title — semibold, NOT uppercase */
-.industry-page .card__top-title {
+[class*="card-grid--industry"] .card__top-title {
   font-family: var(--font-family);
   font-size: 26px;
   line-height: 28px;
@@ -189,7 +192,7 @@
 }
 
 /* Main title (if used) */
-.industry-page .card__main-title {
+[class*="card-grid--industry"] .card__main-title {
   font-family: var(--font-family);
   font-size: 26px;
   line-height: 28px;
@@ -199,7 +202,7 @@
 }
 
 /* Description — Roboto Condensed 16px/20px */
-.industry-page .card__subtitle {
+[class*="card-grid--industry"] .card__subtitle {
   font-family: var(--font-family);
   font-size: 16px;
   line-height: 20px;
@@ -213,7 +216,7 @@
    Dark section — 2nd card-grid
    -------------------------------------------------------------------------- */
 
-.industry-page .card-grid--dark {
+.card-grid--industry_dark {
   background-color: #4A4F55;
   color: var(--color-white);
   margin-left: calc(-50vw + 50%);
@@ -222,35 +225,35 @@
   padding-right: calc(50vw - 50%);
 }
 
-.industry-page .card-grid--dark .section__title {
+.card-grid--industry_dark .section__title {
   color: var(--color-white);
 }
 
-.industry-page .card-grid--dark .section__subtitle {
+.card-grid--industry_dark .section__subtitle {
   color: #FAFAFA;
   opacity: 1;
 }
 
-.industry-page .card-grid--dark .card__top-title {
+.card-grid--industry_dark .card__top-title {
   color: var(--color-white);
 }
 
-.industry-page .card-grid--dark .card__subtitle {
+.card-grid--industry_dark .card__subtitle {
   color: rgba(255, 255, 255, 0.85);
 }
 
 /* Cards on dark bg */
-.industry-page .card-grid--dark .card,
-.industry-page .card-grid--dark .swiper-slide .card {
+.card-grid--industry_dark .card,
+.card-grid--industry_dark .swiper-slide .card {
   background: none;
 }
 
-.industry-page .card-grid--dark .card__top-title,
-.industry-page .card-grid--dark .card__main-title {
+.card-grid--industry_dark .card__top-title,
+.card-grid--industry_dark .card__main-title {
   color: var(--color-white);
 }
 
-.industry-page .card-grid--dark .card__subtitle {
+.card-grid--industry_dark .card__subtitle {
   color: rgba(255, 255, 255, 0.85);
 }
 
@@ -259,7 +262,7 @@
    Sections 2+ use swiper scrollbar
    -------------------------------------------------------------------------- */
 
-.industry-page .card-grid::after {
+.card-grid--industry::after {
   display: none;
 }
 
@@ -268,7 +271,7 @@
    -------------------------------------------------------------------------- */
 
 @media (max-width: 1023px) {
-  .industry-page .card-grid__items {
+  [class*="card-grid--industry"] .card-grid__items {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -316,48 +319,50 @@
   }
 
   /* Card Grid — single column, left-aligned header */
-  .industry-page .card-grid {
+  .card-grid--industry,
+  .card-grid--industry_dark {
     padding: 60px 0;
   }
 
-  .industry-page .card-grid > .container {
+  [class*="card-grid--industry"] > .container,
+  .card-grid--industry_dark > .container {
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
   }
 
-  .industry-page .card-grid .section__header {
+  [class*="card-grid--industry"] .section__header {
     text-align: center;
     margin-bottom: 40px;
   }
 
-  .industry-page .card-grid .section__title {
+  [class*="card-grid--industry"] .section__title {
     text-transform: uppercase;
   }
 
-  .industry-page .card-grid .section__subtitle {
+  [class*="card-grid--industry"] .section__subtitle {
     text-align: center;
   }
 
-  .industry-page .card-grid .section__subtitle {
+  [class*="card-grid--industry"] .section__subtitle {
     max-width: none;
   }
 
   /* Cards — full width, centered text */
-  .industry-page .card {
+  [class*="card-grid--industry"] .card {
     max-width: 100%;
   }
 
-  .industry-page .card__image {
+  [class*="card-grid--industry"] .card__image {
     width: 100%;
     height: auto;
     aspect-ratio: 332 / 160;
   }
 
-  .industry-page .card__body {
+  [class*="card-grid--industry"] .card__body {
     max-width: none;
   }
 
-  .industry-page .card-grid + .card-grid {
+  .card-grid--industry + .card-grid--industry {
     margin-top: 40px;
   }
 }

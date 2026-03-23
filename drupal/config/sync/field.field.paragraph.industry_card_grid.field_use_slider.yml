@@ -1,0 +1,21 @@
+uuid: dc18a99c-163a-4512-950f-6221cd9f90ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_use_slider
+    - paragraphs.paragraphs_type.industry_card_grid
+id: paragraph.industry_card_grid.field_use_slider
+field_name: field_use_slider
+entity_type: paragraph
+bundle: industry_card_grid
+label: 'Use Slider'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
