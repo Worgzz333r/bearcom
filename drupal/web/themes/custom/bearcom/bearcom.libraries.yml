@@ -16,7 +16,7 @@ global:
       css/components/_cta-block.css: {}
       css/components/_content-block.css: {}
       css/components/_checklist.css: {}
-      css/components/_rentals.css: {}
+      css/components/_image-grid.css: {}
       css/components/_pagination.css: {}
       css/components/_breadcrumbs.css: {}
       css/components/_form.css: {}

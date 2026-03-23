@@ -1,14 +1,14 @@
-uuid: 8a75012b-82f1-4e9f-8326-2a034e409d9e
+uuid: d5e3f9a2-1b4c-4d8e-a6f7-2c9b3e4d5a10
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_title
-    - paragraphs.paragraphs_type.rentals_connected
-id: paragraph.rentals_connected.field_title
+    - paragraphs.paragraphs_type.image_grid
+id: paragraph.image_grid.field_title
 field_name: field_title
 entity_type: paragraph
-bundle: rentals_connected
+bundle: image_grid
 label: Title
 description: ''
 required: false

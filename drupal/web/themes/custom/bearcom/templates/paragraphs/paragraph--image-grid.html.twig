@@ -1,0 +1,20 @@
+{# Image Grid — title + description + grid of image_grid_items #}
+{% set style = paragraph.field_style.value|default('plain') %}
+<section class="image-grid image-grid--{{ style }}">
+  <div class="container">
+    {% if paragraph.field_title.value or paragraph.field_description.value %}
+      <div class="section__header">
+        {% if paragraph.field_title.value %}
+          <h2 class="section__title">{{ paragraph.field_title.value }}</h2>
+        {% endif %}
+        {% if paragraph.field_description.value %}
+          <p class="section__subtitle">{{ paragraph.field_description.value|striptags|raw }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="image-grid__items">
+      {{ content.field_items }}
+    </div>
+  </div>
+</section>

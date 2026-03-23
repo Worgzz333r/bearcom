@@ -1,0 +1,10 @@
+uuid: d5e3f0a1-7b2c-4d8e-a9f6-3c1b4e5d6a80
+langcode: en
+status: true
+dependencies: {  }
+id: image_grid_item
+label: 'Image Grid Item'
+icon_uuid: null
+icon_default: null
+description: 'Single item in an image grid — image, optional title and link'
+behavior_plugins: {  }

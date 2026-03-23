@@ -8,7 +8,7 @@
   border: 1px solid transparent;
   background:
     linear-gradient(var(--color-background), var(--color-background)) padding-box,
-    linear-gradient(to right, #FAFAFA, #FB591F) border-box;
+    linear-gradient(to right, var(--color-background), var(--color-error-orange)) border-box;
 }
 
 .card__image {
@@ -23,7 +23,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(270deg, #FAFAFA 2.12%, rgba(250, 250, 250, 0) 56.64%);
+  background: linear-gradient(270deg, var(--color-background) 2.12%, rgba(250, 250, 250, 0) 56.64%);
   pointer-events: none;
 }
 
@@ -32,7 +32,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #FAFAFA 2.12%, rgba(250, 250, 250, 0) 56.64%);
+  background: linear-gradient(90deg, var(--color-background) 2.12%, rgba(250, 250, 250, 0) 56.64%);
   pointer-events: none;
 }
 
@@ -97,7 +97,7 @@
 .card-grid__items > div {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: var(--spacing-lg);
 }
 
 /* Card style 1 — image left, numbers right */
@@ -106,7 +106,7 @@
   background:
     url('../../images/card-numbers-right.png') no-repeat right center / auto 100%,
     linear-gradient(var(--color-background), var(--color-background)) padding-box,
-    linear-gradient(to right, #FAFAFA 45%, #FB591F) border-box;
+    linear-gradient(to right, var(--color-background) 45%, var(--color-error-orange)) border-box;
 }
 
 /* Card style 2 — image right, numbers left */
@@ -115,7 +115,7 @@
   background:
     url('../../images/card-numbers-left.png') no-repeat left center / auto 100%,
     linear-gradient(var(--color-background), var(--color-background)) padding-box,
-    linear-gradient(to left, #FAFAFA 45%, #FB591F) border-box;
+    linear-gradient(to left, var(--color-background) 45%, var(--color-error-orange)) border-box;
 }
 
 /* Card style 3 — image left, rounded right */
@@ -124,7 +124,7 @@
   border-radius: 0 150px 150px 0;
   background:
     linear-gradient(var(--color-background), var(--color-background)) padding-box,
-    linear-gradient(to right, #FAFAFA 45%, #FB591F) border-box;
+    linear-gradient(to right, var(--color-background) 45%, var(--color-error-orange)) border-box;
 }
 
 .card-grid__items > div > div:nth-child(4n+3) .card__image {
@@ -139,7 +139,7 @@
   border-radius: 150px;
   background:
     linear-gradient(var(--color-background), var(--color-background)) padding-box,
-    linear-gradient(to left, #FAFAFA 45%, #FB591F) border-box;
+    linear-gradient(to left, var(--color-background) 45%, var(--color-error-orange)) border-box;
 }
 
 .card-grid__items > div > div:nth-child(4n+4) .card__image {

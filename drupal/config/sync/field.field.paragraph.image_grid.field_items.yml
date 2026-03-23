@@ -1,0 +1,27 @@
+uuid: d1e2f3a4-5b6c-4d7e-8f9a-0b1c2d3e4f50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_items
+    - paragraphs.paragraphs_type.image_grid
+    - paragraphs.paragraphs_type.image_grid_item
+  module:
+    - entity_reference_revisions
+id: paragraph.image_grid.field_items
+field_name: field_items
+entity_type: paragraph
+bundle: image_grid
+label: Items
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      image_grid_item: image_grid_item
+    negate: 0
+field_type: entity_reference_revisions
