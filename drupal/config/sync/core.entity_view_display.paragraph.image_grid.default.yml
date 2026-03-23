@@ -15,14 +15,6 @@ targetEntityType: paragraph
 bundle: image_grid
 mode: default
 content:
-  field_title:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_description:
     type: text_default
     label: hidden
@@ -38,6 +30,14 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
   field_style: true

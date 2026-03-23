@@ -22,22 +22,6 @@ targetEntityType: node
 bundle: product
 mode: default
 content:
-  field_images:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_short_description:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_category:
     type: entity_reference_label
     label: inline
@@ -45,14 +29,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_resources:
-    type: file_default
-    label: hidden
-    settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
-    weight: 3
     region: content
   field_cta_url:
     type: link
@@ -66,14 +42,14 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-  field_specs:
-    type: entity_reference_revisions_entity_view
+  field_images:
+    type: entity_reference_entity_view
     label: hidden
     settings:
       view_mode: default
-      link: ''
+      link: false
     third_party_settings: {  }
-    weight: 5
+    weight: 0
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
@@ -84,10 +60,35 @@ content:
     third_party_settings: {  }
     weight: 6
     region: content
+  field_resources:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_short_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_specs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
 hidden:
+  field_product_type: true
   search_api_excerpt: true

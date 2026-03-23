@@ -9,7 +9,7 @@ id: paragraph.card_item.field_title
 field_name: field_title
 entity_type: paragraph
 bundle: card_item
-label: Top Label
+label: 'Top Label'
 description: 'Small text above the main title (e.g. Supplied)'
 required: true
 translatable: true
