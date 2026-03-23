@@ -1,0 +1,19 @@
+uuid: f6a7b8c9-0d1e-4f2a-3b4c-5d6e7f8a9b0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_value
+    - paragraphs.paragraphs_type.spec_row
+id: paragraph.spec_row.field_value
+field_name: field_value
+entity_type: paragraph
+bundle: spec_row
+label: Value
+description: 'Spec value, e.g. "128"'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

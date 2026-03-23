@@ -128,9 +128,14 @@ newsletter:
       css/components/_newsletter.css: {}
 
 specs-table:
+  js:
+    js/specs-toggle.js: {}
   css:
     component:
       css/components/_specs-table.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
 
 homepage:
   css:

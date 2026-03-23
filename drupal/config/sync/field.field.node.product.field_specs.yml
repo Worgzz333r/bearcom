@@ -1,0 +1,27 @@
+uuid: f1f37393-39ed-4de7-a482-dbffdbf1c165
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_specs
+    - node.type.product
+    - paragraphs.paragraphs_type.spec_table
+  module:
+    - entity_reference_revisions
+id: node.product.field_specs
+field_name: field_specs
+entity_type: node
+bundle: product
+label: Specs
+description: 'Product specifications.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      spec_table: spec_table
+    negate: 0
+field_type: entity_reference_revisions

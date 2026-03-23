@@ -1,0 +1,42 @@
+uuid: b4c5d6e7-8f9a-4b0c-1d2e-3f4a5b6c7d8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.spec_table.field_description
+    - field.field.paragraph.spec_table.field_items
+    - field.field.paragraph.spec_table.field_title
+    - paragraphs.paragraphs_type.spec_table
+  module:
+    - entity_reference_revisions
+id: paragraph.spec_table.default
+targetEntityType: paragraph
+bundle: spec_table
+mode: default
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_items:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

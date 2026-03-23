@@ -1,0 +1,54 @@
+uuid: f2a3b4c5-6d7e-4f8a-9b0c-1d2e3f4a5b6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.spec_table.field_description
+    - field.field.paragraph.spec_table.field_items
+    - field.field.paragraph.spec_table.field_title
+    - paragraphs.paragraphs_type.spec_table
+  module:
+    - paragraphs
+    - text
+id: paragraph.spec_table.default
+targetEntityType: paragraph
+bundle: spec_table
+mode: default
+content:
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_items:
+    type: paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Row
+      title_plural: Rows
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: spec_row
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
