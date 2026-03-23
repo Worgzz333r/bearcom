@@ -9,9 +9,8 @@ id: paragraph.card_item.field_subtitle
 field_name: field_subtitle
 entity_type: paragraph
 bundle: card_item
-label: Main Title
+label: 'Main Title'
 description: 'Large number or highlight text (e.g. over 12,000)'
-
 required: false
 translatable: true
 default_value: {  }

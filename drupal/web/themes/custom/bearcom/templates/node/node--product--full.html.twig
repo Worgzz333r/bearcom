@@ -1,0 +1,95 @@
+{# Product — full page: hero + specs + paragraphs #}
+<article class="product-page">
+
+  {# Hero section #}
+  <section class="product-hero">
+    <div class="container">
+      <div class="product-hero__inner">
+
+        {# Gallery — left side #}
+        {% if node.field_images|length > 0 %}
+          <div class="product-hero__gallery" data-product-gallery>
+            {% if node.field_images|length > 4 %}
+              <div class="product-gallery__scrollbar" data-scrollbar>
+                <div class="product-gallery__scrollbar-thumb" data-scrollbar-thumb></div>
+              </div>
+            {% endif %}
+            <div class="product-gallery__thumbs">
+              {% for item in node.field_images %}
+                {% if item.entity %}
+                  <button class="product-gallery__thumb{{ loop.first ? ' is-active' : '' }}" data-slide="{{ loop.index0 }}">
+                    <img src="{{ file_url(item.entity.field_media_image.entity.uri.value) }}" alt="{{ item.entity.field_media_image.alt }}" loading="lazy">
+                  </button>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <div class="product-gallery__main">
+              <div class="product-gallery__slides" data-slides>
+                {% for item in node.field_images %}
+                  {% if item.entity %}
+                    <div class="product-gallery__slide{{ loop.first ? ' is-active' : '' }}">
+                      <img src="{{ file_url(item.entity.field_media_image.entity.uri.value) }}" alt="{{ item.entity.field_media_image.alt }}">
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              {% if node.field_images|length > 1 %}
+                <button class="product-gallery__arrow product-gallery__arrow--prev" data-prev aria-label="Previous">
+                  <img src="/{{ directory }}/images/orange-list-pointer.svg" alt="Previous">
+                </button>
+                <button class="product-gallery__arrow product-gallery__arrow--next" data-next aria-label="Next">
+                  <img src="/{{ directory }}/images/orange-list-pointer.svg" alt="Next">
+                </button>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+
+        {# Info — right side #}
+        <div class="product-hero__info">
+          {% if node.field_product_type.value %}
+            <span class="product-hero__type">Product Type: {{ node.field_product_type.value }}</span>
+          {% endif %}
+
+          <h1 class="product-hero__title">{{ label }}{% if node.field_category.entity %} | {{ node.field_category.entity.name.value }}{% endif %}</h1>
+
+          {% if node.field_short_description.value %}
+            <div class="product-hero__description">{{ content.field_short_description }}</div>
+          {% endif %}
+
+          {% if node.field_resources|length > 0 %}
+            <div class="product-hero__resources">
+              {% for item in node.field_resources %}
+                <a href="{{ file_url(item.entity.uri.value) }}" target="_blank">{{ item.description|default(item.entity.filename.value) }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if node.field_cta_url.0.url %}
+            <div class="product-hero__cta">
+              <a href="{{ node.field_cta_url.0.url.toString() }}" class="btn btn--primary">
+                {{ node.field_cta_url.0.title|default('Request a Quote') }}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {# Specs section #}
+  {% if content.field_specs|render|trim %}
+    <section class="product-specs">
+      <div class="container">
+        {{ content.field_specs }}
+      </div>
+    </section>
+  {% endif %}
+
+  {# Flexible paragraphs #}
+  {% if content.field_paragraphs|render|trim %}
+    {{ content.field_paragraphs }}
+  {% endif %}
+
+</article>

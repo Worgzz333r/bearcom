@@ -91,6 +91,14 @@ function bearcom_theme_suggestions_node_alter(array &$suggestions, array $variab
 function bearcom_preprocess_paragraph(array &$variables) {
   $paragraph = $variables['paragraph'];
   $variables['paragraph_type'] = $paragraph->bundle();
+
+  // Pass parent node title to spec_table paragraph.
+  if ($paragraph->bundle() === 'spec_table') {
+    $parent = $paragraph->getParentEntity();
+    if ($parent && $parent->getEntityTypeId() === 'node') {
+      $variables['product_name'] = $parent->label();
+    }
+  }
 }
 
 /**
@@ -117,6 +125,10 @@ function bearcom_page_attachments_alter(array &$attachments) {
         $attachments['#attached']['library'][] = 'bearcom/location-search';
         $attachments['#attached']['library'][] = 'bearcom/location';
       }
+    }
+    if ($node->bundle() === 'product') {
+      $attachments['#attached']['library'][] = 'bearcom/product';
+      $attachments['#attached']['library'][] = 'bearcom/specs-table';
     }
     if ($node->bundle() === 'industry') {
       $attachments['#attached']['library'][] = 'bearcom/industry';

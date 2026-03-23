@@ -1,0 +1,13 @@
+{# Spec Row — label + value + optional tooltip #}
+<div class="spec-row">
+  <div class="spec-row__label">
+    <span class="spec-row__dot"></span>
+    <span>{{ paragraph.field_label.value }}</span>
+    {% if paragraph.field_tooltip.value %}
+      <span class="spec-row__tooltip" data-tooltip="{{ paragraph.field_tooltip.value }}">
+        <img class="spec-row__tooltip-icon" src="/{{ directory }}/images/tooltip.svg" alt="info">
+      </span>
+    {% endif %}
+  </div>
+  <div class="spec-row__value">{{ paragraph.field_value.value }}</div>
+</div>

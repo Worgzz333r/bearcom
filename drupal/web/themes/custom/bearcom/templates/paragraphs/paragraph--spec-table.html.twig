@@ -1,0 +1,21 @@
+{# Spec Table — title + description + rows, 6+ rows collapse into accordion #}
+<div class="spec-table">
+  {% set title = paragraph.field_title.value|default('') %}
+  {% if title %}
+    <h2 class="spec-table__title">{{ title|replace({'H2 - ': '', 'Product Name': product_name|default('Product Name')}) }}</h2>
+  {% endif %}
+
+  {% if paragraph.field_description.value %}
+    {% set desc = paragraph.field_description.value|replace({
+      '<!--Product name-->': product_name|default(''),
+      '&lt;!--Product name--&gt;': product_name|default(''),
+      'Product name': product_name|default(''),
+      'Product Name': product_name|default('')
+    }) %}
+    <div class="spec-table__description">{{ desc|raw }}</div>
+  {% endif %}
+
+  <div class="spec-table__rows" data-specs>
+    {{ content.field_items }}
+  </div>
+</div>

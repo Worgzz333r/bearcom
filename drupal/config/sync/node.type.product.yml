@@ -1,0 +1,11 @@
+uuid: 0b862ec8-4cfa-41ad-b1df-c99b0404f2f6
+langcode: en
+status: true
+dependencies: {  }
+name: Product
+type: product
+description: 'Product pages with gallery, pricing, specs and resources.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

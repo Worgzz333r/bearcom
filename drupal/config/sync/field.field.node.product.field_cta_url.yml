@@ -1,0 +1,23 @@
+uuid: e5d56b13-f981-4262-9e01-31d9b9a2f3e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cta_url
+    - node.type.product
+  module:
+    - link
+id: node.product.field_cta_url
+field_name: field_cta_url
+entity_type: node
+bundle: product
+label: 'CTA URL'
+description: 'Request a Quote button link.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link
