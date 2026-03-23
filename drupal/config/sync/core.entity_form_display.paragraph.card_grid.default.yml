@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.card_grid.field_cards
+    - field.field.paragraph.card_grid.field_section_style
     - field.field.paragraph.card_grid.field_subtitle
     - field.field.paragraph.card_grid.field_title
+    - field.field.paragraph.card_grid.field_use_slider
     - paragraphs.paragraphs_type.card_grid
   module:
     - paragraphs
@@ -50,4 +52,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_section_style: true
+  field_use_slider: true
   status: true

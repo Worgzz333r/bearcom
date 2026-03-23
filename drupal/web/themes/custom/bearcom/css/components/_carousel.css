@@ -1,19 +1,76 @@
 /* ==========================================================================
-   Carousel — Splide slider for card-grid sections
+   Carousel — swiper_formatter module overrides for industry
    ========================================================================== */
 
-.industry-carousel {
+.industry-page .swiper-container {
+  padding-bottom: 84px;
+}
+
+/* --------------------------------------------------------------------------
+   Grid mode (no slider) — hide all swiper controls
+   -------------------------------------------------------------------------- */
+
+.card-grid--grid .swiper-scrollbar,
+.card-grid--grid .swiper-button-prev,
+.card-grid--grid .swiper-button-next,
+.card-grid--grid .swiper-pagination {
+  display: none;
+}
+
+.card-grid--grid .swiper-container {
+  padding-bottom: 0;
   overflow: visible;
 }
 
-.industry-carousel .splide__slide {
-  list-style: none;
+/* --------------------------------------------------------------------------
+   Slider — default scrollbar (dark)
+   -------------------------------------------------------------------------- */
+
+.card-grid--slider .swiper-scrollbar {
+  width: 100% !important;
+  height: 4px !important;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  bottom: 0 !important;
+  left: 0 !important;
+  top: auto !important;
 }
 
-.industry-carousel .splide__slide .card {
-  height: 100%;
+.card-grid--slider .swiper-scrollbar-drag {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--color-primary);
+  cursor: grab;
 }
 
-.industry-carousel .splide__track {
-  overflow: visible;
+.card-grid--slider .swiper-button-prev,
+.card-grid--slider .swiper-button-next {
+  display: none;
+}
+
+/* Hide pagination */
+.industry-page .swiper-pagination {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Dark style — white scrollbar + white arrows
+   -------------------------------------------------------------------------- */
+
+.card-grid--dark .swiper-scrollbar-drag {
+  background: #EAEAEA80;
+}
+
+.card-grid--dark .swiper-button-prev,
+.card-grid--dark .swiper-button-next {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Orange style — orange scrollbar
+   -------------------------------------------------------------------------- */
+
+.card-grid--orange .swiper-scrollbar-drag {
+  background-color: var(--color-primary);
 }

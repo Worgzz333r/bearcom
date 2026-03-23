@@ -1,0 +1,18 @@
+uuid: 29115672-6d57-42b4-b34c-b6726e99d45a
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_use_slider
+field_name: field_use_slider
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
