@@ -3,6 +3,7 @@
  * @file
  * View row: Industries Listing — fields mode.
  * Renders each industry as an industry-card.
+ * view_node field renders as <a href="/path">Learn More</a>
  */
 #}
 
@@ -13,13 +14,15 @@
 
   <div class="industry-card__body">
     <h3 class="industry-card__title">
-      <a href="{{ fields.view_node.content|striptags|trim }}">{{ fields.title.content }}</a>
+      {{ fields.title.content }}
     </h3>
 
     <div class="industry-card__description">
       {{ fields.field_description.content }}
     </div>
 
-    <a href="{{ fields.view_node.content|striptags|trim }}" class="industry-card__link">Learn More</a>
+    <div class="industry-card__link">
+      {{ fields.view_node.content }}
+    </div>
   </div>
 </article>

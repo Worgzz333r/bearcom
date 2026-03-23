@@ -1,1 +1,19 @@
-/* TODO: Implement */
+/* ==========================================================================
+   Carousel — Splide slider for card-grid sections
+   ========================================================================== */
+
+.industry-carousel {
+  overflow: visible;
+}
+
+.industry-carousel .splide__slide {
+  list-style: none;
+}
+
+.industry-carousel .splide__slide .card {
+  height: 100%;
+}
+
+.industry-carousel .splide__track {
+  overflow: visible;
+}
