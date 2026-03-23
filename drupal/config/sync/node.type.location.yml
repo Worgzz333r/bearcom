@@ -1,0 +1,11 @@
+uuid: a959ec87-6ef6-4e5d-9d8e-106f76a78af1
+langcode: en
+status: true
+dependencies: {  }
+name: Location
+type: location
+description: 'BearCom office/branch location'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

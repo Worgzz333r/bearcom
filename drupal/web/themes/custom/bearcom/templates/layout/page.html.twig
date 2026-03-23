@@ -8,7 +8,7 @@
 {% include '@bearcom/layout/header.html.twig' %}
 
 <main role="main" class="main-content">
-  {% if node_type is defined and node_type in ['flexible_page', 'industry'] %}
+  {% if node_type is defined and node_type in ['flexible_page', 'industry', 'location'] %}
     {{ page.content }}
   {% else %}
     <div class="container">

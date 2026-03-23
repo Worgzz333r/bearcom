@@ -1,0 +1,10 @@
+uuid: 45456ad9-c457-4349-8160-eb78f5b85586
+langcode: en
+status: true
+dependencies: {  }
+id: open_hours_row
+label: 'Open Hours Row'
+icon_uuid: null
+icon_default: null
+description: 'Day + Hours for location open hours table'
+behavior_plugins: {  }

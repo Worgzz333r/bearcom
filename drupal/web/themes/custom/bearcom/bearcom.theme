@@ -110,6 +110,13 @@ function bearcom_page_attachments_alter(array &$attachments) {
       $attachments['#attached']['library'][] = 'bearcom/tabs';
       $attachments['#attached']['library'][] = 'bearcom/stats-counter';
       $attachments['#attached']['library'][] = 'bearcom/accordion';
+
+      // Location Parent page
+      $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+      if ($alias === '/locations') {
+        $attachments['#attached']['library'][] = 'bearcom/location-search';
+        $attachments['#attached']['library'][] = 'bearcom/location';
+      }
     }
     if ($node->bundle() === 'industry') {
       $attachments['#attached']['library'][] = 'bearcom/industry';

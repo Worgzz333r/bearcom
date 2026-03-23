@@ -48,7 +48,7 @@ display:
           exclude: false
           type: string
           settings:
-            link_to_entity: false
+            link_to_entity: true
         field_description:
           id: field_description
           table: node__field_description

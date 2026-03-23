@@ -1,0 +1,19 @@
+uuid: 98b4adcd-211a-4837-a142-35e10f7dda97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_day
+    - paragraphs.paragraphs_type.open_hours_row
+id: paragraph.open_hours_row.field_day
+field_name: field_day
+entity_type: paragraph
+bundle: open_hours_row
+label: Day
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

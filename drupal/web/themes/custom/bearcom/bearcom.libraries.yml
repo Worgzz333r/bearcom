@@ -101,13 +101,15 @@ smooth-scroll:
     - core/once
 
 location-search:
-  js:
-    js/location-search.js: {}
   css:
     component:
+      https://unpkg.com/leaflet@1.9.4/dist/leaflet.css: { type: external, minified: true }
       css/components/_location-search.css: {}
       css/components/_location-card.css: {}
       css/components/_state-directory.css: {}
+  js:
+    https://unpkg.com/leaflet@1.9.4/dist/leaflet.js: { type: external, minified: true }
+    js/location-search.js: {}
   dependencies:
     - core/drupal
     - core/once

@@ -1,1 +1,23 @@
-/* TODO: Implement */
+/* ==========================================================================
+   Location Parent Page — /locations
+   ========================================================================== */
+
+.location-parent {
+  background: var(--color-white);
+}
+
+@media (max-width: 767px) {
+  /* Search section — no side padding on section, container handles it */
+  .location-parent .location-search {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* State directory — override the calc() full-width trick, let container handle padding */
+  .location-parent .state-directory {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

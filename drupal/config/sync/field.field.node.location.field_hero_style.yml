@@ -1,0 +1,21 @@
+uuid: 8067a036-c41c-44f6-8729-0b64add48538
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_style
+    - node.type.location
+  module:
+    - options
+id: node.location.field_hero_style
+field_name: field_hero_style
+entity_type: node
+bundle: location
+label: 'Hero Style'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

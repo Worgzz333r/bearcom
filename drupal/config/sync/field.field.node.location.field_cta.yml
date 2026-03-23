@@ -1,0 +1,23 @@
+uuid: 8e1cdcd5-e1db-479b-b331-fdb09c3985c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cta
+    - node.type.location
+  module:
+    - entity_reference_revisions
+id: node.location.field_cta
+field_name: field_cta
+entity_type: node
+bundle: location
+label: 'CTA Block'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings: {  }
+field_type: entity_reference_revisions

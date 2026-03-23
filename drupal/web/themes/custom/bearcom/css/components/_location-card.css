@@ -1,1 +1,52 @@
-/* TODO: Implement */
+/* ==========================================================================
+   Location Card (mini) — dark card in search results
+   ========================================================================== */
+
+.location-card {
+  width: 201px;
+  min-height: 204px;
+  background: #444444;
+  border-radius: 16px;
+  padding: 24px;
+  color: var(--color-white);
+  box-sizing: border-box;
+}
+
+.location-card__title {
+  font-family: var(--font-family);
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.location-card__address {
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 16px;
+}
+
+.location-card__phone {
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 16px;
+}
+
+.location-card__link {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-style: solid;
+}
+
+.location-card__link:hover {
+  color: #E04A00;
+}

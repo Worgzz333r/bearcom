@@ -1,0 +1,62 @@
+uuid: 4d4ac175-4a6e-4506-836e-8afc3e3faf43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.industry_card_grid.field_cards
+    - field.field.paragraph.industry_card_grid.field_section_style
+    - field.field.paragraph.industry_card_grid.field_subtitle
+    - field.field.paragraph.industry_card_grid.field_title
+    - field.field.paragraph.industry_card_grid.field_use_slider
+    - paragraphs.paragraphs_type.industry_card_grid
+  module:
+    - paragraphs
+id: paragraph.industry_card_grid.default
+targetEntityType: paragraph
+bundle: industry_card_grid
+mode: default
+content:
+  field_cards:
+    type: entity_reference_paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_section_style:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_subtitle:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_use_slider:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,32 @@
+uuid: e1aa68e2-eb0d-4a3f-a334-780e60d47669
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.open_hours_row.field_day
+    - field.field.paragraph.open_hours_row.field_hours
+    - paragraphs.paragraphs_type.open_hours_row
+id: paragraph.open_hours_row.default
+targetEntityType: paragraph
+bundle: open_hours_row
+mode: default
+content:
+  field_day:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_hours:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

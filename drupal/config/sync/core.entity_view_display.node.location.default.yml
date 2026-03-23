@@ -1,0 +1,104 @@
+uuid: 7c30849d-288e-450b-a715-2769cad506f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.location.field_about
+    - field.field.node.location.field_address
+    - field.field.node.location.field_cta
+    - field.field.node.location.field_description
+    - field.field.node.location.field_faq
+    - field.field.node.location.field_hero_style
+    - field.field.node.location.field_latitude
+    - field.field.node.location.field_longitude
+    - field.field.node.location.field_open_hours
+    - field.field.node.location.field_phone
+    - field.field.node.location.field_photo
+    - field.field.node.location.field_state
+    - node.type.location
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.location.default
+targetEntityType: node
+bundle: location
+mode: default
+content:
+  field_about:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_address:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_cta:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_faq:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_open_hours:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_phone:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_photo:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_state:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_description: true
+  field_hero_style: true
+  field_latitude: true
+  field_longitude: true
+  search_api_excerpt: true

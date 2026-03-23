@@ -1,8 +1,21 @@
-{# Hero Banner — styles: product, image, color, solid #}
+{# Hero Banner — styles: product, image, color, solid, soundwave #}
 {% set style = paragraph.field_style.value|default('product') %}
 <section class="hero hero--{{ style }}">
+  {% if style == 'soundwave' %}
+    <div class="hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 373 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="119.88" width="35.89" height="53.5" rx="17.95" fill="currentColor"/>
+        <rect x="56.55" y="113.7" width="34.99" height="74.18" rx="17.49" fill="currentColor"/>
+        <rect x="112.09" y="33.48" width="36.01" height="234.35" rx="18.01" fill="currentColor"/>
+        <rect x="168.49" y="0" width="36.05" height="299.38" rx="18.02" fill="currentColor"/>
+        <rect x="224.05" y="85.11" width="36.04" height="122.15" rx="18.02" fill="currentColor"/>
+        <rect x="280.66" y="46.33" width="36.02" height="205.18" rx="18.01" fill="currentColor"/>
+        <rect x="337.2" y="119.98" width="35.8" height="53.41" rx="17.9" fill="currentColor"/>
+      </svg>
+    </div>
+  {% endif %}
   <div class="container">
-    {% if style != 'solid' and paragraph.field_product_image.entity %}
+    {% if style not in ['solid', 'soundwave'] and paragraph.field_product_image.entity %}
       <div class="hero__product-image">
         {% set media = paragraph.field_product_image.entity %}
         <img src="/sites/default/files/{{ media.field_media_image.entity.uri.value|replace({'public://': ''}) }}" alt="{{ paragraph.field_title.value }}">
@@ -26,7 +39,7 @@
             </a>
           {% endif %}
           {% if paragraph.field_secondary_url.0.url %}
-            <a href="{{ paragraph.field_secondary_url.0.url }}" class="btn btn--outline hero__cta">
+            <a href="{{ paragraph.field_secondary_url.0.url }}" class="btn btn--outline hero__secondary">
               {{ paragraph.field_secondary_url.0.title|default('Learn More') }}
             </a>
           {% endif %}

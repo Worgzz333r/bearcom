@@ -8,7 +8,9 @@ dependencies:
     - field.field.node.flexible_page.field_heading
     - field.field.node.flexible_page.field_hero_style
     - field.field.node.flexible_page.field_image
+    - field.field.node.flexible_page.field_link
     - field.field.node.flexible_page.field_paragraphs
+    - field.field.node.flexible_page.field_phone
     - field.field.node.flexible_page.field_webform
     - node.type.flexible_page
   module:
@@ -76,5 +78,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_link: true
+  field_phone: true
   field_webform: true
   search_api_excerpt: true

@@ -1,0 +1,22 @@
+uuid: 25ef5901-0894-4a3c-82a4-f49eefc56390
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.location
+  module:
+    - text
+id: node.location.field_description
+field_name: field_description
+entity_type: node
+bundle: location
+label: 'Hero Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

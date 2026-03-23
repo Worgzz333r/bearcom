@@ -7,7 +7,6 @@ dependencies:
     - field.field.paragraph.hero_banner.field_cta_url
     - field.field.paragraph.hero_banner.field_image
     - field.field.paragraph.hero_banner.field_product_image
-    - field.field.paragraph.hero_banner.field_secondary_text
     - field.field.paragraph.hero_banner.field_secondary_url
     - field.field.paragraph.hero_banner.field_style
     - field.field.paragraph.hero_banner.field_subtitle
@@ -83,6 +82,5 @@ content:
     weight: 0
     region: content
 hidden:
-  field_secondary_text: true
   field_secondary_url: true
   search_api_excerpt: true

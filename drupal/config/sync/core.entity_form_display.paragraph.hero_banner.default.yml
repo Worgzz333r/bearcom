@@ -7,7 +7,6 @@ dependencies:
     - field.field.paragraph.hero_banner.field_cta_url
     - field.field.paragraph.hero_banner.field_image
     - field.field.paragraph.hero_banner.field_product_image
-    - field.field.paragraph.hero_banner.field_secondary_text
     - field.field.paragraph.hero_banner.field_secondary_url
     - field.field.paragraph.hero_banner.field_style
     - field.field.paragraph.hero_banner.field_subtitle
@@ -21,6 +20,14 @@ targetEntityType: paragraph
 bundle: hero_banner
 mode: default
 content:
+  field_cta_text:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_cta_url:
     type: link_default
     weight: 5
@@ -29,16 +36,23 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-  field_product_image:
+  field_image:
     type: media_library_widget
     weight: 2
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
+  field_product_image:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   field_secondary_url:
     type: link_default
-    weight: 6
+    weight: 5
     region: content
     settings:
       placeholder_url: ''
@@ -46,7 +60,7 @@ content:
     third_party_settings: {  }
   field_style:
     type: options_select
-    weight: 7
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -68,7 +82,4 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_cta_text: true
-  field_image: true
-  field_secondary_text: true
   status: true
