@@ -11,7 +11,7 @@ dependencies:
     - paragraphs.paragraphs_type.guided_journey
     - paragraphs.paragraphs_type.hero_banner
     - paragraphs.paragraphs_type.product_grid
-    - paragraphs.paragraphs_type.rentals_connected
+    - paragraphs.paragraphs_type.image_grid
     - paragraphs.paragraphs_type.stats_counter
     - paragraphs.paragraphs_type.video_block
   module:
@@ -34,7 +34,7 @@ settings:
       cta_block: cta_block
       card_grid: card_grid
       stats_counter: stats_counter
-      rentals_connected: rentals_connected
+      image_grid: image_grid
       guided_journey: guided_journey
       content_block: content_block
       product_grid: product_grid

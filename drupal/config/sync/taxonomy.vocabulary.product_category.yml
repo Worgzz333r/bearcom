@@ -1,9 +1,9 @@
-uuid: dcd91470-d272-45c2-be2a-4ba327f151e1
+uuid: 3bbc888e-570f-4b57-aafd-8c8841d5e9dd
 langcode: en
 status: true
 dependencies: {  }
 name: 'Product Category'
 vid: product_category
-description: 'Product categories for BearCom catalog'
+description: 'Categories for products'
 weight: 0
 new_revision: false

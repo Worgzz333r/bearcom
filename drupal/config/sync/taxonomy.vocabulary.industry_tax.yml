@@ -1,9 +1,9 @@
-uuid: 5b1af35a-09c9-4f2b-b629-a973c122e530
+uuid: 691474e5-14a7-4d37-813b-c03ca1c15a11
 langcode: en
 status: true
 dependencies: {  }
 name: Industry
 vid: industry_tax
-description: 'Industry taxonomy'
+description: 'Industry categories'
 weight: 0
 new_revision: false

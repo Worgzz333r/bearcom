@@ -11,7 +11,7 @@ id: paragraph.hero_banner.field_cta_url
 field_name: field_cta_url
 entity_type: paragraph
 bundle: hero_banner
-label: 'CTA URL'
+label: 'Primary Button'
 description: ''
 required: false
 translatable: true
