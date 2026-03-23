@@ -92,7 +92,7 @@
 
 /* Orange style */
 .cta-block--orange .cta-block__inner {
-  background-color: #FB591FE5;
+  background-color: color-mix(in srgb, var(--color-error-orange) 90%, transparent);
 }
 
 .cta-block--orange .cta-block__title,
@@ -138,7 +138,7 @@
 }
 
 .cta-block--credibility .cta-block__inner {
-  gap: 30px;
+  gap: var(--spacing-30);
   padding: var(--spacing-lg) var(--spacing-xl);
   background-color: var(--color-background);
   border-radius: 0;
@@ -178,7 +178,7 @@
 }
 
 .cta-block--credibility .cta-block__description {
-  color: #262626;
+  color: var(--color-text-dark);
   text-align: left;
   margin: 0 0 46px;
 }

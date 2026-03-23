@@ -1,18 +1,18 @@
-uuid: 3712ca67-3a2d-446c-9805-286d3929862c
+uuid: e6f4a0b3-2c5d-4e9f-b7a8-3d0c4f5e6b21
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_description
-    - paragraphs.paragraphs_type.card_item
+    - paragraphs.paragraphs_type.image_grid
   module:
     - text
-id: paragraph.card_item.field_description
+id: paragraph.image_grid.field_description
 field_name: field_description
 entity_type: paragraph
-bundle: card_item
-label: Subtitle
-description: 'Small text below the main title (e.g. Hotels across America)'
+bundle: image_grid
+label: Description
+description: ''
 required: false
 translatable: true
 default_value: {  }

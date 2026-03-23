@@ -1,0 +1,62 @@
+uuid: a8b6c2d5-4e7f-4a1b-d9c0-5f2e6b7a8d43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_grid.field_description
+    - field.field.paragraph.image_grid.field_items
+    - field.field.paragraph.image_grid.field_style
+    - field.field.paragraph.image_grid.field_title
+    - paragraphs.paragraphs_type.image_grid
+  module:
+    - options
+    - paragraphs
+    - text
+id: paragraph.image_grid.default
+targetEntityType: paragraph
+bundle: image_grid
+mode: default
+content:
+  field_style:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_items:
+    type: paragraphs
+    weight: 3
+    region: content
+    settings:
+      title: Item
+      title_plural: Items
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: image_grid_item
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -8,8 +8,8 @@
 
 @media (max-width: 1023px) {
   .container {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: var(--spacing-30);
+    padding-right: var(--spacing-30);
   }
 }
 
@@ -87,7 +87,8 @@
   font-size: var(--p-size);
   line-height: var(--p-lh);
   color: var(--color-text-primary);
-  margin: var(--spacing-sm) 0 0;
+  margin: var(--spacing-sm) auto 0;
+  max-width: 1000px;
 }
 
 .section--alt {

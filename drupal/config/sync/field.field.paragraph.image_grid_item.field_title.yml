@@ -1,0 +1,19 @@
+uuid: f7a5b2c3-9d4e-4f0a-c1b8-5e3d6a7f8c02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.image_grid_item
+id: paragraph.image_grid_item.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: image_grid_item
+label: Title
+description: 'Text displayed on overlay/grey-panel styles'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -8,11 +8,12 @@
   border: 1px solid transparent;
   background:
     linear-gradient(var(--color-background), var(--color-background)) padding-box,
-    linear-gradient(to right, #FAFAFA, #FB591F) border-box;
+    linear-gradient(to right, var(--color-background), var(--color-error-orange)) border-box;
 }
 
 .card__image {
   flex: 0 0 50%;
+  height: 300px;
   overflow: hidden;
   position: relative;
 }
@@ -22,7 +23,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(270deg, #FAFAFA 2.12%, rgba(250, 250, 250, 0) 56.64%);
+  background: linear-gradient(270deg, var(--color-background) 2.12%, rgba(250, 250, 250, 0) 56.64%);
   pointer-events: none;
 }
 
@@ -31,20 +32,20 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #FAFAFA 2.12%, rgba(250, 250, 250, 0) 56.64%);
+  background: linear-gradient(90deg, var(--color-background) 2.12%, rgba(250, 250, 250, 0) 56.64%);
   pointer-events: none;
 }
 
 .card__image img {
   width: 100%;
-  height: 100%;
+  height: 300px;
   object-fit: cover;
   display: block;
 }
 
 .card__body {
   flex: 1;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-lg) 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,29 +54,27 @@
 
 
 .card__top-title {
-  font-size: var(--details-size);
-  line-height: var(--details-lh);
+  font-size: var(--h5-size);
+  line-height: var(--h5-lh);
   color: var(--color-text-dark);
   text-transform: uppercase;
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: 1px;
+  font-weight: var(--font-weight-regular);
 }
 
 .card__main-title {
-  font-size: var(--h2-size);
-  line-height: var(--h2-lh);
-  font-weight: 700;
+  font-size: var(--h1-size);
+  line-height: var(--h1-lh);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-primary);
   margin: var(--spacing-xs) 0;
 }
 
 .card__subtitle {
-  font-size: var(--details-size);
-  line-height: var(--details-lh);
+  font-size: var(--h5-size);
+  line-height: var(--h5-lh);
   color: var(--color-text-dark);
   text-transform: uppercase;
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: 1px;
+  font-weight: var(--font-weight-regular);
 }
 
 /* Image-only card — no text */
@@ -98,7 +97,7 @@
 .card-grid__items > div {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
 }
 
 /* Card style 1 — image left, numbers right */
@@ -107,7 +106,7 @@
   background:
     url('../../images/card-numbers-right.png') no-repeat right center / auto 100%,
     linear-gradient(var(--color-background), var(--color-background)) padding-box,
-    linear-gradient(to right, #FAFAFA 50%, #FB591F) border-box;
+    linear-gradient(to right, var(--color-background) 45%, var(--color-error-orange)) border-box;
 }
 
 /* Card style 2 — image right, numbers left */
@@ -116,21 +115,21 @@
   background:
     url('../../images/card-numbers-left.png') no-repeat left center / auto 100%,
     linear-gradient(var(--color-background), var(--color-background)) padding-box,
-    linear-gradient(to left, #FAFAFA 50%, #FB591F) border-box;
+    linear-gradient(to left, var(--color-background) 45%, var(--color-error-orange)) border-box;
 }
 
 /* Card style 3 — image left, rounded right */
 .card-grid__items > div > div:nth-child(4n+3) .card {
   flex-direction: row;
   border-radius: 0 150px 150px 0;
-  align-items: stretch;
   background:
     linear-gradient(var(--color-background), var(--color-background)) padding-box,
-    linear-gradient(to right, #FAFAFA 50%, #FB591F) border-box;
+    linear-gradient(to right, var(--color-background) 45%, var(--color-error-orange)) border-box;
 }
 
 .card-grid__items > div > div:nth-child(4n+3) .card__image {
   border-radius: 0 150px 150px 0;
+  border-right: 7px solid var(--color-primary);
   overflow: hidden;
 }
 
@@ -138,14 +137,14 @@
 .card-grid__items > div > div:nth-child(4n+4) .card {
   flex-direction: row-reverse;
   border-radius: 150px;
-  align-items: stretch;
   background:
     linear-gradient(var(--color-background), var(--color-background)) padding-box,
-    linear-gradient(to left, #FAFAFA 50%, #FB591F) border-box;
+    linear-gradient(to left, var(--color-background) 45%, var(--color-error-orange)) border-box;
 }
 
 .card-grid__items > div > div:nth-child(4n+4) .card__image {
   border-radius: 150px;
+  border-left: 7px solid var(--color-primary);
   overflow: hidden;
 }
 

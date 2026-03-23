@@ -1,0 +1,23 @@
+uuid: e2f3a4b5-6c7d-4e8f-9a0b-1c2d3e4f5a61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_style
+    - paragraphs.paragraphs_type.image_grid
+  module:
+    - options
+id: paragraph.image_grid.field_style
+field_name: field_style
+entity_type: paragraph
+bundle: image_grid
+label: Style
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: plain
+default_value_callback: ''
+settings: {  }
+field_type: list_string
