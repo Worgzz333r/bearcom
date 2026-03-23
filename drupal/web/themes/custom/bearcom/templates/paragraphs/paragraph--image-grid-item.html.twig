@@ -1,12 +1,13 @@
 {# Image Grid Item — image + optional title + optional link #}
-{% set has_link = paragraph.field_link.0.url is not empty %}
+{% set link_url = paragraph.field_link.0.url ? paragraph.field_link.0.url.toString() : '' %}
+{% set has_link = link_url is not empty %}
 {% set tag = has_link ? 'a' : 'div' %}
-{% set link_attrs = has_link ? ' href="' ~ paragraph.field_link.0.url ~ '"' : '' %}
+{% set link_attrs = has_link ? ' href="' ~ link_url ~ '"' : '' %}
 
 <{{ tag }}{{ link_attrs }} class="image-grid__item">
   {% if paragraph.field_icon.entity %}
     <div class="image-grid__image">
-      <img src="{{ file_url(paragraph.field_icon.entity.field_media_image.entity.uri.value) }}" alt="{{ paragraph.field_icon.entity.field_media_image.alt }}" loading="lazy">
+      {{ content.field_icon }}
     </div>
   {% endif %}
 
