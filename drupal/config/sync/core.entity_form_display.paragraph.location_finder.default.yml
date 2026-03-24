@@ -1,0 +1,14 @@
+uuid: 140b46c4-61d0-4259-8007-89fdcc0e41ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.location_finder
+id: paragraph.location_finder.default
+targetEntityType: paragraph
+bundle: location_finder
+mode: default
+content: {  }
+hidden:
+  created: true
+  status: true

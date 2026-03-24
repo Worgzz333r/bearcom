@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Location Finder paragraph — search + map + state directory.
+ * Content loaded via JS from /api/locations.
+ */
+#}
+
+{# Search + Map Section #}
+<section class="location-search" id="search">
+  <div class="container">
+    <div class="location-search__layout">
+      <div class="location-search__left">
+        <div class="location-search__header">
+          <label class="location-search__label" for="location-query">Enter ZIP or City, State</label>
+          <a href="#" class="location-search__geoloc" id="use-my-location">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.875 6.67763L13.125 0.875L7.32237 13.125L6.03289 7.96711L0.875 6.67763Z" stroke="#FC5000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Use my location
+          </a>
+        </div>
+        <input type="text" class="location-search__input" id="location-query" placeholder="98102 or Taos, NM" autocomplete="off">
+        <div class="location-search__divider"></div>
+        <div class="location-search__cards" id="location-cards">
+          {# AJAX results go here #}
+        </div>
+      </div>
+      <div class="location-search__map" id="location-map">
+        {# Leaflet map #}
+      </div>
+    </div>
+  </div>
+</section>
+
+{# State Directory #}
+<section class="state-directory" id="directory">
+  <div class="container">
+    <div class="state-directory__grid" id="state-directory-grid">
+      {# Populated by JS from API #}
+    </div>
+  </div>
+</section>

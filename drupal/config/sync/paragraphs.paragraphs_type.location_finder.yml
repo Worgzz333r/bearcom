@@ -1,0 +1,10 @@
+uuid: daf5cf14-8c75-4379-ac72-d149dd941918
+langcode: en
+status: true
+dependencies: {  }
+id: location_finder
+label: 'Location Finder'
+icon_uuid: null
+icon_default: null
+description: 'Search + map + state directory block. No fields needed — content loaded via JS from API.'
+behavior_plugins: {  }

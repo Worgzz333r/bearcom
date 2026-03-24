@@ -1,0 +1,13 @@
+uuid: b034905f-3f7c-4231-bfdd-67bc53a98c59
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.location_finder
+id: paragraph.location_finder.default
+targetEntityType: paragraph
+bundle: location_finder
+mode: default
+content: {  }
+hidden:
+  search_api_excerpt: true
