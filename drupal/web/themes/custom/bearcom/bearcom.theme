@@ -134,5 +134,9 @@ function bearcom_page_attachments_alter(array &$attachments) {
       $attachments['#attached']['library'][] = 'bearcom/industry';
       $attachments['#attached']['library'][] = 'bearcom/carousel';
     }
+    if ($node->bundle() === 'location') {
+      $attachments['#attached']['library'][] = 'bearcom/location-detail';
+      $attachments['#attached']['library'][] = 'bearcom/accordion';
+    }
   }
 }

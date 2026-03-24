@@ -182,6 +182,19 @@ location:
       css/pages/_location.css: {}
       css/pages/_location-parent.css: {}
 
+location-detail:
+  css:
+    component:
+      https://unpkg.com/leaflet@1.9.4/dist/leaflet.css: { type: external, minified: true }
+    theme:
+      css/pages/_location-detail.css: {}
+  js:
+    https://unpkg.com/leaflet@1.9.4/dist/leaflet.js: { type: external, minified: true }
+    js/location-detail-map.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
 landing-page:
   css:
     theme:

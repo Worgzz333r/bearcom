@@ -1,0 +1,135 @@
+{#
+/**
+ * @file
+ * Location Detail Page — individual office/branch.
+ * Hero style controlled via field_hero_style (orange/grey).
+ */
+#}
+
+{% set hero_style = node.field_hero_style.value|default('orange') %}
+
+<article{{ attributes.addClass('location-detail', 'location-detail--' ~ hero_style) }}>
+
+  {# Hero #}
+  <section class="location-detail__hero location-detail__hero--{{ hero_style }}">
+    <div class="container">
+      <h1 class="location-detail__hero-title">{{ label }}</h1>
+      {% if content.field_description|render|trim %}
+        <div class="location-detail__hero-desc">{{ content.field_description }}</div>
+      {% endif %}
+      <div class="location-detail__hero-buttons">
+        <a href="/contact-us" class="btn btn--primary">Contact Us</a>
+        {% if node.field_phone.value %}
+          <a href="tel:{{ node.field_phone.value }}" class="btn btn--outline-white location-detail__hero-phone">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.6667 11.28V13.28C14.6667 13.4657 14.593 13.6441 14.4617 13.7754C14.3305 13.9066 14.1522 13.9804 13.9667 13.98C11.7219 13.9549 9.55069 13.2563 7.73334 12.0067C6.04636 10.8683 4.63504 9.45695 3.49667 7.77C2.24001 5.94 1.54001 3.75334 1.52001 1.49334C1.52001 1.30867 1.59334 1.13134 1.72334 1.00067C1.85401 0.870004 2.03067 0.796671 2.21534 0.796671H4.21534C4.55401 0.793337 4.84734 1.04 4.90201 1.37334C4.96001 1.75334 5.06267 2.12667 5.20867 2.48667C5.30467 2.72 5.25134 2.98667 5.07201 3.17L4.23601 4.006C5.29134 5.84534 6.82067 7.37467 8.66001 8.43L9.49601 7.594C9.67934 7.41467 9.94601 7.36134 10.1793 7.45734C10.5393 7.60334 10.9127 7.706 11.2927 7.764C11.6327 7.81934 11.8827 8.12 11.8793 8.466L11.88 8.46667V11.28H14.6667Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            {{ node.field_phone.value }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  {# Info + Photo #}
+  <section class="location-detail__info">
+    <div class="container">
+      <div class="location-detail__info-layout">
+        <div class="location-detail__info-left">
+          {% if node.field_address.value %}
+            <h2 class="location-detail__office-name">{{ node.field_address.value|split("\n")|first }}</h2>
+            {% set address_lines = node.field_address.value|split("\n") %}
+            {% if address_lines|length > 1 %}
+              <div class="location-detail__address">{{ address_lines|slice(1)|join('<br>')|raw }}</div>
+            {% endif %}
+          {% endif %}
+
+          {% if node.field_phone.value %}
+            <div class="location-detail__phone">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.6667 11.28V13.28C14.6667 13.4657 14.593 13.6441 14.4617 13.7754C14.3305 13.9066 14.1522 13.9804 13.9667 13.98C11.7219 13.9549 9.55069 13.2563 7.73334 12.0067C6.04636 10.8683 4.63504 9.45695 3.49667 7.77C2.24001 5.94 1.54001 3.75334 1.52001 1.49334C1.52001 1.30867 1.59334 1.13134 1.72334 1.00067C1.85401 0.870004 2.03067 0.796671 2.21534 0.796671H4.21534C4.55401 0.793337 4.84734 1.04 4.90201 1.37334C4.96001 1.75334 5.06267 2.12667 5.20867 2.48667C5.30467 2.72 5.25134 2.98667 5.07201 3.17L4.23601 4.006C5.29134 5.84534 6.82067 7.37467 8.66001 8.43L9.49601 7.594C9.67934 7.41467 9.94601 7.36134 10.1793 7.45734C10.5393 7.60334 10.9127 7.706 11.2927 7.764C11.6327 7.81934 11.8827 8.12 11.8793 8.466L11.88 8.46667V11.28H14.6667Z" stroke="#FC5000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="tel:{{ node.field_phone.value }}">{{ node.field_phone.value }}</a>
+            </div>
+          {% endif %}
+
+          <div class="location-detail__divider"></div>
+
+          {# Open Hours #}
+          {% if content.field_open_hours|render|trim %}
+            <div class="location-detail__hours">
+              <h3 class="location-detail__hours-title">Open Hours</h3>
+              <table class="location-detail__hours-table">
+                <tbody>
+                  {% for item in node.field_open_hours %}
+                    {% set row = item.entity %}
+                    <tr>
+                      <td class="location-detail__hours-day">{{ row.field_day.value }}</td>
+                      <td class="location-detail__hours-time">{{ row.field_hours.value }}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="location-detail__info-right">
+          {% if node.field_photo.entity %}
+            {% set media = node.field_photo.entity %}
+            {% set image = media.field_media_image.entity %}
+            {% if image %}
+              <div class="location-detail__photo">
+                <img src="{{ file_url(image.uri.value) }}" alt="{{ media.field_media_image.alt }}" loading="lazy">
+              </div>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# About #}
+  {% if node.field_about.value %}
+    <section class="location-detail__about">
+      <div class="container">
+        <div class="location-detail__about-layout">
+          <div class="location-detail__about-text">
+            <h2 class="location-detail__about-title">About the Office</h2>
+            <div class="location-detail__about-body">{{ node.field_about.value|raw }}</div>
+          </div>
+          <div class="location-detail__about-wave" aria-hidden="true">
+            {{ source('@bearcom/images/soundwave.svg')|raw }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  {# FAQ + Map #}
+  {% if content.field_faq|render|trim %}
+    <section class="location-detail__faq-section">
+      <div class="container">
+        <h2 class="location-detail__faq-heading">General Questions</h2>
+        <div class="location-detail__faq-layout">
+          <div class="location-detail__faq-left">
+            <div class="accordion">
+              {{ content.field_faq }}
+            </div>
+          </div>
+          <div class="location-detail__faq-right">
+            {% if node.field_latitude.value and node.field_longitude.value %}
+              <div class="location-detail-map"
+                   data-lat="{{ node.field_latitude.value }}"
+                   data-lon="{{ node.field_longitude.value }}"></div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  {# CTA #}
+  {% if content.field_cta|render|trim %}
+    <section class="location-detail__cta">
+      {{ content.field_cta }}
+    </section>
+  {% endif %}
+
+</article>

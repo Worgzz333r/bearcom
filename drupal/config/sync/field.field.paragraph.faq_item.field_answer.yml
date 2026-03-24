@@ -1,4 +1,4 @@
-uuid: 784bf700-defa-41ee-9eda-94ffb51450ab
+uuid: 31b3d8fb-3cdc-416c-9162-77302a7e9534
 langcode: en
 status: true
 dependencies:
@@ -13,7 +13,7 @@ entity_type: paragraph
 bundle: faq_item
 label: Answer
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
