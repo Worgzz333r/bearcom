@@ -76,9 +76,21 @@
   opacity: 0.9;
 }
 
-/* Style: solid color — white text */
+/* Style: solid color — orange bg, white curved panel right, image RIGHT */
 .hero--color {
+  background-color: var(--color-primary);
   color: var(--color-white);
+  min-height: auto;
+  height: 400px;
+  padding: var(--spacing-xl) 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero--color .container {
+  flex-direction: row-reverse;
+  position: relative;
+  z-index: 1;
 }
 
 .hero--color .hero__title {
@@ -87,7 +99,46 @@
 
 .hero--color .hero__subtitle {
   color: var(--color-white);
+  opacity: 0.9;
+  max-width: 560px;
 }
+
+.hero--color .hero__product-image {
+  flex: 0 0 350px;
+  height: 350px;
+  position: relative;
+}
+
+.hero--color .hero__product-image img {
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+}
+
+/* Curved panel — uses actual design shape as background */
+.hero--color .hero__product-image::before {
+  content: '';
+  position: absolute;
+  left: -150px;
+  top: -50px;
+  bottom: -50px;
+  right: -9999px;
+  background: url('../../images/hero-curve.png') no-repeat left center / auto 100%;
+  z-index: -1;
+}
+
+/* Flat fill — covers everything to the right of the curve */
+.hero--color .hero__product-image::after {
+  content: '';
+  position: absolute;
+  left: 50px;
+  top: -50px;
+  bottom: -50px;
+  right: -9999px;
+  background: var(--color-background-alt);
+  z-index: -2;
+}
+
 
 /* Style: solid grey — light grey bg, centered text, dark color */
 .hero--solid {

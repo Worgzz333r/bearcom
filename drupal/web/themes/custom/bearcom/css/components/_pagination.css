@@ -1,1 +1,109 @@
-/* TODO: Implement */
+/* ==========================================================================
+   Pagination — Views pager
+   ========================================================================== */
+
+.pager {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-xxl) 0 100px;
+}
+
+.pager__items {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Hide "Last" link — not in the design */
+.pager__item--last {
+  display: none;
+}
+
+/* Hide "First" link — not in the design */
+.pager__item--first {
+  display: none;
+}
+
+/* Page number items */
+.pager__item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--spacing-lg);
+  height: var(--spacing-lg);
+  border-radius: 50%;
+  font-family: var(--font-family);
+  font-size: var(--p-size);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-dark);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.pager__item a:hover {
+  opacity: 1;
+  color: var(--color-primary);
+}
+
+/* Active page */
+.pager__item.is-active a {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: var(--font-weight-regular);
+}
+
+.pager__item.is-active a:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+/* Prev / Next arrows */
+.pager__item--previous,
+.pager__item--next {
+  order: 0;
+}
+
+.pager__item--previous {
+  order: -1;
+  margin-right: 34px;
+}
+
+.pager__item--next {
+  order: 999;
+  margin-left: 34px;
+}
+
+.pager__item--previous a,
+.pager__item--next a {
+  font-size: 0;
+  min-width: var(--spacing-lg);
+  height: var(--spacing-lg);
+}
+
+.pager__item--previous a::before,
+.pager__item--next a::before {
+  content: '';
+  display: block;
+  width: 11px;
+  height: 11px;
+  background: url('../../images/arrow-right-dark.svg') no-repeat center center;
+  background-size: contain;
+}
+
+.pager__item--previous a::before {
+  transform: rotate(180deg);
+}
+
+.pager__item--previous a:hover::before,
+.pager__item--next a:hover::before {
+  opacity: 0.6;
+}
+
+/* Hide text inside prev/next */
+.pager__item--previous a span,
+.pager__item--next a span {
+  display: none;
+}

@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * View: Products Listing — /products
+ * Sidebar filters + 3×3 product card grid with AJAX.
+ * Embedded via product_grid paragraph on a flexible_page node.
+ */
+#}
+
+{{ attach_library('bearcom/category') }}
+{{ attach_library('bearcom/filter-sidebar') }}
+
+{%
+  set classes = [
+    'category-page',
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  <div class="container">
+
+    {# Layout: sidebar + top bar + grid #}
+    <div class="category-page__layout">
+
+      {# Sidebar — exposed filters #}
+      {% if exposed %}
+        <aside class="filter-sidebar">
+          <div class="filter-sidebar__label">Filter by:</div>
+          {{ exposed }}
+        </aside>
+      {% endif %}
+
+      {# Main — top bar + product grid + pager #}
+      <div class="category-page__main">
+        <div class="category-page__top">
+          {% if header %}
+            <div class="category-page__count">{{ header }}</div>
+          {% endif %}
+        </div>
+
+        <div class="category-page__grid">
+          {{ rows }}
+        </div>
+
+        {% if pager %}
+          <div class="category-page__pager">
+            {{ pager }}
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+
+  </div>
+</div>

@@ -14,6 +14,7 @@
   background-color: var(--color-footer-bg);
   border-radius: var(--footer-radius) var(--footer-radius) 0 0;
   overflow: hidden;
+  margin-top: 60px;
 }
 
 .site-footer a {

@@ -54,7 +54,7 @@
 /* Header / Navigation */
 .site-header {
   background-color: var(--color-background);
-  border-bottom: 1px solid var(--color-background-alt);
+  border-bottom: 1px solid var(--color-primary);
   position: sticky;
   top: 0;
   z-index: var(--z-header);

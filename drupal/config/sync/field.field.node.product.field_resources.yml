@@ -18,6 +18,8 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
+  handler: default
+  handler_settings: {  }
   file_directory: product-resources
   file_extensions: 'pdf doc docx xls xlsx ppt pptx'
   max_filesize: '10 MB'
