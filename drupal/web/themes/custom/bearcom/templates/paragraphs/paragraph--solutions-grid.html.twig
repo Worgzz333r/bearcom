@@ -1,0 +1,21 @@
+{# Solutions Grid — vertical cards, Swiper slider when > 3 items #}
+{% set card_count = paragraph.field_cards|length %}
+{% set is_slider = card_count > 3 %}
+<section class="solutions-grid {{ is_slider ? 'solutions-grid--slider' : 'solutions-grid--grid' }}">
+  <div class="container">
+    {% if paragraph.field_title.value or content.field_description|render|trim %}
+      <div class="section__header">
+        {% if paragraph.field_title.value %}
+          <h2 class="section__title">{{ paragraph.field_title.value }}</h2>
+        {% endif %}
+        {% if content.field_description|render|trim %}
+          <div class="section__subtitle">{{ content.field_description }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="solutions-grid__items">
+      {{ content.field_cards }}
+    </div>
+  </div>
+</section>

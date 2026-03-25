@@ -1,6 +1,7 @@
 /* Accordion — shared pattern for FAQ, specs, product tabs */
 .accordion__item {
-  border-bottom: 1px solid var(--color-medium-gray);
+  border-bottom: 1px solid var(--color-border-light);
+  margin-bottom: var(--spacing-sm);
 }
 
 .accordion__trigger {
@@ -16,14 +17,16 @@
 }
 
 .accordion__title {
-  font-size: var(--h5-size);
-  line-height: var(--h5-lh);
+  font-size: var(--h4-size);
+  line-height: var(--h4-lh);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-dark-blue);
+  color: var(--color-text-primary);
 }
 
 .accordion__icon {
-  font-size: var(--h4-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--color-primary);
   transition: transform var(--transition-base);
   flex-shrink: 0;
@@ -37,15 +40,16 @@
 .accordion__content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height var(--transition-base);
+  transition: max-height var(--transition-fast);
 }
 
 .accordion__item.is-open .accordion__content {
-  max-height: 1000px;
+  max-height: 200px;
+  transition: max-height var(--transition-slow);
 }
 
 .accordion__body {
-  padding: 0 0 var(--spacing-md);
+  padding: var(--spacing-xs) 0 var(--spacing-sm);
   font-size: var(--p-size);
   line-height: var(--p-lh);
   color: var(--color-text-primary);

@@ -1,0 +1,10 @@
+uuid: a7c3e1f0-9b42-4d8a-b5e6-3f1a2c8d9e0b
+langcode: en
+status: true
+dependencies: {  }
+id: solutions_grid
+label: 'Solutions Grid'
+icon_uuid: null
+icon_default: null
+description: 'Vertical card grid with optional Swiper slider (3+ cards)'
+behavior_plugins: {  }

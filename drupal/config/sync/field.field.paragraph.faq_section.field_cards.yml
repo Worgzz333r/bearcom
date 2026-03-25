@@ -1,0 +1,27 @@
+uuid: e3f4a5b6-c7d8-4e9f-0a1b-2c3d4e5f6a7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cards
+    - paragraphs.paragraphs_type.faq_item
+    - paragraphs.paragraphs_type.faq_section
+  module:
+    - entity_reference_revisions
+id: paragraph.faq_section.field_cards
+field_name: field_cards
+entity_type: paragraph
+bundle: faq_section
+label: 'FAQ Items'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      faq_item: faq_item
+    negate: 0
+field_type: entity_reference_revisions

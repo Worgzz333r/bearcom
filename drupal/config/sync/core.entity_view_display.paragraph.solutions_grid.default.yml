@@ -1,0 +1,48 @@
+uuid: a8b9c0d1-e5f6-4a7b-c2d3-4e5f6a7b8c9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.solutions_grid.field_cards
+    - field.field.paragraph.solutions_grid.field_description
+    - field.field.paragraph.solutions_grid.field_title
+    - paragraphs.paragraphs_type.solutions_grid
+    - swiper_formatter.swiper_formatter.solutions_cards
+  module:
+    - swiper_formatter
+    - text
+id: paragraph.solutions_grid.default
+targetEntityType: paragraph
+bundle: solutions_grid
+mode: default
+content:
+  field_cards:
+    type: swiper_formatter_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+      template: solutions_cards
+      caption: ''
+      destination: ''
+      swiper_access: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

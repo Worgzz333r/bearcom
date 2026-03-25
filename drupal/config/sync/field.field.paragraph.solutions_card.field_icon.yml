@@ -1,0 +1,26 @@
+uuid: c9d0e1f2-a3b4-4c5d-e6f7-8a9b0c1d2e3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_icon
+    - media.type.image
+    - paragraphs.paragraphs_type.solutions_card
+  module:
+    - media
+id: paragraph.solutions_card.field_icon
+field_name: field_icon
+entity_type: paragraph
+bundle: solutions_card
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+field_type: entity_reference

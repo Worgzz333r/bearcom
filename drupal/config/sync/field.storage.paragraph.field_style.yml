@@ -13,43 +13,46 @@ settings:
   allowed_values:
     -
       value: product
-      label: Product
+      label: '[Hero] Product — image left, text right'
     -
       value: image
-      label: Image
+      label: '[Hero] Image — full bg image, white text'
     -
       value: color
-      label: 'Solid Color'
+      label: '[Hero] Solid Color — orange bg, curved panel'
     -
       value: solid
-      label: 'Solid Grey'
-    -
-      value: default
-      label: Default
-    -
-      value: orange
-      label: Orange
-    -
-      value: credibility
-      label: Credibility
-    -
-      value: centered
-      label: Centered
-    -
-      value: plain
-      label: 'Plain (images only)'
-    -
-      value: overlay
-      label: 'Overlay (blue gradient + text)'
-    -
-      value: grey-panel
-      label: 'Grey Panel (grey bar + text)'
-    -
-      value: rentals
-      label: 'Rentals (2 images, no crop)'
+      label: '[Hero] Solid Grey — grey bg, centered text'
     -
       value: soundwave
-      label: 'Soundwave (grey bg, wave illustration)'
+      label: '[Hero] Soundwave — grey bg, wave illustration'
+    -
+      value: white
+      label: '[Hero] White — white bg, centered text'
+    -
+      value: default
+      label: '[CTA] Default'
+    -
+      value: orange
+      label: '[CTA] Orange'
+    -
+      value: credibility
+      label: '[CTA] Credibility'
+    -
+      value: centered
+      label: '[Stats] Centered'
+    -
+      value: plain
+      label: '[Image Grid] Plain — images only'
+    -
+      value: overlay
+      label: '[Image Grid] Overlay — blue gradient + text'
+    -
+      value: grey-panel
+      label: '[Image Grid] Grey Panel — grey bar + text'
+    -
+      value: rentals
+      label: '[Image Grid] Rentals — 2 images, no crop'
   allowed_values_function: ''
 module: options
 locked: false

@@ -1,0 +1,54 @@
+uuid: f7a8b9c0-d4e5-4f6a-b1c2-3d4e5f6a7b8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.solutions_grid.field_cards
+    - field.field.paragraph.solutions_grid.field_description
+    - field.field.paragraph.solutions_grid.field_title
+    - paragraphs.paragraphs_type.solutions_grid
+  module:
+    - paragraphs
+    - text
+id: paragraph.solutions_grid.default
+targetEntityType: paragraph
+bundle: solutions_grid
+mode: default
+content:
+  field_cards:
+    type: paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Card
+      title_plural: Cards
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: simple
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

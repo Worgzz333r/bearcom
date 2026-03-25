@@ -1,0 +1,10 @@
+uuid: c1d2e3f4-a5b6-4c7d-8e9f-0a1b2c3d4e5f
+langcode: en
+status: true
+dependencies: {  }
+id: faq_section
+label: 'FAQ Section'
+icon_uuid: null
+icon_default: null
+description: 'Section with title and FAQ accordion items'
+behavior_plugins: {  }

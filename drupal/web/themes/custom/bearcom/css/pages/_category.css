@@ -24,7 +24,7 @@ section.product-grid {
 .category-page > .container {
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0;
+  padding: 0 20px;
 }
 
 /* --------------------------------------------------------------------------
@@ -45,6 +45,7 @@ section.product-grid {
 
 .category-page__main {
   position: relative;
+  padding-bottom: 100px;
 }
 
 .category-page__top {
