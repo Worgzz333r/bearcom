@@ -1,0 +1,10 @@
+uuid: b8c9d0e1-f2a3-4b4c-d5e6-7f8a9b0c1d2e
+langcode: en
+status: true
+dependencies: {  }
+id: solutions_card
+label: 'Solutions Card'
+icon_uuid: null
+icon_default: null
+description: 'Card with image, title, and description'
+behavior_plugins: {  }

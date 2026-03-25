@@ -1,0 +1,18 @@
+{# Solutions Card — image + title + description #}
+<div class="solutions-card">
+  {% if content.field_icon|render|trim %}
+    <div class="solutions-card__image">
+      {{ content.field_icon }}
+    </div>
+  {% endif %}
+
+  <div class="solutions-card__body">
+    {% if paragraph.field_title.value %}
+      <h3 class="solutions-card__title">{{ paragraph.field_title.value }}</h3>
+    {% endif %}
+
+    {% if content.field_description|render|trim %}
+      <div class="solutions-card__text">{{ content.field_description }}</div>
+    {% endif %}
+  </div>
+</div>

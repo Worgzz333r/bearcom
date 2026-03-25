@@ -1,1 +1,239 @@
-/* TODO: Implement */
+/* ==========================================================================
+   Filter Sidebar — BEF checkboxes on /products
+   ========================================================================== */
+
+.filter-sidebar {
+  border-right: 1px solid var(--color-primary);
+  padding-right: var(--spacing-lg);
+  align-self: stretch;
+}
+
+
+.filter-sidebar__label {
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: 700;
+  color: var(--color-text-dark);
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-xl);
+  padding-top: var(--spacing-xxl);
+}
+
+/* Filter group — fieldset wrapper */
+.filter-sidebar fieldset,
+.filter-sidebar .form-item {
+  border: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-30);
+  padding-bottom: var(--spacing-30);
+  border-bottom: 1px solid rgba(251, 89, 31, 0.3);
+}
+
+.filter-sidebar fieldset:last-of-type {
+  border-bottom: 1px solid rgba(251, 89, 31, 0.3);
+}
+
+/* Filter group title */
+.filter-sidebar legend,
+.filter-sidebar h4,
+.filter-sidebar .bef-nested > h4 {
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0 0 var(--spacing-sm);
+  padding: 0;
+  border: none;
+}
+
+/* Individual checkbox items */
+.filter-sidebar .form-type-checkbox,
+.filter-sidebar .bef-checkboxes .form-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
+  padding-left: var(--spacing-sm);
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.filter-sidebar .form-type-checkbox input[type="checkbox"],
+.filter-sidebar .bef-checkboxes input[type="checkbox"] {
+  width: var(--spacing-sm);
+  height: var(--spacing-sm);
+  border: 1.5px solid var(--color-dark-blue);
+  border-radius: 2px;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  background-color: var(--color-white);
+  transition: all var(--transition-fast);
+}
+
+.filter-sidebar .form-type-checkbox input[type="checkbox"]:checked,
+.filter-sidebar .bef-checkboxes input[type="checkbox"]:checked {
+  background-color: var(--color-white);
+  border-color: var(--color-primary);
+  border-width: 2px;
+  border-radius: 4px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23FC5000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px;
+}
+
+.filter-sidebar .form-type-checkbox label,
+.filter-sidebar .bef-checkboxes label {
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-dark-blue);
+  cursor: pointer;
+}
+
+/* Sort by — positioned top-right of layout grid */
+.category-page__layout .form-item-sort-by {
+  position: absolute;
+  right: 0;
+  top: var(--spacing-xxl);
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 10;
+}
+
+/* --------------------------------------------------------------------------
+   Custom Sort Dropdown
+   -------------------------------------------------------------------------- */
+
+.sort-dropdown {
+  position: relative;
+}
+
+.sort-dropdown__trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-family);
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-dark);
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.sort-dropdown__trigger:hover {
+  color: var(--color-primary);
+}
+
+.sort-dropdown__chevron {
+  transition: transform var(--transition-base);
+}
+
+.sort-dropdown.is-open .sort-dropdown__chevron {
+  transform: rotate(180deg);
+}
+
+.sort-dropdown__panel {
+  position: absolute;
+  top: calc(100% + var(--spacing-xs));
+  right: 0;
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  min-width: 160px;
+  padding: var(--spacing-xs) 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(calc(-1 * var(--spacing-xs)));
+  transition: opacity var(--transition-base), transform var(--transition-base), visibility var(--transition-base);
+  z-index: 100;
+}
+
+.sort-dropdown.is-open .sort-dropdown__panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.sort-dropdown__item {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: var(--p-lh);
+  color: var(--color-text-dark);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.sort-dropdown__item:hover {
+  background-color: var(--color-background-alt);
+  color: var(--color-primary);
+}
+
+.sort-dropdown__item.is-active {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Submit / reset buttons */
+.filter-sidebar .form-actions {
+  margin-top: var(--spacing-sm);
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.filter-sidebar .form-actions .form-submit {
+  display: none;
+}
+
+.filter-sidebar .form-actions .button--reset,
+.filter-sidebar input[type="reset"] {
+  display: inline-block;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-button);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color var(--transition-fast);
+}
+
+.filter-sidebar .form-actions .button--reset:hover,
+.filter-sidebar input[type="reset"]:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — Mobile (≤ 767px)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  .filter-sidebar {
+    position: static;
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px solid var(--color-medium-gray);
+    padding-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+}

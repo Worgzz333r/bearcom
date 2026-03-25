@@ -12,10 +12,12 @@ global:
       css/components/_button.css: {}
       css/components/_hero.css: {}
       css/components/_card.css: {}
+      css/components/_product-card.css: {}
       css/components/_industry-card.css: {}
       css/components/_cta-block.css: {}
       css/components/_content-block.css: {}
       css/components/_checklist.css: {}
+      css/components/_faq-section.css: {}
       css/components/_image-grid.css: {}
       css/components/_pagination.css: {}
       css/components/_breadcrumbs.css: {}
@@ -97,7 +99,19 @@ carousel:
     js/carousel.js: {}
   dependencies:
     - core/drupal
-    - swiper_formatter/local_minified
+    - swiper_formatter/remote
+    - swiper_formatter/swiper_formatter
+
+solutions-grid:
+  css:
+    component:
+      css/components/_solutions-grid.css: {}
+  js:
+    js/solutions-grid.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - swiper_formatter/remote
     - swiper_formatter/swiper_formatter
 
 smooth-scroll:
@@ -122,9 +136,14 @@ location-search:
     - core/once
 
 filter-sidebar:
+  js:
+    js/sort-dropdown.js: {}
   css:
     component:
       css/components/_filter-sidebar.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
 
 share-buttons:
   css:

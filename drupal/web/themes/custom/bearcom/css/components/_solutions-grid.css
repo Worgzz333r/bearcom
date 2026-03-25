@@ -1,0 +1,197 @@
+/* ==========================================================================
+   Solutions Grid — vertical cards with orange border
+   ========================================================================== */
+
+.solutions-grid {
+  padding: var(--section-padding) 0 120px;
+  background: var(--color-background) url('../../images/solutions-wave-bg.svg') no-repeat center calc(50% - 30px);
+  background-size: auto 85%;
+  overflow: hidden;
+}
+
+.solutions-grid .section__header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* --------------------------------------------------------------------------
+   Grid mode (3 or fewer cards) — 3-column layout
+   -------------------------------------------------------------------------- */
+
+/* Grid mode — applied by JS when cards fit in one row */
+.solutions-grid--grid .swiper-scrollbar,
+.solutions-grid--grid .swiper-button-prev,
+.solutions-grid--grid .swiper-button-next,
+.solutions-grid--grid .swiper-pagination {
+  display: none;
+}
+
+.solutions-grid--grid .swiper-container {
+  padding-bottom: 0;
+  margin-top: 0;
+  overflow: visible;
+}
+
+/* --------------------------------------------------------------------------
+   Card — override base .card to vertical layout
+   -------------------------------------------------------------------------- */
+
+.solutions-grid .paragraph--type--card-item .card,
+section.solutions-grid .card {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  border-radius: var(--radius-card-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-primary);
+  background: transparent;
+  padding: var(--spacing-md);
+}
+
+/* Center card — white background + shadow */
+.solutions-grid .swiper-slide.is-center .card,
+.solutions-grid--grid .swiper-slide:nth-child(2) .card {
+  background: var(--color-white);
+  box-shadow: 0 0 12px 0 rgba(252, 78, 0, 0.6);
+}
+
+/* Reset alternating card layouts from base _card.css */
+.solutions-grid .paragraph--type--card-item:nth-child(4n+1) .card,
+.solutions-grid .paragraph--type--card-item:nth-child(4n+2) .card,
+.solutions-grid .paragraph--type--card-item:nth-child(4n+3) .card,
+.solutions-grid .paragraph--type--card-item:nth-child(4n+4) .card {
+  flex-direction: column;
+  border-radius: var(--radius-card-lg);
+  background: transparent;
+}
+
+.solutions-grid .paragraph--type--card-item:nth-child(4n+3) .card__image,
+.solutions-grid .paragraph--type--card-item:nth-child(4n+4) .card__image {
+  border-radius: var(--radius-card-lg);
+  border-left: none;
+  border-right: none;
+}
+
+/* Remove image fade overlay from base _card.css */
+.solutions-grid .card__image::after {
+  display: none;
+}
+
+/* Image — rounded corners */
+.solutions-grid .paragraph--type--card-item .card__image,
+section.solutions-grid .card__image {
+  flex: none;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border-radius: var(--radius-card-lg);
+}
+
+.solutions-grid .paragraph--type--card-item .card__image img,
+section.solutions-grid .card__image img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* Body — centered text */
+.solutions-grid .paragraph--type--card-item .card__body,
+section.solutions-grid .card__body {
+  flex: 1;
+  padding: var(--spacing-lg) 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: static;
+}
+
+/* Top label — used as title */
+.solutions-grid .paragraph--type--card-item .card__top-title,
+section.solutions-grid .card__top-title {
+  font-size: var(--h4-size);
+  line-height: var(--h4-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-dark);
+  text-transform: none;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Main title — used as description */
+.solutions-grid .paragraph--type--card-item .card__main-title,
+section.solutions-grid .card__main-title {
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* Subtitle — hidden */
+.solutions-grid .paragraph--type--card-item .card__subtitle,
+section.solutions-grid .card__subtitle {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Slider mode — Swiper overrides
+   -------------------------------------------------------------------------- */
+
+.solutions-grid--slider .swiper-container {
+  padding: 16px 0 84px;
+  margin-top: -16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.solutions-grid--slider .swiper-scrollbar {
+  width: 100%;
+  height: 4px;
+  background: var(--color-medium-gray);
+  border: none;
+  border-radius: 4px;
+  bottom: 0;
+  left: 0;
+  top: auto;
+}
+
+.solutions-grid--slider .swiper-scrollbar-drag {
+  height: 4px;
+  border-radius: 4px;
+  background: var(--color-error-orange);
+  cursor: grab;
+}
+
+.solutions-grid--slider .swiper-button-prev,
+.solutions-grid--slider .swiper-button-next {
+  width: 40px;
+  height: 40px;
+  background: url('../../images/orange-list-pointer.svg') no-repeat center / contain;
+  position: absolute;
+  top: calc(50% - 42px);
+  z-index: 10;
+}
+
+.solutions-grid--slider .swiper-button-prev::after,
+.solutions-grid--slider .swiper-button-next::after {
+  display: none;
+}
+
+.solutions-grid--slider .swiper-button-prev {
+  left: 10px;
+  transform: rotate(180deg);
+}
+
+.solutions-grid--slider .swiper-button-next {
+  right: 10px;
+}
+
+.solutions-grid--slider .swiper-pagination {
+  display: none;
+}
+

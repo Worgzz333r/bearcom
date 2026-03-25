@@ -1,0 +1,20 @@
+/* ==========================================================================
+   FAQ Section
+   ========================================================================== */
+
+.faq-section {
+  padding: var(--section-padding) 0;
+}
+
+.faq-section .section__header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.faq-section .section__title {
+  color: var(--color-text-primary);
+}
+
+.faq-section__items {
+  width: 100%;
+}

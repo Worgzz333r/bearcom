@@ -1,0 +1,44 @@
+uuid: f4a5b6c7-d8e9-4f0a-1b2c-3d4e5f6a7b8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.faq_section.field_cards
+    - field.field.paragraph.faq_section.field_title
+    - paragraphs.paragraphs_type.faq_section
+  module:
+    - paragraphs
+id: paragraph.faq_section.default
+targetEntityType: paragraph
+bundle: faq_section
+mode: default
+content:
+  field_cards:
+    type: paragraphs
+    weight: 1
+    region: content
+    settings:
+      title: 'FAQ Item'
+      title_plural: 'FAQ Items'
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

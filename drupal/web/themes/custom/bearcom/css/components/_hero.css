@@ -76,9 +76,21 @@
   opacity: 0.9;
 }
 
-/* Style: solid color — white text */
+/* Style: solid color — orange bg, white curved panel right, image RIGHT */
 .hero--color {
+  background-color: var(--color-primary);
   color: var(--color-white);
+  min-height: auto;
+  height: 400px;
+  padding: var(--spacing-xl) 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero--color .container {
+  flex-direction: row-reverse;
+  position: relative;
+  z-index: 1;
 }
 
 .hero--color .hero__title {
@@ -87,7 +99,46 @@
 
 .hero--color .hero__subtitle {
   color: var(--color-white);
+  opacity: 0.9;
+  max-width: 560px;
 }
+
+.hero--color .hero__product-image {
+  flex: 0 0 350px;
+  height: 350px;
+  position: relative;
+}
+
+.hero--color .hero__product-image img {
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+}
+
+/* Curved panel — uses actual design shape as background */
+.hero--color .hero__product-image::before {
+  content: '';
+  position: absolute;
+  left: -150px;
+  top: -50px;
+  bottom: -50px;
+  right: -9999px;
+  background: url('../../images/hero-curve.png') no-repeat left center / auto 100%;
+  z-index: -1;
+}
+
+/* Flat fill — covers everything to the right of the curve */
+.hero--color .hero__product-image::after {
+  content: '';
+  position: absolute;
+  left: 50px;
+  top: -50px;
+  bottom: -50px;
+  right: -9999px;
+  background: var(--color-background-alt);
+  z-index: -2;
+}
+
 
 /* Style: solid grey — light grey bg, centered text, dark color */
 .hero--solid {
@@ -121,6 +172,49 @@
 
 .hero--solid .hero__buttons {
   justify-content: center;
+}
+
+/* Style: white — grey bg (#EFEFEF), same layout as Solid Color */
+.hero--white {
+  background-color: var(--color-background-alt);
+  color: var(--color-dark-blue);
+  min-height: auto;
+  height: 400px;
+  padding: var(--spacing-xl) 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero--white .container {
+  flex-direction: row-reverse;
+  position: relative;
+  z-index: 1;
+}
+
+.hero--white .hero__title {
+  color: var(--color-dark-blue);
+}
+
+.hero--white .hero__subtitle {
+  color: var(--color-text-primary);
+  max-width: 560px;
+}
+
+.hero--white .hero__product-image {
+  flex: 0 0 350px;
+  height: 350px;
+  position: relative;
+}
+
+.hero--white .hero__product-image img {
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+}
+
+.hero--white .hero__product-image::before,
+.hero--white .hero__product-image::after {
+  display: none;
 }
 
 /* Soundwave — grey bg with wave illustration */
@@ -271,6 +365,40 @@
   .hero {
     min-height: auto;
     padding: var(--spacing-lg) 0;
+  }
+
+  /* Product hero — mobile */
+  .hero--product {
+    padding: 20px 0 var(--spacing-lg);
+  }
+
+  .hero--product .container {
+    text-align: left;
+  }
+
+  .hero--product .hero__product-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .hero--product .hero__product-image img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  .hero--product .hero__title {
+    font-size: var(--h1-size-mobile, 38px);
+    line-height: var(--h1-lh-mobile, 40px);
+  }
+
+  .hero--product .hero__subtitle {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .hero--product .hero__buttons {
+    justify-content: flex-start;
+    gap: var(--spacing-lg);
   }
 
   .hero--solid {

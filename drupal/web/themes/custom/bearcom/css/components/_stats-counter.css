@@ -137,18 +137,112 @@
   line-height: var(--h1-lh);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .stats-counter__items > div {
-    grid-template-columns: 1fr;
-    justify-items: center;
+    grid-template-columns: repeat(2, 300px);
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .stats-counter__items > div::before,
+  .stats-counter__items > div::after {
+    display: none;
   }
 
   .stats-counter__items > div > div:last-child:nth-child(3n+1) {
     grid-column: auto;
   }
 
+  .stats-counter {
+    overflow: hidden;
+  }
+
+  .stats-counter .container,
+  .stats-counter__items,
+  .stats-counter__items > div {
+    overflow: visible;
+  }
+
+  .stats-counter__items > div > div {
+    justify-self: center;
+    width: 300px;
+    position: relative;
+    overflow: visible;
+  }
+
+  /* Wave only on 1st and 3rd (odd) items to avoid overlap on same row */
+  .stats-counter__items > div > div:nth-child(odd)::before {
+    content: '';
+    position: absolute;
+    left: -9999px;
+    right: -9999px;
+    top: 0;
+    bottom: 0;
+    background: url('../../images/orange-wave-segment.svg') repeat-x -13px center;
+    background-size: 47px 37px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .stats-counter__item {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Center the 3rd item that wraps to its own row */
+  .stats-counter__items > div > div:last-child:nth-child(odd):nth-child(n+3) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 767px) {
+  .stats-counter {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .stats-counter__items > div {
+    grid-template-columns: 280px;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .stats-counter__items > div::before,
+  .stats-counter__items > div::after {
+    display: none;
+  }
+
+  .stats-counter__items > div > div:last-child:nth-child(3n+1) {
+    grid-column: auto;
+  }
+
+  .stats-counter__items > div > div:last-child:nth-child(odd):nth-child(n+3) {
+    grid-column: auto;
+    max-width: 320px;
+  }
+
+  .stats-counter__items > div > div {
+    position: relative;
+    width: 280px;
+  }
+
+  .stats-counter__items > div > div::before {
+    content: '';
+    position: absolute;
+    left: -9999px;
+    right: -9999px;
+    top: 0;
+    bottom: 0;
+    background: url('../../images/orange-wave-segment.svg') repeat-x -13px center;
+    background-size: 47px 37px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
   .stats-counter__item {
     width: 100%;
-    max-width: 320px;
+    position: relative;
+    z-index: 1;
+    box-shadow: none;
+    border: 1px solid color-mix(in srgb, var(--color-error-orange) 30%, transparent);
   }
 }

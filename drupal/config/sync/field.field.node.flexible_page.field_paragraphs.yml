@@ -6,11 +6,18 @@ dependencies:
     - field.storage.node.field_paragraphs
     - node.type.flexible_page
     - paragraphs.paragraphs_type.card_grid
+    - paragraphs.paragraphs_type.content_block
+    - paragraphs.paragraphs_type.faq_section
     - paragraphs.paragraphs_type.cta_block
     - paragraphs.paragraphs_type.faq_two_column
+    - paragraphs.paragraphs_type.guided_journey
     - paragraphs.paragraphs_type.hero_banner
+    - paragraphs.paragraphs_type.image_grid
     - paragraphs.paragraphs_type.location_finder
     - paragraphs.paragraphs_type.product_grid
+    - paragraphs.paragraphs_type.solutions_grid
+    - paragraphs.paragraphs_type.stats_counter
+    - paragraphs.paragraphs_type.video_block
   module:
     - entity_reference_revisions
 id: node.flexible_page.field_paragraphs
@@ -34,9 +41,12 @@ settings:
       rentals_connected: rentals_connected
       guided_journey: guided_journey
       content_block: content_block
+      faq_section: faq_section
       product_grid: product_grid
       video_block: video_block
+      image_grid: image_grid
       location_finder: location_finder
       faq_two_column: faq_two_column
+      solutions_grid: solutions_grid
     negate: 0
 field_type: entity_reference_revisions

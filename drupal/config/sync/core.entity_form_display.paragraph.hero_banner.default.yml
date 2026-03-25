@@ -82,4 +82,5 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_secondary_text: true
   status: true

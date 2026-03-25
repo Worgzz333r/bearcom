@@ -1,0 +1,96 @@
+uuid: b92c3d4e-5f6a-4b7c-8d9e-0f1a2b3c4d5e
+langcode: en
+status: true
+dependencies: {  }
+id: solutions_cards
+label: 'Solutions Cards (3 per view)'
+description: '3 slides visible, scrollbar, for solutions grid'
+breakpoint: true
+swiper_options:
+  source: remote
+  autoHeight: false
+  width: null
+  height: null
+  breakpointsBase: window
+  observer: false
+  updateOnWindowResize: true
+  resizeObserver: true
+  direction: horizontal
+  effect: slide
+  loop: false
+  rewind: false
+  centeredSlides: false
+  speed: 300
+  slidesPerView: 3.0
+  spaceBetween: 40
+  slidesPerGroup: 1
+  loopedSlides: 1
+  noSwipingSelector: '.no-swipe, button, input'
+  mousewheel: false
+  grabCursor: true
+  simulateTouch: true
+  allowTouchMove: true
+  cssMode: false
+  grid:
+    enabled: false
+    rows: 1
+    fill: column
+  keyboard:
+    enabled: false
+    onlyInViewport: true
+    pageUpDown: true
+  autoplay:
+    enabled: false
+    delay: 4000
+    disableOnInteraction: true
+    pauseOnMouseEnter: false
+    reverseDirection: false
+    stopOnLastSlide: false
+    waitForTransition: true
+  navigation:
+    enabled: true
+    hideOnClick: false
+  pagination:
+    enabled: false
+    type: bullets
+    dynamicBullets: true
+    clickable: true
+  scrollbar:
+    enabled: true
+    draggable: true
+    dragSize: auto
+    hide: false
+    snapOnRelease: false
+  zoom:
+    enabled: false
+    limitToOriginalSize: false
+    maxRatio: 3
+    minRatio: 1
+    panOnMouseMove: false
+    toggle: true
+  breakpoints:
+    -
+      breakpoint: '0'
+      weight: 0
+      slidesPerView: 1
+      spaceBetween: 16
+      slidesPerGroup: 1
+    -
+      breakpoint: '768'
+      weight: 1
+      slidesPerView: 2
+      spaceBetween: 24
+      slidesPerGroup: 1
+    -
+      breakpoint: '1200'
+      weight: 2
+      slidesPerView: 3
+      spaceBetween: 40
+      slidesPerGroup: 1
+  lazy:
+    enabled: false
+    checkInView: false
+    loadOnTransitionStart: false
+    loadPrevNext: false
+    loadPrevNextAmount: 1
+    scrollingElement: window

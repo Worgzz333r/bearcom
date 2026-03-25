@@ -151,6 +151,11 @@
   object-fit: cover;
 }
 
+/* Hide mobile nav on desktop */
+.guided-journey__mobile-nav {
+  display: none;
+}
+
 @media (max-width: 1023px) {
   .guided-journey__nav {
     gap: var(--spacing-lg);
@@ -158,23 +163,97 @@
 }
 
 @media (max-width: 767px) {
+  .guided-journey {
+    padding: var(--spacing-xl) 0;
+  }
+
+  /* Title — uppercase */
+  .guided-journey .section__title {
+    text-transform: uppercase;
+  }
+
+  /* Hide tab navigation */
   .guided-journey__nav {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    justify-content: flex-start;
-    gap: var(--spacing-lg);
+    display: none;
   }
 
-  .guided-journey__tab {
-    white-space: nowrap;
+  /* Show only active panel */
+  .guided-journey__panel {
+    display: none;
   }
 
+  .guided-journey__panel.is-active {
+    display: block;
+  }
+
+  /* Panels — only active visible, animated via JS class */
+  .guided-journey__panels {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .guided-journey__panel {
+    display: none;
+  }
+
+  .guided-journey__panel.is-active {
+    display: block;
+  }
+
+  .guided-journey__panel.gj-animate-right {
+    animation: gjSlideRight 250ms ease forwards;
+  }
+
+  .guided-journey__panel.gj-animate-left {
+    animation: gjSlideLeft 250ms ease forwards;
+  }
+
+  @keyframes gjSlideRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes gjSlideLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  /* Dots indicator */
+  .guided-journey__mobile-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-md);
+  }
+
+  .guided-journey__mobile-dots {
+    display: flex;
+    gap: var(--spacing-xs);
+  }
+
+  .guided-journey__mobile-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-medium-gray);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+  }
+
+  .guided-journey__mobile-dot.is-active {
+    background: var(--color-primary);
+  }
+
+  /* Image first, then text */
   .guided-journey__panel-inner {
-    flex-direction: column;
+    flex-direction: column-reverse;
+    gap: 0;
   }
 
   .guided-journey__panel-image {
     flex: none;
     width: 100%;
+    margin-bottom: var(--spacing-30);
   }
 }

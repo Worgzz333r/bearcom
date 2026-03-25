@@ -1,1 +1,111 @@
-/* TODO: Implement */
+/* ==========================================================================
+   Category Page — /products listing
+   ========================================================================== */
+
+.category-page {
+  padding: 0;
+  border-bottom: 1px solid var(--color-primary);
+}
+
+section.product-grid {
+  padding: 0;
+  margin: 0;
+}
+
+.product-grid__content,
+.product-grid__content > .views-element-container {
+  padding: 0;
+  margin: 0;
+}
+
+.category-page__layout {
+}
+
+.category-page > .container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --------------------------------------------------------------------------
+   Layout — sidebar + grid
+   -------------------------------------------------------------------------- */
+
+.category-page__layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 0 var(--spacing-30);
+  align-items: stretch;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   Top bar — results count + sort (inside main area)
+   -------------------------------------------------------------------------- */
+
+.category-page__main {
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.category-page__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xl);
+  padding-top: var(--spacing-xxl);
+}
+
+.category-page__count {
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-regular);
+}
+
+/* --------------------------------------------------------------------------
+   Products grid — 3 columns
+   -------------------------------------------------------------------------- */
+
+.category-page__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl) 45px;
+}
+
+/* --------------------------------------------------------------------------
+   Pagination
+   -------------------------------------------------------------------------- */
+
+.category-page__pager {
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — Tablet (≤ 1023px)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1023px) {
+  .category-page__layout {
+    grid-template-columns: 180px 1fr;
+  }
+
+  .category-page__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — Mobile (≤ 767px)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  .category-page__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .category-page__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+}

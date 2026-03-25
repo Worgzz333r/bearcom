@@ -1,0 +1,19 @@
+uuid: d2e3f4a5-b6c7-4d8e-9f0a-1b2c3d4e5f6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.faq_section
+id: paragraph.faq_section.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: faq_section
+label: Title
+description: 'Section heading (e.g. General Questions)'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
