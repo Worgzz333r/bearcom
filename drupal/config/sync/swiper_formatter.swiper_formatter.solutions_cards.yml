@@ -5,7 +5,7 @@ dependencies: {  }
 id: solutions_cards
 label: 'Solutions Cards (3 per view)'
 description: '3 slides visible, scrollbar, for solutions grid'
-breakpoint: false
+breakpoint: true
 swiper_options:
   source: remote
   autoHeight: false
@@ -82,7 +82,7 @@ swiper_options:
       spaceBetween: 24
       slidesPerGroup: 1
     -
-      breakpoint: '1024'
+      breakpoint: '1200'
       weight: 2
       slidesPerView: 3
       spaceBetween: 40

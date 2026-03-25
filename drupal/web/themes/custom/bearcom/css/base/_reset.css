@@ -11,6 +11,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -60,4 +61,11 @@ fieldset {
 table {
   border-collapse: collapse;
   width: 100%;
+}
+
+/* Utility: hide on mobile */
+@media (max-width: 767px) {
+  .hide-on-mobile {
+    display: none;
+  }
 }

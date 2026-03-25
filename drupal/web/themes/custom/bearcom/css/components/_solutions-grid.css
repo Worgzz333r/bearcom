@@ -6,6 +6,7 @@
   padding: var(--section-padding) 0 120px;
   background: var(--color-background) url('../../images/solutions-wave-bg.svg') no-repeat center calc(50% - 30px);
   background-size: auto 85%;
+  overflow: hidden;
 }
 
 .solutions-grid .section__header {
@@ -29,6 +30,8 @@
 
 .solutions-grid .paragraph--type--card-item .card,
 section.solutions-grid .card {
+  max-width: 400px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -132,15 +135,11 @@ section.solutions-grid .card__subtitle {
    Slider mode — Swiper overrides
    -------------------------------------------------------------------------- */
 
-.solutions-grid--slider .solutions-grid__items {
-  overflow: visible;
-}
-
 .solutions-grid--slider .swiper-container {
   padding: 16px 0 84px;
   margin-top: -16px;
   overflow: hidden;
-  position: static;
+  position: relative;
 }
 
 .solutions-grid--slider .swiper-scrollbar {
@@ -159,10 +158,6 @@ section.solutions-grid .card__subtitle {
   border-radius: 4px;
   background: var(--color-error-orange);
   cursor: grab;
-}
-
-.solutions-grid--slider .solutions-grid__items {
-  position: relative;
 }
 
 .solutions-grid--slider .swiper-button-prev,

@@ -1,6 +1,7 @@
 {# Image Grid — title + description + grid of image_grid_items #}
 {% set style = paragraph.field_style.value|default('plain') %}
-<section class="image-grid image-grid--{{ style }}">
+{% set hide_mobile = paragraph.field_hide_mobile.value %}
+<section class="image-grid image-grid--{{ style }}{{ hide_mobile ? ' hide-on-mobile' : '' }}">
   <div class="container">
     {% if paragraph.field_title.value or paragraph.field_description.value %}
       <div class="section__header">

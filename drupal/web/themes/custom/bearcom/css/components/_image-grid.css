@@ -85,7 +85,53 @@ a.image-grid__item:hover {
 }
 
 @media (max-width: 767px) {
+  .image-grid {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .image-grid .section__title {
+    text-transform: uppercase;
+  }
+
   .image-grid__items > div {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  /* Rentals style — vertical cards with title on top */
+  .image-grid--rentals .image-grid__items > div {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .image-grid--rentals .image-grid__item {
+    display: flex;
+    flex-direction: column-reverse;
+    border: none;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+    text-align: center;
+  }
+
+  .image-grid--rentals .image-grid__caption {
+    display: block;
+    position: static;
+    padding: 0;
+    background: none;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .image-grid--rentals .image-grid__title {
+    font-size: var(--h2-size);
+    line-height: var(--h2-lh);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    text-transform: uppercase;
+  }
+
+  .image-grid--rentals .image-grid__image img {
+    height: auto;
+    object-fit: contain;
   }
 }

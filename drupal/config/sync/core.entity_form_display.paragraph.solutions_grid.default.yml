@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.solutions_grid.field_cards
+    - field.field.paragraph.solutions_grid.field_hide_mobile
     - field.field.paragraph.solutions_grid.field_description
     - field.field.paragraph.solutions_grid.field_title
     - paragraphs.paragraphs_type.solutions_grid
@@ -40,6 +41,13 @@ content:
     settings:
       rows: 3
       placeholder: ''
+    third_party_settings: {  }
+  field_hide_mobile:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_title:
     type: string_textfield

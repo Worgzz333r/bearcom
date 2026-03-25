@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.image_grid.field_description
+    - field.field.paragraph.image_grid.field_hide_mobile
     - field.field.paragraph.image_grid.field_items
     - field.field.paragraph.image_grid.field_style
     - field.field.paragraph.image_grid.field_title
@@ -24,6 +25,13 @@ content:
     settings:
       rows: 3
       placeholder: ''
+    third_party_settings: {  }
+  field_hide_mobile:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_items:
     type: paragraphs
