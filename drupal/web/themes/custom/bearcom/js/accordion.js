@@ -12,6 +12,19 @@
           trigger.setAttribute('aria-expanded', !isOpen);
         });
       });
+
+      // Open item by default based on data-open-index
+      once('accordion-default', '.accordion[data-open-index]', context).forEach(function (accordion) {
+        var index = parseInt(accordion.getAttribute('data-open-index'), 10);
+        var items = accordion.querySelectorAll('.accordion__item');
+        if (items[index]) {
+          items[index].classList.add('is-open');
+          var trigger = items[index].querySelector('.accordion__trigger');
+          if (trigger) {
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        }
+      });
     }
   };
 })(Drupal, once);

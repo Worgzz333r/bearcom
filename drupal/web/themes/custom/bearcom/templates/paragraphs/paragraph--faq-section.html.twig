@@ -1,4 +1,4 @@
-{# FAQ Section — title + accordion FAQ items #}
+{# FAQ Section — title + accordion FAQ items, 2nd item open by default #}
 <section class="faq-section">
   <div class="container">
     {% if paragraph.field_title.value %}
@@ -7,7 +7,7 @@
       </div>
     {% endif %}
 
-    <div class="faq-section__items accordion">
+    <div class="faq-section__items accordion" data-open-index="1">
       {{ content.field_cards }}
     </div>
   </div>
