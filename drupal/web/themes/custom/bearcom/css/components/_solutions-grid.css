@@ -181,12 +181,12 @@ section.solutions-grid .card__subtitle {
 }
 
 .solutions-grid--slider .swiper-button-prev {
-  left: -50px;
+  left: 10px;
   transform: rotate(180deg);
 }
 
 .solutions-grid--slider .swiper-button-next {
-  right: -50px;
+  right: 10px;
 }
 
 .solutions-grid--slider .swiper-pagination {
@@ -206,6 +206,7 @@ section.solutions-grid .card__subtitle {
   .solutions-grid--grid .solutions-grid__cards {
     grid-template-columns: repeat(2, 1fr);
   }
+
 }
 
 @media (max-width: 767px) {
