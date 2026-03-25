@@ -17,4 +17,8 @@
   {% endif %}
 </main>
 
-{% include '@bearcom/layout/footer.html.twig' %}
+{% if is_error_page is defined and is_error_page %}
+  {% include '@bearcom/layout/footer--minimal.html.twig' %}
+{% else %}
+  {% include '@bearcom/layout/footer.html.twig' %}
+{% endif %}

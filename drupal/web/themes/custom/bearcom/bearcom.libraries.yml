@@ -82,6 +82,13 @@ accordion:
     - core/drupal
     - core/once
 
+faq-two-col:
+  css:
+    component:
+      css/components/_faq-two-col.css: {}
+  dependencies:
+    - bearcom/accordion
+
 carousel:
   css:
     component:

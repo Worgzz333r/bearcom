@@ -1,0 +1,21 @@
+uuid: 747489a0-5545-447d-a1cd-be85d9df1bd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image
+    - paragraphs.paragraphs_type.faq_two_column
+id: paragraph.faq_two_column.field_image
+field_name: field_image
+entity_type: paragraph
+bundle: faq_two_column
+label: 'Right Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings: {  }
+field_type: entity_reference

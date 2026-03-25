@@ -1,1 +1,124 @@
-/* TODO: Implement */
+/* Error pages (403, 404) */
+.error-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.error-page__inner {
+  max-width: 600px;
+}
+
+.error-page__wave {
+  width: 111px;
+  height: 90px;
+  margin: 0 auto 42px;
+}
+
+.error-page__wave svg {
+  width: 100%;
+  height: 100%;
+}
+
+.error-page__wave svg path {
+  fill: var(--color-primary);
+}
+
+.error-page__code {
+  font-family: var(--font-family);
+  font-size: 140px;
+  line-height: 100%;
+  font-weight: 600;
+  color: #FB591F;
+  margin: 0 0 24px;
+}
+
+.error-page__title {
+  font-family: var(--font-family);
+  font-size: 42px;
+  line-height: 44px;
+  font-weight: 600;
+  color: #22262C;
+  margin: 0 0 16px;
+}
+
+.error-page__message {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #4A4F55;
+  margin: 0 0 32px;
+}
+
+.error-page__btn {
+  background-color: #116CA6;
+  border-color: #116CA6;
+  color: var(--color-white);
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.error-page__btn:hover {
+  background-color: var(--color-blue);
+  border-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+/* Error page — 120px gap between button and orange footer */
+.page--error .main-content {
+  margin-bottom: 0;
+  padding-bottom: 120px;
+}
+
+/* Responsive — Tablet */
+@media (max-width: 1023px) {
+  .error-page {
+    padding: 60px 0;
+  }
+
+  .error-page__code {
+    font-size: 100px;
+  }
+
+  .page--error .main-content {
+    padding-bottom: 80px;
+  }
+}
+
+/* Responsive — Mobile */
+@media (max-width: 767px) {
+  .error-page {
+    padding: var(--section-padding) 0;
+    min-height: auto;
+  }
+
+  .error-page__wave {
+    width: 80px;
+    height: 64px;
+    margin-bottom: 24px;
+  }
+
+  .error-page__code {
+    font-size: 72px;
+    margin-bottom: 16px;
+  }
+
+  .error-page__title {
+    font-size: 26px;
+    line-height: 28px;
+    margin-bottom: 12px;
+  }
+
+  .error-page__message {
+    margin-bottom: 24px;
+  }
+
+  .page--error .main-content {
+    padding-bottom: 60px;
+  }
+}

@@ -1,0 +1,17 @@
+{#
+/**
+ * Error page template (403/404).
+ * Variables: error_code, error_title, error_message — set in preprocess.
+ */
+#}
+<div class="error-page">
+  <div class="error-page__inner">
+    <div class="error-page__wave" aria-hidden="true">
+      {{ source('@bearcom/images/soundwave.svg')|raw }}
+    </div>
+    <h1 class="error-page__code">{{ error_code|default('404') }}</h1>
+    <h2 class="error-page__title">{{ error_title|default("Oops! You're lost!") }}</h2>
+    <p class="error-page__message">{{ error_message|default('The page you are looking for was not found.') }}</p>
+    <a href="/" class="btn error-page__btn">GO TO HOMEPAGE</a>
+  </div>
+</div>

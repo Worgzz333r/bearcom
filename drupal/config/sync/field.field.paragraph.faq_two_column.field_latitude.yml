@@ -1,0 +1,23 @@
+uuid: 43510f04-48d2-480a-8615-bc30b9528f69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_latitude
+    - paragraphs.paragraphs_type.faq_two_column
+id: paragraph.faq_two_column.field_latitude
+field_name: field_latitude
+entity_type: paragraph
+bundle: faq_two_column
+label: Latitude
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

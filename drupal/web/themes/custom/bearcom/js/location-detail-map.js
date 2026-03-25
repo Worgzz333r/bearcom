@@ -18,10 +18,10 @@
         }).addTo(map);
 
         var icon = L.divIcon({
-          className: 'location-marker',
-          html: '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="9" r="9" fill="#FC5000"/></svg>',
-          iconSize: [18, 18],
-          iconAnchor: [9, 9],
+          className: 'location-detail-marker',
+          html: '<svg width="27" height="43" viewBox="0 0 27 43" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 0C6.044 0 0 6.044 0 13.5 0 23.625 13.5 43 13.5 43S27 23.625 27 13.5C27 6.044 20.956 0 13.5 0zm0 18.333a4.833 4.833 0 110-9.666 4.833 4.833 0 010 9.666z" fill="#EA4335"/></svg>',
+          iconSize: [27, 43],
+          iconAnchor: [13.5, 43],
         });
 
         L.marker([lat, lon], { icon: icon }).addTo(map);

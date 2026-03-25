@@ -1,18 +1,18 @@
-uuid: 38a6d5f8-7197-478c-9379-07b5899d5f9f
+uuid: a24e7865-2131-4c3f-a0bc-2e1b6d713215
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_faq
-    - node.type.location
+    - field.storage.paragraph.field_faq
+    - paragraphs.paragraphs_type.faq_item
     - paragraphs.paragraphs_type.faq_two_column
   module:
     - entity_reference_revisions
-id: node.location.field_faq
+id: paragraph.faq_two_column.field_faq
 field_name: field_faq
-entity_type: node
-bundle: location
-label: FAQ
+entity_type: paragraph
+bundle: faq_two_column
+label: 'FAQ Items'
 description: ''
 required: false
 translatable: true
@@ -22,5 +22,5 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      faq_two_column: faq_two_column
+      faq_item: faq_item
 field_type: entity_reference_revisions

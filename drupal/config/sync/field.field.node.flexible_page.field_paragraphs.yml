@@ -7,6 +7,7 @@ dependencies:
     - node.type.flexible_page
     - paragraphs.paragraphs_type.card_grid
     - paragraphs.paragraphs_type.cta_block
+    - paragraphs.paragraphs_type.faq_two_column
     - paragraphs.paragraphs_type.hero_banner
     - paragraphs.paragraphs_type.location_finder
     - paragraphs.paragraphs_type.product_grid
@@ -36,5 +37,6 @@ settings:
       product_grid: product_grid
       video_block: video_block
       location_finder: location_finder
+      faq_two_column: faq_two_column
     negate: 0
 field_type: entity_reference_revisions
