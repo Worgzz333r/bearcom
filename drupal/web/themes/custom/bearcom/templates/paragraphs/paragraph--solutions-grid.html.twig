@@ -1,8 +1,7 @@
-{# Solutions Grid — vertical cards, Swiper slider when > 3 items #}
+{# Solutions Grid — always renders via Swiper, JS handles grid/slider mode #}
 {% set card_count = paragraph.field_cards|length %}
-{% set is_slider = card_count > 3 %}
 {% set hide_mobile = paragraph.field_hide_mobile.value %}
-<section class="solutions-grid {{ is_slider ? 'solutions-grid--slider' : 'solutions-grid--grid' }}{{ hide_mobile ? ' hide-on-mobile' : '' }}">
+<section class="solutions-grid{{ hide_mobile ? ' hide-on-mobile' : '' }}" data-card-count="{{ card_count }}">
   <div class="container">
     {% if paragraph.field_title.value or content.field_description|render|trim %}
       <div class="section__header">
@@ -16,17 +15,7 @@
     {% endif %}
 
     <div class="solutions-grid__items">
-      {% if is_slider %}
-        {# Slider mode: use swiper_formatter output #}
-        {{ content.field_cards }}
-      {% else %}
-        {# Grid mode: render cards directly, no Swiper #}
-        <div class="solutions-grid__cards">
-          {% for item in paragraph.field_cards %}
-            {{ drupal_entity('paragraph', item.entity.id(), 'default') }}
-          {% endfor %}
-        </div>
-      {% endif %}
+      {{ content.field_cards }}
     </div>
   </div>
 </section>
