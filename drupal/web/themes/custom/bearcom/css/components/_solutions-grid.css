@@ -17,8 +17,7 @@
    Grid mode (3 or fewer cards) — 3-column layout
    -------------------------------------------------------------------------- */
 
-.solutions-grid--grid .solutions-grid__items .field__items,
-.solutions-grid--grid .solutions-grid__items > div {
+.solutions-grid--grid .solutions-grid__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-lg);
@@ -43,8 +42,8 @@ section.solutions-grid .card {
 
 /* Center card — white background + shadow */
 .solutions-grid .swiper-slide.is-center .card,
-.solutions-grid--grid .field__item:nth-child(2) .card,
-.solutions-grid--grid > .container > .solutions-grid__items > div > div:nth-child(2) .card {
+.solutions-grid--grid .solutions-grid__cards > :nth-child(2) .card,
+.solutions-grid--grid .solutions-grid__cards > .card:nth-child(2) {
   background: var(--color-white);
   box-shadow: 0 0 12px 0 rgba(252, 78, 0, 0.6);
 }
@@ -198,32 +197,19 @@ section.solutions-grid .card__subtitle {
    Grid mode — hide swiper controls
    -------------------------------------------------------------------------- */
 
-.solutions-grid--grid .swiper-scrollbar,
-.solutions-grid--grid .swiper-button-prev,
-.solutions-grid--grid .swiper-button-next,
-.solutions-grid--grid .swiper-pagination {
-  display: none;
-}
-
-.solutions-grid--grid .swiper-container {
-  padding-bottom: 0;
-  overflow: visible;
-}
 
 /* --------------------------------------------------------------------------
    Responsive
    -------------------------------------------------------------------------- */
 
 @media (max-width: 1023px) {
-  .solutions-grid--grid .solutions-grid__items .field__items,
-  .solutions-grid--grid .solutions-grid__items > div {
+  .solutions-grid--grid .solutions-grid__cards {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 767px) {
-  .solutions-grid--grid .solutions-grid__items .field__items,
-  .solutions-grid--grid .solutions-grid__items > div {
+  .solutions-grid--grid .solutions-grid__cards {
     grid-template-columns: 1fr;
   }
 }

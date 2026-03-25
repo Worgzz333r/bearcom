@@ -15,7 +15,17 @@
     {% endif %}
 
     <div class="solutions-grid__items">
-      {{ content.field_cards }}
+      {% if is_slider %}
+        {# Slider mode: use swiper_formatter output #}
+        {{ content.field_cards }}
+      {% else %}
+        {# Grid mode: render cards directly, no Swiper #}
+        <div class="solutions-grid__cards">
+          {% for item in paragraph.field_cards %}
+            {{ drupal_entity('paragraph', item.entity.id(), 'default') }}
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
   </div>
 </section>
