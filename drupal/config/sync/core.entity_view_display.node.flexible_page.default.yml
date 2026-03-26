@@ -18,6 +18,7 @@ dependencies:
     - options
     - text
     - user
+    - webform
 id: node.flexible_page.default
 targetEntityType: node
 bundle: flexible_page
@@ -72,6 +73,15 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_webform:
+    type: webform_entity_reference_entity_view
+    label: hidden
+    settings:
+      source_entity: true
+      lazy: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -80,5 +90,4 @@ content:
 hidden:
   field_link: true
   field_phone: true
-  field_webform: true
   search_api_excerpt: true
