@@ -34,12 +34,8 @@
     <div class="container">
       <div class="location-detail__info-layout">
         <div class="location-detail__info-left">
-          {% if node.field_address.value %}
-            <h2 class="location-detail__office-name">{{ node.field_address.value|split("\n")|first }}</h2>
-            {% set address_lines = node.field_address.value|split("\n") %}
-            {% if address_lines|length > 1 %}
-              <div class="location-detail__address">{{ address_lines|slice(1)|join('<br>')|raw }}</div>
-            {% endif %}
+          {% if content.field_address|render|trim %}
+            <div class="location-detail__address">{{ content.field_address }}</div>
           {% endif %}
 
           {% if node.field_phone.value %}
