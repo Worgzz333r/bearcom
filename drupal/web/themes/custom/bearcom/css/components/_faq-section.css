@@ -71,6 +71,7 @@
 @media (max-width: 767px) {
   .faq-section {
     padding: var(--spacing-xl) 0;
+    overflow: hidden;
   }
 
   .faq-section .section__header {
@@ -88,6 +89,7 @@
 
   .faq-section--two-col .faq-section__left {
     flex: none;
+    max-width: 100%;
   }
 
   .faq-section--two-col .faq-section__right {

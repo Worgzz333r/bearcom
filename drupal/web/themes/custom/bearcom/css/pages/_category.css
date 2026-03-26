@@ -121,6 +121,10 @@ section.product-grid {
     margin-right: auto;
   }
 
+  .category-page__top .form-item-sort-by {
+    position: static;
+  }
+
 
   .category-page__main {
     padding-bottom: var(--spacing-xl);

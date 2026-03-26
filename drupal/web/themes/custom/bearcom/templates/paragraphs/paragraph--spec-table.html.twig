@@ -1,5 +1,6 @@
 {# Spec Table — title + description + rows, 6+ rows collapse into accordion #}
-<div class="spec-table">
+{% set style = paragraph.field_style.value|default('default') %}
+<div class="spec-table{{ style != 'default' ? ' spec-table--' ~ style : '' }}">
   {% set title = paragraph.field_title.value|default('') %}
   {% if title %}
     <h2 class="spec-table__title">{{ title|replace({'H2 - ': '', 'Product Name': product_name|default('Product Name')}) }}</h2>
