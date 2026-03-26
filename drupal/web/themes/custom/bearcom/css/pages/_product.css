@@ -355,10 +355,11 @@
   font-weight: var(--font-weight-semibold);
   color: var(--color-dark-blue);
   text-align: left;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .spec-table__toggle .toggle-icon {
-  float: right;
   width: 16px;
   height: 16px;
   background: url('../../images/plus.svg') no-repeat center / contain;
@@ -625,7 +626,7 @@
   .spec-table__toggle .toggle-icon {
     width: 10px;
     height: 10px;
-    margin-top: 6px;
+    margin-top: 0;
   }
 
   .spec-table:not(.spec-table--stacked) .spec-table__additional-rows > div:last-child {
