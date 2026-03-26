@@ -114,17 +114,21 @@
   margin-bottom: 12px;
 }
 
-.location-detail__address h3 {
+.location-detail__address p {
   font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #262626;
+  margin: 0;
+}
+
+.location-detail__address p:first-of-type {
   font-size: 34px;
   line-height: 36px;
   font-weight: 600;
   color: #22262C;
   margin: 0 0 16px;
-}
-
-.location-detail__address p {
-  margin: 0;
 }
 
 .location-detail__phone {
