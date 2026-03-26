@@ -28,18 +28,13 @@
   align-items: center;
   justify-content: center;
   color: var(--color-primary);
+  transition: transform var(--transition-base);
   flex-shrink: 0;
   margin-left: var(--spacing-sm);
-  font-style: normal;
 }
 
 .accordion__item.is-open .accordion__icon {
-  font-size: 0;
-}
-
-.accordion__item.is-open .accordion__icon::before {
-  content: '\00d7';
-  font-size: var(--h4-size);
+  transform: rotate(45deg);
 }
 
 .accordion__content {

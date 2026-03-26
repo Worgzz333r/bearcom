@@ -1,23 +1,19 @@
-uuid: 414a6097-3425-4165-9f2c-db5ec1014e1d
+uuid: c2d3e4f5-a6b7-4c8d-9e0f-1a2b3c4d5e6f
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_longitude
-    - paragraphs.paragraphs_type.faq_two_column
-id: paragraph.faq_two_column.field_longitude
+    - paragraphs.paragraphs_type.faq_section
+id: paragraph.faq_section.field_longitude
 field_name: field_longitude
 entity_type: paragraph
-bundle: faq_two_column
+bundle: faq_section
 label: Longitude
-description: ''
+description: 'Fill in to show map on the right side'
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings:
-  min: null
-  max: null
-  prefix: ''
-  suffix: ''
+settings: {  }
 field_type: float

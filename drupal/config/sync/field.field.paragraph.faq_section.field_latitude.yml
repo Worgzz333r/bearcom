@@ -1,23 +1,19 @@
-uuid: 43510f04-48d2-480a-8615-bc30b9528f69
+uuid: b1c2d3e4-f5a6-4b7c-8d9e-0f1a2b3c4d5e
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_latitude
-    - paragraphs.paragraphs_type.faq_two_column
-id: paragraph.faq_two_column.field_latitude
+    - paragraphs.paragraphs_type.faq_section
+id: paragraph.faq_section.field_latitude
 field_name: field_latitude
 entity_type: paragraph
-bundle: faq_two_column
+bundle: faq_section
 label: Latitude
-description: ''
+description: 'Fill in to show map on the right side'
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings:
-  min: null
-  max: null
-  prefix: ''
-  suffix: ''
+settings: {  }
 field_type: float
