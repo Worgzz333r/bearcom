@@ -60,7 +60,20 @@
 .card-grid--industry + .card-grid--industry,
 .card-grid--industry + .card-grid--industry_dark,
 .card-grid--industry_dark + .card-grid--industry {
-  margin-top: 88px;
+  margin-top: 92px;
+  position: relative;
+}
+
+.card-grid--industry + .card-grid--industry::before,
+.card-grid--industry + .card-grid--industry_dark::before,
+.card-grid--industry_dark + .card-grid--industry::before {
+  content: '';
+  position: absolute;
+  top: -46px;
+  left: 60px;
+  width: 377px;
+  height: 0;
+  border-top: 4px solid #FC5000;
 }
 
 [class*="card-grid--industry"] .section__header {
@@ -173,7 +186,7 @@
   flex: none;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 10px;
   margin-top: 40px;
   width: 100%;
 }

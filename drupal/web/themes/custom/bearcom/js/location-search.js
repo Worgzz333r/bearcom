@@ -73,8 +73,7 @@
             html += '<div class="location-card">' +
               '<div class="location-card__body">' +
               '<h3 class="location-card__title">' + loc.title + '</h3>' +
-              '<p class="location-card__address">' + addressHtml + '</p>' +
-              '<p class="location-card__phone">' + (loc.phone || '') + '</p>' +
+              '<div class="location-card__address">' + addressHtml + '</div>' +
               '<a href="/node/' + loc.nid + '" class="location-card__link">More Info</a>' +
               '</div>' +
               '</div>';
