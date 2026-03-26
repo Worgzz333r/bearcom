@@ -6,8 +6,8 @@ name: BearCom
 mail: admin@example.com
 slogan: ''
 page:
-  403: /node/56
-  404: /node/57
+  403: /403
+  404: /404
   front: /node/1
 admin_compact_mode: false
 weight_select_max: 100
