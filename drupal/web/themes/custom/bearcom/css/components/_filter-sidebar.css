@@ -253,6 +253,11 @@
     transform: translateX(0);
   }
 
+  .filter-sidebar .form-item-sort-by {
+    position: static;
+    display: none;
+  }
+
   .filter-sidebar__label {
     display: flex;
     align-items: center;

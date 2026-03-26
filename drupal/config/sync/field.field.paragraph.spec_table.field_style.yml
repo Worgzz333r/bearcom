@@ -1,0 +1,21 @@
+uuid: a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_style
+    - paragraphs.paragraphs_type.spec_table
+  module:
+    - options
+id: paragraph.spec_table.field_style
+field_name: field_style
+entity_type: paragraph
+bundle: spec_table
+label: Style
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
