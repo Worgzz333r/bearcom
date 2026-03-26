@@ -114,6 +114,19 @@
   margin-bottom: 12px;
 }
 
+.location-detail__address h3 {
+  font-family: var(--font-family);
+  font-size: 34px;
+  line-height: 36px;
+  font-weight: 600;
+  color: #22262C;
+  margin: 0 0 16px;
+}
+
+.location-detail__address p {
+  margin: 0;
+}
+
 .location-detail__phone {
   display: inline-flex;
   align-items: center;
