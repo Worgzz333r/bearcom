@@ -1,5 +1,5 @@
 /* ==========================================================================
-   FAQ Section
+   FAQ Section — base style (full-width) + two-column variant
    ========================================================================== */
 
 .faq-section {
@@ -17,4 +17,73 @@
 
 .faq-section__items {
   width: 100%;
+}
+
+/* --two-col variant: narrower FAQ left, image/map right */
+.faq-section--two-col .faq-section__layout {
+  display: flex;
+  gap: var(--spacing-xl);
+  align-items: flex-start;
+}
+
+.faq-section--two-col .faq-section__left {
+  flex: 0 0 630px;
+}
+
+.faq-section--two-col .faq-section__right {
+  flex: 1;
+}
+
+.faq-section__image img {
+  width: 100%;
+  height: 352px;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
+.faq-section__map {
+  width: 100%;
+  height: 352px;
+}
+
+.faq-section__right .faq-section__map.leaflet-container {
+  border-radius: var(--radius-card-lg);
+  overflow: hidden;
+}
+
+/* Responsive — Tablet */
+@media (max-width: 1023px) {
+  .faq-section--two-col .faq-section__layout {
+    gap: var(--spacing-lg);
+  }
+
+  .faq-section--two-col .faq-section__left {
+    flex: 1;
+  }
+
+  .faq-section--two-col .faq-section__right {
+    flex: 0 0 40%;
+  }
+}
+
+/* Responsive — Mobile */
+@media (max-width: 767px) {
+  .faq-section--two-col .faq-section__layout {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .faq-section--two-col .faq-section__left {
+    flex: none;
+  }
+
+  .faq-section--two-col .faq-section__right {
+    flex: none;
+    width: 100%;
+  }
+
+  .faq-section__map {
+    height: 280px;
+  }
 }

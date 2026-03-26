@@ -1,16 +1,16 @@
-uuid: 747489a0-5545-447d-a1cd-be85d9df1bd7
+uuid: d3e4f5a6-b7c8-4d9e-0f1a-2b3c4d5e6f7a
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_image
-    - paragraphs.paragraphs_type.faq_two_column
-id: paragraph.faq_two_column.field_image
+    - paragraphs.paragraphs_type.faq_section
+id: paragraph.faq_section.field_image
 field_name: field_image
 entity_type: paragraph
-bundle: faq_two_column
+bundle: faq_section
 label: 'Right Image'
-description: ''
+description: 'If filled, shows image on the right instead of map'
 required: false
 translatable: true
 default_value: {  }

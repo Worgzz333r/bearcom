@@ -1,5 +1,14 @@
-{# FAQ Section — title + accordion FAQ items, 2nd item open by default #}
-<section class="faq-section">
+{#
+/**
+ * FAQ Section — title + accordion FAQ items, 2nd item open by default.
+ * If image or lat/lon filled → two-column layout (FAQ left, image/map right).
+ */
+#}
+{% set has_image = not paragraph.field_image.isEmpty %}
+{% set has_map = paragraph.field_latitude.value and paragraph.field_longitude.value %}
+{% set has_right = has_image or has_map %}
+
+<section class="faq-section{{ has_right ? ' faq-section--two-col' : '' }}">
   <div class="container">
     {% if paragraph.field_title.value %}
       <div class="section__header">
@@ -7,8 +16,26 @@
       </div>
     {% endif %}
 
-    <div class="faq-section__items accordion" data-open-index="1">
-      {{ content.field_cards }}
+    <div class="faq-section__layout">
+      <div class="faq-section__left">
+        <div class="faq-section__items accordion" data-open-index="1">
+          {{ content.field_cards }}
+        </div>
+      </div>
+
+      {% if has_image %}
+        <div class="faq-section__right">
+          <div class="faq-section__image">
+            {{ content.field_image }}
+          </div>
+        </div>
+      {% elseif has_map %}
+        <div class="faq-section__right">
+          <div class="faq-section__map location-detail-map"
+               data-lat="{{ paragraph.field_latitude.value }}"
+               data-lon="{{ paragraph.field_longitude.value }}"></div>
+        </div>
+      {% endif %}
     </div>
   </div>
 </section>

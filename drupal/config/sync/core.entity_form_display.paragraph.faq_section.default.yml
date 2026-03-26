@@ -4,9 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.faq_section.field_cards
+    - field.field.paragraph.faq_section.field_image
+    - field.field.paragraph.faq_section.field_latitude
+    - field.field.paragraph.faq_section.field_longitude
     - field.field.paragraph.faq_section.field_title
     - paragraphs.paragraphs_type.faq_section
   module:
+    - media_library
     - paragraphs
 id: paragraph.faq_section.default
 targetEntityType: paragraph
@@ -30,6 +34,27 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  field_image:
+    type: media_library_widget
+    weight: 2
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_latitude:
+    type: number
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_longitude:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   field_title:
     type: string_textfield

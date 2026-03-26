@@ -136,11 +136,10 @@ function bearcom_preprocess_paragraph(array &$variables) {
     }
   }
 
-  // FAQ Two Column — attach libraries.
-  if ($paragraph->bundle() === 'faq_two_column') {
-    $variables['#attached']['library'][] = 'bearcom/faq-two-col';
-    // If map variant, attach Leaflet + map JS.
-    if ($paragraph->field_latitude->value && $paragraph->field_longitude->value && $paragraph->field_image->isEmpty()) {
+  // FAQ Section — attach accordion + map libraries when needed.
+  if ($paragraph->bundle() === 'faq_section') {
+    $variables['#attached']['library'][] = 'bearcom/accordion';
+    if ($paragraph->hasField('field_latitude') && $paragraph->field_latitude->value && $paragraph->field_longitude->value && $paragraph->field_image->isEmpty()) {
       $variables['#attached']['library'][] = 'bearcom/location-detail';
     }
   }
