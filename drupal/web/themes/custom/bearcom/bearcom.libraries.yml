@@ -235,6 +235,11 @@ contact-us:
   css:
     theme:
       css/pages/_contact-us.css: {}
+  js:
+    js/contact-form.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
 
 error-page:
   css:

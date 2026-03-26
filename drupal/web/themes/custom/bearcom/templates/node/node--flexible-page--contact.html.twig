@@ -1,0 +1,83 @@
+{#
+/**
+ * @file
+ * Contact Us page — soundwave + two-column (info left, form right) + CTA.
+ * Uses paragraph "contact_info" for left column, "cta_block" for bottom CTA.
+ */
+#}
+
+{% set contact_info = null %}
+{% set other_paragraphs = [] %}
+{% for item in node.field_paragraphs %}
+  {% if item.entity.bundle() == 'contact_info' %}
+    {% set contact_info = item.entity %}
+  {% else %}
+    {% set other_paragraphs = other_paragraphs|merge([item]) %}
+  {% endif %}
+{% endfor %}
+
+<article class="contact-page">
+
+  {# Soundwave decoration #}
+  <div class="contact-page__wave" aria-hidden="true">
+    {{ source('@bearcom/images/soundwave.svg')|raw }}
+  </div>
+
+  {# Two-column layout #}
+  <div class="container">
+    <div class="contact-page__layout">
+
+      {# Left column — info from contact_info paragraph #}
+      <div class="contact-page__info">
+        {% if contact_info %}
+          {% if contact_info.field_title.value %}
+            <h1 class="contact-page__title">{{ contact_info.field_title.value }}</h1>
+          {% endif %}
+
+          {% if not contact_info.field_description.isEmpty %}
+            <div class="contact-page__desc">
+              {{ contact_info.field_description.value|raw }}
+            </div>
+          {% endif %}
+
+          {% if not contact_info.field_items.isEmpty %}
+            <div class="contact-page__benefits">
+              {% for item in contact_info.field_items %}
+                {% set checklist = item.entity %}
+                <div class="checklist-item">
+                  <span class="checklist-item__icon" aria-hidden="true">✓</span>
+                  <div class="checklist-item__text">{{ checklist.field_text.value|striptags }}</div>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if not contact_info.field_image.isEmpty %}
+            {% set media = contact_info.field_image.entity %}
+            {% if media %}
+              <div class="contact-page__image">
+                <img src="{{ file_url(media.field_media_image.entity.fileuri) }}" alt="{{ media.field_media_image.alt }}" loading="lazy">
+                <div class="contact-page__image-wave" aria-hidden="true">
+                  {{ source('@bearcom/images/soundwave-white.svg')|raw }}
+                </div>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      </div>
+
+      {# Right column — form #}
+      <div class="contact-page__form">
+        <h2 class="contact-page__form-title">Just a Few Details First</h2>
+        {{ content.field_webform }}
+      </div>
+
+    </div>
+  </div>
+
+  {# CTA / other paragraphs #}
+  {% for item in other_paragraphs %}
+    {{ drupal_entity('paragraph', item.entity.id()) }}
+  {% endfor %}
+
+</article>

@@ -1,0 +1,21 @@
+uuid: b2c3d4e5-f6a7-8901-bcde-f12345678901
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.contact_info
+  module:
+    - text
+id: paragraph.contact_info.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: contact_info
+label: Description
+description: 'Text paragraph below the title.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
