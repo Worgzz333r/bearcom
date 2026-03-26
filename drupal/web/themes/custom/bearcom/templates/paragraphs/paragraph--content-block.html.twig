@@ -1,7 +1,8 @@
-{# Content Block — image left/right + title + body (shared paragraph) #}
+{# Content Block — image left/right + caption + title + body #}
 {% set layout = paragraph.field_layout.value|default('image-left') %}
 
 <section class="content-block content-block--{{ layout }}">
+  <div class="content-block__wave" aria-hidden="true"></div>
   <div class="container">
     <div class="content-block__inner">
       {% if paragraph.field_image.entity %}
@@ -11,6 +12,10 @@
       {% endif %}
 
       <div class="content-block__content">
+        {% if paragraph.field_subtitle.value %}
+          <span class="content-block__caption{{ paragraph.field_uppercase.value ? ' content-block__caption--uppercase' : '' }}">{{ paragraph.field_subtitle.value }}</span>
+        {% endif %}
+
         {% if paragraph.field_title.value %}
           <h2 class="content-block__title">{{ paragraph.field_title.value }}</h2>
         {% endif %}

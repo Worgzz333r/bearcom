@@ -207,7 +207,7 @@
 
 /* Spec Table */
 .product-specs {
-  padding: var(--section-padding) 0;
+  padding: 40px 0;
 }
 
 .product-specs .spec-table {
