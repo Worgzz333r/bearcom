@@ -17,7 +17,7 @@
         btn.className = 'spec-table__toggle';
         btn.type = 'button';
         btn.innerHTML = 'Additional specs <span class="toggle-icon"></span>';
-        btn.style.display = 'block';
+        btn.style.display = 'flex';
 
         var rowsWrap = document.createElement('div');
         rowsWrap.className = 'spec-table__additional-rows';
