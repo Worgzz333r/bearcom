@@ -294,18 +294,19 @@
 
   .site-footer--minimal {
     padding: 40px 0 30px;
-    gap: 20px;
+    gap: 0;
   }
 
   .site-footer--minimal__top {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
+    margin-bottom: 120px;
   }
 
   .site-footer--minimal__logo img {
-    width: 130px;
-    height: auto;
+    width: 155px;
+    height: 52px;
   }
 }
 

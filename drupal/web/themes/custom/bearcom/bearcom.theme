@@ -17,6 +17,9 @@ function bearcom_preprocess_html(array &$variables) {
     if ($alias === '/403' || $alias === '/404') {
       $variables['attributes']['class'][] = 'page--error';
     }
+    if ($alias === '/contact-us') {
+      $variables['attributes']['class'][] = 'page--contact';
+    }
   }
 }
 
@@ -33,6 +36,7 @@ function bearcom_preprocess_page(array &$variables) {
     if ($node->bundle() === 'flexible_page') {
       $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
       $variables['is_error_page'] = ($alias === '/403' || $alias === '/404');
+      $variables['is_contact_page'] = ($alias === '/contact-us');
     }
   }
 }
@@ -169,6 +173,11 @@ function bearcom_page_attachments_alter(array &$attachments) {
       // Error pages
       if ($alias === '/403' || $alias === '/404') {
         $attachments['#attached']['library'][] = 'bearcom/error-page';
+      }
+
+      // Contact page
+      if ($alias === '/contact-us') {
+        $attachments['#attached']['library'][] = 'bearcom/contact-us';
       }
 
       // Location Parent page
