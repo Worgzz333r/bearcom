@@ -30,6 +30,13 @@
   margin: 0 0 16px;
 }
 
+.location-card__address p {
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
+}
+
 .location-card__phone {
   font-family: var(--font-family);
   font-size: 14px;
