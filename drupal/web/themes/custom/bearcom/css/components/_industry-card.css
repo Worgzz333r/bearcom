@@ -132,8 +132,8 @@
 
 @media (max-width: 767px) {
 
-  /* Section background with rounded top (arc), continues to CTA */
-  .product-grid {
+  /* Section background with rounded top (arc) — only when NOT catalog page */
+  .product-grid:not(:has(.category-page)) {
     background-color: var(--color-background-alt);
     border-radius: 50% 50% 0 0 / 40px 40px 0 0;
     padding: var(--spacing-xl) var(--container-padding) var(--spacing-lg);

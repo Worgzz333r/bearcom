@@ -53,6 +53,9 @@ settings:
     -
       value: rentals
       label: '[Image Grid] Rentals — 2 images, no crop'
+    -
+      value: stacked
+      label: '[Spec Table] Stacked — label above value'
   allowed_values_function: ''
 module: options
 locked: false

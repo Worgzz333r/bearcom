@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.paragraph.spec_table.field_description
     - field.field.paragraph.spec_table.field_items
+    - field.field.paragraph.spec_table.field_style
     - field.field.paragraph.spec_table.field_title
     - paragraphs.paragraphs_type.spec_table
   module:
+    - options
     - paragraphs
     - text
 id: paragraph.spec_table.default
@@ -22,6 +24,12 @@ content:
     settings:
       rows: 3
       placeholder: ''
+    third_party_settings: {  }
+  field_style:
+    type: options_select
+    weight: -1
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_items:
     type: paragraphs

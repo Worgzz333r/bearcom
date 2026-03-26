@@ -54,3 +54,35 @@
   line-height: var(--p-lh);
   color: var(--color-text-primary);
 }
+
+@media (max-width: 767px) {
+  .accordion__item {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .accordion__trigger {
+    padding: var(--spacing-xs) 0;
+  }
+
+  .accordion__title {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    max-width: 305px;
+  }
+
+  .accordion__body {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+  }
+
+  .accordion__icon {
+    margin-left: 10px;
+  }
+
+  .accordion__icon img {
+    width: 10px;
+    height: 10px;
+  }
+}
