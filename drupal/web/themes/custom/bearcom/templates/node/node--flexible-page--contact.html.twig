@@ -46,7 +46,7 @@
                 {% set checklist = item.entity %}
                 <div class="checklist-item">
                   <span class="checklist-item__icon" aria-hidden="true">✓</span>
-                  <div class="checklist-item__text">{{ checklist.field_text.value }}</div>
+                  <div class="checklist-item__text">{{ checklist.field_text.value|striptags }}</div>
                 </div>
               {% endfor %}
             </div>
