@@ -80,3 +80,35 @@
   margin: 0;
   padding: 0;
 }
+
+/* Responsive — Mobile */
+@media (max-width: 767px) {
+  .product-card__image {
+    height: auto;
+  }
+
+  .product-card__image img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+  }
+
+  .product-card__title {
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: none;
+  }
+
+  .product-card__description {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .product-card__dashes {
+    margin-bottom: 12px;
+  }
+
+  .product-card__dashes span {
+    height: 2px;
+  }
+}

@@ -94,12 +94,11 @@
 }
 
 .hero--color .hero__title {
-  color: var(--color-white);
+  color: var(--color-background-alt);
 }
 
 .hero--color .hero__subtitle {
-  color: var(--color-white);
-  opacity: 0.9;
+  color: var(--color-background-alt);
   max-width: 560px;
 }
 
@@ -359,6 +358,11 @@
     flex: none;
     width: 100%;
   }
+
+  .hero--color .hero__product-image::before,
+  .hero--color .hero__product-image::after {
+    display: none;
+  }
 }
 
 @media (max-width: 767px) {
@@ -399,6 +403,55 @@
   .hero--product .hero__buttons {
     justify-content: flex-start;
     gap: var(--spacing-lg);
+  }
+
+  /* Color hero — mobile */
+  .hero--color {
+    height: auto;
+    padding: 0;
+    background: var(--color-primary) url('../../images/hero-curve-mobile.png') no-repeat bottom -40px center / 100% 420px;
+  }
+
+  .hero--color .container {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .hero--color .hero__content {
+    order: 1;
+    padding: 60px 0 40px;
+  }
+
+  .hero--color .hero__title {
+    font-size: var(--h1-size);
+    line-height: var(--h1-lh);
+  }
+
+  .hero--color .hero__subtitle {
+    font-size: var(--p-size);
+    line-height: var(--p-lh);
+    max-width: none;
+    margin-bottom: 0;
+  }
+
+  .hero--color .hero__product-image {
+    flex: none;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    order: 2;
+    padding: 0 0 60px;
+  }
+
+  .hero--color .hero__product-image img {
+    width: 266px;
+    height: 266px;
+  }
+
+  .hero--color .hero__product-image::before,
+  .hero--color .hero__product-image::after {
+    display: none;
   }
 
   .hero--solid {

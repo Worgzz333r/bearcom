@@ -25,14 +25,24 @@
       {# Sidebar — exposed filters #}
       {% if exposed %}
         <aside class="filter-sidebar">
-          <div class="filter-sidebar__label">Filter by:</div>
+          <div class="filter-sidebar__label">
+            Filter by:
+            <button class="filter-sidebar__close" aria-label="Close filters">
+              <img src="/{{ directory }}/images/cross.svg" alt="" width="24" height="24">
+            </button>
+          </div>
           {{ exposed }}
+          <button type="button" class="filter-sidebar__clear">Clear All Filters</button>
         </aside>
       {% endif %}
 
       {# Main — top bar + product grid + pager #}
       <div class="category-page__main">
         <div class="category-page__top">
+          <button class="filter-toggle" aria-controls="filter-sidebar" aria-expanded="false">
+            <img class="filter-toggle__icon" src="/{{ directory }}/images/sliders-horizontal.svg" alt="" width="15" height="15">
+            Filters
+          </button>
           {% if header %}
             <div class="category-page__count">{{ header }}</div>
           {% endif %}
