@@ -48,6 +48,13 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_faq:
     type: entity_reference_revisions_entity_view
     label: hidden
@@ -97,7 +104,6 @@ content:
     weight: 100
     region: content
 hidden:
-  field_description: true
   field_hero_style: true
   field_latitude: true
   field_longitude: true
