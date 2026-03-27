@@ -1,6 +1,11 @@
-{# Card Grid — title + subtitle + nested card_item paragraphs #}
-{% set style = paragraph.field_style.value|default('default') %}
-<section class="card-grid card-grid--{{ style }}">
+{#
+/**
+ * Product Comparison — title + subtitle + two cards (white/orange).
+ * Uses field_title, field_subtitle, field_items (nested product_comparison_card paragraphs).
+ */
+#}
+
+<section class="product-comparison">
   <div class="container">
     {% if paragraph.field_title.value or paragraph.field_subtitle.value %}
       <div class="section__header">
@@ -13,8 +18,8 @@
       </div>
     {% endif %}
 
-    <div class="card-grid__items">
-      {{ content.field_cards }}
+    <div class="product-comparison__grid">
+      {{ content.field_items }}
     </div>
   </div>
 </section>

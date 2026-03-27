@@ -26,6 +26,9 @@ settings:
     -
       value: industry_dark
       label: 'Industry Dark (grey bg, vertical cards)'
+    -
+      value: industry_blue
+      label: 'Industry Blue (blue bg, white text)'
   allowed_values_function: ''
 module: options
 locked: false

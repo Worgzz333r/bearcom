@@ -1,0 +1,29 @@
+uuid: c3d4e5f6-pcc-items-0003-abcdef666666
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_items
+    - paragraphs.paragraphs_type.checklist_item
+    - paragraphs.paragraphs_type.product_comparison_card
+id: paragraph.product_comparison_card.field_items
+field_name: field_items
+entity_type: paragraph
+bundle: product_comparison_card
+label: Features
+description: 'Checklist items for this product.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      checklist_item: checklist_item
+    target_bundles_drag_drop:
+      checklist_item:
+        enabled: true
+        weight: 0
+field_type: entity_reference_revisions

@@ -17,6 +17,12 @@ settings:
     -
       value: image-right
       label: 'Image Right'
+    -
+      value: centered
+      label: 'Centered (no image)'
+    -
+      value: divided
+      label: 'Divided (with border lines)'
   allowed_values_function: ''
 module: options
 locked: false

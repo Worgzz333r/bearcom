@@ -8,17 +8,32 @@
 use Drupal\node\NodeInterface;
 
 /**
+ * Get cached alias for a node. Avoids repeated lookups.
+ */
+function _bearcom_get_node_alias(NodeInterface $node): string {
+  static $cache = [];
+  $nid = $node->id();
+  if (!isset($cache[$nid])) {
+    $cache[$nid] = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $nid);
+  }
+  return $cache[$nid];
+}
+
+/**
  * Implements hook_preprocess_html().
  */
 function bearcom_preprocess_html(array &$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
   if ($node instanceof NodeInterface && $node->bundle() === 'flexible_page') {
-    $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+    $alias = _bearcom_get_node_alias($node);
     if ($alias === '/403' || $alias === '/404') {
       $variables['attributes']['class'][] = 'page--error';
     }
     if ($alias === '/contact-us') {
       $variables['attributes']['class'][] = 'page--contact';
+    }
+    if ($alias === '/industries') {
+      $variables['attributes']['class'][] = 'page--industry';
     }
   }
 }
@@ -34,7 +49,7 @@ function bearcom_preprocess_page(array &$variables) {
 
     // Flag error pages for minimal footer.
     if ($node->bundle() === 'flexible_page') {
-      $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+      $alias = _bearcom_get_node_alias($node);
       $variables['is_error_page'] = ($alias === '/403' || $alias === '/404');
       $variables['is_contact_page'] = ($alias === '/contact-us');
     }
@@ -50,7 +65,7 @@ function bearcom_preprocess_node(array &$variables) {
 
   // Error pages — pass error code and messages.
   if ($node->bundle() === 'flexible_page') {
-    $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+    $alias = _bearcom_get_node_alias($node);
     if ($alias === '/403') {
       $variables['error_code'] = '403';
       $variables['error_title'] = 'Forbidden';
@@ -75,7 +90,7 @@ function bearcom_theme_suggestions_page_alter(array &$suggestions, array $variab
 
     // Specific suggestions for flexible_page based on URL alias.
     if ($node->bundle() === 'flexible_page') {
-      $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+      $alias = _bearcom_get_node_alias($node);
       if ($alias === '/locations') {
         $suggestions[] = 'page__flexible_page__locations';
       }
@@ -107,7 +122,7 @@ function bearcom_theme_suggestions_node_alter(array &$suggestions, array $variab
 
   // For flexible_page, add alias-based suggestions.
   if ($node->bundle() === 'flexible_page') {
-    $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+    $alias = _bearcom_get_node_alias($node);
     $is_front = \Drupal::service('path.matcher')->isFrontPage();
 
     if ($is_front) {
@@ -158,6 +173,17 @@ function bearcom_page_attachments_alter(array &$attachments) {
   $attachments['#attached']['library'][] = 'bearcom/mobile-menu';
   $attachments['#attached']['library'][] = 'bearcom/search-expand';
 
+  // Pass theme path and map settings to JS.
+  $theme_path = \Drupal::theme()->getActiveTheme()->getPath();
+  $attachments['#attached']['drupalSettings']['bearcom'] = [
+    'themePath' => $theme_path,
+    'tileUrl' => 'https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}',
+    'markerIcon' => '/' . $theme_path . '/images/marker-orange.svg',
+    'markerPin' => '/' . $theme_path . '/images/marker-pin.svg',
+    'phone' => '(800) 527-1670',
+    'phoneRaw' => '8005271670',
+  ];
+
   // Attach page-specific libraries based on node type.
   $node = \Drupal::routeMatch()->getParameter('node');
   if ($node instanceof NodeInterface) {
@@ -167,8 +193,12 @@ function bearcom_page_attachments_alter(array &$attachments) {
       $attachments['#attached']['library'][] = 'bearcom/stats-counter';
       $attachments['#attached']['library'][] = 'bearcom/accordion';
       $attachments['#attached']['library'][] = 'bearcom/solutions-grid';
+      $attachments['#attached']['library'][] = 'bearcom/service';
+      $attachments['#attached']['library'][] = 'bearcom/cta-orange';
+      $attachments['#attached']['library'][] = 'bearcom/industry';
+      $attachments['#attached']['library'][] = 'bearcom/carousel';
 
-      $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $node->id());
+      $alias = _bearcom_get_node_alias($node);
 
       // Error pages
       if ($alias === '/403' || $alias === '/404') {

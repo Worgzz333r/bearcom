@@ -56,6 +56,18 @@ settings:
     -
       value: stacked
       label: '[Spec Table] Stacked — label above value'
+    -
+      value: blue
+      label: '[Card Grid] Blue background'
+    -
+      value: dark-blue
+      label: '[Card Grid] Dark blue background'
+    -
+      value: white
+      label: '[Product Card] White'
+    -
+      value: orange-card
+      label: '[Product Card] Orange'
   allowed_values_function: ''
 module: options
 locked: false

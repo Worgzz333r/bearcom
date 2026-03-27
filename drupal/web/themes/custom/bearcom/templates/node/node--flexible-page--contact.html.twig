@@ -36,7 +36,7 @@
 
           {% if not contact_info.field_description.isEmpty %}
             <div class="contact-page__desc">
-              {{ contact_info.field_description.value|raw }}
+              {{ contact_info.field_description.processed }}
             </div>
           {% endif %}
 

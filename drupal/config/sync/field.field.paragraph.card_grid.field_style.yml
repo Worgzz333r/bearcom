@@ -1,0 +1,21 @@
+uuid: g1h2i3j4-k5l6-7890-mnop-cardgridstyl
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_style
+    - paragraphs.paragraphs_type.card_grid
+id: paragraph.card_grid.field_style
+field_name: field_style
+entity_type: paragraph
+bundle: card_grid
+label: Style
+description: 'Visual style variant for the card grid.'
+required: false
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

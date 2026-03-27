@@ -1,0 +1,23 @@
+uuid: c3d4e5f6-pcc-url-0006-abcdef999999
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_button_url
+    - paragraphs.paragraphs_type.product_comparison_card
+  module:
+    - link
+id: paragraph.product_comparison_card.field_button_url
+field_name: field_button_url
+entity_type: paragraph
+bundle: product_comparison_card
+label: 'Button URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

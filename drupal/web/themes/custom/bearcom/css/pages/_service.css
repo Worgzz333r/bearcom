@@ -1,1 +1,403 @@
-/* TODO: Implement */
+/* ==========================================================================
+   Service Page — styles for service-specific paragraph variants
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   #3 Content Block — section dividers (black lines top/bottom)
+   -------------------------------------------------------------------------- */
+
+.content-block--divided {
+  border-top: 1px solid var(--color-dark-blue);
+  border-bottom: 1px solid var(--color-dark-blue);
+}
+
+.content-block--divided + .content-block--divided {
+  border-top: none;
+}
+
+/* Soundwave decoration between content blocks */
+.content-block + .content-block .content-block__wave {
+  display: block;
+  width: 60px;
+  height: 48px;
+  margin: 0 auto var(--spacing-lg);
+}
+
+.content-block + .content-block .content-block__wave svg path {
+  fill: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   #5 Video Block
+   -------------------------------------------------------------------------- */
+
+.video-block {
+  padding: var(--section-padding) 0;
+}
+
+.video-block .section__header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.video-block .section__title {
+  font-family: var(--font-family);
+  font-size: var(--h2-size);
+  line-height: var(--h2-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark-blue);
+}
+
+.video-block__player {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  border-radius: var(--radius-card-lg);
+  overflow: hidden;
+  background: #E8E8E8;
+}
+
+/* Make all Drupal wrappers fill the player */
+.video-block__player > div,
+.video-block__player div,
+.video-block__player .field,
+.video-block__player .field__item,
+.video-block__player .media,
+.video-block__player .media__content {
+  width: 100%;
+  height: 100%;
+}
+
+.video-block__player iframe,
+.video-block__player video,
+.video-block__player img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   #7 Content Block — centered text (no image variant)
+   -------------------------------------------------------------------------- */
+
+.content-block--centered {
+  padding-bottom: var(--spacing-lg);
+}
+
+.content-block--centered .content-block__inner {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.content-block--centered .content-block__title {
+  font-size: var(--h2-size);
+  line-height: var(--h2-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark-blue);
+  margin-bottom: 25px;
+}
+
+.content-block--centered .content-block__body {
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  color: var(--color-text-dark);
+}
+
+/* --------------------------------------------------------------------------
+   #8 Card Grid — Blue style
+   -------------------------------------------------------------------------- */
+
+.card-grid--blue {
+  background-color: var(--color-blue);
+  padding: var(--section-padding) 0;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+}
+
+.card-grid--blue .section__title {
+  color: var(--color-white);
+}
+
+.card-grid--blue .section__subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card-grid--blue .card {
+  background: none;
+}
+
+.card-grid--blue .card__top-title,
+.card-grid--blue .card__main-title {
+  color: var(--color-white);
+}
+
+.card-grid--blue .card__subtitle {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* --------------------------------------------------------------------------
+   #9 Product Comparison Cards
+   -------------------------------------------------------------------------- */
+
+.product-comparison {
+  padding: var(--section-padding) 0;
+}
+
+.product-comparison .section__header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.product-comparison .section__title {
+  font-family: var(--font-family);
+  font-size: var(--h2-size);
+  line-height: var(--h2-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.product-comparison .section__subtitle {
+  font-family: var(--font-family);
+  font-size: var(--p-size);
+  line-height: 18px;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-primary);
+  text-align: center;
+  max-width: 1000px;
+  margin: var(--spacing-sm) auto 0;
+}
+
+.product-comparison .section__header {
+  margin-bottom: 90px;
+}
+
+.product-comparison__grid > div {
+  display: flex;
+  gap: 120px;
+  justify-content: center;
+}
+
+/* Card — shared base */
+.product-comparison__card {
+  width: 540px;
+  min-height: 658px;
+  border-radius: var(--radius-card-lg);
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* White variant (default) */
+.product-comparison__card--white {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-primary);
+}
+
+.product-comparison__card--white .product-comparison__card-title {
+  color: var(--color-dark-blue);
+}
+
+.product-comparison__card--white .product-comparison__card-desc {
+  color: var(--color-text-primary);
+}
+
+.product-comparison__card--white .checklist-item__icon {
+  color: var(--color-primary);
+}
+
+.product-comparison__card--white .checklist-item__text {
+  color: var(--color-text-primary);
+}
+
+.product-comparison__card--white .product-comparison__card-btn {
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.product-comparison__card--white .product-comparison__card-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Orange variant */
+.product-comparison__card--orange-card {
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.product-comparison__card--orange-card .product-comparison__card-title {
+  color: var(--color-white);
+}
+
+.product-comparison__card--orange-card .product-comparison__card-desc {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.product-comparison__card--orange-card .checklist-item__icon {
+  color: var(--color-white);
+}
+
+.product-comparison__card--orange-card .checklist-item__text {
+  color: var(--color-white);
+}
+
+.product-comparison__card--orange-card .product-comparison__card-btn {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-white);
+  color: var(--color-primary);
+}
+
+.product-comparison__card--orange-card .product-comparison__card-btn:hover {
+  background-color: transparent;
+  color: var(--color-white);
+}
+
+/* Card inner elements */
+.product-comparison__card-title {
+  font-family: var(--font-family);
+  font-size: var(--h3-size);
+  line-height: var(--h3-lh);
+  font-weight: var(--font-weight-semibold);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.product-comparison__card-desc {
+  font-family: var(--font-family);
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
+  max-width: 390px;
+  margin: 0 0 var(--spacing-30);
+}
+
+.product-comparison__card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  flex: 1;
+}
+
+.product-comparison__card-features .checklist-item {
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid rgba(74, 79, 85, 0.3);
+}
+
+.product-comparison__card--orange-card .product-comparison__card-features .checklist-item {
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+.product-comparison__card-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: var(--spacing-xs) 12px;
+  box-sizing: border-box;
+  margin-top: 90px;
+  border-radius: var(--radius-card);
+  font-family: var(--font-family);
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — Tablet
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1023px) {
+  .product-comparison__grid {
+    gap: var(--spacing-md);
+  }
+
+  .product-comparison__card {
+    padding: var(--spacing-md);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — Mobile
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  .video-block {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .video-block .section__title {
+    text-transform: uppercase;
+  }
+
+  .video-block__player {
+    border-radius: 0;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .content-block--centered .content-block__inner {
+    max-width: 100%;
+  }
+
+  .product-comparison__grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-comparison {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .product-comparison .section__header {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .product-comparison .section__title {
+    text-transform: uppercase;
+    font-size: var(--h2-size);
+    line-height: var(--h2-lh);
+  }
+
+  .product-comparison__grid > div {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .product-comparison__grid > div > div {
+    flex: none;
+    width: 100%;
+  }
+
+  .product-comparison__card {
+    width: 100%;
+    min-height: auto;
+    padding: var(--spacing-md);
+    box-sizing: border-box;
+  }
+
+  .product-comparison__card-desc {
+    max-width: none;
+  }
+
+  .product-comparison__card-btn {
+    margin-top: var(--spacing-lg);
+  }
+}

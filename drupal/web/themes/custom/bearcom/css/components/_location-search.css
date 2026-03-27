@@ -3,13 +3,13 @@
    ========================================================================== */
 
 .location-search {
-  padding: 40px 0 60px;
+  padding: var(--spacing-lg) 0 var(--spacing-xl);
 }
 
 /* Two-column layout — left: search+cards, right: map */
 .location-search__layout {
   display: flex;
-  gap: 30px;
+  gap: var(--spacing-30);
 }
 
 .location-search__left {
@@ -23,27 +23,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
-  padding-left: 24px;
+  margin-bottom: var(--spacing-sm);
+  padding-left: var(--spacing-md);
 }
 
 .location-search__label {
   font-family: var(--font-family);
-  font-size: 16px;
-  line-height: 20px;
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
   font-weight: 700;
-  color: #22262C;
+  color: var(--color-dark-blue);
 }
 
 .location-search__geoloc {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--spacing-xs);
   font-family: var(--font-family);
-  font-size: 16px;
-  line-height: 20px;
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
   font-weight: 400;
-  color: #22262C;
+  color: var(--color-dark-blue);
   text-decoration: none;
 }
 
@@ -59,19 +59,19 @@
 .location-search__input {
   display: block;
   width: 100%;
-  padding: 16px 24px;
-  border: 1px solid #4A4F55;
-  border-radius: 8px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-text-primary);
+  border-radius: var(--radius-card);
   font-family: var(--font-family);
-  font-size: 16px;
-  line-height: 20px;
-  color: #22262C;
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  color: var(--color-dark-blue);
   outline: none;
   box-sizing: border-box;
 }
 
 .location-search__input::placeholder {
-  color: #9CA3AF;
+  color: var(--color-placeholder, #9CA3AF);
 }
 
 .location-search__input:focus {
@@ -95,7 +95,7 @@
 .location-search__map {
   flex: 1;
   min-height: 460px;
-  border-radius: 16px;
+  border-radius: var(--radius-card-lg);
   overflow: hidden;
 }
 

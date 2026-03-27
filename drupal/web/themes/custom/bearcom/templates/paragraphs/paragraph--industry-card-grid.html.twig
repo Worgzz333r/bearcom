@@ -15,7 +15,29 @@
     {% endif %}
 
     <div class="card-grid__items">
-      {{ content.field_cards }}
+      {% if is_slider %}
+        {{ content.field_cards }}
+      {% else %}
+        {% for item in paragraph.field_cards %}
+          {% set card = item.entity %}
+          <div class="card {{ not card.field_title.value and not card.field_description.value ? 'card--image-only' }}">
+            {% if card.field_icon.entity %}
+              <div class="card__image">
+                <img src="{{ file_url(card.field_icon.entity.field_media_image.entity.uri.value) }}"
+                     alt="{{ card.field_icon.entity.field_media_image.alt }}" loading="lazy">
+              </div>
+            {% endif %}
+            <div class="card__body">
+              {% if card.field_title.value %}
+                <span class="card__top-title">{{ card.field_title.value }}</span>
+              {% endif %}
+              {% if card.field_description.value %}
+                <span class="card__subtitle">{{ card.field_description.value|striptags }}</span>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
     </div>
   </div>
 </section>

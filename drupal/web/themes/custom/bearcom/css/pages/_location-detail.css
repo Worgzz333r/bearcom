@@ -2,7 +2,7 @@
 
 /* Hero */
 .location-detail__hero {
-  padding: 80px 0;
+  padding: var(--section-padding) 0;
   text-align: center;
 }
 
@@ -20,8 +20,9 @@
   font-size: var(--h1-size);
   line-height: var(--h1-lh);
   font-weight: var(--font-weight-semibold);
-  color: #FAFAFA;
+  color: var(--color-background);
   margin: 0 0 var(--spacing-sm);
+
 }
 
 .location-detail__hero-desc {
@@ -29,12 +30,12 @@
   max-width: 100%;
   margin: 0 auto;
   font-family: var(--font-family);
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 400;
-  color: #EFEFEF;
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-background-alt);
   text-align: center;
-  letter-spacing: 0;
+
 }
 
 .location-detail__hero-desc p,
@@ -59,8 +60,8 @@
 }
 
 .location-detail__hero-phone {
-  background-color: #116CA6;
-  color: #EFEFEF;
+  background-color: var(--color-blue-light);
+  color: var(--color-background-alt);
   border: none;
   gap: 12px;
 }
@@ -78,12 +79,12 @@
 
 /* Info + Photo */
 .location-detail__info {
-  padding: 80px 0;
+  padding: var(--section-padding) 0;
 }
 
 .location-detail__info-layout {
   display: flex;
-  gap: 30px;
+  gap: var(--spacing-30);
   align-items: flex-start;
 }
 
@@ -98,36 +99,36 @@
 /* Office name heading */
 .location-detail__office-name {
   font-family: var(--font-family);
-  font-size: 34px;
-  line-height: 36px;
-  font-weight: 600;
-  color: #22262C;
+  font-size: var(--h3-size);
+  line-height: var(--h3-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark-blue);
   margin: 0 0 16px;
 }
 
 .location-detail__address {
   font-family: var(--font-family);
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 400;
-  color: #262626;
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-dark);
   margin-bottom: 12px;
 }
 
 .location-detail__address p {
   font-family: var(--font-family);
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 400;
-  color: #262626;
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-dark);
   margin: 0;
 }
 
 .location-detail__address p:first-of-type {
-  font-size: 34px;
-  line-height: 36px;
-  font-weight: 600;
-  color: #22262C;
+  font-size: var(--h3-size);
+  line-height: var(--h3-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark-blue);
   margin: 0 0 16px;
 }
 
@@ -144,10 +145,10 @@
 
 .location-detail__phone a {
   font-family: var(--font-family);
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 400;
-  color: #262626;
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-dark);
   text-decoration: none;
 }
 
@@ -158,9 +159,9 @@
 /* Orange divider */
 .location-detail__divider {
   border: none;
-  border-top: 1px solid #FC5000;
+  border-top: 1px solid var(--color-primary);
   height: 0;
-  margin: 40px 0;
+  margin: var(--spacing-lg) 0;
 }
 
 /* Hours table */
@@ -170,10 +171,10 @@
 
 .location-detail__hours-title {
   font-family: var(--font-family);
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 600;
-  color: #22262C;
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark-blue);
   text-transform: uppercase;
   margin: 0 0 20px;
 }
@@ -193,17 +194,17 @@
 .location-detail__hours-table td {
   padding: 0;
   font-family: var(--font-family);
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 400;
-  color: #262626;
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-dark);
 }
 
 /* Photo */
 .location-detail__photo {
   width: 660px;
   height: 492px;
-  border-radius: 16px;
+  border-radius: var(--radius-card-lg);
   overflow: hidden;
 }
 
@@ -217,7 +218,7 @@
 /* About */
 .location-detail__about {
   padding: 122px 0;
-  background-color: #116CA6;
+  background-color: var(--color-blue-light);
   color: var(--color-white);
   position: relative;
   overflow: hidden;
@@ -236,10 +237,10 @@
 .location-detail__about-body,
 .location-detail__about-text p {
   font-family: var(--font-family);
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 400;
-  color: #FAFAFA;
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-background);
   margin: 0;
 }
 
@@ -250,9 +251,9 @@
 
 .location-detail__about-title {
   font-family: var(--font-family);
-  font-size: 42px;
-  line-height: 44px;
-  font-weight: 600;
+  font-size: var(--h2-size);
+  line-height: var(--h2-lh);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-white);
   margin: 0 0 26px;
 }
@@ -277,15 +278,15 @@
 
 /* FAQ + Map */
 .location-detail__faq-section {
-  padding: 80px 0;
+  padding: var(--section-padding) 0;
 }
 
 .location-detail__faq-heading {
   font-family: var(--font-family);
-  font-size: 42px;
-  line-height: 44px;
-  font-weight: 600;
-  color: #4A4F55;
+  font-size: var(--h2-size);
+  line-height: var(--h2-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
   text-align: center;
   margin: 0 0 56px;
 }
@@ -315,10 +316,10 @@
 
 .location-detail__faq-left .accordion__title {
   font-family: var(--font-family);
-  font-size: 26px;
-  line-height: 28px;
-  font-weight: 600;
-  color: #4A4F55;
+  font-size: var(--h4-size);
+  line-height: var(--h4-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
 }
 
 .location-detail__faq-left .accordion__icon {
@@ -353,7 +354,7 @@
   }
 
   .location-detail__info-layout {
-    gap: 30px;
+    gap: var(--spacing-30);
   }
 
   .location-detail__info-left {
@@ -376,7 +377,7 @@
   }
 
   .location-detail__about {
-    padding: 80px 0;
+    padding: var(--section-padding) 0;
   }
 
   .location-detail__about-wave {
@@ -396,7 +397,7 @@
   }
 
   .location-detail__faq-layout {
-    gap: 30px;
+    gap: var(--spacing-30);
   }
 
   .location-detail__faq-left {
@@ -441,7 +442,7 @@
 
   .location-detail__info-layout {
     flex-direction: column;
-    gap: 30px;
+    gap: var(--spacing-30);
   }
 
   .location-detail__info-left {
@@ -500,7 +501,7 @@
 
   .location-detail__faq-layout {
     flex-direction: column;
-    gap: 30px;
+    gap: var(--spacing-30);
   }
 
   .location-detail__faq-left {

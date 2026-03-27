@@ -9,7 +9,7 @@
 }
 
 .industry-page .hero .container {
-  gap: 30px;
+  gap: var(--spacing-30);
 }
 
 .industry-page .hero__product-image {
@@ -54,7 +54,7 @@
 
 .card-grid--industry,
 .card-grid--industry_dark {
-  padding: 80px 0;
+  padding: var(--section-padding) 0;
 }
 
 .card-grid--industry + .card-grid--industry,
@@ -73,7 +73,7 @@
   left: 60px;
   width: 377px;
   height: 0;
-  border-top: 4px solid #FC5000;
+  border-top: 4px solid var(--color-primary);
 }
 
 [class*="card-grid--industry"] .section__header {
@@ -93,8 +93,8 @@
   font-family: var(--font-family);
   font-size: 16px;
   line-height: 18px;
-  font-weight: 400;
-  color: #262626;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-dark);
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -163,7 +163,7 @@
   width: 332px;
   height: 160px;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: var(--radius-card-lg);
   margin: 0 auto;
   position: relative;
 }
@@ -195,10 +195,10 @@
 /* Title — semibold, NOT uppercase */
 [class*="card-grid--industry"] .card__top-title {
   font-family: var(--font-family);
-  font-size: 26px;
-  line-height: 28px;
-  font-weight: 600;
-  color: #262626;
+  font-size: var(--h4-size);
+  line-height: var(--h4-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-dark);
   text-transform: none;
   letter-spacing: 0;
   display: block;
@@ -207,20 +207,20 @@
 /* Main title (if used) */
 [class*="card-grid--industry"] .card__main-title {
   font-family: var(--font-family);
-  font-size: 26px;
-  line-height: 28px;
-  font-weight: 600;
-  color: #262626;
+  font-size: var(--h4-size);
+  line-height: var(--h4-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-dark);
   margin: 0;
 }
 
 /* Description — Roboto Condensed 16px/20px */
 [class*="card-grid--industry"] .card__subtitle {
   font-family: var(--font-family);
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 400;
-  color: #262626;
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-dark);
   text-transform: none;
   letter-spacing: 0;
 }
@@ -230,7 +230,7 @@
    -------------------------------------------------------------------------- */
 
 .card-grid--industry_dark {
-  background-color: #4A4F55;
+  background-color: var(--color-text-primary);
   color: var(--color-white);
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -243,7 +243,7 @@
 }
 
 .card-grid--industry_dark .section__subtitle {
-  color: #FAFAFA;
+  color: var(--color-background);
   opacity: 1;
 }
 
@@ -264,6 +264,94 @@
 .card-grid--industry_dark .card__top-title,
 .card-grid--industry_dark .card__main-title {
   color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   Grid mode (non-slider) — 3 columns
+   -------------------------------------------------------------------------- */
+
+.card-grid--grid .card-grid__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg) var(--grid-gap);
+}
+
+@media (max-width: 1023px) {
+  .card-grid--grid .card-grid__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .card-grid--grid .card-grid__items {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Blue section — industry card grid on blue background
+   -------------------------------------------------------------------------- */
+
+.card-grid--industry_blue {
+  background-color: var(--color-blue-light);
+  color: var(--color-white);
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+}
+
+.card-grid--industry_blue .section__title {
+  color: var(--color-white);
+}
+
+.card-grid--industry_blue .section__subtitle {
+  color: var(--color-background);
+}
+
+.card-grid--industry_blue .card-grid__items {
+  gap: 39px 34px;
+}
+
+.card-grid--industry_blue .card,
+.card-grid--industry_blue .swiper-slide .card {
+  background: none;
+  text-align: center;
+}
+
+.card-grid--industry_blue .card__image {
+  width: 332px;
+  height: 160px;
+  margin: 0 auto;
+  border-radius: var(--radius-card-lg);
+  overflow: hidden;
+}
+
+.card-grid--industry_blue .card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-grid--industry_blue .card__body {
+  padding: 0 var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  gap: var(--spacing-sm);
+}
+
+.card-grid--industry_blue .card__top-title,
+.card-grid--industry_blue .card__main-title {
+  color: var(--color-background);
+  font-size: var(--h4-size);
+  line-height: var(--h4-lh);
+  font-weight: var(--font-weight-semibold);
+}
+
+.card-grid--industry_blue .card__subtitle {
+  color: var(--color-background);
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
 }
 
 .card-grid--industry_dark .card__subtitle {
@@ -319,7 +407,7 @@
     flex: none;
     width: 100%;
     height: auto;
-    border-radius: 16px;
+    border-radius: var(--radius-card-lg);
     overflow: hidden;
   }
 
@@ -377,5 +465,18 @@
 
   .card-grid--industry + .card-grid--industry {
     margin-top: 40px;
+  }
+
+  /* Grey bg extends to footer on /industries parent page only */
+  body.page--industry,
+  body.page--industry .dialog-off-canvas-main-canvas,
+  body.page--industry .main-content {
+    background-color: var(--color-background-alt);
+  }
+
+  body.page--industry .site-footer,
+  body.page--industry .site-footer__main,
+  body.page--industry .site-footer__wave {
+    background-color: var(--color-background-alt);
   }
 }

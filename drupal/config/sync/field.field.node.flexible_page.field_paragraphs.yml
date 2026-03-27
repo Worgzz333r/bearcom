@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.faq_section
     - paragraphs.paragraphs_type.contact_info
     - paragraphs.paragraphs_type.cta_block
+    - paragraphs.paragraphs_type.industry_card_grid
     - paragraphs.paragraphs_type.guided_journey
     - paragraphs.paragraphs_type.hero_banner
     - paragraphs.paragraphs_type.image_grid
@@ -42,6 +43,8 @@ settings:
       guided_journey: guided_journey
       contact_info: contact_info
       content_block: content_block
+      industry_card_grid: industry_card_grid
+      product_comparison: product_comparison
       faq_section: faq_section
       product_grid: product_grid
       video_block: video_block

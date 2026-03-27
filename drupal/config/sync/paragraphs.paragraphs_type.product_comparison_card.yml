@@ -1,0 +1,10 @@
+uuid: a1b2c3d4-prod-card-0002-abcdef654321
+langcode: en
+status: true
+dependencies: {  }
+id: product_comparison_card
+label: 'Product Comparison Card'
+icon_uuid: null
+icon_default: null
+description: 'Single product card with title, description, features list, and CTA button.'
+behavior_plugins: {  }

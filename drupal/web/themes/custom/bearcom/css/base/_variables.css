@@ -16,6 +16,8 @@
   --color-blue: #0057A0;
   --color-blue-light: #116CA6;
   --color-green: #28A745;
+  --color-card-dark: #444444;
+  --color-placeholder: #9CA3AF;
 
   /* Typography */
   --font-family: 'Roboto Condensed', sans-serif;

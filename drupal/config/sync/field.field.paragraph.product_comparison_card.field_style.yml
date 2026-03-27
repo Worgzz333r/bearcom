@@ -1,0 +1,21 @@
+uuid: c3d4e5f6-pcc-style-0004-abcdef777777
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_style
+    - paragraphs.paragraphs_type.product_comparison_card
+id: paragraph.product_comparison_card.field_style
+field_name: field_style
+entity_type: paragraph
+bundle: product_comparison_card
+label: Style
+description: 'Card color variant: white or orange.'
+required: false
+translatable: false
+default_value:
+  -
+    value: white
+default_value_callback: ''
+settings: {  }
+field_type: list_string

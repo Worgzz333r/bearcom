@@ -1,0 +1,35 @@
+{#
+/**
+ * Product Comparison Card — title, description, checklist features, CTA button.
+ * field_style: 'white' or 'orange'
+ */
+#}
+{% set style = paragraph.field_style.value|default('white') %}
+
+<div class="product-comparison__card product-comparison__card--{{ style }}">
+  {% if paragraph.field_title.value %}
+    <h3 class="product-comparison__card-title">{{ paragraph.field_title.value }}</h3>
+  {% endif %}
+
+  {% if paragraph.field_description.value %}
+    <div class="product-comparison__card-desc">{{ paragraph.field_description.value|striptags }}</div>
+  {% endif %}
+
+  {% if not paragraph.field_items.isEmpty %}
+    <ul class="product-comparison__card-features">
+      {% for item in paragraph.field_items %}
+        {% set checklist = item.entity %}
+        <li class="checklist-item">
+          <span class="checklist-item__icon" aria-hidden="true">✓</span>
+          <span class="checklist-item__text">{{ checklist.field_text.value|striptags }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if paragraph.field_button_text.value %}
+    <a href="{{ paragraph.field_button_url.0.url|default('/contact-us') }}" class="product-comparison__card-btn">
+      {{ paragraph.field_button_text.value }}
+    </a>
+  {% endif %}
+</div>

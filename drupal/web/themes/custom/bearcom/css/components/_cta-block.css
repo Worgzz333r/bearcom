@@ -184,10 +184,6 @@
 }
 
 /* Hide wave decoration, show image overlay instead */
-.cta-block--credibility .cta-block__decoration {
-  display: none;
-}
-
 /* Orange button instead of outline */
 .cta-block--credibility .btn.btn--outline {
   background-color: var(--color-primary);

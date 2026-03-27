@@ -230,9 +230,9 @@
    -------------------------------------------------------------------------- */
 
 .site-footer--minimal-wrapper {
-  background-color: #FB591F;
+  background-color: var(--color-footer-mobile-bg);
   border-radius: 32px 32px 0 0;
-  padding: 0 60px;
+  padding: 0 var(--spacing-xl);
 }
 
 .site-footer--minimal {
@@ -241,8 +241,8 @@
   color: var(--color-white);
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 60px 0 40px;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
 }
 
 .site-footer--minimal__top {
@@ -261,8 +261,8 @@
   color: var(--color-white);
   border: none;
   gap: 12px;
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: var(--spacing-xs) 12px;
+  border-radius: var(--radius-card);
   font-size: var(--p-size);
   text-decoration: none;
 }
@@ -278,8 +278,8 @@
 
 .site-footer--minimal__patent {
   font-family: var(--font-family);
-  font-size: 16px;
-  line-height: 18px;
+  font-size: var(--details-size);
+  line-height: var(--details-lh);
   font-weight: 400;
   color: #FAFAFA;
   text-align: center;
@@ -293,14 +293,14 @@
   }
 
   .site-footer--minimal {
-    padding: 40px 0 30px;
+    padding: var(--spacing-lg) 0 var(--spacing-30);
     gap: 0;
   }
 
   .site-footer--minimal__top {
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: var(--spacing-lg);
     margin-bottom: 120px;
   }
 

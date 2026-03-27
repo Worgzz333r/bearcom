@@ -9,6 +9,7 @@
 
           var formData = new FormData(form);
           var submitBtn = form.querySelector('[type="submit"]');
+          var originalBtnText = submitBtn ? submitBtn.textContent : '';
           if (submitBtn) {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
@@ -17,58 +18,53 @@
           fetch(form.action, {
             method: 'POST',
             body: formData,
-            headers: {
-              'Accept': 'text/html'
-            }
+            headers: { 'Accept': 'text/html' }
           })
           .then(function (response) {
             if (response.ok) {
-              showThankYouModal();
+              showModal('success');
               form.reset();
             } else {
-              alert('Something went wrong. Please try again.');
+              showModal('error');
             }
           })
           .catch(function () {
-            alert('Network error. Please try again.');
+            showModal('error');
           })
           .finally(function () {
             if (submitBtn) {
               submitBtn.disabled = false;
-              submitBtn.textContent = 'Submit';
+              submitBtn.textContent = originalBtnText;
             }
           });
-        });
-      });
-
-      once('contact-modal-close', '.contact-modal', context).forEach(function (modal) {
-        modal.addEventListener('click', function (e) {
-          if (e.target === modal || e.target.closest('.contact-modal__close')) {
-            closeModal(modal);
-          }
         });
       });
     }
   };
 
-  function showThankYouModal() {
+  function showModal(type) {
     var existing = document.querySelector('.contact-modal');
-    if (existing) {
-      existing.remove();
-    }
+    if (existing) existing.remove();
 
+    var isSuccess = type === 'success';
     var modal = document.createElement('div');
     modal.className = 'contact-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', isSuccess ? 'Message sent' : 'Error');
+
     modal.innerHTML =
       '<div class="contact-modal__overlay"></div>' +
       '<div class="contact-modal__content">' +
         '<button class="contact-modal__close" aria-label="Close">&times;</button>' +
-        '<div class="contact-modal__icon">' +
-          '<svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="28" fill="#FC5000"/><path d="M18 28.5L25 35.5L38 22.5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
-        '</div>' +
-        '<h3 class="contact-modal__title">Thank You!</h3>' +
-        '<p class="contact-modal__text">Your message has been sent successfully. Our team will get back to you shortly.</p>' +
-        '<button class="contact-modal__btn">OK</button>' +
+        '<div class="contact-modal__icon contact-modal__icon--' + type + '"></div>' +
+        '<h3 class="contact-modal__title">' + (isSuccess ? 'Thank You!' : 'Oops!') + '</h3>' +
+        '<p class="contact-modal__text">' +
+          (isSuccess
+            ? 'Your message has been sent successfully. Our team will get back to you shortly.'
+            : 'Something went wrong. Please try again later.') +
+        '</p>' +
+        '<button class="contact-modal__btn">' + (isSuccess ? 'OK' : 'Try Again') + '</button>' +
       '</div>';
 
     document.body.appendChild(modal);
@@ -85,6 +81,13 @@
     modal.addEventListener('click', function (e) {
       if (e.target === modal || e.target.classList.contains('contact-modal__overlay')) {
         closeModal(modal);
+      }
+    });
+
+    document.addEventListener('keydown', function handler(e) {
+      if (e.key === 'Escape') {
+        closeModal(modal);
+        document.removeEventListener('keydown', handler);
       }
     });
   }

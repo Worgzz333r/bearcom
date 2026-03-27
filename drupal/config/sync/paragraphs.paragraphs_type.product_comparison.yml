@@ -1,0 +1,10 @@
+uuid: a1b2c3d4-prod-comp-0001-abcdef123456
+langcode: en
+status: true
+dependencies: {  }
+id: product_comparison
+label: 'Product Comparison'
+icon_uuid: null
+icon_default: null
+description: 'Two product cards side by side (white/orange) with features checklist and CTA.'
+behavior_plugins: {  }
