@@ -1,0 +1,19 @@
+uuid: c3e4f5a6-7d8b-9c0e-1f2a-3b4c5d6e7f8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.accessory_card
+id: paragraph.accessory_card.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: accessory_card
+label: Title
+description: 'Category name displayed on the card'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

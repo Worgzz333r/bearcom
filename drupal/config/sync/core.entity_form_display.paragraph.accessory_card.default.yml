@@ -1,0 +1,61 @@
+uuid: f6b7c8d9-0e1a-2f3b-4c5d-6e7f8a9b0c1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.accessory_card.field_card_style
+    - field.field.paragraph.accessory_card.field_description
+    - field.field.paragraph.accessory_card.field_image
+    - field.field.paragraph.accessory_card.field_link
+    - field.field.paragraph.accessory_card.field_title
+    - paragraphs.paragraphs_type.accessory_card
+  module:
+    - link
+    - media_library
+    - options
+id: paragraph.accessory_card.default
+targetEntityType: paragraph
+bundle: accessory_card
+mode: default
+content:
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: media_library_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_description:
+    type: text_textarea
+    weight: 1.5
+    region: content
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_card_style:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_style: true
+  status: true

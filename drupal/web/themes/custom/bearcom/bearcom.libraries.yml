@@ -155,6 +155,11 @@ newsletter:
     component:
       css/components/_newsletter.css: {}
 
+accessories-grid:
+  css:
+    component:
+      css/components/_accessories-grid.css: {}
+
 related-radios:
   js:
     js/related-carousel.js: {}

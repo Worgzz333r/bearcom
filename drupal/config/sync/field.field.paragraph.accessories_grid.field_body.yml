@@ -1,0 +1,22 @@
+uuid: c9e0f1a2-3b4c-5d6e-7f8a-9b0c1d2e3f4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.accessories_grid
+  module:
+    - text
+id: paragraph.accessories_grid.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: accessories_grid
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

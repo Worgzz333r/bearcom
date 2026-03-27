@@ -1,0 +1,54 @@
+uuid: e1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.accessories_grid.field_body
+    - field.field.paragraph.accessories_grid.field_cards
+    - field.field.paragraph.accessories_grid.field_title
+    - paragraphs.paragraphs_type.accessories_grid
+  module:
+    - paragraphs
+    - text
+id: paragraph.accessories_grid.default
+targetEntityType: paragraph
+bundle: accessories_grid
+mode: default
+content:
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_body:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_cards:
+    type: paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Card
+      title_plural: Cards
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: accessory_card
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
