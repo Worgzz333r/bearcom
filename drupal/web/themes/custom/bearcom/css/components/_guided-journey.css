@@ -43,7 +43,17 @@
   text-align: center;
 }
 
-.guided-journey__tab:first-child {
+.guided-journey__nav:has(.guided-journey__tab:only-child) {
+  min-width: 0;
+}
+
+.guided-journey__tab:only-child {
+  text-align: center;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.guided-journey__tab:first-child:not(:only-child) {
   text-align: left;
   padding-left: 6px;
 }
@@ -53,7 +63,7 @@
   padding-right: 6px;
 }
 
-.guided-journey__tab:last-child {
+.guided-journey__tab:last-child:not(:only-child) {
   text-align: right;
   padding-right: 6px;
 }
@@ -78,7 +88,7 @@
 .guided-journey__panel-inner {
   display: flex;
   gap: var(--spacing-30);
-  align-items: flex-start;
+  align-items: center;
 }
 
 .guided-journey__panel-content {
@@ -154,6 +164,24 @@
 /* Hide mobile nav on desktop */
 .guided-journey__mobile-nav {
   display: none;
+}
+
+/* Blue style variant */
+.guided-journey--blue {
+  background-color: #116CA6;
+  border-radius: 32px 32px 0 0;
+  padding-top: 40px;
+  margin-top: 40px;
+}
+
+.guided-journey--blue .section__title,
+.guided-journey--blue .section__subtitle,
+.guided-journey--blue .guided-journey__tab,
+.guided-journey--blue .guided-journey__panel-title,
+.guided-journey--blue .guided-journey__body,
+.guided-journey--blue .guided-journey__checklist li,
+.guided-journey--blue .guided-journey__panel-content {
+  color: #FAFAFA;
 }
 
 @media (max-width: 1023px) {

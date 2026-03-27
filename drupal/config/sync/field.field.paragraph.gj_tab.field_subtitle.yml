@@ -1,0 +1,19 @@
+uuid: c8a2f1e3-7d94-4b6a-a1e5-3f8b2c9d0e71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_subtitle
+    - paragraphs.paragraphs_type.gj_tab
+id: paragraph.gj_tab.field_subtitle
+field_name: field_subtitle
+entity_type: paragraph
+bundle: gj_tab
+label: Caption
+description: 'Orange caption text above the heading'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -105,13 +105,13 @@ div + div > .content-block {
 div + div > .content-block .content-block__wave {
   display: flex;
   justify-content: center;
-  padding: 30px 0;
+  padding: 42px 0;
 }
 
 div + div > .content-block .content-block__wave::before {
   content: '';
   width: 38px;
-  height: 30px;
+  height: 42px;
   background: url('../../images/orange-wave-segment.svg') no-repeat center / contain;
 }
 
@@ -150,5 +150,13 @@ div + div > .content-block .content-block__wave::before {
     max-height: 400px;
     object-fit: cover;
     object-position: center bottom;
+  }
+
+  div + div > .content-block .content-block__wave {
+    padding: 30px 0;
+  }
+
+  div + div > .content-block .content-block__wave::before {
+    height: 30px;
   }
 }

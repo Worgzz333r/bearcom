@@ -140,6 +140,26 @@ function bearcom_preprocess_paragraph(array &$variables) {
     }
   }
 
+  // Related Radios — load products from the same category.
+  if ($paragraph->bundle() === 'related_radios') {
+    $parent = $paragraph->getParentEntity();
+    if ($parent && $parent->getEntityTypeId() === 'node' && $parent->bundle() === 'product' && $parent->hasField('field_category') && !$parent->field_category->isEmpty()) {
+      $category_id = $parent->field_category->target_id;
+      $query = \Drupal::entityQuery('node')
+        ->condition('type', 'product')
+        ->condition('status', 1)
+        ->condition('field_category', $category_id)
+        ->condition('nid', $parent->id(), '<>')
+        ->sort('title', 'ASC')
+        ->range(0, 12)
+        ->accessCheck(TRUE);
+      $nids = $query->execute();
+      if ($nids) {
+        $variables['related_products'] = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nids);
+      }
+    }
+  }
+
   // FAQ Section — attach accordion + map libraries when needed.
   if ($paragraph->bundle() === 'faq_section') {
     $variables['#attached']['library'][] = 'bearcom/accordion';
@@ -189,6 +209,11 @@ function bearcom_page_attachments_alter(array &$attachments) {
     if ($node->bundle() === 'product') {
       $attachments['#attached']['library'][] = 'bearcom/product';
       $attachments['#attached']['library'][] = 'bearcom/specs-table';
+      $attachments['#attached']['library'][] = 'bearcom/tabs';
+      $attachments['#attached']['library'][] = 'bearcom/accordion';
+      $attachments['#attached']['library'][] = 'bearcom/stats-counter';
+      $attachments['#attached']['library'][] = 'bearcom/solutions-grid';
+      $attachments['#attached']['library'][] = 'bearcom/related-radios';
     }
     if ($node->bundle() === 'industry') {
       $attachments['#attached']['library'][] = 'bearcom/industry';

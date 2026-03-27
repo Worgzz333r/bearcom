@@ -56,6 +56,9 @@ settings:
     -
       value: stacked
       label: '[Spec Table] Stacked — label above value'
+    -
+      value: blue
+      label: '[Guided Journey] Blue — blue bg, light text'
   allowed_values_function: ''
 module: options
 locked: false
