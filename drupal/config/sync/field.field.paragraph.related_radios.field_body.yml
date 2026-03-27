@@ -1,0 +1,22 @@
+uuid: d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.related_radios
+  module:
+    - text
+id: paragraph.related_radios.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: related_radios
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

@@ -1,0 +1,10 @@
+uuid: a1c2e3f4-5b6d-7a8c-9e0f-1a2b3c4d5e6f
+langcode: en
+status: true
+dependencies: {  }
+id: accessory_card
+label: 'Accessory Card'
+icon_uuid: null
+icon_default: null
+description: 'Card with image, title and link to filtered catalog'
+behavior_plugins: {  }

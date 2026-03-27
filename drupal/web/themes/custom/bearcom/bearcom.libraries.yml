@@ -155,6 +155,21 @@ newsletter:
     component:
       css/components/_newsletter.css: {}
 
+accessories-grid:
+  css:
+    component:
+      css/components/_accessories-grid.css: {}
+
+related-radios:
+  js:
+    js/related-carousel.js: {}
+  css:
+    component:
+      css/components/_related-radios.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
 specs-table:
   js:
     js/specs-toggle.js: {}

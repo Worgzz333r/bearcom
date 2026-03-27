@@ -1,0 +1,68 @@
+{# Related Radios — text block + product carousel #}
+{% set products = related_products ?? [] %}
+<section class="related-radios">
+  <div class="container">
+    {% if paragraph.field_title.value %}
+      <h2 class="related-radios__title">{{ paragraph.field_title.value }}</h2>
+    {% endif %}
+
+    <div class="related-radios__inner">
+      <div class="related-radios__text">
+        {% if paragraph.field_subtitle.value %}
+          <span class="related-radios__caption">{{ paragraph.field_subtitle.value }}</span>
+        {% endif %}
+
+        {% if paragraph.field_heading.value %}
+          <h3 class="related-radios__heading">{{ paragraph.field_heading.value }}</h3>
+        {% endif %}
+
+        {% if paragraph.field_body.value %}
+          <div class="related-radios__body">{{ paragraph.field_body.value|raw }}</div>
+        {% endif %}
+
+        {% if paragraph.field_cta_url.0.url %}
+          <div class="related-radios__cta">
+            <a href="{{ paragraph.field_cta_url.0.url.toString() }}" class="btn btn--primary">
+              {{ paragraph.field_cta_url.0.title|default('Learn More') }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+
+      {% if products|length > 0 %}
+        <div class="related-radios__carousel-wrap" data-related-carousel>
+          {% if products|length > 3 %}
+            <button class="related-radios__arrow related-radios__arrow--prev" data-prev aria-label="Previous">
+              <img src="/{{ directory }}/images/orange-list-pointer.svg" alt="Previous">
+            </button>
+          {% endif %}
+
+          <div class="related-radios__carousel">
+            <div class="related-radios__slides" data-slides>
+              {% for product in products %}
+                <div class="related-radios__slide">
+                  <a href="{{ path('entity.node.canonical', {'node': product.id}) }}" class="related-radios__card">
+                    <div class="related-radios__card-image">
+                      {% if product.field_images.0.entity and product.field_images.0.entity.field_media_image.entity %}
+                        <img src="{{ file_url(product.field_images.0.entity.field_media_image.entity.uri.value) }}"
+                             alt="{{ product.field_images.0.entity.field_media_image.alt }}"
+                             loading="lazy">
+                      {% endif %}
+                    </div>
+                    <h4 class="related-radios__card-title">{{ product.label }}</h4>
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          {% if products|length > 3 %}
+            <button class="related-radios__arrow related-radios__arrow--next" data-next aria-label="Next">
+              <img src="/{{ directory }}/images/orange-list-pointer.svg" alt="Next">
+            </button>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

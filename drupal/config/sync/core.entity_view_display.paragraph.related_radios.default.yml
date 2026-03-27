@@ -1,0 +1,73 @@
+uuid: b8c9d0e1-f2a3-4b5c-6d7e-8f9a0b1c2d3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.related_radios.field_body
+    - field.field.paragraph.related_radios.field_cta_url
+    - field.field.paragraph.related_radios.field_heading
+    - field.field.paragraph.related_radios.field_products
+    - field.field.paragraph.related_radios.field_subtitle
+    - field.field.paragraph.related_radios.field_title
+    - paragraphs.paragraphs_type.related_radios
+  module:
+    - link
+    - text
+id: paragraph.related_radios.default
+targetEntityType: paragraph
+bundle: related_radios
+mode: default
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_cta_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_products:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  search_api_excerpt: true

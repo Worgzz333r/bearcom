@@ -1,0 +1,19 @@
+uuid: a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.related_radios
+id: paragraph.related_radios.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: related_radios
+label: Title
+description: 'Section heading (e.g. Related Radios)'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

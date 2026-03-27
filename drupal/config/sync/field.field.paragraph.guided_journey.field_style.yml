@@ -1,0 +1,21 @@
+uuid: d4e8a2b1-6c73-4f5e-9a1d-2b7c8e0f3a54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_style
+    - paragraphs.paragraphs_type.guided_journey
+  module:
+    - options
+id: paragraph.guided_journey.field_style
+field_name: field_style
+entity_type: paragraph
+bundle: guided_journey
+label: Style
+description: 'Visual style variant for the block'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

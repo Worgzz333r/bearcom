@@ -1,0 +1,23 @@
+uuid: e5a6b7c8-9f0d-1e2a-3b4c-5d6e7f8a9b0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.accessory_card
+  module:
+    - link
+id: paragraph.accessory_card.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: accessory_card
+label: Link
+description: 'URL to catalog with category filter'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

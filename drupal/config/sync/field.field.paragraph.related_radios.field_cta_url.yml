@@ -1,0 +1,23 @@
+uuid: e5f6a7b8-c9d0-1e2f-3a4b-5c6d7e8f9a0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_url
+    - paragraphs.paragraphs_type.related_radios
+  module:
+    - link
+id: paragraph.related_radios.field_cta_url
+field_name: field_cta_url
+entity_type: paragraph
+bundle: related_radios
+label: 'CTA Button'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

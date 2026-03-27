@@ -1,5 +1,6 @@
 {# Guided Journey — tabs component #}
-<section class="guided-journey" data-tabs>
+{% set style = paragraph.field_style.value %}
+<section class="guided-journey{% if style %} guided-journey--{{ style }}{% endif %}" data-tabs>
   <div class="container">
     {% if paragraph.field_title.value %}
       <div class="section__header">
@@ -26,12 +27,12 @@
         <div class="guided-journey__panel{% if loop.first %} is-active{% endif %}" data-tab-panel="{{ loop.index0 }}">
           <div class="guided-journey__panel-inner">
             <div class="guided-journey__panel-content">
-              <span class="guided-journey__caption">Caption leave here</span>
+              {% if tab.field_subtitle.value %}
+                <span class="guided-journey__caption">{{ tab.field_subtitle.value }}</span>
+              {% endif %}
 
-              <h3 class="guided-journey__panel-title">{{ paragraph.field_title.value }}</h3>
-
-              {% if tab.field_body.value %}
-                <div class="guided-journey__body">{{ tab.field_body.value|raw }}</div>
+              {% if tab.field_title.value %}
+                <h3 class="guided-journey__panel-title">{{ tab.field_title.value }}</h3>
               {% endif %}
 
               {% if tab.field_description.value %}

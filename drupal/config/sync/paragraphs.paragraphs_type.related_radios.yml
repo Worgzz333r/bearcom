@@ -1,0 +1,10 @@
+uuid: b2c4e6a8-1d3f-5a7b-9c0e-2f4a6b8d0e1c
+langcode: en
+status: true
+dependencies: {  }
+id: related_radios
+label: 'Related Radios'
+icon_uuid: null
+icon_default: null
+description: 'Related products carousel with text block'
+behavior_plugins: {  }

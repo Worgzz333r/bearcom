@@ -212,6 +212,50 @@
    Responsive — Dev 1 base
    -------------------------------------------------------------------------- */
 
+@media (max-width: 1199px) {
+  .cta-block__inner {
+    padding: var(--spacing-xl) 500px var(--spacing-xl) var(--spacing-70);
+  }
+}
+
+@media (max-width: 1023px) {
+  .cta-block__inner {
+    padding: var(--spacing-xl) 500px var(--spacing-xl) var(--spacing-lg);
+  }
+
+  .cta-block__decoration {
+    width: auto;
+    left: 30%;
+    background-size: auto 100%;
+    background-position: right center;
+  }
+}
+
+@media (max-width: 929px) {
+  .cta-block {
+    --cta-wave-width: auto;
+  }
+
+  .cta-block__inner {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--spacing-lg) var(--container-padding);
+  }
+
+  .cta-block__decoration {
+    position: relative;
+    width: 100%;
+    left: auto;
+    height: 150px;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    background: url('../../images/cta-wave-icon.svg') center center / contain no-repeat;
+    margin-bottom: var(--spacing-lg);
+    order: -2;
+  }
+}
+
 @media (max-width: 767px) {
   .cta-block {
     --cta-wave-width: auto;

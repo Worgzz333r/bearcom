@@ -1,0 +1,40 @@
+{# Accessories Grid — category cards linking to filtered catalog #}
+<section class="accessories-grid">
+  <div class="container">
+    {% if paragraph.field_title.value %}
+      <h2 class="accessories-grid__title">{{ paragraph.field_title.value }}</h2>
+    {% endif %}
+
+    {% if paragraph.field_body.value %}
+      <p class="accessories-grid__description">{{ paragraph.field_body.value|striptags }}</p>
+    {% endif %}
+
+    <div class="accessories-grid__cards">
+      {% for item in paragraph.field_cards %}
+        {% set card = item.entity %}
+        {% if card %}
+          {% set link_url = card.field_link.0.url ? card.field_link.0.url.toString() : '#' %}
+          {% set card_style = card.field_card_style.value|default('orange') %}
+          <a href="{{ link_url }}" class="accessories-grid__card accessories-grid__card--{{ card_style }}">
+            <span class="accessories-grid__card-title">{{ card.field_title.value }}</span>
+            <div class="accessories-grid__card-image">
+              {% set media = card.field_image.entity %}
+              {% if media %}
+                <img src="{{ file_url(media.field_media_image.entity.uri.value) }}"
+                     alt="{{ media.field_media_image.alt }}"
+                     loading="lazy">
+              {% endif %}
+            </div>
+            {% if card.field_description.value %}
+              <div class="accessories-grid__card-desc">
+                <img class="accessories-grid__card-icon" src="/{{ directory }}/images/zap.svg" alt="" width="24" height="24">
+                <strong class="accessories-grid__card-name">{{ card.field_title.value }}</strong>
+                <p class="accessories-grid__card-text">{{ card.field_description.value|striptags }}</p>
+              </div>
+            {% endif %}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

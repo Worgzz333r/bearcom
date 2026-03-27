@@ -1,0 +1,237 @@
+/* Related Radios */
+.related-radios {
+  padding: var(--section-padding) 0;
+}
+
+.related-radios__title {
+  text-align: center;
+  font-size: 42px;
+  line-height: 44px;
+  font-weight: 600;
+  color: var(--color-dark-blue);
+  margin-bottom: var(--spacing-xl);
+}
+
+.related-radios__inner {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+/* Left text block */
+.related-radios__text {
+  flex: 1;
+}
+
+.related-radios__caption {
+  display: block;
+  font-size: var(--p-size);
+  line-height: var(--details-lh);
+  font-weight: var(--font-weight-regular);
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.related-radios__heading {
+  font-size: var(--h4-size);
+  line-height: var(--h4-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark-blue);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.related-radios__body {
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.related-radios__cta {
+  margin-top: 40px;
+}
+
+/* Carousel wrapper — arrow + carousel + arrow in a row */
+.related-radios__carousel-wrap {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.related-radios__arrow--prev {
+  margin-right: -16px;
+  z-index: 2;
+}
+
+.related-radios__arrow--next {
+  margin-left: -16px;
+  z-index: 2;
+}
+
+/* Carousel — overflow hidden, shows exactly 3 cards */
+.related-radios__carousel {
+  width: 660px;
+  overflow: hidden;
+}
+
+.related-radios__slides {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.3s ease;
+}
+
+.related-radios__slide {
+  flex: 0 0 200px;
+  min-width: 200px;
+}
+
+.related-radios__card {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 8px;
+}
+
+.related-radios__card-image {
+  width: 180px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.related-radios__card-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.related-radios__card-title {
+  margin-top: 16px;
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0;
+  color: var(--color-dark-blue);
+}
+
+.related-radios__card:hover .related-radios__card-title {
+  color: var(--color-primary);
+}
+
+/* Arrows */
+.related-radios__arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.related-radios__arrow img {
+  width: 32px;
+  height: 32px;
+  transition: opacity var(--transition-base);
+}
+
+.related-radios__arrow:hover img {
+  opacity: 0.8;
+}
+
+.related-radios__arrow--prev img {
+  transform: rotate(180deg);
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .related-radios__inner {
+    flex-direction: column;
+  }
+
+  .related-radios__text {
+    flex: none;
+    width: 100%;
+  }
+
+  .related-radios__carousel-wrap {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .related-radios__carousel {
+    width: 660px;
+  }
+}
+
+/* Small tablet — 2 cards */
+@media (max-width: 767px) {
+  .related-radios__carousel {
+    width: 430px;
+  }
+}
+
+/* Mobile — 1 card */
+@media (max-width: 519px) {
+  .related-radios {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .related-radios__title {
+    font-size: 28px;
+    line-height: 32px;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 36px;
+  }
+
+  .related-radios__cta {
+    margin-top: 24px;
+  }
+
+  .related-radios__inner {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .related-radios__text {
+    flex: none;
+    width: 100%;
+  }
+
+  .related-radios__carousel-wrap {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .related-radios__carousel {
+    width: auto;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .related-radios__slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+  }
+
+  .related-radios__card {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .related-radios__card-image {
+    width: 180px;
+    height: 200px;
+    background: #fff;
+    border-radius: 8px;
+  }
+
+  .related-radios__card-title {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}

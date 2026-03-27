@@ -1,23 +1,26 @@
 /* Content Block — image left/right layout */
 .content-block {
-  padding: var(--section-padding) 0;
+  margin: var(--spacing-xl) 0;
+  position: relative;
 }
 
 .content-block__inner {
   display: flex;
   align-items: center;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-30);
 }
 
 .content-block__image {
-  flex: 0 0 45%;
-  border-radius: var(--radius-card);
+  flex: 0 0 51%;
+  border-radius: var(--radius-card-lg);
   overflow: hidden;
 }
 
 .content-block__image img {
   width: 100%;
-  height: auto;
+  height: 460px;
+  object-fit: cover;
+  object-position: center bottom;
   display: block;
 }
 
@@ -25,12 +28,25 @@
   flex: 1;
 }
 
+.content-block__caption {
+  display: block;
+  font-size: var(--details-size);
+  line-height: var(--details-lh);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.content-block__caption--uppercase {
+  text-transform: uppercase;
+}
+
 .content-block__title {
   font-size: var(--h2-size);
   line-height: var(--h2-lh);
   font-weight: var(--font-weight-semibold);
   color: var(--color-dark-blue);
-  margin: 0 0 var(--spacing-sm);
+  margin: 0 0 var(--spacing-md);
 }
 
 .content-block__body {
@@ -39,19 +55,108 @@
   color: var(--color-text-primary);
 }
 
+.content-block__body ul {
+  list-style: none;
+  padding-left: 18px;
+  margin: var(--spacing-xs) 0;
+}
+
+.content-block__body ul li {
+  position: relative;
+  padding-left: 4px;
+}
+
+.content-block__body ul li::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-text-primary);
+}
+
+.content-block__body ol {
+  list-style: decimal;
+  padding-left: 20px;
+  margin: var(--spacing-xs) 0;
+}
+
 /* Image right — reverse order */
 .content-block--image-right .content-block__inner {
   flex-direction: row-reverse;
 }
 
+/* Wave separator between consecutive content blocks */
+.content-block__wave {
+  display: none;
+}
+
+div:has(+ div > .content-block) > .content-block {
+  margin-bottom: 0;
+}
+
+div + div > .content-block {
+  margin-top: 0;
+}
+
+div + div > .content-block .content-block__wave {
+  display: flex;
+  justify-content: center;
+  padding: 42px 0;
+}
+
+div + div > .content-block .content-block__wave::before {
+  content: '';
+  width: 38px;
+  height: 42px;
+  background: url('../../images/orange-wave-segment.svg') no-repeat center / contain;
+}
+
 @media (max-width: 767px) {
+  .content-block {
+    margin: var(--spacing-lg) 0;
+  }
+
   .content-block__inner,
   .content-block--image-right .content-block__inner {
     flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .content-block__content {
+    order: 1;
+  }
+
+  .content-block__caption {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .content-block__title {
+    margin-bottom: var(--spacing-sm);
   }
 
   .content-block__image {
+    order: 2;
     flex: none;
     width: 100%;
+    height: auto;
+  }
+
+  .content-block__image img {
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    object-position: center bottom;
+  }
+
+  div + div > .content-block .content-block__wave {
+    padding: 30px 0;
+  }
+
+  div + div > .content-block .content-block__wave::before {
+    height: 30px;
   }
 }

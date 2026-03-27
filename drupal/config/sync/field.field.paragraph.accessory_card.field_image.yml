@@ -1,0 +1,26 @@
+uuid: d4f5a6b7-8e9c-0d1f-2a3b-4c5d6e7f8a9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image
+    - paragraphs.paragraphs_type.accessory_card
+  module:
+    - media
+id: paragraph.accessory_card.field_image
+field_name: field_image
+entity_type: paragraph
+bundle: accessory_card
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    auto_create: false
+field_type: entity_reference
