@@ -16,10 +16,10 @@ settings:
       label: 'Orange (default)'
     -
       value: blue
-      label: 'Blue'
+      label: Blue
     -
       value: dark
-      label: 'Dark'
+      label: Dark
   allowed_values_function: ''
 module: options
 locked: false

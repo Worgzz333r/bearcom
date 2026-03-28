@@ -195,3 +195,21 @@ section.solutions-grid .card__subtitle {
   display: none;
 }
 
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1023px) {
+  .solutions-grid {
+    padding: var(--spacing-xl) 0 80px;
+    background-size: auto 70%;
+  }
+}
+
+@media (max-width: 767px) {
+  .solutions-grid {
+    padding: var(--spacing-lg) 0 60px;
+    background-size: auto 50%;
+    background-position: center center;
+  }
+}

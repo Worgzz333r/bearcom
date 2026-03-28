@@ -30,3 +30,6 @@
     </div>
   </div>
 </section>
+
+{# Consume remaining fields to prevent Drupal from rendering them #}
+{{ content|without('field_title', 'field_description', 'field_button_text', 'field_button_url', 'field_image', 'field_style') }}

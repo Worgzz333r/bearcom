@@ -344,6 +344,7 @@
   .hero .container {
     flex-direction: column;
     text-align: center;
+    align-items: center;
   }
 
   .hero__content {
@@ -357,6 +358,8 @@
   .hero__product-image {
     flex: none;
     width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .hero--color .hero__product-image::before,

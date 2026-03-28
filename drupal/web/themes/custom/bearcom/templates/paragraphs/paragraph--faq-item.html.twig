@@ -10,3 +10,4 @@
     <div class="accordion__body">{{ content.field_answer }}</div>
   </div>
 </div>
+{{ content|without('field_question', 'field_answer') }}

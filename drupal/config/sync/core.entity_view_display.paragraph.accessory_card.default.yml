@@ -3,6 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.accessory_card.field_card_style
+    - field.field.paragraph.accessory_card.field_category
+    - field.field.paragraph.accessory_card.field_description
     - field.field.paragraph.accessory_card.field_image
     - field.field.paragraph.accessory_card.field_link
     - field.field.paragraph.accessory_card.field_title
@@ -14,14 +17,6 @@ targetEntityType: paragraph
 bundle: accessory_card
 mode: default
 content:
-  field_title:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_image:
     type: entity_reference_entity_view
     label: hidden
@@ -43,5 +38,16 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
+  field_card_style: true
+  field_category: true
+  field_description: true
   search_api_excerpt: true

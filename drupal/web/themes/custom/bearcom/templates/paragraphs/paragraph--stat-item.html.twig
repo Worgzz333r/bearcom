@@ -3,3 +3,4 @@
   <span class="stats-counter__number" data-stat-number>{{ paragraph.field_number.value }}</span>
   <span class="stats-counter__label">{{ paragraph.field_label.value|raw }}</span>
 </div>
+{{ content|without('field_number', 'field_label') }}

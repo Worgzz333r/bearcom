@@ -16,3 +16,4 @@
     {% endif %}
   </div>
 </div>
+{{ content|without('field_icon', 'field_title', 'field_description') }}

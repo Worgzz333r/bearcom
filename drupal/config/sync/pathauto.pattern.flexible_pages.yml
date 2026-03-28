@@ -1,0 +1,22 @@
+uuid: d11bb088-4924-4399-974d-a2eb9b56675b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: flexible_pages
+label: 'Flexible pages'
+type: 'canonical_entities:node'
+pattern: '/[node:title]'
+selection_criteria:
+  1442904b-89c5-43ff-acae-3cf4ffc598b0:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 1442904b-89c5-43ff-acae-3cf4ffc598b0
+    context_mapping:
+      node: node
+    bundles:
+      flexible_page: flexible_page
+selection_logic: and
+weight: 0
+relationships: {  }

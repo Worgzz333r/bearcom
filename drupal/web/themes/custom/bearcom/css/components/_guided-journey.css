@@ -273,6 +273,11 @@
     background: var(--color-primary);
   }
 
+  /* Text align left on mobile */
+  .guided-journey__panel-content {
+    text-align: left;
+  }
+
   /* Image first, then text */
   .guided-journey__panel-inner {
     flex-direction: column-reverse;

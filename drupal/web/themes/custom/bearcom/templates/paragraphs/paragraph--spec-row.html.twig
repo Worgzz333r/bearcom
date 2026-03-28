@@ -11,3 +11,4 @@
   </div>
   <div class="spec-row__value">{{ paragraph.field_value.value }}</div>
 </div>
+{{ content|without('field_label', 'field_tooltip', 'field_value') }}

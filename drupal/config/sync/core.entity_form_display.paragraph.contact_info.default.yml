@@ -18,14 +18,6 @@ targetEntityType: paragraph
 bundle: contact_info
 mode: default
 content:
-  field_title:
-    type: string_textfield
-    weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_description:
     type: text_textarea
     weight: 1
@@ -33,6 +25,14 @@ content:
     settings:
       rows: 3
       placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types:
+        - image
     third_party_settings: {  }
   field_items:
     type: entity_reference_paragraphs
@@ -46,12 +46,14 @@ content:
       form_display_mode: default
       default_paragraph_type: checklist_item
     third_party_settings: {  }
-  field_image:
-    type: media_library_widget
-    weight: 3
+  field_title:
+    type: string_textfield
+    weight: 0
     region: content
     settings:
-      media_types:
-        - image
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  created: true
+  status: true

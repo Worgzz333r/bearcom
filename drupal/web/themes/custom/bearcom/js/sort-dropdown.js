@@ -1,6 +1,34 @@
 (function (Drupal, once) {
   'use strict';
 
+  /**
+   * Pre-select category checkboxes from URL query params.
+   * Handles links like /products?category[]=12&category[]=13
+   */
+  Drupal.behaviors.filterFromUrl = {
+    attach: function (context) {
+      once('filter-from-url', '.filter-sidebar', context).forEach(function (sidebar) {
+        var params = new URLSearchParams(window.location.search);
+        var categories = params.getAll('category[]');
+        if (!categories.length) return;
+
+        var changed = false;
+        categories.forEach(function (tid) {
+          var checkbox = sidebar.querySelector('input[type="checkbox"][value="' + tid + '"]');
+          if (checkbox && !checkbox.checked) {
+            checkbox.checked = true;
+            changed = true;
+          }
+        });
+
+        if (changed) {
+          var submit = sidebar.querySelector('.form-submit');
+          if (submit) submit.click();
+        }
+      });
+    }
+  };
+
   Drupal.behaviors.sortDropdown = {
     attach: function (context) {
       once('sort-dropdown', '.form-item-sort-by', context).forEach(function (wrapper) {

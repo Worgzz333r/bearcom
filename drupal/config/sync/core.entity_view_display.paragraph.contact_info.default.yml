@@ -16,35 +16,36 @@ targetEntityType: paragraph
 bundle: contact_info
 mode: default
 content:
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_items:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_title:
     type: string
-    weight: 0
-    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-  field_description:
-    type: text_default
-    weight: 1
+    weight: 0
     region: content
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-  field_items:
-    type: entity_reference_revisions_entity_view
-    weight: 2
-    region: content
-    label: hidden
-    settings:
-      view_mode: default
-    third_party_settings: {  }
-  field_image:
-    type: entity_reference_entity_view
-    weight: 3
-    region: content
-    label: hidden
-    settings:
-      view_mode: default
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  search_api_excerpt: true

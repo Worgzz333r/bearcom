@@ -20,3 +20,4 @@
     {{ content.field_items }}
   </div>
 </div>
+{{ content|without('field_title', 'field_description', 'field_items', 'field_style') }}

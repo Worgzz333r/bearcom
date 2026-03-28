@@ -65,7 +65,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: -0.5
+    weight: 0
     region: content
 hidden:
   search_api_excerpt: true

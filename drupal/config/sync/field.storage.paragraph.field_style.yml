@@ -28,7 +28,7 @@ settings:
       label: '[Hero] Soundwave — grey bg, wave illustration'
     -
       value: white
-      label: '[Hero] White — white bg, centered text'
+      label: '[Product Card] White'
     -
       value: default
       label: '[CTA] Default'
@@ -62,9 +62,6 @@ settings:
     -
       value: dark-blue
       label: '[Card Grid] Dark blue background'
-    -
-      value: white
-      label: '[Product Card] White'
     -
       value: orange-card
       label: '[Product Card] Orange'

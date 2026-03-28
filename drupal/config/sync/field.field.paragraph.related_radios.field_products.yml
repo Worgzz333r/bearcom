@@ -21,8 +21,8 @@ settings:
   handler_settings:
     target_bundles:
       product: product
-    auto_create: false
     sort:
       field: title
       direction: ASC
+    auto_create: false
 field_type: entity_reference

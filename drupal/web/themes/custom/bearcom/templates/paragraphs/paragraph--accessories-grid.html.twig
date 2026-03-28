@@ -13,7 +13,13 @@
       {% for item in paragraph.field_cards %}
         {% set card = item.entity %}
         {% if card %}
-          {% set link_url = card.field_link.0.url ? card.field_link.0.url.toString() : '#' %}
+          {% if card.field_category.target_id %}
+            {% set link_url = '/products?category[]=' ~ card.field_category.target_id %}
+          {% elseif card.field_link.0.url %}
+            {% set link_url = card.field_link.0.url.toString() %}
+          {% else %}
+            {% set link_url = '#' %}
+          {% endif %}
           {% set card_style = card.field_card_style.value|default('orange') %}
           <a href="{{ link_url }}" class="accessories-grid__card accessories-grid__card--{{ card_style }}">
             <span class="accessories-grid__card-title">{{ card.field_title.value }}</span>

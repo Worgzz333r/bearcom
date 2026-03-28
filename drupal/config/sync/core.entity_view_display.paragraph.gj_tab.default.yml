@@ -62,7 +62,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 0.5
+    weight: 0
     region: content
 hidden:
   field_checklist: true

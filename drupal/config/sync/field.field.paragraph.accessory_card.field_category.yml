@@ -1,0 +1,25 @@
+uuid: 69350fa1-1cef-4bf7-8a8c-056241ee14b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_category
+    - paragraphs.paragraphs_type.accessory_card
+    - taxonomy.vocabulary.product_category
+id: paragraph.accessory_card.field_category
+field_name: field_category
+entity_type: paragraph
+bundle: accessory_card
+label: 'Product Category'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_category: product_category
+    auto_create: false
+field_type: entity_reference
