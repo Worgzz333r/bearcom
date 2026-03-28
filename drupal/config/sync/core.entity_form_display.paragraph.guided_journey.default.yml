@@ -18,7 +18,7 @@ mode: default
 content:
   field_style:
     type: options_select
-    weight: -1
+    weight: -100
     region: content
     settings: {  }
     third_party_settings: {  }
