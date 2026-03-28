@@ -14,7 +14,8 @@
         {% set card = item.entity %}
         {% if card %}
           {% if card.field_category.target_id %}
-            {% set link_url = '/products?category[]=' ~ card.field_category.target_id %}
+            {% set tid = card.field_category.target_id %}
+            {% set link_url = '/products?category[' ~ tid ~ ']=' ~ tid %}
           {% elseif card.field_link.0.url %}
             {% set link_url = card.field_link.0.url.toString() %}
           {% else %}
