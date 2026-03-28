@@ -50,7 +50,7 @@
   right: 0;
   top: 100%;
   background: #FAFAFA;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: none;
   border-top: none;
   z-index: 999;
   min-width: 850px;
@@ -211,23 +211,26 @@
 
 /* Cards — Rentals (4) / Resources (3) */
 .mega-menu__grid--cards {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   max-width: 1020px;
 }
 
-/* 3 cards or fewer — fixed 320px */
-.mega-menu__grid--cards .mega-menu__card {
-  flex: 0 0 320px;
+/* 4+ cards — use 4 columns */
+.mega-menu__grid--cards:has(.mega-menu__card:nth-child(4)) {
+  grid-template-columns: repeat(4, 1fr);
 }
 
-/* 4+ cards — on wide screens fit in one row, otherwise same as 3 */
-@media (min-width: 1400px) {
-  .mega-menu__grid--cards .mega-menu__card:first-child:nth-last-child(n+4),
-  .mega-menu__grid--cards .mega-menu__card:first-child:nth-last-child(n+4) ~ .mega-menu__card {
-    flex: 1 1 0;
-    max-width: 320px;
+@media (max-width: 1200px) {
+  .mega-menu__grid--cards:has(.mega-menu__card:nth-child(4)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 920px) {
+  .mega-menu__grid--cards {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
