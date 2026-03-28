@@ -212,17 +212,10 @@ industry:
     theme:
       css/pages/_industry.css: {}
 
-cta-orange:
-  css:
-    component:
-      css/components/_cta-orange.css: {}
-
 service:
   css:
     theme:
       css/pages/_service.css: {}
-  dependencies:
-    - bearcom/cta-orange
 
 location:
   css:

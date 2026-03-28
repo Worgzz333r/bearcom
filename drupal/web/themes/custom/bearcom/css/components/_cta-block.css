@@ -92,7 +92,7 @@
 
 /* Orange style */
 .cta-block--orange .cta-block__inner {
-  background-color: color-mix(in srgb, var(--color-error-orange) 90%, transparent);
+  background-color: var(--color-primary);
 }
 
 .cta-block--orange .cta-block__title,

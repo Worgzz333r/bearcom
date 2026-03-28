@@ -214,7 +214,6 @@ function bearcom_page_attachments_alter(array &$attachments) {
       $attachments['#attached']['library'][] = 'bearcom/accordion';
       $attachments['#attached']['library'][] = 'bearcom/solutions-grid';
       $attachments['#attached']['library'][] = 'bearcom/service';
-      $attachments['#attached']['library'][] = 'bearcom/cta-orange';
       $attachments['#attached']['library'][] = 'bearcom/industry';
       $attachments['#attached']['library'][] = 'bearcom/carousel';
 
