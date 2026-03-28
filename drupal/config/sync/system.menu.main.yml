@@ -1,7 +1,12 @@
 uuid: becbc846-ebbc-4503-bef6-dd1cc711eef4
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_item_extras
+third_party_settings:
+  menu_item_extras:
+    menu_item_extras_enabled: true
 _core:
   default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
 id: main

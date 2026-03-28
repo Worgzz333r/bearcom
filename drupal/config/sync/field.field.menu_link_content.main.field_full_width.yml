@@ -1,0 +1,23 @@
+uuid: d579d271-142a-45cb-ae89-59f600a3644b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_full_width
+    - system.menu.main
+id: menu_link_content.main.field_full_width
+field_name: field_full_width
+entity_type: menu_link_content
+bundle: main
+label: 'Full width dropdown'
+description: 'If checked, the mega menu dropdown will span the full width of the header.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

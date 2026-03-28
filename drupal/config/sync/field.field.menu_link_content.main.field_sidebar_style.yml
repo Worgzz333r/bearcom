@@ -1,0 +1,23 @@
+uuid: 0880b666-fec0-4166-be64-e36c19c63058
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_sidebar_style
+    - system.menu.main
+  module:
+    - options
+id: menu_link_content.main.field_sidebar_style
+field_name: field_sidebar_style
+entity_type: menu_link_content
+bundle: main
+label: 'Sidebar Style'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: orange
+default_value_callback: ''
+settings: {  }
+field_type: list_string

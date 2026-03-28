@@ -1,0 +1,8 @@
+uuid: a97d0f0e-6ba3-4303-8c6f-fb5571760e87
+langcode: en
+status: true
+dependencies: {  }
+id: mega-menu-sidebar
+label: 'Mega Menu Sidebar'
+description: 'CTA links shown in the orange sidebar of mega menu dropdowns.'
+locked: false

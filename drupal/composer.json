@@ -25,6 +25,7 @@
         "drupal/geofield": "^1.61",
         "drupal/leaflet": "^10.2",
         "drupal/media_library_form_element": "^2.0",
+        "drupal/menu_item_extras": "^3.1",
         "drupal/metatag": "^2.1",
         "drupal/paragraphs": "^1.17",
         "drupal/pathauto": "^1.13",

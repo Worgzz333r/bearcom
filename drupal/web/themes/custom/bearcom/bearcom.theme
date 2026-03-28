@@ -8,13 +8,92 @@
 use Drupal\node\NodeInterface;
 
 /**
+ * Implements hook_preprocess_menu() for main menu.
+ * Adds icon_url/icon_svg to menu items and sidebar links.
+ */
+function bearcom_preprocess_menu__main(array &$variables) {
+  _bearcom_add_menu_icons($variables['items']);
+
+  // Load mega-menu-sidebar links
+  $menu_tree = \Drupal::menuTree();
+  $params = $menu_tree->getCurrentRouteMenuTreeParameters('mega-menu-sidebar');
+  $tree = $menu_tree->load('mega-menu-sidebar', $params);
+  $manipulators = [
+    ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+    ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+  ];
+  $tree = $menu_tree->transform($tree, $manipulators);
+
+  $sidebar_links = [];
+  foreach ($tree as $element) {
+    $link = $element->link;
+    $description = '';
+    if (method_exists($link, 'getEntity')) {
+      $entity = $link->getEntity();
+      if ($entity && $entity->hasField('description')) {
+        $description = $entity->get('description')->value ?: '';
+      }
+    }
+    $sidebar_links[] = [
+      'title' => $link->getTitle(),
+      'url' => $link->getUrlObject()->toString(),
+      'description' => $description,
+    ];
+  }
+  $variables['sidebar_links'] = $sidebar_links;
+}
+
+function _bearcom_add_menu_icons(array &$items) {
+  foreach ($items as &$item) {
+    $item['icon_url'] = NULL;
+    if (isset($item['original_link'])) {
+      $plugin = $item['original_link'];
+      if (method_exists($plugin, 'getEntity')) {
+        $entity = $plugin->getEntity();
+        if ($entity && $entity->hasField('field_image') && !$entity->get('field_image')->isEmpty()) {
+          $file = $entity->get('field_image')->entity;
+          if ($file) {
+            $item['image_url'] = \Drupal::service('file_url_generator')->generateString($file->getFileUri());
+          }
+        }
+        if ($entity && $entity->hasField('field_sidebar_style')) {
+          $item['sidebar_style'] = $entity->get('field_sidebar_style')->value ?: 'orange';
+        }
+        if ($entity && $entity->hasField('field_full_width')) {
+          $item['full_width'] = (bool) $entity->get('field_full_width')->value;
+        }
+        if ($entity && $entity->hasField('field_icon') && !$entity->get('field_icon')->isEmpty()) {
+          $file = $entity->get('field_icon')->entity;
+          if ($file) {
+            $uri = $file->getFileUri();
+            $path = \Drupal::service('file_system')->realpath($uri);
+            if ($path && file_exists($path)) {
+              $svg = file_get_contents($path);
+              // Remove XML declaration if present
+              $svg = preg_replace('/<\?xml[^>]*\?>/', '', $svg);
+              $item['icon_svg'] = $svg;
+            }
+            $item['icon_url'] = \Drupal::service('file_url_generator')->generateString($file->getFileUri());
+          }
+        }
+      }
+    }
+    if (!empty($item['below'])) {
+      _bearcom_add_menu_icons($item['below']);
+    }
+  }
+}
+
+/**
  * Get cached alias for a node. Avoids repeated lookups.
  */
 function _bearcom_get_node_alias(NodeInterface $node): string {
   static $cache = [];
   $nid = $node->id();
   if (!isset($cache[$nid])) {
-    $cache[$nid] = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $nid);
+    $path = '/node/' . $nid;
+    $alias = \Drupal::service('path_alias.manager')->getAliasByPath($path);
+    $cache[$nid] = $alias ?: $path;
   }
   return $cache[$nid];
 }

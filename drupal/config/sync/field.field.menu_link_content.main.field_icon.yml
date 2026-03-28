@@ -1,0 +1,27 @@
+uuid: 31f2b20b-2c0f-47a9-982b-32fa26733dae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_icon
+    - system.menu.main
+  module:
+    - file
+id: menu_link_content.main.field_icon
+field_name: field_icon
+entity_type: menu_link_content
+bundle: main
+label: 'SVG Icon'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: menu-icons
+  file_extensions: svg
+  max_filesize: '64 KB'
+  description_field: false
+field_type: file
