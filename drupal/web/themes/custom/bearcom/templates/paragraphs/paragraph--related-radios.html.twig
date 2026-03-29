@@ -1,6 +1,6 @@
 {# Related Radios — text block + product carousel #}
 {% set products = related_products ?? [] %}
-<section class="related-radios">
+<section class="related-radios" id="related-products" data-section-label="Related Products">
   <div class="container">
     {% if paragraph.field_title.value %}
       <h2 class="related-radios__title">{{ paragraph.field_title.value }}</h2>

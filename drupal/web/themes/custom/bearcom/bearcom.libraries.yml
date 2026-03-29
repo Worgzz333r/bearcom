@@ -195,9 +195,12 @@ category:
 product:
   js:
     js/product-gallery.js: {}
+    js/product-subnav.js: {}
   css:
     theme:
       css/pages/_product.css: {}
+    component:
+      css/components/_product-subnav.css: {}
   dependencies:
     - core/drupal
     - core/once

@@ -8,7 +8,7 @@
 {% set has_map = paragraph.field_latitude.value and paragraph.field_longitude.value %}
 {% set has_right = has_image or has_map %}
 
-<section class="faq-section{{ has_right ? ' faq-section--two-col' : '' }}">
+<section class="faq-section{{ has_right ? ' faq-section--two-col' : '' }}" id="faq" data-section-label="FAQ">
   <div class="container">
     {% if paragraph.field_title.value %}
       <div class="section__header">

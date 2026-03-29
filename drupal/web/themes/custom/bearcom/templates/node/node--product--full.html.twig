@@ -1,8 +1,23 @@
 {# Product — full page: hero + specs + paragraphs #}
 <article class="product-page">
 
+  {# Product subnav — from field_subnav or auto-populated by JS #}
+  <nav class="product-subnav" data-product-subnav>
+    <div class="container">
+      <ul class="product-subnav__list" data-product-subnav-list>
+        {% if node.field_subnav|length > 0 %}
+          {% for item in node.field_subnav %}
+            <li class="product-subnav__item">
+              <a href="{{ item.uri|replace({'internal:': ''}) }}" class="product-subnav__link">{{ item.title }}</a>
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+
   {# Hero section #}
-  <section class="product-hero">
+  <section class="product-hero" id="overview" data-section-label="Overview">
     <div class="container">
       <div class="product-hero__inner">
 
@@ -80,7 +95,7 @@
 
   {# Specs section #}
   {% if content.field_specs|render|trim %}
-    <section class="product-specs">
+    <section class="product-specs" id="specifications" data-section-label="Specifications">
       <div class="container">
         {{ content.field_specs }}
       </div>

@@ -1,8 +1,15 @@
 {# Product — full page: hero + specs + paragraphs #}
 <article class="product-page">
 
+  {# Product subnav — auto-populated by JS from section ids #}
+  <nav class="product-subnav" data-product-subnav>
+    <div class="container">
+      <ul class="product-subnav__list" data-product-subnav-list></ul>
+    </div>
+  </nav>
+
   {# Hero section #}
-  <section class="product-hero">
+  <section class="product-hero" id="overview" data-section-label="Overview">
     <div class="container">
       <div class="product-hero__inner">
 
@@ -80,7 +87,7 @@
 
   {# Specs section #}
   {% if content.field_specs|render|trim %}
-    <section class="product-specs">
+    <section class="product-specs" id="specifications" data-section-label="Specifications">
       <div class="container">
         {{ content.field_specs }}
       </div>

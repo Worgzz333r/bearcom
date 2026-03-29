@@ -1,6 +1,6 @@
 {# Guided Journey — tabs component #}
 {% set style = paragraph.field_style.value %}
-<section class="guided-journey{% if style %} guided-journey--{{ style }}{% endif %}" data-tabs>
+<section class="guided-journey{% if style %} guided-journey--{{ style }}{% endif %}" id="guided-journey" data-section-label="Guided Journey block" data-tabs>
   <div class="container">
     {% if paragraph.field_title.value %}
       <div class="section__header">

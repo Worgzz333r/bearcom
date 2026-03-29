@@ -1,0 +1,63 @@
+/* Product subnav — sticky section nav on product pages */
+.product-subnav {
+  position: sticky;
+  top: 100px;
+  z-index: calc(var(--z-header) - 1);
+  background: var(--color-background);
+  border-top: 1px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
+  border-bottom: 1px solid var(--color-primary);
+}
+
+.product-subnav__list {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.product-subnav__list::-webkit-scrollbar {
+  display: none;
+}
+
+.product-subnav__item {
+  flex-shrink: 0;
+}
+
+.product-subnav__link {
+  display: block;
+  padding: var(--container-padding) 0;
+  font-family: var(--font-family);
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+.product-subnav__link:hover {
+  color: var(--color-primary);
+}
+
+.product-subnav__link.is-active {
+  color: var(--color-dark-blue);
+  font-weight: 700;
+}
+
+/* Hide breadcrumbs on product pages */
+.page-node-type-product .block-system-breadcrumb-block {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .product-subnav {
+    top: 0;
+  }
+}

@@ -1,7 +1,7 @@
 {# Content Block — image left/right + caption + title + body #}
 {% set layout = paragraph.field_layout.value|default('image-left') %}
 
-<section class="content-block content-block--{{ layout }}">
+<section class="content-block content-block--{{ layout }}" id="features" data-section-label="Features">
   <div class="content-block__wave" aria-hidden="true"></div>
   <div class="container">
     <div class="content-block__inner">
