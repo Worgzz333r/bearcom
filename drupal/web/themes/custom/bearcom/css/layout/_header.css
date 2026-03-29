@@ -2,15 +2,22 @@
 .top-bar {
   background-color: var(--color-footer-bg);
   color: var(--color-white);
-  font-size: 14px;
-  padding: 10px 0;
+  font-size: var(--details-size);
+  height: var(--spacing-xl);
+}
+
+.top-bar > .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .top-bar__inner {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-xl);
 }
 
 .top-bar a,
@@ -18,16 +25,22 @@
   color: var(--color-white);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 14px;
+  gap: 12px;
+  font-size: var(--details-size);
 }
 
 .top-bar a:hover {
   color: var(--color-primary);
 }
 
+.top-bar__contact {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
 .top-bar__phone {
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-regular);
 }
 
 .top-bar__search-icon {
@@ -38,7 +51,7 @@
 .top-bar__country-switch {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--spacing-md);
 }
 
 .top-bar__country-switch span {
@@ -46,9 +59,8 @@
 }
 
 .top-bar__country-switch img {
-  width: 28px;
-  height: 20px;
-  border-radius: 2px;
+  width: 36px;
+  height: 18px;
 }
 
 /* Header / Navigation */
@@ -78,7 +90,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 0;
+  height: 100px;
 }
 
 /* Logo */
@@ -117,7 +129,7 @@
 .site-header__nav {
   display: flex;
   align-items: center;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-50);
 }
 
 /* Menu styles are in _mega-menu.css */
@@ -164,7 +176,7 @@
   display: none;
 }
 
-@media (max-width: 920px) {
+@media (max-width: 960px) {
   .site-header__nav {
     display: none;
   }

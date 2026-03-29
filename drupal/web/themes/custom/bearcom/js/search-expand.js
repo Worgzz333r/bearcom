@@ -6,13 +6,14 @@
       var toggles = once('search-expand', '[data-search-toggle]', context);
 
       toggles.forEach(function (toggle) {
-        var field = document.querySelector('[data-search-field]');
-        if (!field) return;
+        var wrapper = toggle.closest('.top-bar__search');
+        var field = wrapper ? wrapper.querySelector('[data-search-field]') : null;
+        if (!wrapper || !field) return;
 
         toggle.addEventListener('click', function (e) {
           e.preventDefault();
-          field.classList.toggle('is-open');
-          if (field.classList.contains('is-open')) {
+          wrapper.classList.toggle('is-open');
+          if (wrapper.classList.contains('is-open')) {
             field.querySelector('input').focus();
           }
         });
@@ -20,7 +21,14 @@
         // Close on Escape.
         field.querySelector('input').addEventListener('keydown', function (e) {
           if (e.key === 'Escape') {
-            field.classList.remove('is-open');
+            wrapper.classList.remove('is-open');
+          }
+        });
+
+        // Close on click outside.
+        document.addEventListener('click', function (e) {
+          if (!wrapper.contains(e.target)) {
+            wrapper.classList.remove('is-open');
           }
         });
       });
