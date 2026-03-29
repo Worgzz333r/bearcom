@@ -44,20 +44,55 @@
 
                 {# === SOLUTIONS: 3 columns (Voice, Security, Data) === #}
                 {% if slug == 'solutions' %}
-                  <div class="mega-menu__columns">
+                  <div class="mega-menu__solutions">
                     {% for child in item.below %}
-                      <div class="mega-menu__column">
-                        <h4 class="mega-menu__column-title">{{ child.title }}</h4>
-                        {% if child.below %}
-                          <ul class="mega-menu__list">
-                            {% for grandchild in child.below %}
-                              <li><a href="{{ grandchild.url }}">
-                                {% if grandchild.icon_svg %}<span class="mega-menu__icon">{{ grandchild.icon_svg|raw }}</span>{% endif %}
-                                {{ grandchild.title }}
-                              </a></li>
-                            {% endfor %}
-                          </ul>
+                      <div class="mega-menu__sol-column">
+                        {% if child.image_url %}
+                          <div class="mega-menu__sol-image">
+                            <img src="{{ child.image_url }}" alt="{{ child.title }}" loading="lazy">
+                          </div>
                         {% endif %}
+                        <div class="mega-menu__sol-body">
+                          <h4 class="mega-menu__sol-title">
+                            {% if child.icon_svg %}<span class="mega-menu__icon">{{ child.icon_svg|raw }}</span>{% endif %}
+                            {{ child.title }}
+                          </h4>
+                          {% if child.below %}
+                            {% for grandchild in child.below %}
+                              {% if grandchild.below %}
+                                {# Group (e.g. "Two-Way Radios & Accessories") #}
+                                <div class="mega-menu__sol-group">
+                                  <h5 class="mega-menu__sol-group-title">{{ grandchild.title }}</h5>
+                                  {% for item3 in grandchild.below %}
+                                    {% if item3.below %}
+                                      {# Sub-group with subtitle + bullet list (e.g. "Radios" → items) #}
+                                      <h6 class="mega-menu__sol-subtitle">{{ item3.title }}</h6>
+                                      <ul class="mega-menu__sol-list">
+                                        {% for item4 in item3.below %}
+                                          <li><a href="{{ item4.url }}">
+                                            {% if item4.icon_svg %}<span class="mega-menu__icon">{{ item4.icon_svg|raw }}</span>{% endif %}
+                                            {{ item4.title }}
+                                          </a></li>
+                                        {% endfor %}
+                                      </ul>
+                                    {% else %}
+                                      <a href="{{ item3.url }}" class="mega-menu__sol-link">
+                                        {% if item3.icon_svg %}<span class="mega-menu__icon">{{ item3.icon_svg|raw }}</span>{% endif %}
+                                        {{ item3.title }}
+                                      </a>
+                                    {% endif %}
+                                  {% endfor %}
+                                </div>
+                              {% else %}
+                                {# Standalone link — bold #}
+                                <a href="{{ grandchild.url }}" class="mega-menu__sol-link">
+                                  {% if grandchild.icon_svg %}<span class="mega-menu__icon">{{ grandchild.icon_svg|raw }}</span>{% endif %}
+                                  {{ grandchild.title }}
+                                </a>
+                              {% endif %}
+                            {% endfor %}
+                          {% endif %}
+                        </div>
                       </div>
                     {% endfor %}
                   </div>
