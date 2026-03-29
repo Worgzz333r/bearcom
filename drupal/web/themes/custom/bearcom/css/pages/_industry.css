@@ -482,17 +482,12 @@
     margin-top: 40px;
   }
 
-  /* Grey bg extends to footer on /industries parent page only */
-  body.page--industry,
-  body.page--industry .dialog-off-canvas-main-canvas,
-  body.page--industry .main-content {
-    background-color: var(--color-background-alt);
-  }
-
-  body.page--industry .site-footer,
-  body.page--industry .site-footer__main,
-  body.page--industry .site-footer__wave {
-    background-color: var(--color-background-alt);
+  /* Grey bg behind footer rounded corners on industry */
+  .dialog-off-canvas-main-canvas:has(.industry-page) > .site-footer,
+  .dialog-off-canvas-main-canvas:has(.industries-section) > .site-footer {
+    margin-top: 0;
+    box-shadow: 0 0 0 32px var(--color-background-alt);
+    clip-path: inset(-32px 0 0 0);
   }
 }
 

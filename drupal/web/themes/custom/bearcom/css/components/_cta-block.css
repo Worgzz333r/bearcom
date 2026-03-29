@@ -335,16 +335,6 @@
     margin-top: 0;
   }
 
-  .dialog-off-canvas-main-canvas:has(.industry-page),
-  .dialog-off-canvas-main-canvas:has(.industries-section) {
-    background-color: var(--color-background-alt);
-  }
-
-  /* Hero stays white */
-  .main-content:has(.industry-page) .hero,
-  .main-content:has(.industries-section) .hero {
-    background-color: var(--color-white);
-  }
 
   /* CTA credibility on industry — grey bg extends down */
   .main-content:has(.industry-page) .cta-block--credibility,
