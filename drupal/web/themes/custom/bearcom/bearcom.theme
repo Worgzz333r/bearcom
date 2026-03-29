@@ -103,6 +103,9 @@ function _bearcom_get_node_alias(NodeInterface $node): string {
  */
 function bearcom_preprocess_html(array &$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof NodeInterface) {
+    $variables['attributes']['class'][] = 'page-node-type-' . $node->bundle();
+  }
   if ($node instanceof NodeInterface && $node->bundle() === 'flexible_page') {
     $alias = _bearcom_get_node_alias($node);
     if ($alias === '/403' || $alias === '/404') {

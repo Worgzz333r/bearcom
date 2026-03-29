@@ -51,8 +51,8 @@
   font-weight: 700;
 }
 
-/* Hide breadcrumbs on product pages */
-.page-node-type-product .block-system-breadcrumb-block {
+/* Hide top bar on product pages */
+.page-node-type-product .top-bar {
   display: none;
 }
 
