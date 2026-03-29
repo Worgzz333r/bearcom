@@ -29,6 +29,9 @@ settings:
     -
       value: industry_blue
       label: 'Industry Blue (blue bg, white text)'
+    -
+      value: divided
+      label: 'Divided (service page lines)'
   allowed_values_function: ''
 module: options
 locked: false

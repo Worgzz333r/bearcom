@@ -65,6 +65,9 @@ settings:
     -
       value: orange-card
       label: '[Product Card] Orange'
+    -
+      value: service
+      label: 'Service (image left, rounded)'
   allowed_values_function: ''
 module: options
 locked: false

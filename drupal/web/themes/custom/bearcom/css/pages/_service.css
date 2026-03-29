@@ -3,28 +3,81 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
+   #1 Hero — service page style (based on plain)
+   -------------------------------------------------------------------------- */
+
+.hero--service {
+  min-height: auto;
+  padding: var(--section-padding) 0;
+}
+
+.hero--service .hero__product-image {
+  flex: 0 0 660px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.hero--service .hero__product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1023px) {
+  .hero--service .hero__product-image {
+    flex: 0 0 50%;
+    height: auto;
+    aspect-ratio: 660 / 400;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero--service .container {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .hero--service .hero__product-image {
+    flex: none;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 660 / 400;
+  }
+
+  .hero--service .hero__buttons {
+    justify-content: flex-start;
+  }
+}
+
+/* --------------------------------------------------------------------------
    #3 Content Block — section dividers (black lines top/bottom)
    -------------------------------------------------------------------------- */
 
-.content-block--divided {
+/* --------------------------------------------------------------------------
+   Divided style — service page content blocks
+   -------------------------------------------------------------------------- */
+
+.content-block.content-block--divided {
+  margin: 0;
+  padding: 0;
+}
+
+/* Top line on first divided only + 60px gap */
+div:not(:has(> .content-block--divided)) + div > .content-block--divided {
   border-top: 1px solid var(--color-dark-blue);
+  padding-top: 60px;
+}
+
+/* Bottom line on last divided only + 60px gap */
+div:has(> .content-block--divided):not(:has(+ div > .content-block--divided)) > .content-block--divided {
   border-bottom: 1px solid var(--color-dark-blue);
+  padding-bottom: 60px;
 }
 
-.content-block--divided + .content-block--divided {
-  border-top: none;
-}
 
-/* Soundwave decoration between content blocks */
-.content-block + .content-block .content-block__wave {
-  display: block;
-  width: 60px;
-  height: 48px;
-  margin: 0 auto var(--spacing-lg);
-}
-
-.content-block + .content-block .content-block__wave svg path {
-  fill: var(--color-primary);
+/* Hide wave on first divided (preceded by non-divided) */
+div:not(:has(> .content-block--divided)) + div > .content-block.content-block--divided .content-block__wave {
+  display: none;
 }
 
 /* --------------------------------------------------------------------------
