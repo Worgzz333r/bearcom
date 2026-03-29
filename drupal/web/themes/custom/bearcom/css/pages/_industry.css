@@ -117,7 +117,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 400px;
+  max-width: 100%;
   margin: 0 auto;
   height: auto;
   border: none;
@@ -157,10 +157,11 @@
   border-radius: var(--radius-card-lg);
 }
 
-/* Image — fixed size */
+/* Image — responsive size */
 [class*="card-grid--industry"] .card__image {
   flex: none;
-  width: 332px;
+  width: 100%;
+  max-width: 332px;
   height: 160px;
   overflow: hidden;
   border-radius: var(--radius-card-lg);
@@ -234,8 +235,9 @@
   color: var(--color-white);
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  padding-left: calc(50vw - 50%);
-  padding-right: calc(50vw - 50%);
+  padding-left: max(calc(50vw - 50%), var(--container-padding));
+  padding-right: max(calc(50vw - 50%), var(--container-padding));
+  overflow: hidden;
 }
 
 .card-grid--industry_dark .section__title {
@@ -297,8 +299,9 @@
   color: var(--color-white);
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  padding-left: calc(50vw - 50%);
-  padding-right: calc(50vw - 50%);
+  padding-left: max(calc(50vw - 50%), var(--container-padding));
+  padding-right: max(calc(50vw - 50%), var(--container-padding));
+  overflow: hidden;
 }
 
 .card-grid--industry_blue .section__title {
@@ -374,6 +377,18 @@
 @media (max-width: 1023px) {
   [class*="card-grid--industry"] .card-grid__items {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Fix #6: add side padding so cards don't touch edges */
+  [class*="card-grid--industry"] > .container {
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
+
+  /* Fix #8: ensure card images scale down */
+  [class*="card-grid--industry"] .card__image {
+    width: 100%;
+    max-width: 332px;
   }
 
   .industry-page .hero__product-image {
@@ -479,4 +494,9 @@
   body.page--industry .site-footer__wave {
     background-color: var(--color-background-alt);
   }
+}
+
+/* Fix #4: Footer background should be grey (not white) on industry pages at all widths */
+body.page--industry .site-footer {
+  margin-top: 0;
 }

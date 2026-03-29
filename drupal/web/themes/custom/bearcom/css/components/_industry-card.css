@@ -86,7 +86,7 @@
 
 .industries-grid {
   display: grid;
-  grid-template-columns: repeat(3, 400px);
+  grid-template-columns: repeat(3, minmax(0, 400px));
   justify-content: center;
   gap: var(--spacing-xl);
 }
@@ -96,11 +96,17 @@
    -------------------------------------------------------------------------- */
 
 .product-grid {
-  padding: 0;
+  padding: var(--section-padding) 0;
 }
 
 .industries-section {
-  padding: 0;
+  padding: 0 var(--container-padding);
+}
+
+/* Fix #7/#8: prevent horizontal scroll from industry cards overflowing */
+.product-grid > .container,
+.industries-section > .container {
+  overflow: hidden;
 }
 
 .product-grid .section__header {

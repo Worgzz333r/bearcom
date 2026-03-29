@@ -11,12 +11,12 @@ menus:
     expanded: true
     weight: 0
     langcode: en
-    uuid: 233aff9d-fa73-4439-b824-249d0e5a4fe0
+    uuid: bedcea50-82eb-48bc-ab73-c2d1873c946c
     options: {  }
   -
     menu_name: main
     title: Voice
-    parent: 'menu_link_content:233aff9d-fa73-4439-b824-249d0e5a4fe0'
+    parent: 'menu_link_content:bedcea50-82eb-48bc-ab73-c2d1873c946c'
     uri: 'internal:/'
     link_title: null
     description: null
@@ -24,12 +24,12 @@ menus:
     expanded: true
     weight: 0
     langcode: en
-    uuid: fda2eaee-bff6-4f8a-ae0f-552fbce96b0e
+    uuid: ede36dae-6ca0-4f1f-b817-d5ab2382dca0
     options: {  }
   -
     menu_name: main
     title: 'Two-Way Radios'
-    parent: 'menu_link_content:fda2eaee-bff6-4f8a-ae0f-552fbce96b0e'
+    parent: 'menu_link_content:ede36dae-6ca0-4f1f-b817-d5ab2382dca0'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -37,12 +37,12 @@ menus:
     expanded: true
     weight: 0
     langcode: en
-    uuid: f08e1f79-6ed7-4147-b60a-27cbdaa16296
+    uuid: 587c4522-8b5e-410d-9c26-87ad1e3e59e0
     options: {  }
   -
     menu_name: main
     title: 'Portable Radios'
-    parent: 'menu_link_content:fda2eaee-bff6-4f8a-ae0f-552fbce96b0e'
+    parent: 'menu_link_content:ede36dae-6ca0-4f1f-b817-d5ab2382dca0'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -50,12 +50,12 @@ menus:
     expanded: true
     weight: 1
     langcode: en
-    uuid: 25c375eb-3442-4599-bd38-c8f2c92222d2
+    uuid: ded99b22-9aa9-43dc-96aa-b72d4d61005d
     options: {  }
   -
     menu_name: main
     title: 'Mobile Radios'
-    parent: 'menu_link_content:fda2eaee-bff6-4f8a-ae0f-552fbce96b0e'
+    parent: 'menu_link_content:ede36dae-6ca0-4f1f-b817-d5ab2382dca0'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -63,12 +63,12 @@ menus:
     expanded: true
     weight: 2
     langcode: en
-    uuid: b4540941-86d7-442a-91dc-f321d4319351
+    uuid: d8fa2c32-42f7-4ca0-9068-296a00ba73e9
     options: {  }
   -
     menu_name: main
     title: 'Cellular Push to Talk'
-    parent: 'menu_link_content:fda2eaee-bff6-4f8a-ae0f-552fbce96b0e'
+    parent: 'menu_link_content:ede36dae-6ca0-4f1f-b817-d5ab2382dca0'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -76,12 +76,12 @@ menus:
     expanded: true
     weight: 3
     langcode: en
-    uuid: f10f4752-6a8e-4d5e-a684-06e5bde9382a
+    uuid: 0bbf6238-782e-447d-b69c-6b09ab936f48
     options: {  }
   -
     menu_name: main
     title: Repeaters
-    parent: 'menu_link_content:fda2eaee-bff6-4f8a-ae0f-552fbce96b0e'
+    parent: 'menu_link_content:ede36dae-6ca0-4f1f-b817-d5ab2382dca0'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -89,12 +89,12 @@ menus:
     expanded: true
     weight: 4
     langcode: en
-    uuid: 03443d80-2360-41dc-aa83-3268012c15b6
+    uuid: 1a9078ab-6aaf-4d83-a55d-9d98c1c715b9
     options: {  }
   -
     menu_name: main
     title: BDA/DAS
-    parent: 'menu_link_content:fda2eaee-bff6-4f8a-ae0f-552fbce96b0e'
+    parent: 'menu_link_content:ede36dae-6ca0-4f1f-b817-d5ab2382dca0'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -102,12 +102,12 @@ menus:
     expanded: true
     weight: 5
     langcode: en
-    uuid: 4c22340b-1458-40fb-8971-28977de1048b
+    uuid: 26ef1181-74e5-456c-bc73-271664fbecad
     options: {  }
   -
     menu_name: main
     title: 'Emergency Mass Notification'
-    parent: 'menu_link_content:fda2eaee-bff6-4f8a-ae0f-552fbce96b0e'
+    parent: 'menu_link_content:ede36dae-6ca0-4f1f-b817-d5ab2382dca0'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -115,12 +115,12 @@ menus:
     expanded: true
     weight: 6
     langcode: en
-    uuid: 20773619-801e-4da1-8c51-a0ea28c99e9d
+    uuid: ada45b54-547c-467e-a471-52edea7e6e18
     options: {  }
   -
     menu_name: main
     title: 'Dispatch Consoles'
-    parent: 'menu_link_content:fda2eaee-bff6-4f8a-ae0f-552fbce96b0e'
+    parent: 'menu_link_content:ede36dae-6ca0-4f1f-b817-d5ab2382dca0'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -128,12 +128,12 @@ menus:
     expanded: true
     weight: 7
     langcode: en
-    uuid: 01747357-5b6f-447a-8d62-ecdffbc765a3
+    uuid: 1e57ab97-a223-4084-9145-ce3aab154d78
     options: {  }
   -
     menu_name: main
     title: 'Call Boxes'
-    parent: 'menu_link_content:fda2eaee-bff6-4f8a-ae0f-552fbce96b0e'
+    parent: 'menu_link_content:ede36dae-6ca0-4f1f-b817-d5ab2382dca0'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -141,12 +141,12 @@ menus:
     expanded: true
     weight: 8
     langcode: en
-    uuid: 6bf1b802-dbac-4aef-8e29-2e8c94527a12
+    uuid: a2ad4e40-78ea-476c-a4f3-b6835d17d129
     options: {  }
   -
     menu_name: main
     title: Accessories
-    parent: 'menu_link_content:fda2eaee-bff6-4f8a-ae0f-552fbce96b0e'
+    parent: 'menu_link_content:ede36dae-6ca0-4f1f-b817-d5ab2382dca0'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -154,12 +154,12 @@ menus:
     expanded: true
     weight: 9
     langcode: en
-    uuid: 75e85754-c4c7-4cac-a1d0-c872114b9a95
+    uuid: 77349983-c180-42df-8488-8b2f9fd5d325
     options: {  }
   -
     menu_name: main
     title: 'Batteries and Chargers'
-    parent: 'menu_link_content:fda2eaee-bff6-4f8a-ae0f-552fbce96b0e'
+    parent: 'menu_link_content:ede36dae-6ca0-4f1f-b817-d5ab2382dca0'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -167,12 +167,12 @@ menus:
     expanded: true
     weight: 10
     langcode: en
-    uuid: 10c37623-15c7-4974-bc5c-e11f24b89702
+    uuid: 251b548a-5e7a-4fd1-a866-765bced9ff9e
     options: {  }
   -
     menu_name: main
     title: Antennas
-    parent: 'menu_link_content:fda2eaee-bff6-4f8a-ae0f-552fbce96b0e'
+    parent: 'menu_link_content:ede36dae-6ca0-4f1f-b817-d5ab2382dca0'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -180,12 +180,12 @@ menus:
     expanded: true
     weight: 11
     langcode: en
-    uuid: b1f2d0b0-676f-402c-86f4-0734c5156726
+    uuid: 015e0ac1-e3a6-4b90-a767-a1a9ab1777e6
     options: {  }
   -
     menu_name: main
     title: Microphones
-    parent: 'menu_link_content:fda2eaee-bff6-4f8a-ae0f-552fbce96b0e'
+    parent: 'menu_link_content:ede36dae-6ca0-4f1f-b817-d5ab2382dca0'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -193,12 +193,12 @@ menus:
     expanded: true
     weight: 12
     langcode: en
-    uuid: 14c8869d-ea80-4d97-8886-452b87ea244c
+    uuid: 8a7a662b-12d8-4c8e-ac3d-a921d37e2a32
     options: {  }
   -
     menu_name: main
     title: Earpieces
-    parent: 'menu_link_content:fda2eaee-bff6-4f8a-ae0f-552fbce96b0e'
+    parent: 'menu_link_content:ede36dae-6ca0-4f1f-b817-d5ab2382dca0'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -206,12 +206,12 @@ menus:
     expanded: true
     weight: 13
     langcode: en
-    uuid: f14c0328-a9a2-4a62-93e5-cc5d7ef48925
+    uuid: f00f4e46-c228-4ea1-9351-f29345bce45f
     options: {  }
   -
     menu_name: main
     title: Cases
-    parent: 'menu_link_content:fda2eaee-bff6-4f8a-ae0f-552fbce96b0e'
+    parent: 'menu_link_content:ede36dae-6ca0-4f1f-b817-d5ab2382dca0'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -219,12 +219,12 @@ menus:
     expanded: true
     weight: 14
     langcode: en
-    uuid: 48ac64c8-4ff3-49f3-82bd-6ecfd208a8e9
+    uuid: f56b8ba7-8689-4551-9555-71a16c2961f7
     options: {  }
   -
     menu_name: main
     title: Security
-    parent: 'menu_link_content:233aff9d-fa73-4439-b824-249d0e5a4fe0'
+    parent: 'menu_link_content:bedcea50-82eb-48bc-ab73-c2d1873c946c'
     uri: 'internal:/'
     link_title: null
     description: null
@@ -232,12 +232,12 @@ menus:
     expanded: true
     weight: 1
     langcode: en
-    uuid: e7ce3ab5-13c6-4b4a-a4e8-866da4f1fd92
+    uuid: ae7c93ca-1569-4c21-bf0c-07a8c17ee090
     options: {  }
   -
     menu_name: main
     title: 'Surveillance Cameras'
-    parent: 'menu_link_content:e7ce3ab5-13c6-4b4a-a4e8-866da4f1fd92'
+    parent: 'menu_link_content:ae7c93ca-1569-4c21-bf0c-07a8c17ee090'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -245,12 +245,12 @@ menus:
     expanded: true
     weight: 0
     langcode: en
-    uuid: 22c50416-9deb-4e35-8c39-31876c4f1018
+    uuid: a62cd176-26e0-46e6-8512-a852acb16701
     options: {  }
   -
     menu_name: main
     title: 'Body Worn Cameras'
-    parent: 'menu_link_content:e7ce3ab5-13c6-4b4a-a4e8-866da4f1fd92'
+    parent: 'menu_link_content:ae7c93ca-1569-4c21-bf0c-07a8c17ee090'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -258,12 +258,12 @@ menus:
     expanded: true
     weight: 1
     langcode: en
-    uuid: 1e32a420-be21-4fc1-bd9c-d2271bde71e6
+    uuid: 28487ae3-1006-4335-ba39-2da794eb0365
     options: {  }
   -
     menu_name: main
     title: 'Access Control & Intercom'
-    parent: 'menu_link_content:e7ce3ab5-13c6-4b4a-a4e8-866da4f1fd92'
+    parent: 'menu_link_content:ae7c93ca-1569-4c21-bf0c-07a8c17ee090'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -271,12 +271,12 @@ menus:
     expanded: true
     weight: 2
     langcode: en
-    uuid: 6f247b81-7645-41d7-b254-f8f928299d22
+    uuid: 7dd12b18-9150-4f94-bb45-add36a349a1d
     options: {  }
   -
     menu_name: main
     title: 'License Plate Recognition'
-    parent: 'menu_link_content:e7ce3ab5-13c6-4b4a-a4e8-866da4f1fd92'
+    parent: 'menu_link_content:ae7c93ca-1569-4c21-bf0c-07a8c17ee090'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -284,12 +284,12 @@ menus:
     expanded: true
     weight: 3
     langcode: en
-    uuid: a8227dbe-2a01-4265-a4ad-5d1dce20f699
+    uuid: 7fafa36d-fbf8-4695-a4cf-396364df780f
     options: {  }
   -
     menu_name: main
     title: 'Concealed Weapons Detection'
-    parent: 'menu_link_content:e7ce3ab5-13c6-4b4a-a4e8-866da4f1fd92'
+    parent: 'menu_link_content:ae7c93ca-1569-4c21-bf0c-07a8c17ee090'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -297,12 +297,12 @@ menus:
     expanded: true
     weight: 4
     langcode: en
-    uuid: f013f0a4-e86c-4cc2-b728-f2f27c46bdc5
+    uuid: e1bdb8cf-a3f8-48df-9e74-439cec62a2be
     options: {  }
   -
     menu_name: main
     title: Data
-    parent: 'menu_link_content:233aff9d-fa73-4439-b824-249d0e5a4fe0'
+    parent: 'menu_link_content:bedcea50-82eb-48bc-ab73-c2d1873c946c'
     uri: 'internal:/'
     link_title: null
     description: null
@@ -310,12 +310,12 @@ menus:
     expanded: true
     weight: 2
     langcode: en
-    uuid: 50121090-b2da-4104-81b0-89beda261153
+    uuid: ceb508d1-e7f5-4e69-9e74-b4747e58bbbd
     options: {  }
   -
     menu_name: main
     title: 'Private LTE'
-    parent: 'menu_link_content:50121090-b2da-4104-81b0-89beda261153'
+    parent: 'menu_link_content:ceb508d1-e7f5-4e69-9e74-b4747e58bbbd'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -323,12 +323,12 @@ menus:
     expanded: true
     weight: 0
     langcode: en
-    uuid: 2c7e76a1-34c3-47f7-a7ce-8d4ba1924d90
+    uuid: e288bdd3-90c7-4625-85e0-bf178a960679
     options: {  }
   -
     menu_name: main
     title: 'AlwaysOn Integrated Solutions'
-    parent: 'menu_link_content:50121090-b2da-4104-81b0-89beda261153'
+    parent: 'menu_link_content:ceb508d1-e7f5-4e69-9e74-b4747e58bbbd'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -336,12 +336,12 @@ menus:
     expanded: true
     weight: 1
     langcode: en
-    uuid: 9f560df6-c2f9-40be-a858-a0572260e395
+    uuid: ffcf257d-e9f4-4c93-9194-2fb007867fb3
     options: {  }
   -
     menu_name: main
     title: 'Backhaul Solutions'
-    parent: 'menu_link_content:50121090-b2da-4104-81b0-89beda261153'
+    parent: 'menu_link_content:ceb508d1-e7f5-4e69-9e74-b4747e58bbbd'
     uri: 'internal:/products'
     link_title: null
     description: null
@@ -349,7 +349,7 @@ menus:
     expanded: true
     weight: 2
     langcode: en
-    uuid: 17667fff-b86c-4cae-a853-d0d3a745afa1
+    uuid: bfe685eb-88e9-4919-8862-a3b3916091c8
     options: {  }
   -
     menu_name: main
@@ -362,12 +362,12 @@ menus:
     expanded: true
     weight: 1
     langcode: en
-    uuid: 878f4aa5-3e80-4ae6-a395-fb3a2cc6b93c
+    uuid: 18c1cde6-d97e-478f-aaba-ed79839c5d58
     options: {  }
   -
     menu_name: main
     title: 'Two-Way Radio Rentals'
-    parent: 'menu_link_content:878f4aa5-3e80-4ae6-a395-fb3a2cc6b93c'
+    parent: 'menu_link_content:18c1cde6-d97e-478f-aaba-ed79839c5d58'
     uri: 'internal:/'
     link_title: null
     description: null
@@ -375,12 +375,12 @@ menus:
     expanded: true
     weight: 0
     langcode: en
-    uuid: 4fd60188-9331-4d9b-98bd-17af79440056
+    uuid: bf48df1e-43a2-47af-ac3d-895c6c78f53f
     options: {  }
   -
     menu_name: main
     title: 'Video Surveillance & CCTV'
-    parent: 'menu_link_content:878f4aa5-3e80-4ae6-a395-fb3a2cc6b93c'
+    parent: 'menu_link_content:18c1cde6-d97e-478f-aaba-ed79839c5d58'
     uri: 'internal:/'
     link_title: null
     description: null
@@ -388,12 +388,12 @@ menus:
     expanded: true
     weight: 1
     langcode: en
-    uuid: f3ed74d2-f2bf-46c3-98b8-1987a1368854
+    uuid: ebc82a82-b4de-4f8c-ac88-87d7e6abf563
     options: {  }
   -
     menu_name: main
     title: 'Private LTE'
-    parent: 'menu_link_content:878f4aa5-3e80-4ae6-a395-fb3a2cc6b93c'
+    parent: 'menu_link_content:18c1cde6-d97e-478f-aaba-ed79839c5d58'
     uri: 'internal:/'
     link_title: null
     description: null
@@ -401,12 +401,12 @@ menus:
     expanded: true
     weight: 2
     langcode: en
-    uuid: 5bfc45b6-7002-43ac-9d4e-239d18a5c1d1
+    uuid: d4be5bee-3cd7-4936-a779-d3f10df9eccf
     options: {  }
   -
     menu_name: main
     title: 'Event Management & Staffing'
-    parent: 'menu_link_content:878f4aa5-3e80-4ae6-a395-fb3a2cc6b93c'
+    parent: 'menu_link_content:18c1cde6-d97e-478f-aaba-ed79839c5d58'
     uri: 'internal:/'
     link_title: null
     description: null
@@ -414,7 +414,7 @@ menus:
     expanded: true
     weight: 3
     langcode: en
-    uuid: 626cd579-3b48-4c6b-9a6e-00d999fa37a0
+    uuid: cd2df37e-c43e-4269-aa6a-035ec45b63b6
     options: {  }
   -
     menu_name: main
@@ -427,12 +427,12 @@ menus:
     expanded: true
     weight: 2
     langcode: en
-    uuid: 785646b7-8cc8-4055-af9f-4a00e1b7fa1b
+    uuid: 3cd7ef25-6765-4cde-a014-2f13eac9b3ee
     options: {  }
   -
     menu_name: main
     title: Education
-    parent: 'menu_link_content:785646b7-8cc8-4055-af9f-4a00e1b7fa1b'
+    parent: 'menu_link_content:3cd7ef25-6765-4cde-a014-2f13eac9b3ee'
     uri: 'internal:/industries'
     link_title: null
     description: null
@@ -440,12 +440,12 @@ menus:
     expanded: true
     weight: 0
     langcode: en
-    uuid: ea630007-090a-4b80-a921-d2a497e98ac1
+    uuid: d752af7d-c580-4066-aa5c-b7655e04d23c
     options: {  }
   -
     menu_name: main
     title: 'Utilities & Public Works'
-    parent: 'menu_link_content:785646b7-8cc8-4055-af9f-4a00e1b7fa1b'
+    parent: 'menu_link_content:3cd7ef25-6765-4cde-a014-2f13eac9b3ee'
     uri: 'internal:/industries'
     link_title: null
     description: null
@@ -453,12 +453,12 @@ menus:
     expanded: true
     weight: 1
     langcode: en
-    uuid: 12ab5e1c-d606-4325-8db4-923c4da0b40d
+    uuid: 431f5eed-ed20-45e8-bbb3-0057eac71c88
     options: {  }
   -
     menu_name: main
     title: 'Transportation Logistics'
-    parent: 'menu_link_content:785646b7-8cc8-4055-af9f-4a00e1b7fa1b'
+    parent: 'menu_link_content:3cd7ef25-6765-4cde-a014-2f13eac9b3ee'
     uri: 'internal:/industries'
     link_title: null
     description: null
@@ -466,12 +466,12 @@ menus:
     expanded: true
     weight: 2
     langcode: en
-    uuid: ae7ca274-4879-46c3-9f19-2ddd2fc03c14
+    uuid: 433e28fb-904f-450a-9f8c-1dcbd9043351
     options: {  }
   -
     menu_name: main
     title: Hospitality
-    parent: 'menu_link_content:785646b7-8cc8-4055-af9f-4a00e1b7fa1b'
+    parent: 'menu_link_content:3cd7ef25-6765-4cde-a014-2f13eac9b3ee'
     uri: 'internal:/industries'
     link_title: null
     description: null
@@ -479,12 +479,12 @@ menus:
     expanded: true
     weight: 3
     langcode: en
-    uuid: 48a7b6db-426f-4d19-80e1-db62e6e4981d
+    uuid: 9519797d-618e-4fa9-bb6f-4ef99757623e
     options: {  }
   -
     menu_name: main
     title: 'Public Safety'
-    parent: 'menu_link_content:785646b7-8cc8-4055-af9f-4a00e1b7fa1b'
+    parent: 'menu_link_content:3cd7ef25-6765-4cde-a014-2f13eac9b3ee'
     uri: 'internal:/industries'
     link_title: null
     description: null
@@ -492,12 +492,12 @@ menus:
     expanded: true
     weight: 4
     langcode: en
-    uuid: 0fcb60e4-bbfe-4bb9-aef6-b8141b12609e
+    uuid: dd667e4d-c488-470c-b89e-da313e0be6d3
     options: {  }
   -
     menu_name: main
     title: Manufacturing
-    parent: 'menu_link_content:785646b7-8cc8-4055-af9f-4a00e1b7fa1b'
+    parent: 'menu_link_content:3cd7ef25-6765-4cde-a014-2f13eac9b3ee'
     uri: 'internal:/industries'
     link_title: null
     description: null
@@ -505,12 +505,12 @@ menus:
     expanded: true
     weight: 5
     langcode: en
-    uuid: 40d86775-49e1-4d56-a17c-d7973c8ed30b
+    uuid: 0452a664-3262-42f3-9e7b-ef9d39db0e93
     options: {  }
   -
     menu_name: main
     title: Facilities
-    parent: 'menu_link_content:785646b7-8cc8-4055-af9f-4a00e1b7fa1b'
+    parent: 'menu_link_content:3cd7ef25-6765-4cde-a014-2f13eac9b3ee'
     uri: 'internal:/industries'
     link_title: null
     description: null
@@ -518,12 +518,12 @@ menus:
     expanded: true
     weight: 6
     langcode: en
-    uuid: f2fa5f89-f7e7-49ce-81c2-929747dbb17c
+    uuid: 6b9ba223-d9a8-43c2-8a82-d4380de969b1
     options: {  }
   -
     menu_name: main
     title: Healthcare
-    parent: 'menu_link_content:785646b7-8cc8-4055-af9f-4a00e1b7fa1b'
+    parent: 'menu_link_content:3cd7ef25-6765-4cde-a014-2f13eac9b3ee'
     uri: 'internal:/industries'
     link_title: null
     description: null
@@ -531,12 +531,12 @@ menus:
     expanded: true
     weight: 7
     langcode: en
-    uuid: 568368bf-6f7f-4cc9-ab81-79492ecfdc9d
+    uuid: 68cd6972-4dff-42f7-a71f-75def5703bbb
     options: {  }
   -
     menu_name: main
     title: 'Retail / Distribution'
-    parent: 'menu_link_content:785646b7-8cc8-4055-af9f-4a00e1b7fa1b'
+    parent: 'menu_link_content:3cd7ef25-6765-4cde-a014-2f13eac9b3ee'
     uri: 'internal:/industries'
     link_title: null
     description: null
@@ -544,12 +544,12 @@ menus:
     expanded: true
     weight: 8
     langcode: en
-    uuid: f076bb82-fa37-49ef-ab54-b259ef0bc5f0
+    uuid: 72bc3dee-2424-40f8-b7ef-d922dbae7198
     options: {  }
   -
     menu_name: main
     title: 'Petro/Chem Oil and Gas'
-    parent: 'menu_link_content:785646b7-8cc8-4055-af9f-4a00e1b7fa1b'
+    parent: 'menu_link_content:3cd7ef25-6765-4cde-a014-2f13eac9b3ee'
     uri: 'internal:/industries'
     link_title: null
     description: null
@@ -557,12 +557,12 @@ menus:
     expanded: true
     weight: 9
     langcode: en
-    uuid: 14f380f1-3e56-480d-be3f-2da67ffc59b7
+    uuid: 226e7c5b-25f6-4bb2-a996-4d16990d9d05
     options: {  }
   -
     menu_name: main
     title: Construction
-    parent: 'menu_link_content:785646b7-8cc8-4055-af9f-4a00e1b7fa1b'
+    parent: 'menu_link_content:3cd7ef25-6765-4cde-a014-2f13eac9b3ee'
     uri: 'internal:/industries'
     link_title: null
     description: null
@@ -570,12 +570,12 @@ menus:
     expanded: true
     weight: 10
     langcode: en
-    uuid: 32c59c65-00ee-403d-a7c8-3b3914ece33f
+    uuid: 57735366-6737-4946-af31-c40b871f0304
     options: {  }
   -
     menu_name: main
     title: Events
-    parent: 'menu_link_content:785646b7-8cc8-4055-af9f-4a00e1b7fa1b'
+    parent: 'menu_link_content:3cd7ef25-6765-4cde-a014-2f13eac9b3ee'
     uri: 'internal:/industries'
     link_title: null
     description: null
@@ -583,7 +583,7 @@ menus:
     expanded: true
     weight: 11
     langcode: en
-    uuid: 95ca20ba-491e-4491-a39d-546343c49ed7
+    uuid: ded9477e-3989-4b71-b42d-6ae6bb506832
     options: {  }
   -
     menu_name: main
@@ -596,12 +596,12 @@ menus:
     expanded: true
     weight: 3
     langcode: en
-    uuid: 32a70333-ce4b-4ef0-b7ac-89dd37eedbc7
+    uuid: 58c56f64-1f76-4bfe-997a-39d8715db824
     options: {  }
   -
     menu_name: main
     title: Promotions
-    parent: 'menu_link_content:32a70333-ce4b-4ef0-b7ac-89dd37eedbc7'
+    parent: 'menu_link_content:58c56f64-1f76-4bfe-997a-39d8715db824'
     uri: 'internal:/'
     link_title: null
     description: null
@@ -609,12 +609,12 @@ menus:
     expanded: true
     weight: 0
     langcode: en
-    uuid: d1eaaac7-9b77-4638-ae31-2f1f1977f42d
+    uuid: 9dc72938-02f0-4785-9617-78bf6024a2a3
     options: {  }
   -
     menu_name: main
     title: 'BearCom Blog'
-    parent: 'menu_link_content:32a70333-ce4b-4ef0-b7ac-89dd37eedbc7'
+    parent: 'menu_link_content:58c56f64-1f76-4bfe-997a-39d8715db824'
     uri: 'internal:/'
     link_title: null
     description: null
@@ -622,12 +622,12 @@ menus:
     expanded: true
     weight: 1
     langcode: en
-    uuid: 20de7abc-f470-44f5-a772-4b21a23d1afd
+    uuid: 76fcc5cd-cc38-4ecf-8870-50d98a4c0c8d
     options: {  }
   -
     menu_name: main
     title: Innovation
-    parent: 'menu_link_content:32a70333-ce4b-4ef0-b7ac-89dd37eedbc7'
+    parent: 'menu_link_content:58c56f64-1f76-4bfe-997a-39d8715db824'
     uri: 'internal:/'
     link_title: null
     description: null
@@ -635,7 +635,7 @@ menus:
     expanded: true
     weight: 2
     langcode: en
-    uuid: e1897843-a1db-405b-87ef-4bb9f2eb2aa0
+    uuid: ced26e63-69f6-4546-bed8-4381c86753aa
     options: {  }
   -
     menu_name: main
@@ -648,12 +648,12 @@ menus:
     expanded: true
     weight: 4
     langcode: en
-    uuid: ab5a862a-0c12-49ef-b16e-d3a54c033088
+    uuid: 1eac84c6-859f-4b6f-a878-974711f01f31
     options: {  }
   -
     menu_name: main
     title: 'Our Story'
-    parent: 'menu_link_content:ab5a862a-0c12-49ef-b16e-d3a54c033088'
+    parent: 'menu_link_content:1eac84c6-859f-4b6f-a878-974711f01f31'
     uri: 'internal:/'
     link_title: null
     description: null
@@ -661,12 +661,12 @@ menus:
     expanded: true
     weight: 0
     langcode: en
-    uuid: 82b06993-402a-4baa-bff0-bbba109bfaea
+    uuid: 0a2d1ced-4372-4c81-9a24-7bc5bbdf2a65
     options: {  }
   -
     menu_name: main
     title: Purpose
-    parent: 'menu_link_content:ab5a862a-0c12-49ef-b16e-d3a54c033088'
+    parent: 'menu_link_content:1eac84c6-859f-4b6f-a878-974711f01f31'
     uri: 'internal:/'
     link_title: null
     description: null
@@ -674,12 +674,12 @@ menus:
     expanded: true
     weight: 1
     langcode: en
-    uuid: a63c8df0-9fad-4d7f-9356-0e79061b190d
+    uuid: 3430ddc3-279e-4803-8b62-814fb130cca8
     options: {  }
   -
     menu_name: main
     title: 'BearCom Companies'
-    parent: 'menu_link_content:ab5a862a-0c12-49ef-b16e-d3a54c033088'
+    parent: 'menu_link_content:1eac84c6-859f-4b6f-a878-974711f01f31'
     uri: 'internal:/'
     link_title: null
     description: null
@@ -687,12 +687,12 @@ menus:
     expanded: true
     weight: 2
     langcode: en
-    uuid: d19dd86f-2d3e-489c-a426-1d309de0be8c
+    uuid: 2cbf54c7-b5c1-4684-99d5-462c82e69e41
     options: {  }
   -
     menu_name: main
     title: Locations
-    parent: 'menu_link_content:ab5a862a-0c12-49ef-b16e-d3a54c033088'
+    parent: 'menu_link_content:1eac84c6-859f-4b6f-a878-974711f01f31'
     uri: 'internal:/locations'
     link_title: null
     description: null
@@ -700,12 +700,12 @@ menus:
     expanded: true
     weight: 3
     langcode: en
-    uuid: 5749d9a4-47d2-4422-b25e-8d4be9437669
+    uuid: 3db11f46-a5e5-492a-b395-e102d8aafca5
     options: {  }
   -
     menu_name: main
     title: Careers
-    parent: 'menu_link_content:ab5a862a-0c12-49ef-b16e-d3a54c033088'
+    parent: 'menu_link_content:1eac84c6-859f-4b6f-a878-974711f01f31'
     uri: 'internal:/'
     link_title: null
     description: null
@@ -713,12 +713,12 @@ menus:
     expanded: true
     weight: 4
     langcode: en
-    uuid: 9806600e-357f-4162-8f38-b075681c819a
+    uuid: 38770bed-9585-4ec6-b8cf-9a4112f64228
     options: {  }
   -
     menu_name: main
     title: 'BearCom in the News'
-    parent: 'menu_link_content:ab5a862a-0c12-49ef-b16e-d3a54c033088'
+    parent: 'menu_link_content:1eac84c6-859f-4b6f-a878-974711f01f31'
     uri: 'internal:/'
     link_title: null
     description: null
@@ -726,820 +726,10 @@ menus:
     expanded: true
     weight: 5
     langcode: en
-    uuid: eed2a639-86e2-4f0f-a3e5-9d2c300bd9e1
+    uuid: 62587035-fc70-444b-8166-9855d5b40616
     options: {  }
 taxonomies:
-  industry_tax:
-    -
-      vid: industry_tax
-      tid: '2'
-      langcode: en
-      name: Construction
-      description__value: null
-      description__format: null
-      weight: '1'
-      parent: '0'
-      uuid: 3c5f5934-e256-451e-ad85-ef8950ca78cf
-    -
-      vid: industry_tax
-      tid: '3'
-      langcode: en
-      name: Education
-      description__value: null
-      description__format: null
-      weight: '2'
-      parent: '0'
-      uuid: ff25db19-c333-4d0b-9d75-7e8aba451bbf
-    -
-      vid: industry_tax
-      tid: '6'
-      langcode: en
-      name: Government
-      description__value: null
-      description__format: null
-      weight: '5'
-      parent: '0'
-      uuid: efb86fbb-9eff-4a30-9dfe-c36dcf635a3c
-    -
-      vid: industry_tax
-      tid: '1'
-      langcode: en
-      name: Healthcare
-      description__value: null
-      description__format: null
-      weight: '0'
-      parent: '0'
-      uuid: 6ac12605-8122-4e08-a5c6-4bf07f03a3ba
-    -
-      vid: industry_tax
-      tid: '4'
-      langcode: en
-      name: Hospitality
-      description__value: null
-      description__format: null
-      weight: '3'
-      parent: '0'
-      uuid: ede67589-80f8-4be7-8a52-49bbfaa170a9
-    -
-      vid: industry_tax
-      tid: '5'
-      langcode: en
-      name: Manufacturing
-      description__value: null
-      description__format: null
-      weight: '4'
-      parent: '0'
-      uuid: 8bd3631d-f0f3-469e-ba89-c22ca4a9810d
-    -
-      vid: industry_tax
-      tid: '7'
-      langcode: en
-      name: Retail
-      description__value: null
-      description__format: null
-      weight: '6'
-      parent: '0'
-      uuid: 87eff462-81a6-4abe-93b8-bd832a5e9f6c
-    -
-      vid: industry_tax
-      tid: '8'
-      langcode: en
-      name: Transportation
-      description__value: null
-      description__format: null
-      weight: '7'
-      parent: '0'
-      uuid: 77d69821-8532-4601-8692-338c761c8498
-    -
-      vid: industry_tax
-      tid: '9'
-      langcode: en
-      name: Warehouse
-      description__value: null
-      description__format: null
-      weight: '8'
-      parent: '0'
-      uuid: d2c16e10-1232-4e7a-a09c-2813f5dd1bf6
-  product_category:
-    -
-      vid: product_category
-      tid: '11'
-      langcode: en
-      name: Accessories
-      description__value: null
-      description__format: null
-      weight: '1'
-      parent: '0'
-      uuid: 6ab6985e-aa04-41a3-a301-ac1744d0f978
-    -
-      vid: product_category
-      tid: '14'
-      langcode: en
-      name: Antennas
-      description__value: null
-      description__format: null
-      weight: '4'
-      parent: '0'
-      uuid: 6c108676-228c-493c-8ab4-b150489da02a
-    -
-      vid: product_category
-      tid: '15'
-      langcode: en
-      name: Batteries
-      description__value: null
-      description__format: null
-      weight: '5'
-      parent: '0'
-      uuid: cbde5c9c-664b-49d9-a346-f23b65243036
-    -
-      vid: product_category
-      tid: '16'
-      langcode: en
-      name: Cases
-      description__value: null
-      description__format: null
-      weight: '6'
-      parent: '0'
-      uuid: d7f056b6-6da8-481f-9845-f8d4f7bb0714
-    -
-      vid: product_category
-      tid: '12'
-      langcode: en
-      name: Chargers
-      description__value: null
-      description__format: null
-      weight: '2'
-      parent: '0'
-      uuid: fa41add6-4e07-4c69-95cf-c15effde35f7
-    -
-      vid: product_category
-      tid: '13'
-      langcode: en
-      name: Earpieces
-      description__value: null
-      description__format: null
-      weight: '3'
-      parent: '0'
-      uuid: 0834f376-5bf4-42a3-aafa-77903533b036
-    -
-      vid: product_category
-      tid: '18'
-      langcode: en
-      name: Headsets
-      description__value: null
-      description__format: null
-      weight: '8'
-      parent: '0'
-      uuid: fb058165-b143-4725-86d4-977ecc986586
-    -
-      vid: product_category
-      tid: '17'
-      langcode: en
-      name: Microphones
-      description__value: null
-      description__format: null
-      weight: '7'
-      parent: '0'
-      uuid: 454e290f-1c55-49c1-8e37-de50a0b9d09d
-    -
-      vid: product_category
-      tid: '10'
-      langcode: en
-      name: 'Two-Way Radios'
-      description__value: null
-      description__format: null
-      weight: '0'
-      parent: '0'
-      uuid: b5e39b9b-aa27-4928-bfdf-c93c9b922fee
-  state_province:
-    -
-      vid: state_province
-      tid: '19'
-      langcode: en
-      name: Alabama
-      description__value: null
-      description__format: null
-      weight: '0'
-      parent: '0'
-      uuid: fffda7c3-a6ec-4b2e-9f1e-2cca64b13b1a
-    -
-      vid: state_province
-      tid: '20'
-      langcode: en
-      name: Alaska
-      description__value: null
-      description__format: null
-      weight: '1'
-      parent: '0'
-      uuid: 1e68ac18-a0bd-42b1-8720-004182c042be
-    -
-      vid: state_province
-      tid: '69'
-      langcode: en
-      name: Alberta
-      description__value: null
-      description__format: null
-      weight: '50'
-      parent: '0'
-      uuid: 0ed1b053-906b-4754-b341-d1e842912689
-    -
-      vid: state_province
-      tid: '21'
-      langcode: en
-      name: Arizona
-      description__value: null
-      description__format: null
-      weight: '2'
-      parent: '0'
-      uuid: f15de60c-0735-4c27-893a-7c38728e877a
-    -
-      vid: state_province
-      tid: '22'
-      langcode: en
-      name: Arkansas
-      description__value: null
-      description__format: null
-      weight: '3'
-      parent: '0'
-      uuid: 46b3cfbb-f833-4889-b276-ca51f25f9844
-    -
-      vid: state_province
-      tid: '70'
-      langcode: en
-      name: 'British Columbia'
-      description__value: null
-      description__format: null
-      weight: '51'
-      parent: '0'
-      uuid: faf02d94-f19b-4714-b869-d4af14796fd9
-    -
-      vid: state_province
-      tid: '23'
-      langcode: en
-      name: California
-      description__value: null
-      description__format: null
-      weight: '4'
-      parent: '0'
-      uuid: d96f7c66-68c8-4c91-860e-e2dec593b723
-    -
-      vid: state_province
-      tid: '24'
-      langcode: en
-      name: Colorado
-      description__value: null
-      description__format: null
-      weight: '5'
-      parent: '0'
-      uuid: 66bad33b-55ff-45a0-98e9-749ef7baad54
-    -
-      vid: state_province
-      tid: '25'
-      langcode: en
-      name: Connecticut
-      description__value: null
-      description__format: null
-      weight: '6'
-      parent: '0'
-      uuid: 203a7f94-bf13-441f-9e32-8f17035f9e3a
-    -
-      vid: state_province
-      tid: '26'
-      langcode: en
-      name: Delaware
-      description__value: null
-      description__format: null
-      weight: '7'
-      parent: '0'
-      uuid: 430bcdda-eab3-4a4c-9500-8041c787103d
-    -
-      vid: state_province
-      tid: '27'
-      langcode: en
-      name: Florida
-      description__value: null
-      description__format: null
-      weight: '8'
-      parent: '0'
-      uuid: 464ef237-5944-42d3-b0b3-d6c2601c9a82
-    -
-      vid: state_province
-      tid: '28'
-      langcode: en
-      name: Georgia
-      description__value: null
-      description__format: null
-      weight: '9'
-      parent: '0'
-      uuid: 0ddb941d-1823-42b8-93bf-04b46aff31d0
-    -
-      vid: state_province
-      tid: '29'
-      langcode: en
-      name: Hawaii
-      description__value: null
-      description__format: null
-      weight: '10'
-      parent: '0'
-      uuid: 5fafefce-29aa-4b8a-8ca2-abb425b59774
-    -
-      vid: state_province
-      tid: '30'
-      langcode: en
-      name: Idaho
-      description__value: null
-      description__format: null
-      weight: '11'
-      parent: '0'
-      uuid: 1adcc114-850b-428e-ae22-ccc9517d72d1
-    -
-      vid: state_province
-      tid: '31'
-      langcode: en
-      name: Illinois
-      description__value: null
-      description__format: null
-      weight: '12'
-      parent: '0'
-      uuid: 9e4b00cb-34da-43bb-bab0-ee7f63201f17
-    -
-      vid: state_province
-      tid: '32'
-      langcode: en
-      name: Indiana
-      description__value: null
-      description__format: null
-      weight: '13'
-      parent: '0'
-      uuid: cc5e3970-1fa8-4757-ae95-7ad5041cdd44
-    -
-      vid: state_province
-      tid: '33'
-      langcode: en
-      name: Iowa
-      description__value: null
-      description__format: null
-      weight: '14'
-      parent: '0'
-      uuid: 72062888-5230-49e1-b79c-46c5f06a4fdb
-    -
-      vid: state_province
-      tid: '34'
-      langcode: en
-      name: Kansas
-      description__value: null
-      description__format: null
-      weight: '15'
-      parent: '0'
-      uuid: ab0cf076-bfec-449d-9f3f-e1838af98e11
-    -
-      vid: state_province
-      tid: '35'
-      langcode: en
-      name: Kentucky
-      description__value: null
-      description__format: null
-      weight: '16'
-      parent: '0'
-      uuid: 21698e5a-776a-4b3b-9234-40a1ea6af759
-    -
-      vid: state_province
-      tid: '36'
-      langcode: en
-      name: Louisiana
-      description__value: null
-      description__format: null
-      weight: '17'
-      parent: '0'
-      uuid: 63788cb3-f52a-4bcb-890c-d57e77272f5d
-    -
-      vid: state_province
-      tid: '37'
-      langcode: en
-      name: Maine
-      description__value: null
-      description__format: null
-      weight: '18'
-      parent: '0'
-      uuid: 84ab5f26-d9ab-4eb5-b955-9b3373534ce8
-    -
-      vid: state_province
-      tid: '71'
-      langcode: en
-      name: Manitoba
-      description__value: null
-      description__format: null
-      weight: '52'
-      parent: '0'
-      uuid: 3ad5736d-0ba8-40bd-9116-d4db3789dbf6
-    -
-      vid: state_province
-      tid: '38'
-      langcode: en
-      name: Maryland
-      description__value: null
-      description__format: null
-      weight: '19'
-      parent: '0'
-      uuid: 3d949d23-a9ad-49f7-a1cd-805c8dcb73b7
-    -
-      vid: state_province
-      tid: '39'
-      langcode: en
-      name: Massachusetts
-      description__value: null
-      description__format: null
-      weight: '20'
-      parent: '0'
-      uuid: 8a1cbc34-a2b1-4cea-867e-04991437fad0
-    -
-      vid: state_province
-      tid: '40'
-      langcode: en
-      name: Michigan
-      description__value: null
-      description__format: null
-      weight: '21'
-      parent: '0'
-      uuid: ba4b0b24-68d9-4d6c-adc7-bcae3ddded6d
-    -
-      vid: state_province
-      tid: '41'
-      langcode: en
-      name: Minnesota
-      description__value: null
-      description__format: null
-      weight: '22'
-      parent: '0'
-      uuid: dd18d7fa-fcd2-4d06-a1dd-d0dac6453e9b
-    -
-      vid: state_province
-      tid: '42'
-      langcode: en
-      name: Mississippi
-      description__value: null
-      description__format: null
-      weight: '23'
-      parent: '0'
-      uuid: d2d316b9-72a5-4961-a0de-f14efcfda4b8
-    -
-      vid: state_province
-      tid: '43'
-      langcode: en
-      name: Missouri
-      description__value: null
-      description__format: null
-      weight: '24'
-      parent: '0'
-      uuid: 2324e68e-61b3-4398-8062-ffe9186b7bb4
-    -
-      vid: state_province
-      tid: '44'
-      langcode: en
-      name: Montana
-      description__value: null
-      description__format: null
-      weight: '25'
-      parent: '0'
-      uuid: c1b36bff-8e40-4229-b48f-ddfd88adc4ac
-    -
-      vid: state_province
-      tid: '45'
-      langcode: en
-      name: Nebraska
-      description__value: null
-      description__format: null
-      weight: '26'
-      parent: '0'
-      uuid: 8dcfeac6-3930-452e-8bc8-f71f5ea135e3
-    -
-      vid: state_province
-      tid: '46'
-      langcode: en
-      name: Nevada
-      description__value: null
-      description__format: null
-      weight: '27'
-      parent: '0'
-      uuid: eafda3b6-e184-4521-85de-a09bbf162cf7
-    -
-      vid: state_province
-      tid: '72'
-      langcode: en
-      name: 'New Brunswick'
-      description__value: null
-      description__format: null
-      weight: '53'
-      parent: '0'
-      uuid: 3dd2b79f-35c5-4637-b67b-37501ba3e837
-    -
-      vid: state_province
-      tid: '47'
-      langcode: en
-      name: 'New Hampshire'
-      description__value: null
-      description__format: null
-      weight: '28'
-      parent: '0'
-      uuid: 8d43bbad-d715-40ec-b3f7-8b1d76baab98
-    -
-      vid: state_province
-      tid: '48'
-      langcode: en
-      name: 'New Jersey'
-      description__value: null
-      description__format: null
-      weight: '29'
-      parent: '0'
-      uuid: 64a9b02c-7cf3-41fb-b9b0-a7d0c1c74bbc
-    -
-      vid: state_province
-      tid: '49'
-      langcode: en
-      name: 'New Mexico'
-      description__value: null
-      description__format: null
-      weight: '30'
-      parent: '0'
-      uuid: 7b6c0ead-34de-48ea-8b69-78b6582cb3dc
-    -
-      vid: state_province
-      tid: '50'
-      langcode: en
-      name: 'New York'
-      description__value: null
-      description__format: null
-      weight: '31'
-      parent: '0'
-      uuid: 8a565461-2e06-4e0a-91e9-36eefed03043
-    -
-      vid: state_province
-      tid: '73'
-      langcode: en
-      name: 'Newfoundland and Labrador'
-      description__value: null
-      description__format: null
-      weight: '54'
-      parent: '0'
-      uuid: 84b6e616-157c-4f38-8823-894362cc6df0
-    -
-      vid: state_province
-      tid: '51'
-      langcode: en
-      name: 'North Carolina'
-      description__value: null
-      description__format: null
-      weight: '32'
-      parent: '0'
-      uuid: aa3f3167-c60e-4ca5-9d01-df7f88f11406
-    -
-      vid: state_province
-      tid: '52'
-      langcode: en
-      name: 'North Dakota'
-      description__value: null
-      description__format: null
-      weight: '33'
-      parent: '0'
-      uuid: b8090610-d175-4606-b457-8d855f591d50
-    -
-      vid: state_province
-      tid: '74'
-      langcode: en
-      name: 'Northwest Territories'
-      description__value: null
-      description__format: null
-      weight: '55'
-      parent: '0'
-      uuid: 36438e2f-7b5c-4073-9ad7-cac72fcf5725
-    -
-      vid: state_province
-      tid: '75'
-      langcode: en
-      name: 'Nova Scotia'
-      description__value: null
-      description__format: null
-      weight: '56'
-      parent: '0'
-      uuid: c59fafe6-1126-4ad6-af72-cb00cf947a28
-    -
-      vid: state_province
-      tid: '76'
-      langcode: en
-      name: Nunavut
-      description__value: null
-      description__format: null
-      weight: '57'
-      parent: '0'
-      uuid: 070ed7f0-0422-4c7e-a53b-1af39123dfeb
-    -
-      vid: state_province
-      tid: '53'
-      langcode: en
-      name: Ohio
-      description__value: null
-      description__format: null
-      weight: '34'
-      parent: '0'
-      uuid: 5a65a2f8-7859-4828-95ab-7307fefa6c39
-    -
-      vid: state_province
-      tid: '54'
-      langcode: en
-      name: Oklahoma
-      description__value: null
-      description__format: null
-      weight: '35'
-      parent: '0'
-      uuid: 1083a1fb-16ce-4e30-b81f-42ce674b8cff
-    -
-      vid: state_province
-      tid: '77'
-      langcode: en
-      name: Ontario
-      description__value: null
-      description__format: null
-      weight: '58'
-      parent: '0'
-      uuid: 5851ce5b-16c0-41c0-b321-26e54007c075
-    -
-      vid: state_province
-      tid: '55'
-      langcode: en
-      name: Oregon
-      description__value: null
-      description__format: null
-      weight: '36'
-      parent: '0'
-      uuid: 96d900f5-0c45-4811-9a40-f2142b7d7809
-    -
-      vid: state_province
-      tid: '56'
-      langcode: en
-      name: Pennsylvania
-      description__value: null
-      description__format: null
-      weight: '37'
-      parent: '0'
-      uuid: 231803ae-3587-47e5-bf42-36645d1411bb
-    -
-      vid: state_province
-      tid: '78'
-      langcode: en
-      name: 'Prince Edward Island'
-      description__value: null
-      description__format: null
-      weight: '59'
-      parent: '0'
-      uuid: 3d4b9c75-a650-4950-bf75-ec9e8a0f93f0
-    -
-      vid: state_province
-      tid: '79'
-      langcode: en
-      name: Quebec
-      description__value: null
-      description__format: null
-      weight: '60'
-      parent: '0'
-      uuid: eb861658-dd3f-4db3-862f-f8abb1316fc5
-    -
-      vid: state_province
-      tid: '57'
-      langcode: en
-      name: 'Rhode Island'
-      description__value: null
-      description__format: null
-      weight: '38'
-      parent: '0'
-      uuid: c3447d19-21d9-47c7-bdeb-8fa4bc222138
-    -
-      vid: state_province
-      tid: '80'
-      langcode: en
-      name: Saskatchewan
-      description__value: null
-      description__format: null
-      weight: '61'
-      parent: '0'
-      uuid: 6efda1c9-87a9-451c-8030-5e73c1cf88c8
-    -
-      vid: state_province
-      tid: '58'
-      langcode: en
-      name: 'South Carolina'
-      description__value: null
-      description__format: null
-      weight: '39'
-      parent: '0'
-      uuid: 00096547-98fd-46e8-9927-06d6f619f67d
-    -
-      vid: state_province
-      tid: '59'
-      langcode: en
-      name: 'South Dakota'
-      description__value: null
-      description__format: null
-      weight: '40'
-      parent: '0'
-      uuid: 71bb83ce-e27d-4731-a5e5-acc27254551e
-    -
-      vid: state_province
-      tid: '60'
-      langcode: en
-      name: Tennessee
-      description__value: null
-      description__format: null
-      weight: '41'
-      parent: '0'
-      uuid: e54bcb35-1911-4b83-b728-40aee69768f2
-    -
-      vid: state_province
-      tid: '61'
-      langcode: en
-      name: Texas
-      description__value: null
-      description__format: null
-      weight: '42'
-      parent: '0'
-      uuid: 94994660-baa0-49b9-a37a-00b571dfa617
-    -
-      vid: state_province
-      tid: '62'
-      langcode: en
-      name: Utah
-      description__value: null
-      description__format: null
-      weight: '43'
-      parent: '0'
-      uuid: b983eb67-9dcd-43a4-8ee3-c7eacc488b85
-    -
-      vid: state_province
-      tid: '63'
-      langcode: en
-      name: Vermont
-      description__value: null
-      description__format: null
-      weight: '44'
-      parent: '0'
-      uuid: 4f875aa7-c244-489a-9614-6e48c49d0fd2
-    -
-      vid: state_province
-      tid: '64'
-      langcode: en
-      name: Virginia
-      description__value: null
-      description__format: null
-      weight: '45'
-      parent: '0'
-      uuid: 1799b715-5a20-476d-8bf4-635d40afe471
-    -
-      vid: state_province
-      tid: '65'
-      langcode: en
-      name: Washington
-      description__value: null
-      description__format: null
-      weight: '46'
-      parent: '0'
-      uuid: bf3061fa-4edb-45be-ab09-7b560bddd071
-    -
-      vid: state_province
-      tid: '66'
-      langcode: en
-      name: 'West Virginia'
-      description__value: null
-      description__format: null
-      weight: '47'
-      parent: '0'
-      uuid: 84cc93a3-2951-4935-978a-1b8b870a3289
-    -
-      vid: state_province
-      tid: '67'
-      langcode: en
-      name: Wisconsin
-      description__value: null
-      description__format: null
-      weight: '48'
-      parent: '0'
-      uuid: ba592d6e-bfe3-49cb-ac0e-e6dcee715c2d
-    -
-      vid: state_province
-      tid: '68'
-      langcode: en
-      name: Wyoming
-      description__value: null
-      description__format: null
-      weight: '49'
-      parent: '0'
-      uuid: ea169b30-e43f-4ac6-8159-a8f2eda7160d
-    -
-      vid: state_province
-      tid: '81'
-      langcode: en
-      name: Yukon
-      description__value: null
-      description__format: null
-      weight: '62'
-      parent: '0'
-      uuid: 56faad9f-04e9-4739-ae74-e5304f7156de
+  industry_tax: {  }
+  product_category: {  }
+  state_province: {  }
   tags: {  }

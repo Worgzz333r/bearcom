@@ -163,8 +163,9 @@
 .cta-block--credibility .cta-block__image::after {
   content: '';
   position: absolute;
-  left: 281px;
-  top: 124px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 98px;
   height: 79px;
   background: url('../../images/soundwave-cta.svg') no-repeat center / contain;
@@ -174,7 +175,6 @@
 .cta-block--credibility .cta-block__title {
   color: var(--color-dark-blue);
   text-align: center;
-  white-space: nowrap;
 }
 
 .cta-block--credibility .cta-block__description {
@@ -214,18 +214,18 @@
 
 @media (max-width: 1199px) {
   .cta-block__inner {
-    padding: var(--spacing-xl) 500px var(--spacing-xl) var(--spacing-70);
+    padding: var(--spacing-xl) 40% var(--spacing-xl) var(--spacing-70);
   }
 }
 
 @media (max-width: 1023px) {
   .cta-block__inner {
-    padding: var(--spacing-xl) 500px var(--spacing-xl) var(--spacing-lg);
+    padding: var(--spacing-xl) 40% var(--spacing-xl) var(--spacing-lg);
   }
 
   .cta-block__decoration {
     width: auto;
-    left: 30%;
+    left: 50%;
     background-size: auto 100%;
     background-position: right center;
   }
@@ -240,6 +240,31 @@
     flex-direction: column;
     text-align: center;
     padding: var(--spacing-lg) var(--container-padding);
+  }
+
+  /* Credibility stays horizontal — scale down like hero */
+  .cta-block--credibility .cta-block__inner {
+    flex-direction: row;
+    text-align: left;
+    padding: var(--spacing-md) var(--container-padding);
+    gap: var(--spacing-sm);
+  }
+
+  .cta-block--credibility .cta-block__image {
+    flex: 0 0 48%;
+    width: auto;
+    height: auto;
+    aspect-ratio: 659 / 325;
+  }
+
+  .cta-block--credibility .cta-block__image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .cta-block--credibility .cta-block__image::after {
+    width: 60px;
+    height: 48px;
   }
 
   .cta-block__decoration {
@@ -298,43 +323,59 @@
     display: none;
   }
 
-  /* Credibility mobile */
+  /* Credibility <=767px — inherits horizontal from 929px, extra tweaks */
   .cta-block--credibility {
     margin-bottom: 0;
-    padding-bottom: 36px;
-    background-color: var(--color-background-alt);
+    padding: 0;
   }
 
   .cta-block--credibility .cta-block__inner {
-    text-align: left;
-    padding: 40px var(--container-padding) 36px;
-    gap: 0;
     background-color: var(--color-background-alt);
+  }
+
+  /* Grey bg from CTA credibility extends seamlessly to footer */
+  .dialog-off-canvas-main-canvas:has(.cta-block--credibility) {
+    background-color: var(--color-background-alt);
+  }
+
+  .dialog-off-canvas-main-canvas:has(.cta-block--credibility) > .site-footer {
+    margin-top: 36px;
   }
 
   .cta-block--credibility .cta-block__image {
     display: block;
+  }
+
+  .cta-block--credibility .cta-block__description {
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+/* Credibility <=480px — switch to mobile column layout (Figma 375/390) */
+@media (max-width: 480px) {
+  .cta-block--credibility .cta-block__inner {
+    flex-direction: column;
+    padding: 40px var(--container-padding) 36px;
+    gap: 0;
+  }
+
+  .cta-block--credibility .cta-block__image {
+    flex: none;
     width: 100%;
     height: 165px;
+    aspect-ratio: auto;
     margin-bottom: 40px;
   }
 
   .cta-block--credibility .cta-block__image img,
   .cta-block--credibility .cta-block__image img:first-child {
-    width: 100%;
     height: 165px;
-    object-fit: cover;
     border-radius: 16px;
   }
 
   .cta-block--credibility .cta-block__image::after {
-    left: auto;
-    top: auto;
-    right: -40px;
-    bottom: -35px;
-    transform: none;
-    width: 98px;
-    height: 79px;
+    width: 50px;
+    height: 40px;
   }
 
   .cta-block.cta-block--credibility .cta-block__title {
@@ -343,10 +384,5 @@
     font-size: 24px;
     line-height: 28px;
     max-width: 255px;
-  }
-
-  .cta-block--credibility .cta-block__description {
-    text-align: left;
-    margin-bottom: var(--spacing-md);
   }
 }
