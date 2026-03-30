@@ -21,6 +21,9 @@ settings:
       value: centered
       label: 'Centered (no image)'
     -
+      value: divided
+      label: 'Divided (with border lines)'
+    -
       value: divided-left
       label: 'Divided Left (image left, border lines)'
     -
