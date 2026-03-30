@@ -137,67 +137,6 @@ function bearcom_preprocess_page(array &$variables) {
     }
   }
 
-  // Footer data from config.
-  $footer_config = \Drupal::config('bearcom_sync.footer');
-  $variables['footer'] = [
-    'addresses' => $footer_config->get('addresses') ?: [],
-    'social' => $footer_config->get('social') ?: [],
-    'patent' => $footer_config->get('patent') ?: '',
-    'phone' => $footer_config->get('phone') ?: '',
-    'phone_display' => $footer_config->get('phone_display') ?: '',
-  ];
-
-  // Footer navigation from Drupal menus.
-  $variables['footer_nav'] = _bearcom_load_footer_menus(['footer-products', 'footer-about', 'footer-resources', 'footer-news']);
-  $variables['footer_legal'] = _bearcom_load_menu_links('footer-legal');
-}
-
-/**
- * Load footer navigation menus as structured arrays.
- */
-function _bearcom_load_footer_menus(array $menu_names): array {
-  $result = [];
-  $menu_tree = \Drupal::menuTree();
-  $menu_storage = \Drupal::entityTypeManager()->getStorage('menu');
-
-  foreach ($menu_names as $menu_name) {
-    $menu = $menu_storage->load($menu_name);
-    if (!$menu) {
-      continue;
-    }
-    $links = _bearcom_load_menu_links($menu_name);
-    if ($links) {
-      $result[] = [
-        'title' => $menu->label(),
-        'links' => $links,
-      ];
-    }
-  }
-  return $result;
-}
-
-/**
- * Load menu links as a simple array of [title, url].
- */
-function _bearcom_load_menu_links(string $menu_name): array {
-  $menu_tree = \Drupal::menuTree();
-  $params = new \Drupal\Core\Menu\MenuTreeParameters();
-  $params->setMaxDepth(1);
-  $tree = $menu_tree->load($menu_name, $params);
-  $tree = $menu_tree->transform($tree, [
-    ['callable' => 'menu.default_tree_manipulators:checkAccess'],
-    ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
-  ]);
-
-  $links = [];
-  foreach ($tree as $element) {
-    $url = $element->link->getUrlObject();
-    $links[] = [
-      'title' => $element->link->getTitle(),
-      'url' => $url->toString(),
-    ];
-  }
-  return $links;
 }
 
 /**
