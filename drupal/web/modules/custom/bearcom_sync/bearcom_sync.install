@@ -82,3 +82,10 @@ function bearcom_sync_update_10002() {
 
   return implode(' ', $messages) ?: 'No changes needed.';
 }
+
+/**
+ * Re-run: add 'testimonial' to field_style, 'divided-left'/'divided-right' to field_layout (10002 ran before cim).
+ */
+function bearcom_sync_update_10003() {
+  return bearcom_sync_update_10002();
+}
