@@ -1,0 +1,23 @@
+uuid: 414a6097-3425-4165-9f2c-db5ec1014e1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_longitude
+    - paragraphs.paragraphs_type.faq_two_column
+id: paragraph.faq_two_column.field_longitude
+field_name: field_longitude
+entity_type: paragraph
+bundle: faq_two_column
+label: Longitude
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float
