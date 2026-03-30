@@ -1,3 +1,7 @@
+dependencies:
+  enforced:
+    module:
+      - bearcom_sync
 addresses:
   -
     title: 'BearCom Canada Headquarters'
