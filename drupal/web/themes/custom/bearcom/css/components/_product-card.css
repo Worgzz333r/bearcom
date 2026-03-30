@@ -69,6 +69,10 @@
   line-height: var(--details-lh);
   font-weight: var(--font-weight-regular);
   color: var(--color-text-primary);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .product-card__description p,
@@ -84,13 +88,14 @@
 /* Responsive — Mobile */
 @media (max-width: 767px) {
   .product-card__image {
-    height: auto;
+    height: 200px;
   }
 
   .product-card__image img {
-    width: 100%;
-    height: auto;
-    max-height: 200px;
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
   }
 
   .product-card__title {
