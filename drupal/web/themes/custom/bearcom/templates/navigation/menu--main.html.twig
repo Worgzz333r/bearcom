@@ -57,6 +57,8 @@
                             {% if child.icon_svg %}<span class="mega-menu__icon">{{ child.icon_svg|raw }}</span>{% endif %}
                             {{ child.title }}
                           </h4>
+                          <div class="mega-menu__sol-content">
+                          <div class="mega-menu__sol-content-inner">
                           {% if child.below %}
                             {% for grandchild in child.below %}
                               {% if grandchild.below %}
@@ -92,6 +94,8 @@
                               {% endif %}
                             {% endfor %}
                           {% endif %}
+                          </div>
+                          </div>
                         </div>
                       </div>
                     {% endfor %}

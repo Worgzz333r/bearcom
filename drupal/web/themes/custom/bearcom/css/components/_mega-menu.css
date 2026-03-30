@@ -269,6 +269,8 @@
 
 .mega-menu__sol-list a:hover {
   color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
 }
 
 /* Standalone bold link (Repeaters, BDA/DAS, etc.) */
@@ -304,6 +306,8 @@
 
 .mega-menu__sol-link:hover {
   color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
 }
 
 /* Industries — grid */
@@ -341,6 +345,8 @@
 .mega-menu__grid-item:hover {
   background-color: var(--color-background);
   color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
 }
 
 /* Cards — Rentals (4) / Resources (3) */
@@ -382,6 +388,8 @@
 
 .mega-menu__card:hover {
   color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
 }
 
 .mega-menu__card-image {
@@ -443,7 +451,71 @@
 
 .mega-menu__about-link:hover {
   color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
 }
+
+/* === Solutions responsive === */
+
+/* Step 1: Smaller cards, reduce padding */
+@media (max-width: 1400px) {
+  .mega-menu__sol-column {
+    flex: 1 1 0;
+    max-width: none;
+  }
+
+  .mega-menu__sol-column:has(.mega-menu__sol-list) {
+    flex-basis: 0;
+  }
+
+  .mega-menu__content {
+    padding: 40px 24px;
+  }
+
+  .mega-menu__sol-image img {
+    height: 120px;
+  }
+}
+
+/* Step 2: Smaller gap, hide images, reduce sidebar */
+@media (max-width: 1200px) {
+  .mega-menu__solutions {
+    gap: var(--spacing-sm);
+  }
+
+  .mega-menu__sol-image {
+    display: none;
+  }
+
+  .mega-menu__sol-body {
+    padding: 12px;
+  }
+
+  .mega-menu__sidebar {
+    flex: 0 0 240px;
+    padding: 40px 20px;
+  }
+
+  .mega-menu__content {
+    padding: 30px 20px;
+  }
+
+  .mega-menu__sol-title {
+    font-size: 16px;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .mega-menu__sol-group-title,
+  .mega-menu__sol-subtitle {
+    font-size: 14px;
+  }
+
+  .mega-menu__sol-list li,
+  .mega-menu__sol-link {
+    font-size: 14px;
+  }
+}
+
 
 /* Hide mega-menu dropdowns on mobile (desktop only) */
 @media (max-width: 960px) {

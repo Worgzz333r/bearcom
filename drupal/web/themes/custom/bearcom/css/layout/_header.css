@@ -156,7 +156,7 @@
   padding: 0;
 }
 
-/* Hamburger */
+/* Hamburger — toggles between menu/close SVG icons with animation */
 .hamburger {
   display: flex;
   align-items: center;
@@ -165,6 +165,35 @@
   background: none;
   border: none;
   padding: 0;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.hamburger__icon-menu,
+.hamburger__icon-close {
+  position: absolute;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.hamburger__icon-menu {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.hamburger__icon-close {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+.hamburger--active .hamburger__icon-menu {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.hamburger--active .hamburger__icon-close {
+  opacity: 1;
+  transform: rotate(0deg);
 }
 
 /* Header minimal (Landing Page, 403, 404) */
@@ -196,6 +225,10 @@
 
   .site-header__mobile-actions {
     display: flex;
+  }
+
+  .site-header {
+    z-index: calc(var(--z-mobile-menu) + 1);
   }
 
   .site-header .container {

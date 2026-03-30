@@ -6,25 +6,14 @@
       var menu = document.querySelector('[data-mobile-menu]');
       if (!menu) return;
 
-      // Open — hamburger button.
-      var openBtns = once('mobile-menu-open', '[data-mobile-menu-toggle]', context);
-      openBtns.forEach(function (btn) {
+      // Toggle — hamburger button (opens/closes).
+      var toggleBtns = once('mobile-menu-toggle', '[data-mobile-menu-toggle]', context);
+      toggleBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
-          menu.classList.add('is-open');
-          btn.classList.add('hamburger--active');
-          document.body.style.overflow = 'hidden';
-          document.documentElement.style.overflow = 'hidden';
-        });
-      });
-
-      // Close — X button.
-      var closeBtns = once('mobile-menu-close', '[data-mobile-menu-close]', context);
-      closeBtns.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          menu.classList.remove('is-open');
-          document.querySelector('[data-mobile-menu-toggle]').classList.remove('hamburger--active');
-          document.body.style.overflow = '';
-          document.documentElement.style.overflow = '';
+          var isOpen = menu.classList.toggle('is-open');
+          btn.classList.toggle('hamburger--active', isOpen);
+          document.body.style.overflow = isOpen ? 'hidden' : '';
+          document.documentElement.style.overflow = isOpen ? 'hidden' : '';
         });
       });
 
