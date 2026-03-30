@@ -262,7 +262,7 @@ div:has(> [class*="content-block--divided"]):not(:has(+ div > [class*="content-b
   height: 600px;
   border-radius: var(--radius-card-lg);
   overflow: hidden;
-  background: #E8E8E8;
+  background: var(--color-medium-gray);
 }
 
 /* Make all Drupal wrappers fill the player */

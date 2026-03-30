@@ -93,7 +93,55 @@ function bearcom_sync_update_10003() {
 /**
  * Create footer menus, menu links, and footer config (addresses, social, patent).
  */
+/**
+ * Add field_hero_link (link) to location CT for hero CTA button.
+ */
 function bearcom_sync_update_10004() {
+  // Create field storage if not exists.
+  $storage = \Drupal\field\Entity\FieldStorageConfig::loadByName('node', 'field_hero_link');
+  if (!$storage) {
+    $storage = \Drupal\field\Entity\FieldStorageConfig::create([
+      'field_name' => 'field_hero_link',
+      'entity_type' => 'node',
+      'type' => 'link',
+      'cardinality' => 1,
+    ]);
+    $storage->save();
+  }
+
+  // Create field instance on location CT.
+  $field = \Drupal\field\Entity\FieldConfig::loadByName('node', 'location', 'field_hero_link');
+  if (!$field) {
+    $field = \Drupal\field\Entity\FieldConfig::create([
+      'field_storage' => $storage,
+      'bundle' => 'location',
+      'label' => 'Hero CTA Link',
+      'settings' => [
+        'link_type' => 16,
+        'title' => 1,
+      ],
+    ]);
+    $field->save();
+  }
+
+  // Add to form display.
+  $form_display = \Drupal::entityTypeManager()
+    ->getStorage('entity_form_display')
+    ->load('node.location.default');
+  if ($form_display && !$form_display->getComponent('field_hero_link')) {
+    $form_display->setComponent('field_hero_link', [
+      'type' => 'link_default',
+      'weight' => 3,
+    ])->save();
+  }
+
+  return 'Created field_hero_link on location CT.';
+}
+
+/**
+ * Create footer menus, menu links, and footer config.
+ */
+function bearcom_sync_update_10005() {
   $messages = [];
 
   // 1. Install footer config (addresses, social, patent, phone).

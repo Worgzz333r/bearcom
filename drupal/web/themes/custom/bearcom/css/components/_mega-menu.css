@@ -120,7 +120,7 @@
 
 .mega-menu__sidebar-divider {
   border: none;
-  border-top: 1px solid #FFFFFF;
+  border-top: 1px solid var(--color-white);
   margin: 32px 0;
 }
 
@@ -382,7 +382,6 @@
   transition: box-shadow var(--transition-fast);
   color: var(--color-text-primary);
   gap: 16px;
-  padding: 8px;
   padding: 8px;
 }
 

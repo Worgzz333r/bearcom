@@ -216,7 +216,7 @@
 }
 
 .site-footer__wave-graphic {
-  color: #555D64;
+  color: var(--color-footer-wave);
 }
 
 .site-footer__wave-graphic svg,
