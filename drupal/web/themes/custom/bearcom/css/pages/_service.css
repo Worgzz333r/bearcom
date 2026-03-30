@@ -180,6 +180,21 @@ div:has(> [class*="content-block--divided"]):not(:has(+ div > [class*="content-b
   border-bottom: 1px solid var(--color-dark-blue);
 }
 
+/* Divided — tablet */
+@media (max-width: 1023px) {
+  [class*="content-block--divided"] .content-block__inner {
+    gap: var(--spacing-md);
+  }
+
+  [class*="content-block--divided"] .content-block__image {
+    flex: 0 0 45%;
+  }
+
+  [class*="content-block--divided"] .content-block__image img {
+    height: 350px;
+  }
+}
+
 /* Divided — mobile */
 @media (max-width: 767px) {
   [class*="content-block--divided"] .content-block__inner {
@@ -518,12 +533,43 @@ div:has(> [class*="content-block--divided"]):not(:has(+ div > [class*="content-b
    -------------------------------------------------------------------------- */
 
 @media (max-width: 1023px) {
+  /* Video block — tablet */
+  .video-block .section__header {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .video-block__player {
+    height: 450px;
+  }
+
+  /* Card grid blue — tablet */
+  .card-grid--blue {
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+  }
+
+  /* Product comparison — tablet */
   .product-comparison__grid {
     gap: var(--spacing-md);
   }
 
+  .product-comparison__grid > div {
+    gap: var(--spacing-xl);
+  }
+
   .product-comparison__card {
+    width: auto;
+    flex: 1;
+    min-height: auto;
     padding: var(--spacing-md);
+  }
+
+  .product-comparison__card-btn {
+    margin-top: var(--spacing-lg);
+  }
+
+  .product-comparison .section__header {
+    margin-bottom: var(--spacing-xl);
   }
 }
 
@@ -546,8 +592,28 @@ div:has(> [class*="content-block--divided"]):not(:has(+ div > [class*="content-b
     aspect-ratio: 16 / 9;
   }
 
+  /* Content block centered — mobile */
+  .content-block--centered {
+    padding-top: 60px;
+    padding-bottom: var(--spacing-lg);
+    margin: 0;
+  }
+
   .content-block--centered .content-block__inner {
     max-width: 100%;
+  }
+
+  .content-block--centered .content-block__title {
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .content-block--centered .content-block__body,
+  .content-block--centered .content-block__body p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: var(--font-weight-regular);
+    text-align: center;
   }
 
   .product-comparison__grid {

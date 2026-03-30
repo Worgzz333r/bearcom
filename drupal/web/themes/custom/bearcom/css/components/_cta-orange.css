@@ -82,6 +82,16 @@
    Responsive — Mobile
    -------------------------------------------------------------------------- */
 
+@media (max-width: 1023px) {
+  .cta-block--testimonial .cta-block__inner {
+    padding: var(--spacing-lg);
+  }
+
+  .cta-block--testimonial .cta-block__decoration {
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
 @media (max-width: 767px) {
   .cta-block--testimonial .cta-block__inner {
     padding: var(--spacing-lg) var(--container-padding);
