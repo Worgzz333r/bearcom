@@ -21,3 +21,64 @@ function bearcom_sync_update_10001() {
   }
   return 'No changes needed.';
 }
+
+/**
+ * Add 'testimonial' to field_style, 'divided-left'/'divided-right' to field_layout.
+ */
+function bearcom_sync_update_10002() {
+  $messages = [];
+
+  // Add testimonial to field_style.
+  $storage = \Drupal\field\Entity\FieldStorageConfig::loadByName('paragraph', 'field_style');
+  if ($storage) {
+    $values = $storage->getSetting('allowed_values');
+    if (!isset($values['testimonial'])) {
+      $values['testimonial'] = '[CTA] Testimonial — orange quote, centered';
+      $storage->setSetting('allowed_values', $values);
+      $storage->save();
+      $messages[] = 'Added testimonial to field_style.';
+    }
+  }
+
+  // Add divided-left, divided-right to field_layout.
+  $storage2 = \Drupal\field\Entity\FieldStorageConfig::loadByName('paragraph', 'field_layout');
+  if ($storage2) {
+    $values2 = $storage2->getSetting('allowed_values');
+    $changed = FALSE;
+    if (!isset($values2['divided-left'])) {
+      $values2['divided-left'] = 'Divided Left (image left, border lines)';
+      $changed = TRUE;
+    }
+    if (!isset($values2['divided-right'])) {
+      $values2['divided-right'] = 'Divided Right (image right, border lines)';
+      $changed = TRUE;
+    }
+    if ($changed) {
+      $storage2->setSetting('allowed_values', $values2);
+      $storage2->save();
+      $messages[] = 'Added divided-left/right to field_layout.';
+    }
+  }
+
+  // Add divided-left, divided-right to field_section_style.
+  $storage3 = \Drupal\field\Entity\FieldStorageConfig::loadByName('paragraph', 'field_section_style');
+  if ($storage3) {
+    $values3 = $storage3->getSetting('allowed_values');
+    $changed3 = FALSE;
+    if (!isset($values3['divided-left'])) {
+      $values3['divided-left'] = 'Divided Left (image left, service)';
+      $changed3 = TRUE;
+    }
+    if (!isset($values3['divided-right'])) {
+      $values3['divided-right'] = 'Divided Right (image right, service)';
+      $changed3 = TRUE;
+    }
+    if ($changed3) {
+      $storage3->setSetting('allowed_values', $values3);
+      $storage3->save();
+      $messages[] = 'Added divided-left/right to field_section_style.';
+    }
+  }
+
+  return implode(' ', $messages) ?: 'No changes needed.';
+}
