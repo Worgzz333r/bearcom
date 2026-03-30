@@ -6,23 +6,14 @@
       var menu = document.querySelector('[data-mobile-menu]');
       if (!menu) return;
 
-      // Open — hamburger button.
-      var openBtns = once('mobile-menu-open', '[data-mobile-menu-toggle]', context);
-      openBtns.forEach(function (btn) {
+      // Toggle — hamburger button (opens/closes).
+      var toggleBtns = once('mobile-menu-toggle', '[data-mobile-menu-toggle]', context);
+      toggleBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
-          menu.classList.add('is-open');
-          btn.classList.add('hamburger--active');
-          document.body.style.overflow = 'hidden';
-        });
-      });
-
-      // Close — X button.
-      var closeBtns = once('mobile-menu-close', '[data-mobile-menu-close]', context);
-      closeBtns.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          menu.classList.remove('is-open');
-          document.querySelector('[data-mobile-menu-toggle]').classList.remove('hamburger--active');
-          document.body.style.overflow = '';
+          var isOpen = menu.classList.toggle('is-open');
+          btn.classList.toggle('hamburger--active', isOpen);
+          document.body.style.overflow = isOpen ? 'hidden' : '';
+          document.documentElement.style.overflow = isOpen ? 'hidden' : '';
         });
       });
 
@@ -53,6 +44,22 @@
         title.addEventListener('click', function () {
           // Close siblings.
           var siblings = column.parentElement.querySelectorAll(':scope > .mega-menu__column.is-expanded');
+          siblings.forEach(function (sib) {
+            if (sib !== column) sib.classList.remove('is-expanded');
+          });
+
+          column.classList.toggle('is-expanded');
+        });
+      });
+
+      // Solutions accordion — sol-column titles
+      var solTitles = once('mobile-acc-sol', '.mobile-menu__nav .mega-menu__sol-title', context);
+      solTitles.forEach(function (title) {
+        var column = title.closest('.mega-menu__sol-column');
+        if (!column) return;
+
+        title.addEventListener('click', function () {
+          var siblings = column.parentElement.querySelectorAll(':scope > .mega-menu__sol-column.is-expanded');
           siblings.forEach(function (sib) {
             if (sib !== column) sib.classList.remove('is-expanded');
           });
