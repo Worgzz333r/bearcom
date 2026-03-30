@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.article.field_cta
     - field.field.node.article.field_hero_style
     - field.field.node.article.field_image
+    - field.field.node.article.field_paragraphs
     - field.field.node.article.field_related
     - field.field.node.article.field_show_share
     - field.field.node.article.field_tags
@@ -62,6 +63,15 @@ content:
         attribute: eager
     third_party_settings: {  }
     weight: -1
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_related:
     type: entity_reference_label
