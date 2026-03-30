@@ -13,6 +13,7 @@
           menu.classList.add('is-open');
           btn.classList.add('hamburger--active');
           document.body.style.overflow = 'hidden';
+          document.documentElement.style.overflow = 'hidden';
         });
       });
 
@@ -23,6 +24,7 @@
           menu.classList.remove('is-open');
           document.querySelector('[data-mobile-menu-toggle]').classList.remove('hamburger--active');
           document.body.style.overflow = '';
+          document.documentElement.style.overflow = '';
         });
       });
 
@@ -53,6 +55,22 @@
         title.addEventListener('click', function () {
           // Close siblings.
           var siblings = column.parentElement.querySelectorAll(':scope > .mega-menu__column.is-expanded');
+          siblings.forEach(function (sib) {
+            if (sib !== column) sib.classList.remove('is-expanded');
+          });
+
+          column.classList.toggle('is-expanded');
+        });
+      });
+
+      // Solutions accordion — sol-column titles
+      var solTitles = once('mobile-acc-sol', '.mobile-menu__nav .mega-menu__sol-title', context);
+      solTitles.forEach(function (title) {
+        var column = title.closest('.mega-menu__sol-column');
+        if (!column) return;
+
+        title.addEventListener('click', function () {
+          var siblings = column.parentElement.querySelectorAll(':scope > .mega-menu__sol-column.is-expanded');
           siblings.forEach(function (sib) {
             if (sib !== column) sib.classList.remove('is-expanded');
           });
