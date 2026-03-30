@@ -281,7 +281,7 @@
   font-size: var(--details-size);
   line-height: var(--details-lh);
   font-weight: 400;
-  color: #FAFAFA;
+  color: var(--color-background);
   text-align: center;
   margin: 0;
 }
@@ -348,6 +348,7 @@
   /* --- Background: orange, rounded top --- */
   .site-footer {
     background-color: var(--color-footer-mobile-bg);
+    margin-top: 36px;
   }
 
   .site-footer__main {
@@ -494,7 +495,7 @@
 
   /* --- Wave: smaller, white --- */
   .site-footer__wave {
-    padding: 12px 0 var(--section-padding);
+    padding: 12px 0 80px;
   }
 
   .site-footer__wave-graphic svg,

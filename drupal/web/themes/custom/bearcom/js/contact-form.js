@@ -74,25 +74,29 @@
       modal.classList.add('contact-modal--visible');
     });
 
+    var escHandler = function (e) {
+      if (e.key === 'Escape') {
+        closeModal(modal, escHandler);
+      }
+    };
+
     modal.querySelector('.contact-modal__btn').addEventListener('click', function () {
-      closeModal(modal);
+      closeModal(modal, escHandler);
     });
 
     modal.addEventListener('click', function (e) {
       if (e.target === modal || e.target.classList.contains('contact-modal__overlay')) {
-        closeModal(modal);
+        closeModal(modal, escHandler);
       }
     });
 
-    document.addEventListener('keydown', function handler(e) {
-      if (e.key === 'Escape') {
-        closeModal(modal);
-        document.removeEventListener('keydown', handler);
-      }
-    });
+    document.addEventListener('keydown', escHandler);
   }
 
-  function closeModal(modal) {
+  function closeModal(modal, escHandler) {
+    if (escHandler) {
+      document.removeEventListener('keydown', escHandler);
+    }
     modal.classList.remove('contact-modal--visible');
     document.body.style.overflow = '';
     setTimeout(function () {

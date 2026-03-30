@@ -232,6 +232,8 @@
 
 .location-detail__about-text {
   max-width: 629px;
+  position: relative;
+  z-index: 1;
 }
 
 .location-detail__about-body,
@@ -260,11 +262,12 @@
 
 .location-detail__about-wave {
   position: absolute;
-  right: 237px;
+  right: clamp(60px, 15vw, 237px);
   top: 50%;
   transform: translateY(-50%);
   width: 187px;
   height: 150px;
+  z-index: 0;
 }
 
 .location-detail__about-wave svg {
@@ -381,9 +384,15 @@
   }
 
   .location-detail__about-wave {
-    right: 60px;
+    position: static;
+    transform: none;
     width: 140px;
     height: 112px;
+    margin: 30px auto 0;
+  }
+
+  .location-detail__about-layout {
+    flex-direction: column;
   }
 
   .location-detail__faq-section {
@@ -470,6 +479,10 @@
 
   .location-detail__about {
     padding: 60px 0;
+  }
+
+  .location-detail__about-text {
+    padding-right: 0;
   }
 
   .location-detail__about-wave {

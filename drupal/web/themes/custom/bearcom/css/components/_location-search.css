@@ -105,10 +105,10 @@
   padding: 20px;
 }
 
-/* Leaflet marker override */
-.location-marker {
-  background: none !important;
-  border: none !important;
+/* Leaflet marker override — specificity beats .leaflet-marker-icon */
+.location-search .location-marker {
+  background: none;
+  border: none;
 }
 
 /* Leaflet popup override */

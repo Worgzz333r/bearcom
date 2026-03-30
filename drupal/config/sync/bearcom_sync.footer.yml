@@ -1,0 +1,31 @@
+addresses:
+  -
+    title: 'BearCom Canada Headquarters'
+    address: |-
+      79 Wellington Street
+      London, Ontario N6B 2K4
+    phone: '8332327266'
+    phone_display: (833)-232-7266
+  -
+    title: 'BearCom Headquarters'
+    address: |-
+      4009 Distribution Drive, #200
+      Garland, Texas 75041
+    phone: '8005271670'
+    phone_display: '(800) 527-1670'
+social:
+  -
+    url: '#'
+    label: Facebook
+  -
+    url: '#'
+    label: LinkedIn
+  -
+    url: '#'
+    label: Twitter
+  -
+    url: '#'
+    label: YouTube
+patent: 'AlwaysOn Alerts is covered by U.S. Patent No. US 20200394897 A1. AlwaysOn Voice Assistant™ is covered by U.S. Patent No. 11,671,796. The remaining AlwaysOn Integrated Solutions are patent pending.'
+phone: '8005271670'
+phone_display: '(800) 527-1670'

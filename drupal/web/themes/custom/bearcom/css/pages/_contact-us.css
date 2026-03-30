@@ -202,6 +202,15 @@ body.page--contact .cta-block--credibility .cta-block__inner {
   border-color: var(--color-primary);
 }
 
+.contact-page__form .form-text:focus-visible,
+.contact-page__form .form-email:focus-visible,
+.contact-page__form .form-tel:focus-visible,
+.contact-page__form .form-select:focus-visible,
+.contact-page__form .form-textarea:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
 .contact-page__form .form-item:focus-within label {
   color: var(--color-primary);
 }

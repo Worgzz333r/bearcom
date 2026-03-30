@@ -32,7 +32,7 @@
   font-size: 140px;
   line-height: 100%;
   font-weight: 600;
-  color: #FB591F;
+  color: var(--color-primary-dark);
   margin: 0 0 24px;
 }
 
@@ -41,7 +41,7 @@
   font-size: 42px;
   line-height: 44px;
   font-weight: 600;
-  color: #22262C;
+  color: var(--color-dark-blue);
   margin: 0 0 16px;
 }
 
@@ -50,13 +50,13 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
-  color: #4A4F55;
+  color: var(--color-text-primary);
   margin: 0 0 32px;
 }
 
 .error-page__btn {
-  background-color: #116CA6;
-  border-color: #116CA6;
+  background-color: var(--color-blue-light);
+  border-color: var(--color-blue-light);
   color: var(--color-white);
   text-transform: uppercase;
   padding: 8px 12px;

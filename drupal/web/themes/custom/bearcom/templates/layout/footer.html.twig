@@ -2,16 +2,9 @@
 /**
  * @file
  * Site footer — full variant.
- * For minimal footer see footer--minimal.html.twig.
- *
- * Structure (from Figma):
- *   .site-footer
- *     .site-footer__main  — dark grey (#4A4F55)
- *       Logo + Social media
- *       Locations + Menu columns
- *       Legal links + Patent
- *     .site-footer__wave  — darker (#22262C)
- *       Soundwave watermark
+ * Content loaded from Drupal menus + bearcom_sync.footer config.
+ * Edit: Structure → Menus (footer-*) for navigation.
+ * Edit: drush config:edit bearcom_sync.footer for addresses/social/patent.
  */
 #}
 
@@ -26,111 +19,62 @@
           <img src="/{{ directory }}/images/logo-white-new.svg" alt="BearCom AlwaysOn" width="226" height="76">
         </a>
 
-        <div class="site-footer__social">
-          <a href="#" class="site-footer__social-link" aria-label="Facebook">
-            <span class="site-footer__social-icon"></span>
-          </a>
-          <a href="#" class="site-footer__social-link" aria-label="LinkedIn">
-            <span class="site-footer__social-icon"></span>
-          </a>
-          <a href="#" class="site-footer__social-link" aria-label="Twitter">
-            <span class="site-footer__social-icon"></span>
-          </a>
-          <a href="#" class="site-footer__social-link" aria-label="YouTube">
-            <span class="site-footer__social-icon"></span>
-          </a>
-        </div>
+        {% if footer.social %}
+          <div class="site-footer__social">
+            {% for social in footer.social %}
+              <a href="{{ social.url }}" class="site-footer__social-link" aria-label="{{ social.label }}">
+                <span class="site-footer__social-icon"></span>
+              </a>
+            {% endfor %}
+          </div>
+        {% endif %}
       </div>
 
       {# Content row: Addresses + Menu columns #}
       <div class="site-footer__content">
-        <div class="site-footer__addresses">
-          <div class="site-footer__address">
-            <strong class="site-footer__address-title">BearCom Canada Headquarters</strong>
-            <p class="site-footer__address-text">
-              79 Wellington Street<br>
-              London, Ontario N6B 2K4
-            </p>
-            <a href="tel:8332327266" class="site-footer__phone">
-              <img src="/{{ directory }}/images/icon-phone.svg" alt="" width="14" height="14" class="site-footer__phone-icon" aria-hidden="true">
-              (833)-232-7266
-            </a>
+        {% if footer.addresses %}
+          <div class="site-footer__addresses">
+            {% for addr in footer.addresses %}
+              <div class="site-footer__address">
+                <strong class="site-footer__address-title">{{ addr.title }}</strong>
+                <p class="site-footer__address-text">{{ addr.address|nl2br }}</p>
+                <a href="tel:{{ addr.phone }}" class="site-footer__phone">
+                  <img src="/{{ directory }}/images/icon-phone.svg" alt="" width="14" height="14" class="site-footer__phone-icon" aria-hidden="true">
+                  {{ addr.phone_display }}
+                </a>
+              </div>
+            {% endfor %}
           </div>
+        {% endif %}
 
-          <div class="site-footer__address">
-            <strong class="site-footer__address-title">BearCom Headquarters</strong>
-            <p class="site-footer__address-text">
-              4009 Distribution Drive, #200<br>
-              Garland, Texas 75041
-            </p>
-            <a href="tel:8005271670" class="site-footer__phone">
-              <img src="/{{ directory }}/images/icon-phone.svg" alt="" width="14" height="14" class="site-footer__phone-icon" aria-hidden="true">
-              (800) 527-1670
-            </a>
-          </div>
-        </div>
-
-        <nav class="site-footer__nav" aria-label="Footer navigation">
-          <div class="site-footer__column">
-            <h4 class="site-footer__column-title">Products</h4>
-            <ul class="site-footer__column-list">
-              <li><a href="/solutions">Solutions</a></li>
-              <li><a href="/services">Services</a></li>
-              <li><a href="/rentals">Rentals</a></li>
-              <li><a href="/products">Products</a></li>
-              <li><a href="/the-big-game">The Big Game</a></li>
-            </ul>
-          </div>
-
-          <div class="site-footer__column">
-            <h4 class="site-footer__column-title">About Us</h4>
-            <ul class="site-footer__column-list">
-              <li><a href="/about">About Bearcom</a></li>
-              <li><a href="/acquisitions">Acquisitions</a></li>
-              <li><a href="/contact-us">Contact Us</a></li>
-              <li><a href="/locations">Locations</a></li>
-              <li><a href="/careers">Careers</a></li>
-            </ul>
-          </div>
-
-          <div class="site-footer__column">
-            <h4 class="site-footer__column-title">Resources</h4>
-            <ul class="site-footer__column-list">
-              <li><a href="/faq">FAQ</a></li>
-              <li><a href="/employee-access">Employee Access</a></li>
-              <li><a href="/amazon-support">Amazon Support</a></li>
-            </ul>
-          </div>
-
-          <div class="site-footer__column">
-            <h4 class="site-footer__column-title">News</h4>
-            <ul class="site-footer__column-list">
-              <li><a href="/press-release">Press Release</a></li>
-              <li><a href="/industry-trends">Industry Trends</a></li>
-              <li><a href="/blog">Blog</a></li>
-            </ul>
-          </div>
-        </nav>
+        {% if footer_nav %}
+          <nav class="site-footer__nav" aria-label="Footer navigation">
+            {% for column in footer_nav %}
+              <div class="site-footer__column">
+                <h4 class="site-footer__column-title">{{ column.title }}</h4>
+                <ul class="site-footer__column-list">
+                  {% for link in column.links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endfor %}
+          </nav>
+        {% endif %}
       </div>
 
       {# Bottom: Legal links + Patent #}
       <div class="site-footer__bottom">
-        <div class="site-footer__legal-links">
-          <a href="/terms-of-use">Terms of Use</a>
-          <a href="/terms-of-sale">Terms of Sale</a>
-          <a href="/rental-equipment">Rental Equipment</a>
-          <a href="/loss-protection">Loss Protection</a>
-          <a href="/program-state">Program State</a>
-          <a href="/license-numbers">License Numbers</a>
-          <a href="/privacy-policy">Privacy Policy</a>
-          <a href="/codes-of-conduct">Codes of Conduct</a>
-          <a href="/motorola-subscription">Motorola Subscription</a>
-          <a href="/terms-subscription">Terms Subscription</a>
-          <a href="/terms-privacy-settings">Terms Privacy Settings</a>
-        </div>
-        <p class="site-footer__patent">
-          AlwaysOn Alerts is covered by U.S. Patent No. US 20200394897 A1. AlwaysOn Voice Assistant&trade; is covered by U.S. Patent No. 11,671,796. The remaining AlwaysOn Integrated Solutions are patent pending.
-        </p>
+        {% if footer_legal %}
+          <div class="site-footer__legal-links">
+            {% for link in footer_legal %}
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+        {% if footer.patent %}
+          <p class="site-footer__patent">{{ footer.patent }}</p>
+        {% endif %}
       </div>
 
     </div>

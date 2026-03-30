@@ -1,0 +1,8 @@
+uuid: b841d03e-0785-4ee6-a699-f2f431e59b6b
+langcode: en
+status: true
+dependencies: {  }
+id: footer-news
+label: News
+description: null
+locked: false

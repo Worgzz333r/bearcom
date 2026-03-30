@@ -449,7 +449,7 @@
   /* Card Grid — single column, left-aligned header */
   .card-grid--industry,
   .card-grid--industry_dark {
-    padding: 60px 0;
+    padding: var(--spacing-lg) 0;
   }
 
   [class*="card-grid--industry"] > .container,
