@@ -1,0 +1,23 @@
+uuid: 730502ba-bad1-409f-b27e-24692fb03f83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_minimal_header
+    - node.type.landing_page
+id: node.landing_page.field_minimal_header
+field_name: field_minimal_header
+entity_type: node
+bundle: landing_page
+label: 'Minimal Header'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

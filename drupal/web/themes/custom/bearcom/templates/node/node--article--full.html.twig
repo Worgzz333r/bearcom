@@ -9,8 +9,8 @@
       <div class="container">
         <div class="article-hero__content">
           <h1 class="article-hero__title">{{ label }}</h1>
-          {% if node.field_short_description.value %}
-            <div class="article-hero__desc">{{ content.field_short_description }}</div>
+          {% if node.body.summary %}
+            <div class="article-hero__desc">{{ node.body.summary }}</div>
           {% endif %}
         </div>
       </div>
@@ -29,31 +29,16 @@
           {% endif %}
           <div class="article-hero__content">
             <h1 class="article-hero__title">{{ label }}</h1>
-            {% if node.field_short_description.value %}
-              <div class="article-hero__desc">{{ content.field_short_description }}</div>
+            {% if node.body.summary %}
+              <div class="article-hero__desc">{{ node.body.summary }}</div>
             {% endif %}
-            <div class="article-hero__buttons">
-              <a href="/contact-us" class="btn btn--white">CTA Button</a>
-              <a href="/contact-us" class="btn btn--outline-white">Secondary Button</a>
-            </div>
           </div>
         </div>
       </div>
     </section>
   {% endif %}
 
-  {# Body content — rich text #}
-  {% if content.body|render|trim %}
-    <section class="article-body">
-      <div class="container">
-        <div class="article-body__content">
-          {{ content.body }}
-        </div>
-      </div>
-    </section>
-  {% endif %}
-
-  {# Paragraphs if any #}
+  {# Paragraphs — main content built from blocks #}
   {% if content.field_paragraphs|render|trim %}
     {{ content.field_paragraphs }}
   {% endif %}

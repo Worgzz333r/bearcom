@@ -1,4 +1,4 @@
-uuid: b1ea9088-c87f-42be-bda2-0caebf078549
+uuid: c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f
 langcode: en
 status: true
 dependencies:
@@ -9,11 +9,13 @@ id: paragraph.content_block.field_uppercase
 field_name: field_uppercase
 entity_type: paragraph
 bundle: content_block
-label: 'Uppercase caption'
+label: 'Caption uppercase'
 description: ''
 required: false
 translatable: true
-default_value: {  }
+default_value:
+  -
+    value: 0
 default_value_callback: ''
 settings:
   on_label: 'On'

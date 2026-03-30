@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Search Results view template.
+ */
+#}
+<div class="search-results-page">
+  <div class="container">
+    <h1 class="search-results-page__title">Search Results</h1>
+
+    {% if exposed %}
+      <div class="search-results-page__form">
+        {{ exposed }}
+        <button type="submit" form="views-exposed-form-search-results-page-1" class="search-results-page__search-icon" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 19L14.9389 14.9389M17.1111 9.55556C17.1111 13.7284 13.7284 17.1111 9.55556 17.1111C5.38274 17.1111 2 13.7284 2 9.55556C2 5.38274 5.38274 2 9.55556 2C13.7284 2 17.1111 5.38274 17.1111 9.55556Z" stroke="#22262C" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    {% endif %}
+
+    {% if rows %}
+      <div class="search-results-page__results">
+        {{ rows }}
+      </div>
+    {% elseif empty %}
+      <div class="search-results-page__empty">
+        {{ empty }}
+      </div>
+    {% endif %}
+
+    {% if pager %}
+      {{ pager }}
+    {% endif %}
+  </div>
+</div>

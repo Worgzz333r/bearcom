@@ -1,29 +1,26 @@
-uuid: 9d10cd4f-dbe0-43a6-876d-de83ef7f879e
+uuid: 65808648-b7be-476d-99d5-e324ff2bdedf
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.location.field_about
-    - field.field.node.location.field_address
-    - field.field.node.location.field_cta
-    - field.field.node.location.field_description
-    - field.field.node.location.field_faq
-    - field.field.node.location.field_hero_style
-    - field.field.node.location.field_latitude
-    - field.field.node.location.field_longitude
-    - field.field.node.location.field_open_hours
-    - field.field.node.location.field_phone
-    - field.field.node.location.field_photo
-    - field.field.node.location.field_state
-    - node.type.location
+    - field.field.node.landing_page.field_benefits
+    - field.field.node.landing_page.field_cta
+    - field.field.node.landing_page.field_description
+    - field.field.node.landing_page.field_headline
+    - field.field.node.landing_page.field_image
+    - field.field.node.landing_page.field_minimal_header
+    - field.field.node.landing_page.field_webform
+    - image.style.thumbnail
+    - node.type.landing_page
   module:
-    - media_library
+    - image
     - paragraphs
     - path
     - text
-id: node.location.default
+    - webform
+id: node.landing_page.default
 targetEntityType: node
-bundle: location
+bundle: landing_page
 mode: default
 content:
   created:
@@ -32,15 +29,43 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_about:
-    type: text_textarea
-    weight: 8
+  field_benefits:
+    type: paragraphs
+    weight: 4
     region: content
     settings:
-      rows: 5
-      placeholder: ''
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
-  field_address:
+  field_cta:
+    type: paragraphs
+    weight: 6
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_description:
     type: text_textarea
     weight: 2
     region: content
@@ -48,90 +73,36 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_cta:
-    type: entity_reference_paragraphs
-    weight: 11
-    region: content
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: closed
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
-  field_description:
-    type: text_textarea
-    weight: 12
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_faq:
-    type: entity_reference_paragraphs
-    weight: 9
-    region: content
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: closed
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
-  field_hero_style:
-    type: options_select
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_latitude:
-    type: number
-    weight: 4
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_longitude:
-    type: number
-    weight: 5
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_open_hours:
-    type: entity_reference_paragraphs
-    weight: 7
-    region: content
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: closed
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
-  field_phone:
+  field_headline:
     type: string_textfield
-    weight: 3
+    weight: 1
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_photo:
-    type: media_library_widget
-    weight: 6
+  field_image:
+    type: image_image
+    weight: 3
     region: content
     settings:
-      media_types: {  }
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
-  field_state:
-    type: options_select
-    weight: 1
+  field_minimal_header:
+    type: boolean_checkbox
+    weight: 7
     region: content
-    settings: {  }
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_webform:
+    type: webform_entity_reference_select
+    weight: 5
+    region: content
+    settings:
+      default_data: true
+      webforms: {  }
     third_party_settings: {  }
   path:
     type: path

@@ -1,12 +1,12 @@
-uuid: b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e
+uuid: 4f00e4a8-a860-4452-aebe-350a1a51fb2d
 langcode: en
 status: true
 dependencies:
   module:
-    - paragraphs
-id: paragraph.field_uppercase
-field_name: field_uppercase
-entity_type: paragraph
+    - node
+id: node.field_minimal_header
+field_name: field_minimal_header
+entity_type: node
 type: boolean
 settings: {  }
 module: core

@@ -1,0 +1,22 @@
+uuid: 2bdf3acd-ae15-4fbd-bbab-bea5ed8b0bc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.landing_page
+  module:
+    - text
+id: node.landing_page.field_description
+field_name: field_description
+entity_type: node
+bundle: landing_page
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

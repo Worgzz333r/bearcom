@@ -1,0 +1,60 @@
+uuid: 25b44176-c5eb-4fea-8c60-cc52d07f4b2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.landing_page.field_benefits
+    - field.field.node.landing_page.field_cta
+    - field.field.node.landing_page.field_description
+    - field.field.node.landing_page.field_headline
+    - field.field.node.landing_page.field_image
+    - field.field.node.landing_page.field_minimal_header
+    - field.field.node.landing_page.field_webform
+    - node.type.landing_page
+  module:
+    - entity_reference_revisions
+    - user
+    - webform
+id: node.landing_page.default
+targetEntityType: node
+bundle: landing_page
+mode: default
+content:
+  field_benefits:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_cta:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_webform:
+    type: webform_entity_reference_entity_view
+    label: above
+    settings:
+      source_entity: true
+      lazy: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_description: true
+  field_headline: true
+  field_image: true
+  field_minimal_header: true
+  search_api_excerpt: true

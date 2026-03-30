@@ -1,0 +1,231 @@
+uuid: aae4fe03-9ba3-40c0-ac43-0279c0d14303
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.storage.node.body
+    - field.storage.node.field_short_description
+    - search_api.server.database
+  module:
+    - node
+id: content
+name: Content
+description: null
+read_only: false
+field_settings:
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  created:
+    label: Created
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
+  field_short_description:
+    label: 'Short Description'
+    datasource_id: 'entity:node'
+    property_path: field_short_description
+    type: text
+    boost: 2.0
+    dependencies:
+      config:
+        - field.storage.node.field_short_description
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        - anonymous
+      view_mode:
+        'entity:node':
+          article: teaser
+          flexible_page: teaser
+          industry: teaser
+          landing_page: default
+          location: default
+          product: teaser
+          service: default
+  status:
+    label: Published
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: 8.0
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  uid:
+    label: Author
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+    plugin_id: 'entity:node'
+    settings:
+      bundles:
+        default: true
+        selected: {  }
+      languages:
+        default: true
+        selected: {  }
+processor_settings:
+  add_url:
+    weights:
+      preprocess_index: -30
+  aggregated_field:
+    weights:
+      add_properties: 20
+  content_access:
+    weights:
+      preprocess_index: -6
+      preprocess_query: -4
+  custom_value: {  }
+  entity_status: {  }
+  entity_type: {  }
+  highlight:
+    weights:
+      postprocess_query: 0
+    prefix: '<strong>'
+    suffix: '</strong>'
+    excerpt: true
+    excerpt_always: false
+    excerpt_length: 256
+    exclude_fields: {  }
+    highlight: always
+    highlight_partial: false
+  html_filter:
+    weights:
+      preprocess_index: -3
+      preprocess_query: -6
+    all_fields: false
+    title: true
+    alt: true
+    tags:
+      b: 2.0
+      h1: 5.0
+      h2: 3.0
+      h3: 2.0
+      strong: 2.0
+  ignorecase:
+    weights:
+      preprocess_index: -5
+      preprocess_query: -5
+    all_fields: true
+    fields:
+      - body
+      - field_short_description
+      - rendered_item
+      - title
+      - type
+  language_with_fallback: {  }
+  rendered_item: {  }
+  stemmer:
+    weights:
+      preprocess_index: 0
+      preprocess_query: 0
+    all_fields: false
+    exceptions: {  }
+  stopwords:
+    weights:
+      preprocess_index: -5
+      preprocess_query: -2
+    all_fields: false
+    stopwords:
+      - a
+      - an
+      - and
+      - are
+      - as
+      - at
+      - be
+      - but
+      - by
+      - for
+      - if
+      - in
+      - into
+      - is
+      - it
+      - 'no'
+      - not
+      - of
+      - 'on'
+      - or
+      - such
+      - that
+      - the
+      - their
+      - then
+      - there
+      - these
+      - they
+      - this
+      - to
+      - was
+      - will
+      - with
+  tokenizer:
+    weights:
+      preprocess_index: -2
+      preprocess_query: -2
+    all_fields: false
+    spaces: '[^\p{L}\p{N}]'
+    ignored: ._-
+    overlap_cjk: 1
+    minimum_word_size: '3'
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  delete_on_fail: true
+  index_directly: true
+  track_changes_in_references: true
+server: database
