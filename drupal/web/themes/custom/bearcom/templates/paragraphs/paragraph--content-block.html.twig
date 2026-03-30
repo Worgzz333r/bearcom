@@ -1,8 +1,8 @@
 {# Content Block — image left/right + caption + title + body #}
 {% set layout = paragraph.field_layout.value|default('image-left') %}
-{% set section_style = paragraph.field_section_style.value %}
+{% set is_divided = layout starts with 'divided' %}
 
-<section class="content-block content-block--{{ layout }}{{ section_style ? ' content-block--' ~ section_style : '' }}" id="features" data-section-label="Features">
+<section class="{{ is_divided ? 'content-block--' ~ layout : 'content-block content-block--' ~ layout }}">
   <div class="content-block__wave" aria-hidden="true"></div>
   <div class="container">
     <div class="content-block__inner">

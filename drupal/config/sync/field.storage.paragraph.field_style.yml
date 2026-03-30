@@ -66,6 +66,9 @@ settings:
       value: orange-card
       label: '[Product Card] Orange'
     -
+      value: testimonial
+      label: '[CTA] Testimonial — orange quote, centered'
+    -
       value: service
       label: 'Service (image left, rounded)'
   allowed_values_function: ''

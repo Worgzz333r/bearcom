@@ -32,6 +32,12 @@ settings:
     -
       value: divided
       label: 'Divided (service page lines)'
+    -
+      value: divided-left
+      label: 'Divided Left (image left, service)'
+    -
+      value: divided-right
+      label: 'Divided Right (image right, service)'
   allowed_values_function: ''
 module: options
 locked: false

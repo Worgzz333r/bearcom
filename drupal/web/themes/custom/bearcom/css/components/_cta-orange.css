@@ -3,7 +3,7 @@
    Soundwave + quote text + person attribution
    ========================================================================== */
 
-.cta-block--orange .cta-block__inner {
+.cta-block--testimonial .cta-block__inner {
   background-color: rgba(251, 89, 31, 0.9);
   flex-direction: column;
   align-items: center;
@@ -13,14 +13,14 @@
   gap: 0;
 }
 
-.cta-block--orange .cta-block__content {
+.cta-block--testimonial .cta-block__content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 /* Soundwave icon */
-.cta-block--orange .cta-block__decoration {
+.cta-block--testimonial .cta-block__decoration {
   position: relative;
   width: 46px;
   height: 36px;
@@ -33,9 +33,9 @@
 }
 
 /* Quote text */
-.cta-block--orange .cta-block__description,
-.cta-block--orange .cta-block__description p,
-.cta-block--orange .cta-block__description div {
+.cta-block--testimonial .cta-block__description,
+.cta-block--testimonial .cta-block__description p,
+.cta-block--testimonial .cta-block__description div {
   color: var(--color-background);
   font-family: var(--font-family);
   font-size: var(--h4-size);
@@ -44,17 +44,17 @@
   text-align: center;
 }
 
-.cta-block--orange .cta-block__description {
+.cta-block--testimonial .cta-block__description {
   max-width: 1200px;
   margin: 0 0 32px;
 }
 
-.cta-block--orange .cta-block__description p {
+.cta-block--testimonial .cta-block__description p {
   margin: 0;
 }
 
 /* Person name — plain text, not a button */
-.cta-block--orange .btn.btn--outline.cta-block__btn {
+.cta-block--testimonial .btn.btn--outline.cta-block__btn {
   all: unset;
   display: block;
   color: #EAEAEA;
@@ -69,7 +69,7 @@
 }
 
 /* Subtitle under person name (uses field_title) */
-.cta-block--orange .cta-block__title {
+.cta-block--testimonial .cta-block__title {
   color: #EAEAEA;
   font-size: var(--p-size);
   line-height: var(--details-lh);
@@ -83,16 +83,16 @@
    -------------------------------------------------------------------------- */
 
 @media (max-width: 767px) {
-  .cta-block--orange .cta-block__inner {
+  .cta-block--testimonial .cta-block__inner {
     padding: var(--spacing-lg) var(--container-padding);
     border-radius: var(--radius-card-lg);
   }
 
-  .cta-block--orange .cta-block__decoration {
+  .cta-block--testimonial .cta-block__decoration {
     margin-bottom: var(--spacing-lg);
   }
 
-  .cta-block--orange .cta-block__description {
+  .cta-block--testimonial .cta-block__description {
     font-size: var(--p-size);
     line-height: var(--p-lh);
   }
