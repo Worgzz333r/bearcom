@@ -23,6 +23,12 @@ settings:
     -
       value: divided
       label: 'Divided (with border lines)'
+    -
+      value: divided-left
+      label: 'Divided Left (image left, border lines)'
+    -
+      value: divided-right
+      label: 'Divided Right (image right, border lines)'
   allowed_values_function: ''
 module: options
 locked: false

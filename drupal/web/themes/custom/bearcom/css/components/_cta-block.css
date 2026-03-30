@@ -329,17 +329,22 @@
     padding: 0;
   }
 
-  .cta-block--credibility .cta-block__inner {
+  /* Industry pages: footer sits on grey bg */
+  .dialog-off-canvas-main-canvas:has(.industry-page) > .site-footer,
+  .dialog-off-canvas-main-canvas:has(.industries-section) > .site-footer {
+    margin-top: 0;
+  }
+
+
+  /* CTA credibility on industry — grey bg extends down */
+  .main-content:has(.industry-page) .cta-block--credibility,
+  .main-content:has(.industries-section) .cta-block--credibility {
     background-color: var(--color-background-alt);
   }
 
-  /* Grey bg from CTA credibility extends seamlessly to footer */
-  .dialog-off-canvas-main-canvas:has(.cta-block--credibility) {
+  .main-content:has(.industry-page) .cta-block--credibility .cta-block__inner,
+  .main-content:has(.industries-section) .cta-block--credibility .cta-block__inner {
     background-color: var(--color-background-alt);
-  }
-
-  .dialog-off-canvas-main-canvas:has(.cta-block--credibility) > .site-footer {
-    margin-top: 36px;
   }
 
   .cta-block--credibility .cta-block__image {

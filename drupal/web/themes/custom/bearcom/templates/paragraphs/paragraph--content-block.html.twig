@@ -1,8 +1,11 @@
 {# Content Block — image left/right + caption + title + body #}
 {% set layout = paragraph.field_layout.value|default('image-left') %}
+{% set is_divided = layout starts with 'divided' %}
 
-<section class="content-block content-block--{{ layout }}" id="features" data-section-label="Features">
-  <div class="content-block__wave" aria-hidden="true"></div>
+<section class="{{ is_divided ? 'content-block--' ~ layout : 'content-block content-block--' ~ layout }}">
+  {% if layout != 'centered' %}
+    <div class="content-block__wave" aria-hidden="true"></div>
+  {% endif %}
   <div class="container">
     <div class="content-block__inner">
       {% if paragraph.field_image.entity %}

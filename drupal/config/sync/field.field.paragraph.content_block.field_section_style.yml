@@ -1,19 +1,21 @@
-uuid: 81b5a5d6-63a0-423e-846d-3af25979082e
+uuid: 98fe784c-5394-48ec-a7d1-2e6f499f188b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_subtitle
+    - field.storage.paragraph.field_section_style
     - paragraphs.paragraphs_type.content_block
-id: paragraph.content_block.field_subtitle
-field_name: field_subtitle
+  module:
+    - options
+id: paragraph.content_block.field_section_style
+field_name: field_section_style
 entity_type: paragraph
 bundle: content_block
-label: Caption
+label: 'Section Style'
 description: ''
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: list_string

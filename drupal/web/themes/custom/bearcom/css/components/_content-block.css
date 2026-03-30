@@ -115,6 +115,20 @@ div + div > .content-block .content-block__wave::before {
   background: url('../../images/orange-wave-segment.svg') no-repeat center / contain;
 }
 
+@media (max-width: 1023px) {
+  .content-block__inner {
+    gap: var(--spacing-md);
+  }
+
+  .content-block__image {
+    flex: 0 0 45%;
+  }
+
+  .content-block__image img {
+    height: 350px;
+  }
+}
+
 @media (max-width: 767px) {
   .content-block {
     margin: var(--spacing-lg) 0;

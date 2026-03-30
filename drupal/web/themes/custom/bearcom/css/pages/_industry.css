@@ -313,21 +313,33 @@
 }
 
 .card-grid--industry_blue .card-grid__items {
-  gap: 39px 34px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 63px 73px;
 }
 
 .card-grid--industry_blue .card,
 .card-grid--industry_blue .swiper-slide .card {
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  border: none;
   background: none;
   text-align: center;
 }
 
 .card-grid--industry_blue .card__image {
-  width: 332px;
+  flex: none;
+  width: 100%;
+  max-width: 332px;
   height: 160px;
   margin: 0 auto;
   border-radius: var(--radius-card-lg);
   overflow: hidden;
+}
+
+.card-grid--industry_blue .card__image::after {
+  display: none;
 }
 
 .card-grid--industry_blue .card__image img {
@@ -338,7 +350,7 @@
 
 .card-grid--industry_blue .card__body {
   padding: 0 var(--spacing-md);
-  margin-top: var(--spacing-lg);
+  margin-top: 0;
   gap: var(--spacing-sm);
 }
 
@@ -463,36 +475,106 @@
     max-width: none;
   }
 
-  /* Cards — full width, centered text */
+  /* Cards — full width, centered text, FAFAFA bg */
   [class*="card-grid--industry"] .card {
     max-width: 100%;
+    background-color: var(--color-background);
+    border-radius: var(--radius-card-lg);
+    padding: 0 20px 20px;
+    gap: 24px;
+    overflow: hidden;
   }
 
-  [class*="card-grid--industry"] .card__image {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 332 / 160;
+  [class*="card-grid--industry"] .card__image,
+  [class*="card-grid--industry"] .card-grid__items > div > div:nth-child(4n+3) .card__image,
+  [class*="card-grid--industry"] .card-grid__items > div > div:nth-child(4n+4) .card__image {
+    width: calc(100% + 40px);
+    max-width: none;
+    height: 216px;
+    aspect-ratio: auto;
+    border-radius: 0;
+    border: none;
+    margin: 0 -20px;
+  }
+
+  [class*="card-grid--industry"] .card__image img {
+    height: 216px;
+  }
+
+  [class*="card-grid--industry"] .card-grid__items {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   [class*="card-grid--industry"] .card__body {
     max-width: none;
+    padding: 0;
+    margin-top: 0;
+    gap: 16px;
+  }
+
+  /* Dark cards — keep transparent bg on dark section */
+  .card-grid--industry_dark .card {
+    background-color: transparent;
+    border-radius: 0;
+    padding-bottom: 24px;
   }
 
   .card-grid--industry + .card-grid--industry {
     margin-top: 40px;
   }
 
-  /* Grey bg extends to footer on /industries parent page only */
-  body.page--industry,
-  body.page--industry .dialog-off-canvas-main-canvas,
-  body.page--industry .main-content {
-    background-color: var(--color-background-alt);
+  /* Industry Blue — mobile: single column + grey arc, no blue bg */
+  .card-grid--industry_blue {
+    background-color: transparent;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  body.page--industry .site-footer,
-  body.page--industry .site-footer__main,
-  body.page--industry .site-footer__wave {
+  .card-grid--industry_blue::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20%;
+    width: 250%;
+    height: 100%;
     background-color: var(--color-background-alt);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .card-grid--industry_blue > .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-grid--industry_blue .card-grid__items {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .card-grid--industry_blue .section__title {
+    color: var(--color-dark-blue);
+  }
+
+  .card-grid--industry_blue .section__subtitle {
+    color: var(--color-text-dark);
+  }
+
+  .card-grid--industry_blue .card__top-title,
+  .card-grid--industry_blue .card__main-title,
+  .card-grid--industry_blue .card__subtitle {
+    color: var(--color-text-dark);
+  }
+
+  /* Grey bg behind footer rounded corners on industry */
+  .dialog-off-canvas-main-canvas:has(.industry-page) > .site-footer,
+  .dialog-off-canvas-main-canvas:has(.industries-section) > .site-footer {
+    margin-top: 0;
+    box-shadow: 0 0 0 32px var(--color-background-alt);
+    clip-path: inset(-32px 0 0 0);
   }
 }
 

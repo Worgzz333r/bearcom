@@ -29,6 +29,15 @@ settings:
     -
       value: industry_blue
       label: 'Industry Blue (blue bg, white text)'
+    -
+      value: divided
+      label: 'Divided (black lines top/bottom, service page)'
+    -
+      value: divided-left
+      label: 'Divided Left (image left, service)'
+    -
+      value: divided-right
+      label: 'Divided Right (image right, service)'
   allowed_values_function: ''
 module: options
 locked: false
