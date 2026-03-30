@@ -3,7 +3,9 @@
 {% set is_divided = layout starts with 'divided' %}
 
 <section class="{{ is_divided ? 'content-block--' ~ layout : 'content-block content-block--' ~ layout }}">
-  <div class="content-block__wave" aria-hidden="true"></div>
+  {% if layout != 'centered' %}
+    <div class="content-block__wave" aria-hidden="true"></div>
+  {% endif %}
   <div class="container">
     <div class="content-block__inner">
       {% if paragraph.field_image.entity %}
