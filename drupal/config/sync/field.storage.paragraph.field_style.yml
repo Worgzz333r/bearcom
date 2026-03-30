@@ -58,7 +58,7 @@ settings:
       label: '[Spec Table] Stacked — label above value'
     -
       value: blue
-      label: '[Guided Journey] Blue — blue bg, light text'
+      label: '[Card Grid] Blue background'
     -
       value: dark-blue
       label: '[Card Grid] Dark blue background'
@@ -68,9 +68,6 @@ settings:
     -
       value: testimonial
       label: '[CTA] Testimonial — orange quote, centered'
-    -
-      value: service
-      label: 'Service (image left, rounded)'
   allowed_values_function: ''
 module: options
 locked: false

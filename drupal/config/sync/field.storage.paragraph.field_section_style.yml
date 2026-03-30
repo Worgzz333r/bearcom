@@ -31,7 +31,7 @@ settings:
       label: 'Industry Blue (blue bg, white text)'
     -
       value: divided
-      label: 'Divided (service page lines)'
+      label: 'Divided (black lines top/bottom, service page)'
     -
       value: divided-left
       label: 'Divided Left (image left, service)'

@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.content_block.field_body
     - field.field.paragraph.content_block.field_image
     - field.field.paragraph.content_block.field_layout
+    - field.field.paragraph.content_block.field_section_style
     - field.field.paragraph.content_block.field_subtitle
     - field.field.paragraph.content_block.field_title
     - field.field.paragraph.content_block.field_uppercase
@@ -64,4 +65,5 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_section_style: true
   status: true
