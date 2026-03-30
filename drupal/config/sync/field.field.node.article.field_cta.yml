@@ -1,0 +1,26 @@
+uuid: 60f5b2c0-2b92-42ba-b190-edcf1ba793f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cta
+    - node.type.article
+    - paragraphs.paragraphs_type.cta_block
+  module:
+    - entity_reference_revisions
+id: node.article.field_cta
+field_name: field_cta
+entity_type: node
+bundle: article
+label: 'CTA Block'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      cta_block: cta_block
+field_type: entity_reference_revisions
