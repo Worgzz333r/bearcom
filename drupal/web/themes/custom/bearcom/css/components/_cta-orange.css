@@ -57,7 +57,7 @@
 .cta-block--testimonial .btn.btn--outline.cta-block__btn {
   all: unset;
   display: block;
-  color: #EAEAEA;
+  color: rgba(255, 255, 255, 0.9);
   font-family: var(--font-family);
   font-weight: 700;
   font-size: var(--p-size);
@@ -70,7 +70,7 @@
 
 /* Subtitle under person name (uses field_title) */
 .cta-block--testimonial .cta-block__title {
-  color: #EAEAEA;
+  color: rgba(255, 255, 255, 0.9);
   font-size: var(--p-size);
   line-height: var(--details-lh);
   font-weight: var(--font-weight-regular);

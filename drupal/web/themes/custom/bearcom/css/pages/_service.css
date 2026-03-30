@@ -262,7 +262,7 @@ div:has(> [class*="content-block--divided"]):not(:has(+ div > [class*="content-b
   height: 600px;
   border-radius: var(--radius-card-lg);
   overflow: hidden;
-  background: #E8E8E8;
+  background: var(--color-medium-gray);
 }
 
 /* Make all Drupal wrappers fill the player */
@@ -294,7 +294,8 @@ div:has(> [class*="content-block--divided"]):not(:has(+ div > [class*="content-b
    -------------------------------------------------------------------------- */
 
 .content-block--centered {
-  padding-bottom: var(--spacing-lg);
+  padding-bottom: 0;
+  margin-bottom: var(--spacing-lg);
 }
 
 .content-block--centered .content-block__inner {

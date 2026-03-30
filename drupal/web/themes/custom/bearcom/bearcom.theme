@@ -136,6 +136,7 @@ function bearcom_preprocess_page(array &$variables) {
       $variables['is_contact_page'] = ($alias === '/contact-us');
     }
   }
+
 }
 
 /**

@@ -49,7 +49,7 @@
   left: auto;
   right: 0;
   top: 100%;
-  background: #FAFAFA;
+  background: var(--color-background);
   box-shadow: none;
   border-top: none;
   z-index: 999;
@@ -115,12 +115,12 @@
 
 /* Dark sidebar style */
 .mega-menu__sidebar--dark {
-  background-color: #4A4F55;
+  background-color: var(--color-footer-bg);
 }
 
 .mega-menu__sidebar-divider {
   border: none;
-  border-top: 1px solid #FFFFFF;
+  border-top: 1px solid var(--color-white);
   margin: 32px 0;
 }
 
@@ -332,7 +332,7 @@
   align-items: center;
   gap: 16px;
   padding: 4px 0;
-  color: #22262C;
+  color: var(--color-dark-blue);
   font-family: 'Roboto Condensed', var(--font-family);
   font-size: 22px;
   line-height: 24px;
@@ -383,7 +383,6 @@
   color: var(--color-text-primary);
   gap: 16px;
   padding: 8px;
-  padding: 8px;
 }
 
 .mega-menu__card:hover {
@@ -409,7 +408,7 @@
   line-height: 24px;
   font-weight: 400;
   text-transform: uppercase;
-  color: #22262C;
+  color: var(--color-dark-blue);
 }
 
 /* About — sidebar inside content, reset content padding */
@@ -435,7 +434,7 @@
 }
 
 .mega-menu__about-link {
-  color: #22262C;
+  color: var(--color-dark-blue);
   font-family: 'Roboto Condensed', var(--font-family);
   font-size: 22px;
   line-height: 24px;
@@ -519,7 +518,8 @@
 
 /* Hide mega-menu dropdowns on mobile (desktop only) */
 @media (max-width: 960px) {
-  .site-header__nav .mega-menu__panel {
-    display: none !important;
+  .site-header__nav .mega-menu__panel,
+  .site-header__nav .mega-menu__panel.is-open {
+    display: none;
   }
 }

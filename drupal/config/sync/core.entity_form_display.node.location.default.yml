@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.location.field_cta
     - field.field.node.location.field_description
     - field.field.node.location.field_faq
+    - field.field.node.location.field_hero_link
     - field.field.node.location.field_hero_style
     - field.field.node.location.field_latitude
     - field.field.node.location.field_longitude
@@ -17,6 +18,7 @@ dependencies:
     - field.field.node.location.field_state
     - node.type.location
   module:
+    - link
     - media_library
     - paragraphs
     - path
@@ -55,7 +57,7 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: closed
+      edit_mode: open
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: ''
@@ -75,10 +77,18 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: closed
+      edit_mode: open
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: ''
+    third_party_settings: {  }
+  field_hero_link:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   field_hero_style:
     type: options_select
@@ -107,7 +117,7 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: closed
+      edit_mode: open
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: ''

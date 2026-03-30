@@ -168,7 +168,7 @@
 
 /* Blue style variant */
 .guided-journey--blue {
-  background-color: #116CA6;
+  background-color: var(--color-blue-light);
   border-radius: 32px 32px 0 0;
   padding-top: 40px;
   margin-top: 40px;
@@ -181,7 +181,7 @@
 .guided-journey--blue .guided-journey__body,
 .guided-journey--blue .guided-journey__checklist li,
 .guided-journey--blue .guided-journey__panel-content {
-  color: #FAFAFA;
+  color: var(--color-background);
 }
 
 @media (max-width: 1023px) {

@@ -226,7 +226,7 @@
   .related-radios__card-image {
     width: 180px;
     height: 200px;
-    background: #fff;
+    background: var(--color-white);
     border-radius: 8px;
   }
 

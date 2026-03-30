@@ -35,11 +35,16 @@
         }
 
         function clearMarkers() {
+          if (!map) return;
           markers.forEach(function (m) { map.removeLayer(m); });
           markers = [];
         }
 
         function addMarkers(locations) {
+          if (!map) {
+            console.warn('locationSearch: map not initialized, skipping markers');
+            return;
+          }
           clearMarkers();
           var bounds = [];
           locations.forEach(function (loc) {
@@ -85,21 +90,29 @@
         }
 
         var allLocations = [];
+        var dataReady = false;
 
         function loadAllLocations() {
           return fetch('/api/locations?_format=json')
-            .then(function (res) { return res.json(); })
+            .then(function (res) {
+              if (!res.ok) throw new Error('API returned ' + res.status);
+              return res.json();
+            })
             .then(function (data) {
               allLocations = data;
+              dataReady = true;
               return data;
             })
-            .catch(function () {
+            .catch(function (err) {
+              console.warn('locationSearch: failed to load locations', err);
               allLocations = [];
+              dataReady = true;
               return [];
             });
         }
 
         function searchLocations(query) {
+          if (!dataReady) return;
           var filtered;
           if (query) {
             var q = query.toLowerCase();

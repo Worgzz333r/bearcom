@@ -258,7 +258,7 @@
   font-size: 58px;
   line-height: 64px;
   font-weight: 600;
-  color: #22262C;
+  color: var(--color-dark-blue);
   max-width: 1054px;
   margin: 0 auto 16px;
 }
@@ -267,7 +267,7 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
-  color: #4A4F55;
+  color: var(--color-text-primary);
   max-width: 1000px;
   margin: 0 auto 62px;
 }
@@ -293,7 +293,7 @@
   font-size: 16px;
   line-height: 18px;
   font-weight: 400;
-  color: #22262C;
+  color: var(--color-dark-blue);
   text-decoration: none;
 }
 

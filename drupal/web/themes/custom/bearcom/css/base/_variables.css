@@ -53,6 +53,7 @@
   --container-padding: 20px;
 
   /* Footer */
+  --color-footer-wave: #555D64;
   --color-footer-mobile-bg: #FB591F;
   --footer-radius: 32px;
   --footer-bottom-gap: 144px;

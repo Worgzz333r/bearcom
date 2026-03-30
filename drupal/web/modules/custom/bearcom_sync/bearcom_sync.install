@@ -89,3 +89,163 @@ function bearcom_sync_update_10002() {
 function bearcom_sync_update_10003() {
   return bearcom_sync_update_10002();
 }
+
+/**
+ * Create footer menus, menu links, and footer config (addresses, social, patent).
+ */
+/**
+ * Add field_hero_link (link) to location CT for hero CTA button.
+ */
+function bearcom_sync_update_10004() {
+  // Create field storage if not exists.
+  $storage = \Drupal\field\Entity\FieldStorageConfig::loadByName('node', 'field_hero_link');
+  if (!$storage) {
+    $storage = \Drupal\field\Entity\FieldStorageConfig::create([
+      'field_name' => 'field_hero_link',
+      'entity_type' => 'node',
+      'type' => 'link',
+      'cardinality' => 1,
+    ]);
+    $storage->save();
+  }
+
+  // Create field instance on location CT.
+  $field = \Drupal\field\Entity\FieldConfig::loadByName('node', 'location', 'field_hero_link');
+  if (!$field) {
+    $field = \Drupal\field\Entity\FieldConfig::create([
+      'field_storage' => $storage,
+      'bundle' => 'location',
+      'label' => 'Hero CTA Link',
+      'settings' => [
+        'link_type' => 16,
+        'title' => 1,
+      ],
+    ]);
+    $field->save();
+  }
+
+  // Add to form display.
+  $form_display = \Drupal::entityTypeManager()
+    ->getStorage('entity_form_display')
+    ->load('node.location.default');
+  if ($form_display && !$form_display->getComponent('field_hero_link')) {
+    $form_display->setComponent('field_hero_link', [
+      'type' => 'link_default',
+      'weight' => 3,
+    ])->save();
+  }
+
+  return 'Created field_hero_link on location CT.';
+}
+
+/**
+ * Create footer menus, menu links, and footer config.
+ */
+function bearcom_sync_update_10005() {
+  $messages = [];
+
+  // 1. Install footer config (addresses, social, patent, phone).
+  $config = \Drupal::configFactory()->getEditable('bearcom_sync.footer');
+  $config->setData([
+    'addresses' => [
+      [
+        'title' => 'BearCom Canada Headquarters',
+        'address' => "79 Wellington Street\nLondon, Ontario N6B 2K4",
+        'phone' => '8332327266',
+        'phone_display' => '(833)-232-7266',
+      ],
+      [
+        'title' => 'BearCom Headquarters',
+        'address' => "4009 Distribution Drive, #200\nGarland, Texas 75041",
+        'phone' => '8005271670',
+        'phone_display' => '(800) 527-1670',
+      ],
+    ],
+    'social' => [
+      ['url' => '#', 'label' => 'Facebook'],
+      ['url' => '#', 'label' => 'LinkedIn'],
+      ['url' => '#', 'label' => 'Twitter'],
+      ['url' => '#', 'label' => 'YouTube'],
+    ],
+    'patent' => "AlwaysOn Alerts is covered by U.S. Patent No. US 20200394897 A1. AlwaysOn Voice Assistant\xE2\x84\xA2 is covered by U.S. Patent No. 11,671,796. The remaining AlwaysOn Integrated Solutions are patent pending.",
+    'phone' => '8005271670',
+    'phone_display' => '(800) 527-1670',
+  ]);
+  $config->save();
+  $messages[] = 'Footer config installed.';
+
+  // 2. Create footer menus.
+  $menus = [
+    'footer-products' => 'Products',
+    'footer-about' => 'About Us',
+    'footer-resources' => 'Resources',
+    'footer-news' => 'News',
+    'footer-legal' => 'Legal',
+  ];
+
+  $menu_storage = \Drupal::entityTypeManager()->getStorage('menu');
+  foreach ($menus as $id => $label) {
+    if (!$menu_storage->load($id)) {
+      $menu_storage->create(['id' => $id, 'label' => $label])->save();
+      $messages[] = "Created menu: $label";
+    }
+  }
+
+  // 3. Create menu links.
+  $link_storage = \Drupal::entityTypeManager()->getStorage('menu_link_content');
+
+  $menu_links = [
+    'footer-products' => [
+      ['title' => 'Solutions', 'uri' => 'internal:/solutions'],
+      ['title' => 'Services', 'uri' => 'internal:/services'],
+      ['title' => 'Rentals', 'uri' => 'internal:/rentals'],
+      ['title' => 'Products', 'uri' => 'internal:/products'],
+      ['title' => 'The Big Game', 'uri' => 'internal:/the-big-game'],
+    ],
+    'footer-about' => [
+      ['title' => 'About Bearcom', 'uri' => 'internal:/about'],
+      ['title' => 'Acquisitions', 'uri' => 'internal:/acquisitions'],
+      ['title' => 'Contact Us', 'uri' => 'internal:/contact-us'],
+      ['title' => 'Locations', 'uri' => 'internal:/locations'],
+      ['title' => 'Careers', 'uri' => 'internal:/careers'],
+    ],
+    'footer-resources' => [
+      ['title' => 'FAQ', 'uri' => 'internal:/faq'],
+      ['title' => 'Employee Access', 'uri' => 'internal:/employee-access'],
+      ['title' => 'Amazon Support', 'uri' => 'internal:/amazon-support'],
+    ],
+    'footer-news' => [
+      ['title' => 'Press Release', 'uri' => 'internal:/press-release'],
+      ['title' => 'Industry Trends', 'uri' => 'internal:/industry-trends'],
+      ['title' => 'Blog', 'uri' => 'internal:/blog'],
+    ],
+    'footer-legal' => [
+      ['title' => 'Terms of Use', 'uri' => 'internal:/terms-of-use'],
+      ['title' => 'Terms of Sale', 'uri' => 'internal:/terms-of-sale'],
+      ['title' => 'Rental Equipment', 'uri' => 'internal:/rental-equipment'],
+      ['title' => 'Loss Protection', 'uri' => 'internal:/loss-protection'],
+      ['title' => 'Program State', 'uri' => 'internal:/program-state'],
+      ['title' => 'License Numbers', 'uri' => 'internal:/license-numbers'],
+      ['title' => 'Privacy Policy', 'uri' => 'internal:/privacy-policy'],
+      ['title' => 'Codes of Conduct', 'uri' => 'internal:/codes-of-conduct'],
+      ['title' => 'Motorola Subscription', 'uri' => 'internal:/motorola-subscription'],
+      ['title' => 'Terms Subscription', 'uri' => 'internal:/terms-subscription'],
+      ['title' => 'Terms Privacy Settings', 'uri' => 'internal:/terms-privacy-settings'],
+    ],
+  ];
+
+  foreach ($menu_links as $menu_name => $links) {
+    foreach ($links as $weight => $link_data) {
+      $link_storage->create([
+        'title' => $link_data['title'],
+        'link' => ['uri' => $link_data['uri']],
+        'menu_name' => $menu_name,
+        'weight' => $weight,
+        'enabled' => TRUE,
+      ])->save();
+    }
+    $messages[] = "Created links for $menu_name";
+  }
+
+  return implode(' ', $messages);
+}

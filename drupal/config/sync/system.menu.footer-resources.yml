@@ -1,0 +1,8 @@
+uuid: 4c916a61-c0a1-4e92-ab0a-1c891cbe8480
+langcode: en
+status: true
+dependencies: {  }
+id: footer-resources
+label: Resources
+description: null
+locked: false
