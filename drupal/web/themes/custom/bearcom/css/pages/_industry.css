@@ -224,6 +224,8 @@
   color: var(--color-text-dark);
   text-transform: none;
   letter-spacing: 0;
+  max-width: 352px;
+  margin: 0 auto;
 }
 
 /* --------------------------------------------------------------------------
@@ -569,8 +571,7 @@
     color: var(--color-text-dark);
   }
 
-  /* Grey bg behind footer rounded corners on industry */
-  .dialog-off-canvas-main-canvas:has(.industry-page) > .site-footer,
+  /* Grey bg behind footer rounded corners on industry parent only */
   .dialog-off-canvas-main-canvas:has(.industries-section) > .site-footer {
     margin-top: 0;
     box-shadow: 0 0 0 32px var(--color-background-alt);
@@ -578,7 +579,13 @@
   }
 }
 
-/* Fix #4: Footer background should be grey (not white) on industry pages at all widths */
+/* Industry parent: footer spacing + grey bg bridge */
 body.page--industry .site-footer {
-  margin-top: 0;
+  margin-top: 36px;
+}
+
+@media (max-width: 767px) {
+  body.page--industry .site-footer {
+    margin-top: 0;
+  }
 }

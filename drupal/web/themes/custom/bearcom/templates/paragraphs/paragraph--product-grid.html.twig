@@ -13,4 +13,4 @@
     {{ drupal_view(view_id, display_id) }}
   </div>
 </section>
-{{ content|without('field_view_id', 'field_title') }}
+{{ content|without('field_view_id', 'field_title', 'field_limit') }}

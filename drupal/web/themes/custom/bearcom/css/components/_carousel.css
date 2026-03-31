@@ -5,7 +5,7 @@
 
 .card-grid--industry .swiper-container,
 .card-grid--industry_dark .swiper-container {
-  padding-bottom: 84px;
+  padding-bottom: 80px;
 }
 
 /* --------------------------------------------------------------------------
@@ -30,7 +30,7 @@
 
 .card-grid--industry.card-grid--slider .swiper-scrollbar,
 .card-grid--industry_dark.card-grid--slider .swiper-scrollbar {
-  width: 100% !important;
+  width: calc(100% + 45px) !important;
   height: 4px !important;
   background: transparent;
   border: none;
