@@ -121,6 +121,26 @@
     gap: 32px;
   }
 
+  .card-grid--industry_blue .card,
+  .card-grid--industry_blue .swiper-slide .card {
+    background: var(--color-background);
+    border-radius: 16px;
+    max-width: 335px;
+    height: 314px;
+    padding: 0 20px 20px;
+    gap: 24px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .card-grid--industry_blue .card__image {
+    width: calc(100% + 40px);
+    max-width: none;
+    height: 160px;
+    border-radius: 0 0 16px 16px;
+    margin: 0 -20px;
+  }
+
   .card-grid--industry_blue .section__title {
     color: var(--color-dark-blue);
   }

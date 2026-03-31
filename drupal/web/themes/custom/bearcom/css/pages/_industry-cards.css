@@ -235,6 +235,7 @@
   .card-grid--industry,
   .card-grid--industry_dark {
     padding: var(--spacing-lg) 0;
+    background-color: var(--color-background);
   }
   [class*="card-grid--industry"] > .container,
   .card-grid--industry_dark > .container {
@@ -254,14 +255,20 @@
   [class*="card-grid--industry"] .section__subtitle {
     max-width: none;
   }
-  /* Cards — full width, centered text, FAFAFA bg */
-  [class*="card-grid--industry"] .card {
-    max-width: 100%;
-    background-color: var(--color-background);
-    border-radius: var(--radius-card-lg);
+  /* Cards — centered, white bg on grey page */
+  [class*="card-grid--industry"] .card,
+  [class*="card-grid--industry"] .card-grid__items > div > div:nth-child(n) .card,
+  [class*="card-grid--industry"] .swiper-slide .card {
+    max-width: 335px;
+    height: 314px;
+    margin: 0 auto;
+    background: var(--color-white);
+    border-radius: 16px;
     padding: 0 20px 20px;
     gap: 24px;
     overflow: hidden;
+    position: relative;
+    z-index: 1;
   }
   [class*="card-grid--industry"] .card__image,
   [class*="card-grid--industry"] .card-grid__items > div > div:nth-child(4n+3) .card__image,
@@ -281,11 +288,19 @@
     grid-template-columns: 1fr;
     gap: 24px;
   }
-  [class*="card-grid--industry"] .card__body {
-    max-width: none;
+  [class*="card-grid--industry"].card-grid--slider .card__body,
+  [class*="card-grid--industry"].card-grid--grid .card__body {
+    max-width: 295px;
     padding: 0;
     margin-top: 0;
     gap: 16px;
+  }
+  [class*="card-grid--industry"] .card__subtitle {
+    max-width: none;
+    width: 100%;
+    height: 72px;
+    margin: 0;
+    overflow: hidden;
   }
   /* Dark cards — keep transparent bg on dark section */
   .card-grid--industry_dark .card {

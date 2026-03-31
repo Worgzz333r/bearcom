@@ -290,10 +290,12 @@
 @media (max-width: 767px) {
   .site-footer--minimal-wrapper {
     padding: 0 var(--container-padding);
+    border-radius: 16px 16px 0 0;
+    margin-top: 36px;
   }
 
   .site-footer--minimal {
-    padding: var(--spacing-lg) 0 var(--spacing-30);
+    padding: 36px 0 42px;
     gap: 0;
   }
 
