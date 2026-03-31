@@ -19,6 +19,10 @@
   padding-top: var(--spacing-xxl);
 }
 
+.filter-sidebar__close {
+  display: none;
+}
+
 /* Filter group — fieldset wrapper */
 .filter-sidebar fieldset,
 .filter-sidebar .form-item {
@@ -271,6 +275,7 @@
   }
 
   .filter-sidebar__close {
+    display: block;
     background: none;
     border: none;
     cursor: pointer;

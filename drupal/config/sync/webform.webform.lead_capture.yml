@@ -1,0 +1,111 @@
+uuid: ea6bc1bf-c38c-4baa-bb01-3dd36c0cc7ec
+langcode: en
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 0
+template: false
+archive: false
+id: lead_capture
+title: 'Lead Capture'
+description: null
+categories: {  }
+elements: |
+
+  first_name:
+    '#type': textfield
+    '#title': 'First Name'
+    '#required': true
+    '#title_display': before
+  last_name:
+    '#type': textfield
+    '#title': 'Last Name'
+    '#required': true
+    '#title_display': before
+  email:
+    '#type': email
+    '#title': 'Email Address'
+    '#required': true
+    '#title_display': before
+  phone:
+    '#type': tel
+    '#title': 'Phone'
+    '#title_display': before
+  company:
+    '#type': textfield
+    '#title': 'Company'
+    '#title_display': before
+  job_title:
+    '#type': textfield
+    '#title': 'Job Title'
+    '#title_display': before
+  country:
+    '#type': textfield
+    '#title': 'Country'
+    '#title_display': before
+  state:
+    '#type': textfield
+    '#title': 'State'
+    '#title_display': before
+  message:
+    '#type': textarea
+    '#title': 'Message'
+    '#title_display': before
+css: ''
+javascript: ''
+settings:
+  ajax: true
+  confirmation_type: message
+  confirmation_message: 'Thank you for your inquiry. A BearCom representative will contact you shortly.'
+  form_submit_label: SUBMIT
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

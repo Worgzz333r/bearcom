@@ -1,1 +1,142 @@
-/* TODO: Implement */
+/* =====================
+   Landing Page — Paid Search LP
+   ===================== */
+
+.landing-page__icon {
+  text-align: center;
+  padding: var(--spacing-lg) 0 var(--spacing-md);
+}
+
+.landing-page__icon img {
+  opacity: 0.15;
+}
+
+/* Two-column grid */
+.landing-page__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+/* Left column */
+.landing-page__headline {
+  font-size: var(--h2-size);
+  line-height: var(--h2-lh);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--color-dark-blue);
+  margin: 0 0 var(--spacing-md);
+}
+
+.landing-page__desc {
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Benefits — checklist items */
+.landing-page__benefits {
+  margin-bottom: var(--spacing-lg);
+}
+
+.landing-page__image {
+  margin-top: var(--spacing-md);
+}
+
+.landing-page__image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Right column — form */
+.landing-page__form {
+  background: var(--color-white);
+  padding: var(--spacing-lg);
+}
+
+.landing-page__form-title {
+  font-size: var(--h5-size);
+  line-height: var(--h5-lh);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  color: var(--color-dark-blue);
+  margin: 0 0 var(--spacing-md);
+}
+
+/* Form fields */
+.landing-page__form .form-item {
+  margin-bottom: var(--spacing-sm);
+}
+
+.landing-page__form label {
+  display: block;
+  font-size: 14px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark-blue);
+  margin-bottom: 4px;
+}
+
+.landing-page__form input[type="text"],
+.landing-page__form input[type="email"],
+.landing-page__form input[type="tel"],
+.landing-page__form textarea,
+.landing-page__form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-medium-gray);
+  border-radius: 4px;
+  font-size: var(--p-size);
+  font-family: var(--font-family);
+  transition: border-color var(--transition-fast);
+}
+
+.landing-page__form input:focus,
+.landing-page__form textarea:focus,
+.landing-page__form select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.landing-page__form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.landing-page__form .form-actions {
+  margin-top: var(--spacing-md);
+}
+
+.landing-page__form .form-submit,
+.landing-page__form button[type="submit"] {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 12px 32px;
+  font-size: 14px;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.landing-page__form .form-submit:hover,
+.landing-page__form button[type="submit"]:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .landing-page__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-page__headline {
+    font-size: var(--h3-size);
+    line-height: var(--h3-lh);
+  }
+}

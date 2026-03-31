@@ -1,11 +1,11 @@
-uuid: d8eb8bd1-9fe8-44c8-a385-dba5b73ffc59
+uuid: 4f00e4a8-a860-4452-aebe-350a1a51fb2d
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_show_share
-field_name: field_show_share
+id: node.field_minimal_header
+field_name: field_minimal_header
 entity_type: node
 type: boolean
 settings: {  }

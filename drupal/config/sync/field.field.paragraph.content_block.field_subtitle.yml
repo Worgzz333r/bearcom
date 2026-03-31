@@ -1,4 +1,4 @@
-uuid: 81b5a5d6-63a0-423e-846d-3af25979082e
+uuid: e4f5a6b7-c8d9-4e0f-1a2b-3c4d5e6f7a8b
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ field_name: field_subtitle
 entity_type: paragraph
 bundle: content_block
 label: Caption
-description: ''
+description: 'Orange caption text above the title'
 required: false
 translatable: true
 default_value: {  }

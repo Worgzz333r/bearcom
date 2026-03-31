@@ -1,0 +1,26 @@
+uuid: ecdccfaf-b258-4679-a508-5501a8c1997b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cta
+    - node.type.landing_page
+    - paragraphs.paragraphs_type.cta_block
+  module:
+    - entity_reference_revisions
+id: node.landing_page.field_cta
+field_name: field_cta
+entity_type: node
+bundle: landing_page
+label: 'CTA Block'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      cta_block: cta_block
+field_type: entity_reference_revisions

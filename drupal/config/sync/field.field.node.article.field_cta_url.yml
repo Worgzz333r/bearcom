@@ -1,0 +1,23 @@
+uuid: e1a2b3c4-d5e6-7890-abcd-ef1234567001
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cta_url
+    - node.type.article
+  module:
+    - link
+id: node.article.field_cta_url
+field_name: field_cta_url
+entity_type: node
+bundle: article
+label: 'Hero CTA Button'
+description: 'Primary CTA button in the hero section.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

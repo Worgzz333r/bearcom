@@ -1,15 +1,15 @@
-uuid: 2978bb2a-0435-4cec-b7aa-6515b7919eb4
+uuid: 730502ba-bad1-409f-b27e-24692fb03f83
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_show_share
-    - node.type.article
-id: node.article.field_show_share
-field_name: field_show_share
+    - field.storage.node.field_minimal_header
+    - node.type.landing_page
+id: node.landing_page.field_minimal_header
+field_name: field_minimal_header
 entity_type: node
-bundle: article
-label: 'Show Share Buttons'
+bundle: landing_page
+label: 'Minimal Header'
 description: ''
 required: false
 translatable: true

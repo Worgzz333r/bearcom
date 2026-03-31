@@ -7,10 +7,12 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.comment
     - field.field.node.article.field_cta
+    - field.field.node.article.field_cta_url
+    - field.field.node.article.field_description
+    - field.field.node.article.field_hero_link
     - field.field.node.article.field_hero_style
     - field.field.node.article.field_image
-    - field.field.node.article.field_related
-    - field.field.node.article.field_show_share
+    - field.field.node.article.field_paragraphs
     - field.field.node.article.field_tags
     - image.style.wide
     - node.type.article
@@ -32,59 +34,33 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: -1
     region: content
-  comment:
-    type: comment_default
-    label: above
-    settings:
-      view_mode: default
-      pager_id: 0
-    third_party_settings: {  }
-    weight: 110
-    region: content
-  field_cta:
+  field_paragraphs:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 20
+    weight: 0
     region: content
-  field_image:
-    type: image
+  field_cta:
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: wide
-      image_loading:
-        attribute: eager
-    third_party_settings: {  }
-    weight: -1
-    region: content
-  field_related:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 25
-    region: content
-  field_tags:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
+      view_mode: default
+      link: ''
     third_party_settings: {  }
     weight: 10
     region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
-    region: content
 hidden:
+  comment: true
+  field_cta_url: true
+  field_description: true
+  field_hero_link: true
   field_hero_style: true
-  field_show_share: true
+  field_image: true
+  field_tags: true
+  links: true
   search_api_excerpt: true
