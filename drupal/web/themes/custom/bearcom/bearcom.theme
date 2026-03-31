@@ -105,6 +105,9 @@ function bearcom_preprocess_html(array &$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
   if ($node instanceof NodeInterface) {
     $variables['attributes']['class'][] = 'page-node-type-' . $node->bundle();
+    if ($node->hasField('field_header_shadow') && !$node->get('field_header_shadow')->isEmpty()) {
+      $variables['attributes']['class'][] = 'header--' . $node->get('field_header_shadow')->value;
+    }
   }
   if ($node instanceof NodeInterface && $node->bundle() === 'flexible_page') {
     $alias = _bearcom_get_node_alias($node);
