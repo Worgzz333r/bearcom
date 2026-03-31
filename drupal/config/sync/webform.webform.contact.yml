@@ -17,47 +17,57 @@ id: contact
 title: Contact
 description: 'Basic email contact webform.'
 categories: {  }
-elements: |
-
+elements: |-
   first_name:
-    "#type": textfield
-    "#title": "First Name"
-    "#required": true
-    "#placeholder": Placeholder
+    '#type': textfield
+    '#title': 'First Name'
+    '#required': true
+    '#placeholder': Placeholder
+    '#pattern': '[a-zA-ZÀ-ÿ \x27\-]+'
+    '#pattern_error': 'Please enter a valid first name.'
   last_name:
-    "#type": textfield
-    "#title": "Last Name"
-    "#required": true
-    "#placeholder": Placeholder
+    '#type': textfield
+    '#title': 'Last Name'
+    '#required': true
+    '#placeholder': Placeholder
+    '#pattern': '[a-zA-ZÀ-ÿ \x27\-]+'
+    '#pattern_error': 'Please enter a valid last name.'
   email:
-    "#type": email
-    "#title": "Email Address"
-    "#required": true
-    "#placeholder": Placeholder
+    '#type': email
+    '#title': 'Email Address'
+    '#required': true
+    '#placeholder': Placeholder
+    '#pattern': '^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$'
+    '#pattern_error': 'Please enter a valid email address.'
   phone:
-    "#type": tel
-    "#title": Phone
-    "#placeholder": Placeholder
+    '#type': tel
+    '#title': Phone
+    '#placeholder': Placeholder
+    '#pattern': '[0-9\-\+\(\) ]+'
+    '#pattern_error': 'Please enter a valid phone number.'
   company:
-    "#type": textfield
-    "#title": Company
-    "#placeholder": Placeholder
+    '#type': textfield
+    '#title': Company
+    '#placeholder': Placeholder
   job_title:
-    "#type": textfield
-    "#title": "Job Title"
-    "#placeholder": Placeholder
+    '#type': textfield
+    '#title': 'Job Title'
+    '#placeholder': Placeholder
   country:
-    "#type": textfield
-    "#title": Country
-    "#placeholder": Placeholder
+    '#type': textfield
+    '#title': Country
+    '#placeholder': Placeholder
   state:
-    "#type": textfield
-    "#title": State
-    "#placeholder": Placeholder
+    '#type': textfield
+    '#title': State
+    '#placeholder': Placeholder
   message:
-    "#type": textarea
-    "#title": Message
-    "#placeholder": Placeholder
+    '#type': textarea
+    '#title': Message
+    '#placeholder': Placeholder
+    '#maxlength': 500
+    '#counter_type': character
+    '#counter_maximum': 500
 css: ''
 javascript: ''
 settings:
