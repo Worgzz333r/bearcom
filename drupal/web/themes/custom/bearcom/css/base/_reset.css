@@ -11,7 +11,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -21,7 +21,7 @@ body {
   font-weight: var(--font-weight-regular);
   color: var(--color-text-primary);
   background-color: var(--color-background);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img {
@@ -61,6 +61,13 @@ fieldset {
 
 table {
   border-collapse: collapse;
+  width: 100%;
+}
+
+/* Lock scroll when mobile menu open */
+body.mobile-menu-open {
+  overflow: hidden;
+  position: fixed;
   width: 100%;
 }
 

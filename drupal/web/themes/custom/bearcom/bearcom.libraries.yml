@@ -10,7 +10,9 @@ global:
       css/layout/_footer.css: {}
     component:
       css/components/_button.css: {}
-      css/components/_hero.css: {}
+      css/components/_hero-base.css: {}
+      css/components/_hero-color.css: {}
+      css/components/_hero-soundwave.css: {}
       css/components/_card.css: {}
       css/components/_product-card.css: {}
       css/components/_industry-card.css: {}
@@ -272,7 +274,8 @@ search-results:
 contact-us:
   css:
     theme:
-      css/pages/_contact-form.css: {}
+      css/pages/_contact-layout.css: {}
+      css/pages/_contact-webform.css: {}
       css/pages/_contact-modal.css: {}
   js:
     js/contact-form.js: {}

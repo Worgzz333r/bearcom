@@ -85,7 +85,7 @@
               e.preventDefault();
               var target = document.getElementById(href.substring(1));
               if (target) {
-                var headerH = 160;
+                var headerH = nav.getBoundingClientRect().bottom;
                 var y = target.getBoundingClientRect().top + window.pageYOffset - headerH;
                 window.scrollTo({ top: y, behavior: 'smooth' });
               }
@@ -119,7 +119,14 @@
           }
 
           links.forEach(function (link, i) {
+            var wasActive = link.classList.contains('is-active');
             link.classList.toggle('is-active', i === activeIndex);
+            if (!wasActive && i === activeIndex) {
+              var li = link.closest('.product-subnav__item');
+              if (li) {
+                li.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+              }
+            }
           });
         }
 

@@ -74,6 +74,10 @@
   gap: var(--spacing-xl);
 }
 
+.image-grid--rentals .image-grid__item {
+  border-radius: 0;
+}
+
 .image-grid--rentals .image-grid__image img {
   height: auto;
   object-fit: contain;

@@ -1,7 +1,7 @@
 /* Product subnav — sticky section nav on product pages */
 .product-subnav {
   position: sticky;
-  top: 100px;
+  top: var(--header-height);
   z-index: calc(var(--z-header) - 1);
   background: var(--color-background);
   border-top: 1px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
@@ -58,6 +58,24 @@
 
 @media (max-width: 960px) {
   .product-subnav {
-    top: 0;
+    top: var(--header-height-mobile);
+  }
+}
+
+@media (max-width: 767px) {
+  .product-subnav {
+    height: 56px;
+  }
+
+  .product-subnav__list {
+    height: 100%;
+    padding-left: var(--container-padding);
+    gap: var(--spacing-md);
+  }
+
+  .product-subnav__link {
+    font-size: 14px;
+    padding: 0;
+    line-height: 56px;
   }
 }
