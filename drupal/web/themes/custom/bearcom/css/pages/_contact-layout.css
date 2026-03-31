@@ -1,0 +1,197 @@
+/* ==========================================================================
+   Contact Us Page — Layout & Left Column
+   ========================================================================== */
+
+/* White background for contact page (override body #FAFAFA) */
+body.page--contact {
+  background-color: var(--color-white);
+}
+
+body.page--contact .cta-block--credibility,
+body.page--contact .cta-block--credibility .cta-block__inner {
+  background-color: var(--color-white);
+}
+
+/* Soundwave decoration */
+.contact-page__wave {
+  width: 111px;
+  height: 90px;
+  margin: var(--section-padding) auto 100px;
+}
+
+.contact-page__wave svg {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-page__wave svg path {
+  fill: var(--color-primary);
+}
+
+/* Two-column layout */
+.contact-page__layout {
+  display: flex;
+  gap: 31px;
+  align-items: flex-start;
+  padding-bottom: var(--section-padding);
+}
+
+/* Left column — info */
+.contact-page__info {
+  flex: 0 0 631px;
+}
+
+.contact-page__title {
+  font-family: var(--font-family);
+  font-size: var(--h2-size);
+  line-height: var(--h2-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.contact-page__desc {
+  font-family: var(--font-family);
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-primary);
+  margin-bottom: 56px;
+}
+
+.contact-page__desc p {
+  margin: 0;
+}
+
+/* Benefits checklist */
+.contact-page__benefits {
+  margin: 0 0 56px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.contact-page__benefits .field__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.contact-page__benefits .checklist-item__text {
+  font-family: var(--font-family);
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-dark-blue);
+}
+
+/* Image with wave overlay */
+.contact-page__image {
+  width: 595px;
+  height: 345px;
+  border-radius: var(--radius-card-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.contact-page__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.contact-page__image .field,
+.contact-page__image .field__item,
+.contact-page__image .media,
+.contact-page__image .media__content {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-page__image-wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 86px;
+  height: 70px;
+  pointer-events: none;
+}
+
+.contact-page__image-wave svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — Tablet
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1023px) {
+  .contact-page__wave {
+    margin: var(--spacing-xl) auto var(--spacing-xl);
+  }
+
+  .contact-page__layout {
+    gap: var(--spacing-lg);
+  }
+
+  .contact-page__info {
+    flex: 1;
+  }
+
+  .contact-page__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 595 / 345;
+  }
+
+  .contact-page__title {
+    font-size: 28px;
+    line-height: 30px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — Mobile
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  .contact-page__wave {
+    margin: 32px auto 24px;
+  }
+
+  .contact-page__layout {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+  }
+
+  .contact-page__info {
+    flex: none;
+    text-align: center;
+  }
+
+  .contact-page__title {
+    font-size: 28px;
+    line-height: 32px;
+    text-transform: uppercase;
+  }
+
+  .contact-page__desc {
+    margin-bottom: 32px;
+  }
+
+  .contact-page__benefits {
+    margin-bottom: 32px;
+    text-align: left;
+  }
+
+  .contact-page__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 595 / 345;
+  }
+}
