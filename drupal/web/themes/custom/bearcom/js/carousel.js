@@ -25,7 +25,7 @@
         setTimeout(function () { clearInterval(check); }, 3000);
       });
 
-      // Set slidesPerView=1 on mobile for slider card grids
+      // Set slidesPerView and slidesPerGroup for slider card grids
       once('mobile-slider', '[class*="card-grid--industry"].card-grid--slider .swiper-container', context).forEach(function (el) {
         var check = setInterval(function () {
           if (el.swiper) {
@@ -41,6 +41,7 @@
               swiper.params.slidesPerView = 1;
               swiper.params.spaceBetween = 16;
             }
+            swiper.params.slidesPerGroup = 1;
             swiper.update();
 
             window.addEventListener('resize', function () {
@@ -52,6 +53,7 @@
                 swiper.params.slidesPerView = 3;
                 swiper.params.spaceBetween = 24;
               }
+              swiper.params.slidesPerGroup = 1;
               swiper.params.scrollbar.dragSize = 377;
               swiper.update();
             });
