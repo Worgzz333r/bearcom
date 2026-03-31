@@ -1,6 +1,6 @@
 {# Card Grid — title + subtitle + nested card_item paragraphs #}
 {% set style = paragraph.field_style.value|default('default') %}
-<section class="card-grid card-grid--{{ style }}">
+<section class="card-grid card-grid--cards card-grid--{{ style }}">
   <div class="container">
     {% if paragraph.field_title.value or paragraph.field_subtitle.value %}
       <div class="section__header">
