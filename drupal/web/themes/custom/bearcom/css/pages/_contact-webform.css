@@ -77,15 +77,7 @@
 .contact-page__form .form-textarea:focus {
   outline: none;
   border-color: var(--color-primary);
-}
-
-.contact-page__form .form-text:focus-visible,
-.contact-page__form .form-email:focus-visible,
-.contact-page__form .form-tel:focus-visible,
-.contact-page__form .form-select:focus-visible,
-.contact-page__form .form-textarea:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+  caret-color: var(--color-primary);
 }
 
 .contact-page__form .form-item:focus-within label {
@@ -96,7 +88,15 @@
 .contact-page__form .form-email::placeholder,
 .contact-page__form .form-tel::placeholder,
 .contact-page__form .form-textarea::placeholder {
-  color: var(--color-text-primary);
+  color: var(--color-placeholder);
+  transition: opacity var(--transition-fast);
+}
+
+.contact-page__form .form-text:focus::placeholder,
+.contact-page__form .form-email:focus::placeholder,
+.contact-page__form .form-tel:focus::placeholder,
+.contact-page__form .form-textarea:focus::placeholder {
+  opacity: 0;
 }
 
 /* Phone field — orange border */
