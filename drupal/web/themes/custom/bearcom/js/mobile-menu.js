@@ -10,10 +10,20 @@
       var toggleBtns = once('mobile-menu-toggle', '[data-mobile-menu-toggle]', context);
       toggleBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
+          var header = document.querySelector('.site-header');
           var isOpen = menu.classList.toggle('is-open');
           btn.classList.toggle('hamburger--active', isOpen);
-          document.body.style.overflow = isOpen ? 'hidden' : '';
-          document.documentElement.style.overflow = isOpen ? 'hidden' : '';
+          if (isOpen) {
+            document.body.dataset.scrollY = window.scrollY;
+            document.body.style.top = '-' + window.scrollY + 'px';
+            document.body.classList.add('mobile-menu-open');
+          } else {
+            var scrollY = parseInt(document.body.dataset.scrollY || '0');
+            document.body.classList.remove('mobile-menu-open');
+            document.body.style.top = '';
+            window.scrollTo({ top: scrollY, behavior: 'instant' });
+          }
+          if (header) header.classList.toggle('is-fixed', isOpen);
         });
       });
 

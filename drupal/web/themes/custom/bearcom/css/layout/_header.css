@@ -211,8 +211,15 @@
     border-bottom: 1px solid var(--color-primary);
   }
 
+  .site-header.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
   .site-header__inner {
-    height: 65px;
+    height: var(--header-height-mobile);
   }
 
   .site-header__logo img {

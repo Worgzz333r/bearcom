@@ -52,6 +52,7 @@
   --container-max-width: 1360px;
   --container-padding: 20px;
   --header-height: 100px;
+  --header-height-mobile: 65px;
   --top-bar-height: var(--spacing-xl);
 
   /* Footer */

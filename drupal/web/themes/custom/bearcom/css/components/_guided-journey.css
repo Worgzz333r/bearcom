@@ -195,6 +195,22 @@
     padding: var(--spacing-xl) 0;
   }
 
+  .guided-journey--blue {
+    background-color: transparent;
+    border-radius: 0;
+    margin-top: 0;
+    padding-top: var(--spacing-xl);
+  }
+
+  .guided-journey--blue .section__title,
+  .guided-journey--blue .section__subtitle,
+  .guided-journey--blue .guided-journey__panel-title,
+  .guided-journey--blue .guided-journey__body,
+  .guided-journey--blue .guided-journey__checklist li,
+  .guided-journey--blue .guided-journey__panel-content {
+    color: inherit;
+  }
+
   /* Title — uppercase */
   .guided-journey .section__title {
     text-transform: uppercase;
