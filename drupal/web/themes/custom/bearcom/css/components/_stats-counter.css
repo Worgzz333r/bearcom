@@ -200,6 +200,10 @@
     padding: var(--spacing-xl) 0;
   }
 
+  .stats-counter__items {
+    padding: 0;
+  }
+
   .stats-counter__items > div {
     grid-template-columns: 280px;
     justify-content: center;

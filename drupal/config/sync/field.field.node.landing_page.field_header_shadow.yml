@@ -1,0 +1,23 @@
+uuid: f22b9970-c2f8-49e0-8903-553d29b8697d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header_shadow
+    - node.type.landing_page
+  module:
+    - options
+id: node.landing_page.field_header_shadow
+field_name: field_header_shadow
+entity_type: node
+bundle: landing_page
+label: 'Header Style'
+description: 'Header bottom decoration for this page.'
+required: false
+translatable: false
+default_value:
+  -
+    value: shadow
+default_value_callback: ''
+settings: {  }
+field_type: list_string

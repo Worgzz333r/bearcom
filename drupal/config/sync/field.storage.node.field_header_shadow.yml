@@ -1,0 +1,33 @@
+uuid: f1a2b3c4-d5e6-7890-abcd-header-shadow
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_header_shadow
+field_name: field_header_shadow
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: shadow
+      label: Shadow
+    -
+      value: border
+      label: 'Solid Border'
+    -
+      value: border_light
+      label: 'Semi-transparent Border'
+    -
+      value: none
+      label: None
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

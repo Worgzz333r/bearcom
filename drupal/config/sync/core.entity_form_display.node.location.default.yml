@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.location.field_cta
     - field.field.node.location.field_description
     - field.field.node.location.field_faq
+    - field.field.node.location.field_header_shadow
     - field.field.node.location.field_hero_style
     - field.field.node.location.field_latitude
     - field.field.node.location.field_longitude
@@ -18,6 +19,7 @@ dependencies:
     - node.type.location
   module:
     - media_library
+    - options
     - paragraphs
     - path
     - text
@@ -79,6 +81,12 @@ content:
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: ''
+    third_party_settings: {  }
+  field_header_shadow:
+    type: options_select
+    weight: 90
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_hero_style:
     type: options_select

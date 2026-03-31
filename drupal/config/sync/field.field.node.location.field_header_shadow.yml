@@ -1,0 +1,23 @@
+uuid: 1d050ebb-5ffe-409c-b503-ae89661c7941
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header_shadow
+    - node.type.location
+  module:
+    - options
+id: node.location.field_header_shadow
+field_name: field_header_shadow
+entity_type: node
+bundle: location
+label: 'Header Style'
+description: 'Header bottom decoration for this page.'
+required: false
+translatable: false
+default_value:
+  -
+    value: shadow
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -5,12 +5,14 @@ dependencies:
   config:
     - field.field.node.industry.field_cta
     - field.field.node.industry.field_description
+    - field.field.node.industry.field_header_shadow
     - field.field.node.industry.field_hero_image
     - field.field.node.industry.field_icon
     - field.field.node.industry.field_solutions
     - node.type.industry
   module:
     - media_library
+    - options
     - paragraphs
     - path
     - text
@@ -50,6 +52,12 @@ content:
     settings:
       rows: 3
       placeholder: ''
+    third_party_settings: {  }
+  field_header_shadow:
+    type: options_select
+    weight: 90
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_hero_image:
     type: media_library_widget
