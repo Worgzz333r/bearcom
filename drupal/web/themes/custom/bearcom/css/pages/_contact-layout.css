@@ -2,14 +2,14 @@
    Contact Us Page — Layout & Left Column
    ========================================================================== */
 
-/* White background for contact page (override body #FAFAFA) */
+/* Background for contact page */
 body.page--contact {
-  background-color: var(--color-white);
+  background-color: var(--color-background);
 }
 
 body.page--contact .cta-block--credibility,
 body.page--contact .cta-block--credibility .cta-block__inner {
-  background-color: var(--color-white);
+  background-color: var(--color-background);
 }
 
 /* Soundwave decoration */
