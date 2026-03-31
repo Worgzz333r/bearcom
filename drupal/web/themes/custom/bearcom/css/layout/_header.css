@@ -70,6 +70,20 @@
   position: sticky;
   top: 0;
   z-index: var(--z-header);
+  box-shadow: 0 3px 4px #4A4F551A;
+}
+
+.header--border .site-header {
+  border-bottom: 1px solid var(--color-primary);
+}
+
+.header--border_light .site-header {
+  box-shadow: none;
+  border-bottom: 1px solid #FB591F4D;
+}
+
+.header--none .site-header {
+  box-shadow: none;
 }
 
 .site-header .container {
@@ -208,6 +222,7 @@
   }
 
   .site-header {
+    box-shadow: none;
     border-bottom: 1px solid var(--color-primary);
   }
 

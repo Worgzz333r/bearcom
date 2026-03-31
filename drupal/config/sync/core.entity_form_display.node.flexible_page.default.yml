@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.flexible_page.field_benefits
     - field.field.node.flexible_page.field_description
+    - field.field.node.flexible_page.field_header_shadow
     - field.field.node.flexible_page.field_heading
     - field.field.node.flexible_page.field_hero_style
     - field.field.node.flexible_page.field_image
@@ -15,6 +16,7 @@ dependencies:
     - node.type.flexible_page
   module:
     - media_library
+    - options
     - paragraphs
     - path
     - text
@@ -27,6 +29,12 @@ content:
   created:
     type: datetime_timestamp
     weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_header_shadow:
+    type: options_select
+    weight: 90
     region: content
     settings: {  }
     third_party_settings: {  }
