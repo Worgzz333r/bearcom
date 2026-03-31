@@ -197,25 +197,25 @@
 }
 
 @media (max-width: 767px) {
-  .card-grid {
+  .card-grid--cards {
     padding: var(--spacing-xl) 0;
   }
 
   /* Section header */
-  .card-grid .section__title {
+  .card-grid--cards .section__title {
     text-transform: uppercase;
   }
 
-  .card-grid .section__header {
+  .card-grid--cards .section__header {
     margin-bottom: var(--spacing-lg);
   }
 
   /* Reset all card variants to vertical */
-  .card,
-  .card-grid__items > div > div:nth-child(4n+1) .card,
-  .card-grid__items > div > div:nth-child(4n+2) .card,
-  .card-grid__items > div > div:nth-child(4n+3) .card,
-  .card-grid__items > div > div:nth-child(4n+4) .card {
+  .card-grid--cards .card,
+  .card-grid--cards .card-grid__items > div > div:nth-child(4n+1) .card,
+  .card-grid--cards .card-grid__items > div > div:nth-child(4n+2) .card,
+  .card-grid--cards .card-grid__items > div > div:nth-child(4n+3) .card,
+  .card-grid--cards .card-grid__items > div > div:nth-child(4n+4) .card {
     flex-direction: column;
     height: auto;
     border-radius: var(--radius-card-lg);
@@ -228,14 +228,14 @@
   }
 
   /* Reset rounded/pill image styles */
-  .card-grid__items > div > div:nth-child(4n+3) .card__image,
-  .card-grid__items > div > div:nth-child(4n+4) .card__image {
+  .card-grid--cards .card-grid__items > div > div:nth-child(4n+3) .card__image,
+  .card-grid--cards .card-grid__items > div > div:nth-child(4n+4) .card__image {
     border-radius: 0;
     border-left: none;
     border-right: none;
   }
 
-  .card__image {
+  .card-grid--cards .card__image {
     flex: none;
     width: 100%;
     height: 220px;
@@ -244,9 +244,9 @@
   }
 
   /* White numbers overlay on image — override desktop fade gradients */
-  .card__image::after,
-  .card-grid__items > div > div:nth-child(4n+1) .card__image::after,
-  .card-grid__items > div > div:nth-child(4n+2) .card__image::after {
+  .card-grid--cards .card__image::after,
+  .card-grid--cards .card-grid__items > div > div:nth-child(4n+1) .card__image::after,
+  .card-grid--cards .card-grid__items > div > div:nth-child(4n+2) .card__image::after {
     content: '';
     position: absolute;
     inset: auto 0 0 0;
@@ -258,16 +258,16 @@
     z-index: 1;
   }
 
-  .card__image img {
+  .card-grid--cards .card__image img {
     height: 220px;
   }
 
-  .card__body {
+  .card-grid--cards .card__body {
     padding: 45px var(--spacing-md);
     text-align: center;
   }
 
-  .card__top-title {
+  .card-grid--cards .card__top-title {
     font-size: var(--h5-size);
     line-height: var(--h5-lh);
     font-weight: var(--font-weight-regular);
@@ -275,21 +275,21 @@
     margin-bottom: var(--spacing-xs);
   }
 
-  .card__main-title {
+  .card-grid--cards .card__main-title {
     font-size: var(--h1-size);
     line-height: var(--h1-lh);
     font-weight: var(--font-weight-semibold);
     margin: 0 0 var(--spacing-xs);
   }
 
-  .card__subtitle {
+  .card-grid--cards .card__subtitle {
     font-size: var(--h5-size);
     line-height: var(--h5-lh);
     font-weight: var(--font-weight-regular);
     text-transform: uppercase;
   }
 
-  .card-grid__items > div {
+  .card-grid--cards .card-grid__items > div {
     gap: 32px;
   }
 }
