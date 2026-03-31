@@ -65,6 +65,9 @@ elements: |-
     '#type': textarea
     '#title': Message
     '#placeholder': Placeholder
+    '#maxlength': 500
+    '#counter_type': character
+    '#counter_maximum': 500
 css: ''
 javascript: ''
 settings:
