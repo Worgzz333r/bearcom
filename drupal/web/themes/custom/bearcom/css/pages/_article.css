@@ -206,14 +206,27 @@
   border-radius: 16px;
 }
 
-.article-body__content p:has(> img) {
+.article-body__content h2:has(> img),
+.article-body__content h3:has(> img),
+.article-body__content h4:has(> img),
+.article-body__content p:has(> img),
+.article-body__content figure {
   position: relative;
   display: block;
   max-width: 900px;
+  height: 500px;
   margin: var(--spacing-lg) auto;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+  border-radius: 16px;
 }
 
-.article-body__content p:has(> img)::after {
+.article-body__content h2:has(> img)::after,
+.article-body__content h3:has(> img)::after,
+.article-body__content h4:has(> img)::after,
+.article-body__content p:has(> img)::after,
+.article-body__content figure::after {
   content: '';
   position: absolute;
   left: 50%;
@@ -223,10 +236,16 @@
   height: 79px;
   background: url('../../images/soundwave-cta.svg') no-repeat center / contain;
   pointer-events: none;
+  z-index: 1;
 }
 
-.article-body__content p:has(> img) img {
+.article-body__content h2:has(> img) img,
+.article-body__content h3:has(> img) img,
+.article-body__content h4:has(> img) img,
+.article-body__content p:has(> img) img,
+.article-body__content figure img {
   margin: 0;
+  border-radius: 0;
 }
 
 /* Lists with orange markers */
@@ -380,7 +399,15 @@
   }
 
   .article-body__content img {
-    height: 350px;
+    height: auto;
+  }
+
+  .article-body__content h2:has(> img),
+  .article-body__content h3:has(> img),
+  .article-body__content h4:has(> img),
+  .article-body__content p:has(> img),
+  .article-body__content figure {
+    height: auto;
   }
 }
 
@@ -433,11 +460,23 @@
   }
 
   .article-body__content img {
-    height: 250px;
+    height: auto;
     border-radius: 12px;
   }
 
-  .article-body__content p:has(> img)::after {
+  .article-body__content h2:has(> img),
+  .article-body__content h3:has(> img),
+  .article-body__content h4:has(> img),
+  .article-body__content p:has(> img),
+  .article-body__content figure {
+    height: auto;
+  }
+
+  .article-body__content h2:has(> img)::after,
+  .article-body__content h3:has(> img)::after,
+  .article-body__content h4:has(> img)::after,
+  .article-body__content p:has(> img)::after,
+  .article-body__content figure::after {
     width: 70px;
     height: 56px;
   }
