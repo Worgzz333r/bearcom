@@ -85,7 +85,7 @@
               e.preventDefault();
               var target = document.getElementById(href.substring(1));
               if (target) {
-                var headerH = 160;
+                var headerH = nav.getBoundingClientRect().bottom;
                 var y = target.getBoundingClientRect().top + window.pageYOffset - headerH;
                 window.scrollTo({ top: y, behavior: 'smooth' });
               }

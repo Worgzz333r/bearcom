@@ -11,7 +11,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -21,7 +21,7 @@ body {
   font-weight: var(--font-weight-regular);
   color: var(--color-text-primary);
   background-color: var(--color-background);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img {

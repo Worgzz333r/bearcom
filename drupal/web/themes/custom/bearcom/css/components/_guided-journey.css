@@ -274,14 +274,29 @@
   }
 
   /* Text align left on mobile */
+  .guided-journey .section__header {
+    text-align: left;
+  }
+
   .guided-journey__panel-content {
     text-align: left;
+    align-items: flex-start;
+  }
+
+  .guided-journey__checklist ul {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .guided-journey__checklist li {
+    justify-content: flex-start;
   }
 
   /* Image first, then text */
   .guided-journey__panel-inner {
     flex-direction: column-reverse;
     gap: 0;
+    align-items: flex-start;
   }
 
   .guided-journey__panel-image {

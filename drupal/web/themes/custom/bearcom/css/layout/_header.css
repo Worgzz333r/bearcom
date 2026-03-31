@@ -3,7 +3,7 @@
   background-color: var(--color-footer-bg);
   color: var(--color-white);
   font-size: var(--details-size);
-  height: var(--spacing-xl);
+  height: var(--top-bar-height);
 }
 
 .top-bar > .container {
@@ -90,7 +90,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: var(--header-height);
 }
 
 /* Logo */
