@@ -64,6 +64,13 @@ table {
   width: 100%;
 }
 
+/* Lock scroll when mobile menu open */
+body.mobile-menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
 /* Utility: hide on mobile */
 @media (max-width: 767px) {
   .hide-on-mobile {

@@ -1,7 +1,7 @@
 /* Mobile Menu — slides under header */
 .mobile-menu {
   position: fixed;
-  top: 66px;
+  top: var(--header-height-mobile, 65px);
   left: 0;
   right: 0;
   bottom: 0;
