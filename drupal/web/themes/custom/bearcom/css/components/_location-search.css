@@ -97,6 +97,8 @@
   min-height: 460px;
   border-radius: var(--radius-card-lg);
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .location-search__empty {
