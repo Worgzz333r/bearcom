@@ -1,6 +1,6 @@
 {# Article — full page #}
 {% set hero_style = node.field_hero_style.value|default('image') %}
-{% set hero_desc = node.field_description.value %}
+{% set hero_desc = node.field_description.value|striptags %}
 {% set secondary_title = node.field_hero_link.0.title|default('') %}
 {% set is_phone = secondary_title matches '/^\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}/' %}
 
