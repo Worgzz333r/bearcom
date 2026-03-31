@@ -221,6 +221,11 @@
     display: none;
   }
 
+  .site-header {
+    box-shadow: none;
+    border-bottom: 1px solid var(--color-primary);
+  }
+
   .site-header.is-fixed {
     position: fixed;
     top: 0;
