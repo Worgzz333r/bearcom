@@ -14,7 +14,8 @@ global:
       css/components/_card.css: {}
       css/components/_product-card.css: {}
       css/components/_industry-card.css: {}
-      css/components/_cta-block.css: {}
+      css/components/_cta-default.css: {}
+      css/components/_cta-credibility.css: {}
       css/components/_cta-orange.css: {}
       css/components/_content-block.css: {}
       css/components/_checklist.css: {}
@@ -222,12 +223,18 @@ article:
 industry:
   css:
     theme:
-      css/pages/_industry.css: {}
+      css/pages/_industry-hero.css: {}
+      css/pages/_industry-cards.css: {}
+      css/pages/_industry-blue.css: {}
 
 service:
   css:
     theme:
-      css/pages/_service.css: {}
+      css/pages/_service-hero.css: {}
+      css/pages/_service-divided.css: {}
+      css/pages/_service-video.css: {}
+      css/pages/_service-centered.css: {}
+      css/pages/_service-cards.css: {}
 
 location:
   css:
@@ -240,7 +247,9 @@ location-detail:
     component:
       https://unpkg.com/leaflet@1.9.4/dist/leaflet.css: { type: external, minified: true }
     theme:
-      css/pages/_location-detail.css: {}
+      css/pages/_location-detail-hero.css: {}
+      css/pages/_location-detail-info.css: {}
+      css/pages/_location-detail-content.css: {}
   js:
     https://unpkg.com/leaflet@1.9.4/dist/leaflet.js: { type: external, minified: true }
     js/location-detail-map.js: {}
@@ -263,7 +272,8 @@ search-results:
 contact-us:
   css:
     theme:
-      css/pages/_contact-us.css: {}
+      css/pages/_contact-form.css: {}
+      css/pages/_contact-modal.css: {}
   js:
     js/contact-form.js: {}
   dependencies:

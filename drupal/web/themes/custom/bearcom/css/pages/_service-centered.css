@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Service Page — Content Block Centered
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   #7 Content Block — centered text (no image variant)
+   -------------------------------------------------------------------------- */
+
+.content-block--centered {
+  padding-bottom: 0;
+  margin-bottom: var(--spacing-lg);
+}
+
+.content-block--centered .content-block__inner {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.content-block--centered .content-block__title {
+  font-size: var(--h2-size);
+  line-height: var(--h2-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark-blue);
+  margin-bottom: 25px;
+}
+
+.content-block--centered .content-block__body {
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  color: var(--color-text-dark);
+}
+
+/* Content block centered — mobile */
+@media (max-width: 767px) {
+  .content-block--centered {
+    padding-top: 60px;
+    padding-bottom: var(--spacing-lg);
+    margin: 0;
+  }
+
+  .content-block--centered .content-block__inner {
+    max-width: 100%;
+  }
+
+  .content-block--centered .content-block__title {
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .content-block--centered .content-block__body,
+  .content-block--centered .content-block__body p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: var(--font-weight-regular);
+    text-align: center;
+  }
+}

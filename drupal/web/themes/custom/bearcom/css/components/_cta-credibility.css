@@ -1,0 +1,184 @@
+/* --------------------------------------------------------------------------
+   Style: Credibility Block (Dev 2)
+   Image left (659×325), title centered, description left
+   -------------------------------------------------------------------------- */
+
+.cta-block--credibility {
+  padding: 0;
+  margin-bottom: var(--section-padding);
+}
+
+.cta-block--credibility > .container {
+  max-width: none;
+  padding: 0;
+}
+
+.cta-block--credibility .cta-block__inner {
+  gap: var(--spacing-30);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  background-color: var(--color-background);
+  border-radius: 0;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.cta-block--credibility .cta-block__image {
+  flex: 0 0 auto;
+  width: 659px;
+  height: 325px;
+  order: -1;
+}
+
+.cta-block--credibility .cta-block__image img {
+  width: 659px;
+  height: 325px;
+  object-fit: cover;
+  border-radius: var(--radius-card-lg);
+}
+
+.cta-block--credibility .cta-block__image::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 98px;
+  height: 79px;
+  background: url('../../images/soundwave-cta.svg') no-repeat center / contain;
+  pointer-events: none;
+}
+
+.cta-block--credibility .cta-block__title {
+  color: var(--color-dark-blue);
+  text-align: center;
+}
+
+.cta-block--credibility .cta-block__description {
+  color: var(--color-text-dark);
+  text-align: left;
+  margin: 0 0 46px;
+}
+
+/* Hide wave decoration, show image overlay instead */
+/* Orange button instead of outline */
+.cta-block--credibility .btn.btn--outline {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: none;
+}
+
+.cta-block--credibility .btn.btn--outline:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+/* Reset padding from base (wave-width calculation) */
+.cta-block--credibility .cta-block__inner {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  max-width: 1440px;
+}
+
+.cta-block--credibility .cta-block__decoration {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — Credibility
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 929px) {
+  /* Credibility stays horizontal — scale down like hero */
+  .cta-block--credibility .cta-block__inner {
+    flex-direction: row;
+    text-align: left;
+    padding: var(--spacing-md) var(--container-padding);
+    gap: var(--spacing-sm);
+  }
+
+  .cta-block--credibility .cta-block__image {
+    flex: 0 0 48%;
+    width: auto;
+    height: auto;
+    aspect-ratio: 659 / 325;
+  }
+
+  .cta-block--credibility .cta-block__image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .cta-block--credibility .cta-block__image::after {
+    width: 60px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Credibility <=767px — inherits horizontal from 929px, extra tweaks */
+  .cta-block--credibility {
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  /* Industry parent: footer sits on grey bg */
+  .dialog-off-canvas-main-canvas:has(.industries-section) > .site-footer {
+    margin-top: 0;
+  }
+
+
+  /* CTA credibility on industry parent — grey bg extends down */
+  .main-content:has(.industries-section) .cta-block--credibility {
+    background-color: var(--color-background-alt);
+  }
+
+  .main-content:has(.industries-section) .cta-block--credibility .cta-block__inner {
+    background-color: var(--color-background-alt);
+    padding-bottom: 36px;
+  }
+
+  .cta-block--credibility .cta-block__image {
+    display: block;
+  }
+
+  .cta-block--credibility .cta-block__description {
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+/* Credibility <=480px — switch to mobile column layout (Figma 375/390) */
+@media (max-width: 480px) {
+  .cta-block--credibility .cta-block__inner {
+    flex-direction: column;
+    padding: 40px var(--container-padding) 36px;
+    gap: 0;
+  }
+
+  .cta-block--credibility .cta-block__image {
+    flex: none;
+    width: 100%;
+    height: 165px;
+    aspect-ratio: auto;
+    margin-bottom: 40px;
+  }
+
+  .cta-block--credibility .cta-block__image img,
+  .cta-block--credibility .cta-block__image img:first-child {
+    height: 165px;
+    border-radius: 16px;
+  }
+
+  .cta-block--credibility .cta-block__image::after {
+    width: 50px;
+    height: 40px;
+  }
+
+  .cta-block.cta-block--credibility .cta-block__title {
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 28px;
+    max-width: 255px;
+  }
+}

@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Thank-you Modal
+   ========================================================================== */
+
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.contact-modal--visible {
+  opacity: 1;
+}
+
+.contact-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.contact-modal__content {
+  position: relative;
+  background: var(--color-white);
+  border-radius: var(--radius-card-lg);
+  padding: 48px 40px;
+  max-width: 440px;
+  width: 90%;
+  text-align: center;
+  transform: translateY(20px);
+  transition: transform var(--transition-base);
+}
+
+.contact-modal--visible .contact-modal__content {
+  transform: translateY(0);
+}
+
+.contact-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+}
+
+.contact-modal__close:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.contact-modal__close:hover {
+  color: var(--color-dark-blue);
+}
+
+.contact-modal__icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+}
+
+.contact-modal__icon--success {
+  background-color: var(--color-primary);
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 12.5L10 17.5L19 8.5' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.contact-modal__icon--error {
+  background-color: var(--color-dark-blue);
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 6L6 18M6 6l12 12' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.contact-modal__title {
+  font-family: var(--font-family);
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 700;
+  color: var(--color-dark-blue);
+  margin: 0 0 12px;
+}
+
+.contact-modal__text {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text-primary);
+  margin: 0 0 28px;
+}
+
+.contact-modal__btn {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  padding: 10px 48px;
+  border: none;
+  border-radius: var(--radius-card);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.contact-modal__btn:hover {
+  background-color: var(--color-primary-dark);
+}

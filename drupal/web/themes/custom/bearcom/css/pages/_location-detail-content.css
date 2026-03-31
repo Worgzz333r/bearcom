@@ -1,0 +1,238 @@
+/* Location Detail Page — About, FAQ, Map, CTA */
+
+/* About */
+.location-detail__about {
+  padding: 122px 0;
+  background-color: var(--color-blue-light);
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.location-detail__about-layout {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.location-detail__about-text {
+  max-width: 629px;
+  position: relative;
+  z-index: 1;
+}
+
+.location-detail__about-body,
+.location-detail__about-text p {
+  font-family: var(--font-family);
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-background);
+  margin: 0;
+}
+
+.location-detail__about-body p + p,
+.location-detail__about-text p + p {
+  margin-top: 20px;
+}
+
+.location-detail__about-title {
+  font-family: var(--font-family);
+  font-size: var(--h2-size);
+  line-height: var(--h2-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-white);
+  margin: 0 0 26px;
+}
+
+.location-detail__about-wave {
+  position: absolute;
+  right: clamp(60px, 15vw, 237px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 187px;
+  height: 150px;
+  z-index: 0;
+}
+
+.location-detail__about-wave svg {
+  width: 100%;
+  height: 100%;
+}
+
+.location-detail__about-wave svg path {
+  fill: var(--color-white);
+}
+
+/* FAQ + Map */
+.location-detail__faq-section {
+  padding: var(--section-padding) 0;
+}
+
+.location-detail__faq-heading {
+  font-family: var(--font-family);
+  font-size: var(--h2-size);
+  line-height: var(--h2-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  text-align: center;
+  margin: 0 0 56px;
+}
+
+.location-detail__faq-layout {
+  display: flex;
+  gap: 65px;
+  align-items: flex-start;
+}
+
+.location-detail__faq-left {
+  flex: 0 0 630px;
+}
+
+.location-detail__faq-right {
+  flex: 1;
+}
+
+/* Accordion overrides for location detail */
+.location-detail__faq-left .accordion__item:first-child {
+  border-top: 1px solid var(--color-medium-gray);
+}
+
+.location-detail__faq-left .accordion__trigger {
+  padding: 20px 0;
+}
+
+.location-detail__faq-left .accordion__title {
+  font-family: var(--font-family);
+  font-size: var(--h4-size);
+  line-height: var(--h4-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.location-detail__faq-left .accordion__icon {
+  font-size: 26px;
+  color: var(--color-primary);
+}
+
+.location-detail-map {
+  width: 100%;
+  height: 352px;
+  border-radius: 0;
+}
+
+/* CTA */
+.location-detail__cta {
+  padding: 0;
+}
+
+/* Responsive — Tablet */
+@media (max-width: 1023px) {
+  .location-detail__about {
+    padding: var(--section-padding) 0;
+  }
+
+  .location-detail__about-wave {
+    position: static;
+    transform: none;
+    width: 140px;
+    height: 112px;
+    margin: 30px auto 0;
+  }
+
+  .location-detail__about-layout {
+    flex-direction: column;
+  }
+
+  .location-detail__faq-section {
+    padding: var(--section-padding) 0;
+  }
+
+  .location-detail__faq-heading {
+    font-size: 30px;
+    line-height: 32px;
+    margin-bottom: 40px;
+  }
+
+  .location-detail__faq-layout {
+    gap: var(--spacing-30);
+  }
+
+  .location-detail__faq-left {
+    flex: 1;
+  }
+
+  .location-detail__faq-right {
+    flex: 0 0 40%;
+  }
+
+  .location-detail__faq-left .accordion__title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+/* Responsive — Mobile */
+@media (max-width: 767px) {
+  .location-detail__about {
+    padding: 60px 0;
+  }
+
+  .location-detail__about-text {
+    padding-right: 0;
+  }
+
+  .location-detail__about-wave {
+    position: static;
+    transform: none;
+    width: 120px;
+    height: 96px;
+    margin: 30px auto 0;
+  }
+
+  .location-detail__about-layout {
+    flex-direction: column;
+  }
+
+  .location-detail__about-title {
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  .location-detail__faq-section {
+    padding: var(--section-padding) 0;
+  }
+
+  .location-detail__faq-heading {
+    font-size: 30px;
+    line-height: 32px;
+    margin-bottom: 30px;
+  }
+
+  .location-detail__faq-layout {
+    flex-direction: column;
+    gap: var(--spacing-30);
+  }
+
+  .location-detail__faq-left {
+    flex: none;
+  }
+
+  .location-detail__faq-right {
+    flex: none;
+    width: 100%;
+  }
+
+  .location-detail__faq-left .accordion__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .location-detail__faq-left .accordion__trigger {
+    padding: 16px 0;
+  }
+
+  .location-detail-map {
+    height: 280px;
+  }
+}

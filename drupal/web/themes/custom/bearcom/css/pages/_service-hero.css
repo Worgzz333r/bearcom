@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Service Page — Hero (service variant)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   #1 Hero — service page style (based on plain)
+   -------------------------------------------------------------------------- */
+
+.hero--service {
+  min-height: auto;
+  padding: var(--section-padding) 0;
+}
+
+.hero--service .hero__product-image {
+  flex: 0 0 660px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.hero--service .hero__product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1023px) {
+  .hero--service .hero__product-image {
+    flex: 0 0 50%;
+    height: auto;
+    aspect-ratio: 660 / 400;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero--service .container {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .hero--service .hero__product-image {
+    flex: none;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 660 / 400;
+  }
+
+  .hero--service .hero__buttons {
+    justify-content: flex-start;
+  }
+}

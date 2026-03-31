@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Industry Landing Page — Hero section
+   ========================================================================== */
+
+/* Hero — image left (660×400), content right */
+.industry-page .hero {
+  padding: var(--section-padding) 0;
+  min-height: auto;
+}
+
+.industry-page .hero .container {
+  gap: var(--spacing-30);
+}
+
+.industry-page .hero__product-image {
+  flex: 0 0 660px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.industry-page .hero__product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.industry-page .hero__content {
+  gap: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.industry-page .hero__title {
+  margin-bottom: 18px;
+}
+
+.industry-page .hero__subtitle {
+  font-family: var(--font-family);
+  font-size: var(--p-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--p-lh);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-lg);
+}
+
+.industry-page .hero .hero__buttons {
+  margin: 0;
+  gap: var(--spacing-lg);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — Tablet
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1023px) {
+  .industry-page .hero__product-image {
+    flex: 0 0 50%;
+    height: auto;
+  }
+
+  .industry-page .hero .container {
+    text-align: left;
+  }
+
+  .industry-page .hero .hero__buttons {
+    justify-content: flex-start;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — Mobile
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  /* Hero — image top, text below, left-aligned */
+  .industry-page .hero .container {
+    flex-direction: column;
+    gap: 24px;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
+
+  .industry-page .hero__product-image {
+    flex: none;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-card-lg);
+    overflow: hidden;
+  }
+
+  .industry-page .hero__content {
+    text-align: left;
+  }
+
+  .industry-page .hero .hero__buttons {
+    justify-content: flex-start;
+  }
+}

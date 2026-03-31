@@ -1,0 +1,189 @@
+/* ==========================================================================
+   Service Page — Content Block Divided (left/right variants)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   #3 Content Block — Divided Left / Divided Right (service page)
+   -------------------------------------------------------------------------- */
+
+/* Shared divided base */
+[class*="content-block--divided"] {
+  padding: 60px 0;
+  margin: 0;
+  position: relative;
+}
+
+[class*="content-block--divided"] .content-block__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-30);
+}
+
+/* Divided Left — image left, text right */
+.content-block--divided-left .content-block__inner {
+  flex-direction: row;
+}
+
+/* Divided Right — image right, text left */
+.content-block--divided-right .content-block__inner {
+  flex-direction: row-reverse;
+}
+
+[class*="content-block--divided"] .content-block__image {
+  flex: 0 0 51%;
+  border-radius: var(--radius-card-lg);
+  overflow: hidden;
+}
+
+[class*="content-block--divided"] .content-block__image img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+}
+
+[class*="content-block--divided"] .content-block__title {
+  margin: 0 0 var(--spacing-md);
+}
+
+/* Caption */
+[class*="content-block--divided"] .content-block__caption {
+  display: block;
+  font-size: var(--details-size);
+  line-height: var(--details-lh);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+[class*="content-block--divided"] .content-block__caption--uppercase {
+  text-transform: uppercase;
+}
+
+/* Body list styles */
+[class*="content-block--divided"] .content-block__body ul {
+  list-style: none;
+  padding-left: 18px;
+  margin: var(--spacing-xs) 0;
+}
+
+[class*="content-block--divided"] .content-block__body ul li {
+  position: relative;
+  padding-left: 4px;
+}
+
+[class*="content-block--divided"] .content-block__body ul li::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-text-primary);
+}
+
+[class*="content-block--divided"] .content-block__body ol {
+  list-style: decimal;
+  padding-left: 20px;
+  margin: var(--spacing-xs) 0;
+}
+
+/* Wave separator between consecutive divided blocks */
+[class*="content-block--divided"] .content-block__wave {
+  display: none;
+}
+
+div:has(+ div > [class*="content-block--divided"]) > [class*="content-block--divided"] {
+  padding-bottom: 0;
+}
+
+div + div > [class*="content-block--divided"] {
+  padding-top: 0;
+}
+
+div + div > [class*="content-block--divided"] .content-block__wave {
+  display: flex;
+  justify-content: center;
+  padding: 42px 0;
+}
+
+div + div > [class*="content-block--divided"] .content-block__wave::before {
+  content: '';
+  width: 38px;
+  height: 42px;
+  background: url('../../images/orange-wave-segment.svg') no-repeat center / contain;
+}
+
+/* Top line — only on the first divided in a run */
+div:not(:has(> [class*="content-block--divided"])) + div > [class*="content-block--divided"] {
+  border-top: 1px solid var(--color-dark-blue);
+  padding-top: 60px;
+}
+
+/* Hide wave on the first divided */
+div:not(:has(> [class*="content-block--divided"])) + div > [class*="content-block--divided"] .content-block__wave {
+  display: none;
+}
+
+/* Bottom line — only on the last divided in a run */
+div:has(> [class*="content-block--divided"]):not(:has(+ div > [class*="content-block--divided"])) > [class*="content-block--divided"] {
+  border-bottom: 1px solid var(--color-dark-blue);
+}
+
+/* Divided — tablet */
+@media (max-width: 1023px) {
+  [class*="content-block--divided"] .content-block__inner {
+    gap: var(--spacing-md);
+  }
+
+  [class*="content-block--divided"] .content-block__image {
+    flex: 0 0 45%;
+  }
+
+  [class*="content-block--divided"] .content-block__image img {
+    height: 350px;
+  }
+}
+
+/* Divided — mobile */
+@media (max-width: 767px) {
+  [class*="content-block--divided"] .content-block__inner {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  [class*="content-block--divided"] .content-block__content {
+    order: 1;
+  }
+
+  [class*="content-block--divided"] .content-block__caption {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  [class*="content-block--divided"] .content-block__title {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  [class*="content-block--divided"] .content-block__image {
+    order: 2;
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+
+  [class*="content-block--divided"] .content-block__image img {
+    height: auto;
+    max-height: 400px;
+  }
+
+  div + div > [class*="content-block--divided"] .content-block__wave {
+    padding: 30px 0;
+  }
+
+  div + div > [class*="content-block--divided"] .content-block__wave::before {
+    height: 30px;
+  }
+}

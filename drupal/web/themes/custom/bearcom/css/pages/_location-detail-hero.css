@@ -1,0 +1,113 @@
+/* Location Detail Page — Hero */
+
+/* Hero */
+.location-detail__hero {
+  padding: var(--section-padding) 0;
+  text-align: center;
+}
+
+.location-detail__hero--orange {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.location-detail__hero--grey {
+  background-color: var(--color-text-primary);
+  color: var(--color-white);
+}
+
+.location-detail__hero-title {
+  font-size: var(--h1-size);
+  line-height: var(--h1-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-background);
+  margin: 0 0 var(--spacing-sm);
+
+}
+
+.location-detail__hero-desc {
+  width: 1000px;
+  max-width: 100%;
+  margin: 0 auto;
+  font-family: var(--font-family);
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-background-alt);
+  text-align: center;
+
+}
+
+.location-detail__hero-desc p,
+.location-detail__hero-desc div {
+  margin: 0;
+}
+
+/* Hero buttons */
+.location-detail__hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 56px;
+}
+
+.location-detail__hero-buttons .btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+}
+
+.location-detail__hero-phone {
+  background-color: var(--color-blue-light);
+  color: var(--color-background-alt);
+  border: none;
+  gap: 12px;
+}
+
+.location-detail__hero-phone:hover {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+.location-detail__hero-phone svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive — Tablet */
+@media (max-width: 1023px) {
+  .location-detail__hero {
+    padding: 60px 0;
+  }
+
+  .location-detail__hero-buttons {
+    gap: 24px;
+    margin-top: 40px;
+  }
+}
+
+/* Responsive — Mobile */
+@media (max-width: 767px) {
+  .location-detail__hero {
+    padding: 40px 0;
+  }
+
+  .location-detail__hero-title {
+    font-size: var(--h1-size);
+    line-height: var(--h1-lh);
+  }
+
+  .location-detail__hero-desc {
+    width: auto;
+  }
+
+  .location-detail__hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+  }
+}
