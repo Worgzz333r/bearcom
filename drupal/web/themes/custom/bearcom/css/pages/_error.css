@@ -32,7 +32,7 @@
   font-size: 140px;
   line-height: 100%;
   font-weight: 600;
-  color: var(--color-primary-dark);
+  color: var(--color-error-orange);
   margin: 0 0 24px;
 }
 
@@ -69,10 +69,10 @@
   color: var(--color-white);
 }
 
-/* Error page — 120px gap between button and orange footer */
+/* Error page — 67px gap between button and orange footer */
 .page--error .main-content {
   margin-bottom: 0;
-  padding-bottom: 120px;
+  padding-bottom: 67px;
 }
 
 /* Responsive — Tablet */
