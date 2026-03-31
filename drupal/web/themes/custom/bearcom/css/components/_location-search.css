@@ -101,6 +101,11 @@
   z-index: 1;
 }
 
+.location-search__map .leaflet-control-zoom,
+.location-search__map .leaflet-control-attribution {
+  display: none;
+}
+
 .location-search__empty {
   color: var(--color-text-primary);
   font-style: italic;

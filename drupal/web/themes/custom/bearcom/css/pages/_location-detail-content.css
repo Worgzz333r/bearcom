@@ -121,6 +121,11 @@
   border-radius: 0;
 }
 
+.location-detail-map .leaflet-control-zoom,
+.location-detail-map .leaflet-control-attribution {
+  display: none;
+}
+
 /* CTA */
 .location-detail__cta {
   padding: 0;
