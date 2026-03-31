@@ -1,0 +1,22 @@
+uuid: e1a2b3c4-d5e6-7890-abcd-ef1234567003
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.article
+  module:
+    - text
+id: node.article.field_description
+field_name: field_description
+entity_type: node
+bundle: article
+label: 'Hero Description'
+description: 'Subtitle / description text displayed in the hero section.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

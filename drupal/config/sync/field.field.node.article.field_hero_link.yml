@@ -1,0 +1,23 @@
+uuid: e1a2b3c4-d5e6-7890-abcd-ef1234567002
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_link
+    - node.type.article
+  module:
+    - link
+id: node.article.field_hero_link
+field_name: field_hero_link
+entity_type: node
+bundle: article
+label: 'Hero Secondary Button'
+description: 'Secondary button in the hero section (e.g. phone number).'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

@@ -10,8 +10,6 @@ dependencies:
     - field.field.node.article.field_hero_style
     - field.field.node.article.field_image
     - field.field.node.article.field_paragraphs
-    - field.field.node.article.field_related
-    - field.field.node.article.field_show_share
     - field.field.node.article.field_tags
     - image.style.medium
     - node.type.article
@@ -61,6 +59,4 @@ hidden:
   field_cta: true
   field_hero_style: true
   field_paragraphs: true
-  field_related: true
-  field_show_share: true
   search_api_excerpt: true

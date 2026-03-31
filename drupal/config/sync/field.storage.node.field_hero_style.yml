@@ -20,6 +20,12 @@ settings:
     -
       value: color
       label: 'Solid Color'
+    -
+      value: soundwave
+      label: Soundwave
+    -
+      value: soundwave_alt
+      label: 'Soundwave (Orange)'
   allowed_values_function: ''
 module: options
 locked: false

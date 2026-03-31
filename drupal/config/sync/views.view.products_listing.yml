@@ -206,7 +206,9 @@ display:
           field: result
           plugin_id: result
           content: '@total RESULTS'
-      display_extenders: {  }
+      display_extenders:
+        ajax_history:
+          enable: true
     cache_metadata:
       max-age: -1
       contexts:

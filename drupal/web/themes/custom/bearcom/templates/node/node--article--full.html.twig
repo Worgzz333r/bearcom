@@ -1,24 +1,51 @@
-{# Article — full page: v1 (white hero) / v2 (blue hero with image) #}
+{# Article — full page #}
 {% set hero_style = node.field_hero_style.value|default('image') %}
+{% set hero_desc = node.field_description.value %}
+{% set secondary_title = node.field_hero_link.0.title|default('') %}
+{% set is_phone = secondary_title matches '/^\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}/' %}
 
 <article class="article-page article-page--{{ hero_style }}">
 
-  {# Hero v1 — white, centered title #}
-  {% if hero_style != 'blue' %}
-    <section class="article-hero article-hero--white">
+  {# Hero — soundwave / soundwave_alt #}
+  {% if hero_style in ['soundwave', 'soundwave_alt'] %}
+    <section class="hero hero--soundwave hero--{{ hero_style|replace({'_': '-'}) }}">
+      <div class="hero__wave" aria-hidden="true">
+        <svg viewBox="0 0 373 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="119.88" width="35.89" height="53.5" rx="17.95" fill="currentColor"/>
+          <rect x="56.55" y="113.7" width="34.99" height="74.18" rx="17.49" fill="currentColor"/>
+          <rect x="112.09" y="33.48" width="36.01" height="234.35" rx="18.01" fill="currentColor"/>
+          <rect x="168.49" y="0" width="36.05" height="299.38" rx="18.02" fill="currentColor"/>
+          <rect x="224.05" y="85.11" width="36.04" height="122.15" rx="18.02" fill="currentColor"/>
+          <rect x="280.66" y="46.33" width="36.02" height="205.18" rx="18.01" fill="currentColor"/>
+          <rect x="337.2" y="119.98" width="35.8" height="53.41" rx="17.9" fill="currentColor"/>
+        </svg>
+      </div>
       <div class="container">
-        <div class="article-hero__content">
-          <h1 class="article-hero__title">{{ label }}</h1>
-          {% if node.body.summary %}
-            <div class="article-hero__desc">{{ node.body.summary }}</div>
+        <div class="hero__content">
+          <h1 class="hero__title">{{ label }}</h1>
+          {% if hero_desc %}
+            <p class="hero__subtitle">{{ hero_desc }}</p>
+          {% endif %}
+          {% if node.field_cta_url.0.url or node.field_hero_link.0.url %}
+            <div class="hero__buttons">
+              {% if node.field_cta_url.0.url %}
+                <a href="{{ node.field_cta_url.0.url }}" class="btn btn--primary hero__cta">
+                  {{ node.field_cta_url.0.title|default('Learn More') }}
+                </a>
+              {% endif %}
+              {% if node.field_hero_link.0.url %}
+                <a href="{{ node.field_hero_link.0.url }}" class="btn btn--outline hero__secondary{{ is_phone ? ' hero__secondary--phone' : '' }}">
+                  {{ secondary_title|default('Learn More') }}
+                </a>
+              {% endif %}
+            </div>
           {% endif %}
         </div>
       </div>
     </section>
-  {% endif %}
 
-  {# Hero v2 — blue with image + text side by side #}
-  {% if hero_style == 'blue' %}
+  {# Hero — blue with image + text side by side #}
+  {% elseif hero_style == 'blue' %}
     <section class="article-hero article-hero--blue">
       <div class="container">
         <div class="article-hero__inner">
@@ -29,16 +56,68 @@
           {% endif %}
           <div class="article-hero__content">
             <h1 class="article-hero__title">{{ label }}</h1>
-            {% if node.body.summary %}
-              <div class="article-hero__desc">{{ node.body.summary }}</div>
+            {% if hero_desc %}
+              <div class="article-hero__desc">{{ hero_desc }}</div>
+            {% endif %}
+            {% if node.field_cta_url.0.url or node.field_hero_link.0.url %}
+              <div class="article-hero__buttons">
+                {% if node.field_cta_url.0.url %}
+                  <a href="{{ node.field_cta_url.0.url }}" class="btn btn--white">
+                    {{ node.field_cta_url.0.title|default('Learn More') }}
+                  </a>
+                {% endif %}
+                {% if node.field_hero_link.0.url %}
+                  <a href="{{ node.field_hero_link.0.url }}" class="btn btn--outline-white{{ is_phone ? ' hero__secondary--phone' : '' }}">
+                    {{ secondary_title|default('Learn More') }}
+                  </a>
+                {% endif %}
+              </div>
             {% endif %}
           </div>
         </div>
       </div>
     </section>
+
+  {# Hero — white (default) #}
+  {% else %}
+    <section class="article-hero article-hero--white">
+      <div class="container">
+        <div class="article-hero__content">
+          <h1 class="article-hero__title">{{ label }}</h1>
+          {% if hero_desc %}
+            <div class="article-hero__desc">{{ hero_desc }}</div>
+          {% endif %}
+          {% if node.field_cta_url.0.url or node.field_hero_link.0.url %}
+            <div class="article-hero__buttons">
+              {% if node.field_cta_url.0.url %}
+                <a href="{{ node.field_cta_url.0.url }}" class="btn btn--primary">
+                  {{ node.field_cta_url.0.title|default('Learn More') }}
+                </a>
+              {% endif %}
+              {% if node.field_hero_link.0.url %}
+                <a href="{{ node.field_hero_link.0.url }}" class="btn btn--outline{{ is_phone ? ' hero__secondary--phone' : '' }}">
+                  {{ secondary_title|default('Learn More') }}
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </section>
   {% endif %}
 
-  {# Paragraphs — main content built from blocks #}
+  {# Article Body — node body field #}
+  {% if node.body.value %}
+    <section class="article-body">
+      <div class="container">
+        <div class="article-body__content">
+          {{ content.body }}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  {# Paragraphs #}
   {% if content.field_paragraphs|render|trim %}
     {{ content.field_paragraphs }}
   {% endif %}
@@ -46,33 +125,6 @@
   {# CTA Block #}
   {% if content.field_cta|render|trim %}
     {{ content.field_cta }}
-  {% endif %}
-
-  {# Related Articles #}
-  {% if node.field_related|length > 0 %}
-    <section class="article-related">
-      <div class="container">
-        <h2 class="article-related__title">Related Articles</h2>
-        <div class="article-related__grid">
-          {% for item in node.field_related %}
-            {% set related_node = item.entity %}
-            {% if related_node %}
-              <a href="{{ path('entity.node.canonical', {'node': related_node.id()}) }}" class="article-related__card">
-                {% if related_node.field_image.entity %}
-                  <div class="article-related__card-image">
-                    <img src="{{ file_url(related_node.field_image.entity.uri.value) }}" alt="{{ related_node.label() }}" loading="lazy">
-                  </div>
-                {% endif %}
-                <div class="article-related__card-body">
-                  <h3 class="article-related__card-title">{{ related_node.label() }}</h3>
-                  <time class="article-related__card-date">{{ related_node.getCreatedTime()|date('F j, Y') }}</time>
-                </div>
-              </a>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-    </section>
   {% endif %}
 
 </article>
