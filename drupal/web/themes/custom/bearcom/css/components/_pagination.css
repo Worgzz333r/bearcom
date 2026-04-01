@@ -110,7 +110,7 @@
 
 @media (max-width: 767px) {
   .pager {
-    padding-top: 60px;
+    padding-top: var(--spacing-xl);
   }
 }
 

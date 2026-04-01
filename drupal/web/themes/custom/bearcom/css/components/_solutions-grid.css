@@ -4,7 +4,7 @@
 
 .solutions-grid {
   padding: var(--section-padding) 0 120px;
-  background: var(--color-background) url('../../images/solutions-wave-bg.svg') no-repeat center calc(50% - 30px);
+  background: var(--color-background) url('../../images/solutions-wave-bg.svg') no-repeat center calc(50% - var(--spacing-30));
   background-size: auto 85%;
   overflow: hidden;
 }
@@ -143,8 +143,8 @@ section.solutions-grid .card__subtitle {
    -------------------------------------------------------------------------- */
 
 .solutions-grid--slider .swiper-container {
-  padding: 16px 0 84px;
-  margin-top: -16px;
+  padding: var(--spacing-sm) 0 84px;
+  margin-top: calc(-1 * var(--spacing-sm));
   overflow: hidden;
   position: relative;
 }
@@ -169,8 +169,8 @@ section.solutions-grid .card__subtitle {
 
 .solutions-grid--slider .swiper-button-prev,
 .solutions-grid--slider .swiper-button-next {
-  width: 40px;
-  height: 40px;
+  width: var(--spacing-lg);
+  height: var(--spacing-lg);
   background: url('../../images/orange-list-pointer.svg') no-repeat center / contain;
   position: absolute;
   top: calc(50% - 42px);
@@ -201,14 +201,14 @@ section.solutions-grid .card__subtitle {
 
 @media (max-width: 1023px) {
   .solutions-grid {
-    padding: var(--spacing-xl) 0 80px;
+    padding: var(--spacing-xl) 0 var(--spacing-xxl);
     background-size: auto 70%;
   }
 }
 
 @media (max-width: 767px) {
   .solutions-grid {
-    padding: var(--spacing-lg) 0 60px;
+    padding: var(--spacing-lg) 0 var(--spacing-xl);
     background-size: auto 50%;
     background-position: center center;
   }

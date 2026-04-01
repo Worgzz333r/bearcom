@@ -14,7 +14,7 @@
   background-color: var(--color-footer-bg);
   border-radius: var(--footer-radius) var(--footer-radius) 0 0;
   overflow: hidden;
-  margin-top: 60px;
+  margin-top: var(--spacing-xl);
 }
 
 .site-footer a {
@@ -141,7 +141,7 @@
   text-transform: uppercase;
   letter-spacing: 0;
   color: var(--color-white);
-  margin: 0 0 20px;
+  margin: 0 0 var(--container-padding);
   overflow-wrap: anywhere;
 }
 
@@ -231,7 +231,7 @@
 
 .site-footer--minimal-wrapper {
   background-color: var(--color-footer-mobile-bg);
-  border-radius: 32px 32px 0 0;
+  border-radius: var(--footer-radius) var(--footer-radius) 0 0;
   padding: 0 var(--spacing-xl);
 }
 
@@ -242,7 +242,7 @@
   display: flex;
   flex-direction: column;
   gap: 74px;
-  padding: 67px 0 60px;
+  padding: 67px 0 var(--spacing-xl);
 }
 
 .site-footer--minimal__top {
@@ -280,7 +280,7 @@
   font-family: var(--font-family);
   font-size: var(--details-size);
   line-height: var(--details-lh);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   color: var(--color-background);
   text-align: center;
   margin: 0;
@@ -497,7 +497,7 @@
 
   /* --- Wave: smaller, white --- */
   .site-footer__wave {
-    padding: 12px 0 80px;
+    padding: 12px 0 var(--spacing-xxl);
   }
 
   .site-footer__wave-graphic svg,
