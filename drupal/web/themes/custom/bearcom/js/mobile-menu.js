@@ -14,8 +14,9 @@
           var isOpen = menu.classList.toggle('is-open');
           btn.classList.toggle('hamburger--active', isOpen);
           if (isOpen) {
+            var headerHeight = header ? header.offsetHeight : 0;
             document.body.dataset.scrollY = window.scrollY;
-            document.body.style.top = '-' + window.scrollY + 'px';
+            document.body.style.top = (headerHeight - window.scrollY) + 'px';
             document.body.classList.add('mobile-menu-open');
           } else {
             var scrollY = parseInt(document.body.dataset.scrollY || '0');
