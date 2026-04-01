@@ -51,14 +51,28 @@
   font-weight: 700;
 }
 
-/* Hide top bar on product pages */
+/* Hide top bar and reset header styles on product pages */
 .page-node-type-product .top-bar {
   display: none;
 }
 
+.page-node-type-product .site-header {
+  box-shadow: none;
+  border-bottom: none;
+}
+
 @media (max-width: 960px) {
+  .page-node-type-product .site-header {
+    position: relative;
+  }
+
+  .page-node-type-product .site-header.is-fixed {
+    position: fixed;
+  }
+
   .product-subnav {
-    top: var(--header-height-mobile);
+    top: 0;
+    z-index: var(--z-header);
   }
 }
 
