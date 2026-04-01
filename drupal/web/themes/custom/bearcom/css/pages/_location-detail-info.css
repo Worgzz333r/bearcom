@@ -1,5 +1,12 @@
 /* Location Detail Page — Info + Photo */
 
+:root {
+  --location-info-left-min: 320px;
+  --location-info-photo-width: 660px;
+  --location-info-photo-ratio: 660 / 492;
+  --location-hours-max-width: 470px;
+}
+
 /* Info + Photo */
 .location-detail__info {
   padding: var(--section-padding) 0;
@@ -12,11 +19,12 @@
 }
 
 .location-detail__info-left {
-  flex: 0 0 630px;
+  flex: 1 1 0;
+  min-width: var(--location-info-left-min);
 }
 
 .location-detail__info-right {
-  flex: 1;
+  flex: 0 1 var(--location-info-photo-width);
 }
 
 /* Office name heading */
@@ -103,7 +111,7 @@
 }
 
 .location-detail__hours-table {
-  max-width: 470px;
+  max-width: var(--location-hours-max-width);
   border-collapse: separate;
   border-spacing: 0 0;
 }
@@ -125,8 +133,9 @@
 
 /* Photo */
 .location-detail__photo {
-  width: 660px;
-  height: 492px;
+  width: 100%;
+  max-width: var(--location-info-photo-width);
+  aspect-ratio: var(--location-info-photo-ratio);
   border-radius: var(--radius-card-lg);
   overflow: hidden;
 }
@@ -148,20 +157,6 @@
     gap: var(--spacing-30);
   }
 
-  .location-detail__info-left {
-    flex: 1;
-  }
-
-  .location-detail__info-right {
-    flex: 0 0 45%;
-  }
-
-  .location-detail__photo {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 660 / 492;
-  }
-
   .location-detail__office-name {
     font-size: 28px;
     line-height: 30px;
@@ -181,16 +176,20 @@
 
   .location-detail__info-left {
     flex: none;
+    width: 100%;
+    min-width: 0;
   }
 
   .location-detail__info-right {
     flex: none;
+    width: 100%;
   }
 
   .location-detail__photo {
     width: 100%;
+    max-width: none;
     height: auto;
-    aspect-ratio: 660 / 492;
+    aspect-ratio: var(--location-info-photo-ratio);
   }
 
   .location-detail__office-name {
