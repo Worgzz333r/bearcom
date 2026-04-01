@@ -75,7 +75,7 @@
   /* Hero — image top, text below, left-aligned */
   .industry-page .hero .container {
     flex-direction: column;
-    gap: 24px;
+    gap: var(--spacing-lg);
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
   }
@@ -83,9 +83,10 @@
   .industry-page .hero__product-image {
     flex: none;
     width: 100%;
-    height: auto;
+    height: 260px;
     border-radius: var(--radius-card-lg);
     overflow: hidden;
+    margin-bottom: 0;
   }
 
   .industry-page .hero__content {
