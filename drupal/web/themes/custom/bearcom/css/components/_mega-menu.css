@@ -18,7 +18,7 @@
   font-weight: var(--font-weight-regular);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  padding: 8px 0;
+  padding: var(--spacing-xs) 0;
   transition: color var(--transition-fast);
   text-decoration: none;
   display: block;
@@ -80,7 +80,7 @@
   flex: 0 0 300px;
   background-color: var(--color-primary);
   border-radius: 0;
-  padding: 60px 30px;
+  padding: var(--spacing-xl) var(--spacing-30);
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -89,7 +89,7 @@
 .mega-menu__sidebar-link {
   color: var(--color-white);
   font-size: 15px;
-  padding: 8px;
+  padding: var(--spacing-xs);
   transition: background-color var(--transition-fast);
   display: flex;
   flex-direction: column;
@@ -97,15 +97,15 @@
 }
 
 .mega-menu__sidebar-link strong {
-  font-size: 16px;
-  line-height: 20px;
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
   font-weight: 700;
 }
 
 .mega-menu__sidebar-desc {
-  font-size: 16px;
+  font-size: var(--p-size);
   line-height: 18px;
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
 }
 
 .mega-menu__sidebar-link:hover {
@@ -127,7 +127,7 @@
 /* Content area */
 .mega-menu__content {
   flex: 1;
-  padding: 60px 30px 60px 30px;
+  padding: var(--spacing-xl) var(--spacing-30) var(--spacing-xl) var(--spacing-30);
 }
 
 @media (min-width: 1300px) {
@@ -301,7 +301,7 @@
 .mega-menu__sol-list a {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--spacing-xs);
 }
 
 .mega-menu__sol-link:hover {
@@ -330,13 +330,13 @@
 .mega-menu__grid-item {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: var(--spacing-sm);
   padding: 4px 0;
   color: var(--color-dark-blue);
   font-family: 'Roboto Condensed', var(--font-family);
-  font-size: 22px;
-  line-height: 24px;
-  font-weight: 400;
+  font-size: var(--h5-size);
+  line-height: var(--h5-lh);
+  font-weight: var(--font-weight-regular);
   text-transform: uppercase;
   letter-spacing: 0;
   transition: color var(--transition-fast);
@@ -353,7 +353,7 @@
 .mega-menu__grid--cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: var(--spacing-30);
   max-width: 1020px;
 }
 
@@ -381,8 +381,8 @@
   overflow: hidden;
   transition: box-shadow var(--transition-fast);
   color: var(--color-text-primary);
-  gap: 16px;
-  padding: 8px;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs);
 }
 
 .mega-menu__card:hover {
@@ -404,9 +404,9 @@
 .mega-menu__card-title {
   padding: 0;
   font-family: 'Roboto Condensed', var(--font-family);
-  font-size: 22px;
-  line-height: 24px;
-  font-weight: 400;
+  font-size: var(--h5-size);
+  line-height: var(--h5-lh);
+  font-weight: var(--font-weight-regular);
   text-transform: uppercase;
   color: var(--color-dark-blue);
 }
@@ -423,28 +423,28 @@
 }
 
 .mega-menu__about-layout .mega-menu__about-list {
-  padding-top: 60px;
+  padding-top: var(--spacing-xl);
 }
 
 .mega-menu__about-list {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--container-padding);
 }
 
 .mega-menu__about-link {
   color: var(--color-dark-blue);
   font-family: 'Roboto Condensed', var(--font-family);
-  font-size: 22px;
-  line-height: 24px;
-  font-weight: 400;
+  font-size: var(--h5-size);
+  line-height: var(--h5-lh);
+  font-weight: var(--font-weight-regular);
   text-transform: uppercase;
   letter-spacing: 0;
   padding: 4px 0;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: var(--spacing-sm);
   transition: color var(--transition-fast);
 }
 
