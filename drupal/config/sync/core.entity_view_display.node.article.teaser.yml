@@ -57,6 +57,10 @@ content:
 hidden:
   comment: true
   field_cta: true
+  field_cta_url: true
+  field_description: true
+  field_header_shadow: true
+  field_hero_link: true
   field_hero_style: true
   field_paragraphs: true
   search_api_excerpt: true

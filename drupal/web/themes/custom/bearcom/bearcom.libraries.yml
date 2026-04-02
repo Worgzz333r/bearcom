@@ -221,6 +221,10 @@ article:
   css:
     theme:
       css/pages/_article.css: {}
+  js:
+    js/article-images.js: {}
+  dependencies:
+    - core/drupal
 
 industry:
   css:

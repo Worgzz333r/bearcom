@@ -58,6 +58,7 @@ hidden:
   comment: true
   field_cta_url: true
   field_description: true
+  field_header_shadow: true
   field_hero_link: true
   field_hero_style: true
   field_image: true

@@ -104,6 +104,8 @@ content:
     weight: 100
     region: content
 hidden:
+  field_header_shadow: true
+  field_hero_link: true
   field_hero_style: true
   field_latitude: true
   field_longitude: true
