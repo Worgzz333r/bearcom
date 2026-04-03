@@ -85,12 +85,14 @@
               e.preventDefault();
               var target = document.getElementById(href.substring(1));
               if (target) {
-                var isMobile = window.innerWidth <= 960;
-                if (isMobile && href === '#overview') {
+                if (href === '#overview') {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 } else {
-                  var headerH = nav.getBoundingClientRect().bottom;
-                  var y = target.getBoundingClientRect().top + window.pageYOffset - headerH;
+                  var header = document.querySelector('.site-header');
+                  var headerH = header ? header.offsetHeight : 0;
+                  var navH = nav.offsetHeight;
+                  var stickyOffset = headerH + navH;
+                  var y = target.getBoundingClientRect().top + window.pageYOffset - stickyOffset;
                   window.scrollTo({ top: y, behavior: 'smooth' });
                 }
               }
