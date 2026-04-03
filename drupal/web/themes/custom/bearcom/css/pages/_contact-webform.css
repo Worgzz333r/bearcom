@@ -4,7 +4,7 @@
 
 /* Right column — form */
 .contact-page__form {
-  flex: 0 0 658px;
+  flex: 0 1 658px;
 }
 
 .contact-page__form-title {
@@ -15,7 +15,7 @@
   color: var(--color-dark-blue);
   text-transform: uppercase;
   letter-spacing: 0;
-  margin: 0 0 var(--spacing-lg);
+  margin: 0 0 var(--spacing-md);
 }
 
 /* --------------------------------------------------------------------------
@@ -48,7 +48,7 @@
   line-height: 18px;
   font-weight: var(--font-weight-semibold);
   color: var(--color-dark-blue);
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: 12px;
   padding-left: var(--spacing-md);
 }
 
@@ -109,9 +109,18 @@
   color: var(--color-primary);
 }
 
+.contact-page__form .form-textarea-wrapper {
+  display: flex;
+}
+
 .contact-page__form .form-textarea {
   height: 120px;
   resize: none;
+  scrollbar-width: none;
+}
+
+.contact-page__form .form-textarea::-webkit-scrollbar {
+  display: none;
 }
 
 /* Submit button */
@@ -119,7 +128,7 @@
   flex: 0 0 100%;
   display: flex;
   justify-content: center;
-  margin: var(--spacing-lg) 0 0;
+  margin: 10px 0 0;
 }
 
 .contact-page__form .webform-button--submit,
@@ -158,21 +167,36 @@
    Responsive — Mobile
    -------------------------------------------------------------------------- */
 
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .contact-page__form {
     flex: none;
     width: 100%;
   }
 
+  .contact-page__form .form-textarea {
+    height: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+
   .contact-page__form .form-item {
     flex: 0 0 100%;
   }
 
+  .contact-page__form label {
+    margin-bottom: 3px;
+  }
+
+  .contact-page__form .form-textarea {
+    height: 57px;
+  }
+
   .contact-page__form .webform-submission-form {
-    row-gap: 20px;
+    row-gap: var(--spacing-md);
   }
 
   .contact-page__form .form-actions {
-    margin-top: var(--spacing-md);
+    margin: var(--spacing-md) 0 var(--spacing-xl);
   }
 }

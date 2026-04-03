@@ -93,14 +93,15 @@
   .cta-block--credibility .cta-block__inner {
     flex-direction: row;
     text-align: left;
-    padding: var(--spacing-md) var(--container-padding);
-    gap: var(--spacing-sm);
+    padding: var(--spacing-lg) var(--container-padding);
+    gap: var(--spacing-30);
   }
 
   .cta-block--credibility .cta-block__image {
     flex: 0 0 48%;
     width: auto;
     height: auto;
+    min-height: 185px;
     aspect-ratio: 659 / 325;
   }
 
@@ -141,11 +142,11 @@
   }
 }
 
-/* Credibility <=480px — switch to mobile column layout (Figma 375/390) */
-@media (max-width: 480px) {
+/* Credibility <=600px — switch to mobile column layout */
+@media (max-width: 600px) {
   .cta-block--credibility .cta-block__inner {
     flex-direction: column;
-    padding: 40px var(--container-padding) 36px;
+    padding: 40px var(--container-padding) 40px;
     gap: 0;
   }
 

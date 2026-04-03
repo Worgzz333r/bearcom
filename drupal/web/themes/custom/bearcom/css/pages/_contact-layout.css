@@ -12,6 +12,10 @@ body.page--contact .cta-block--credibility .cta-block__inner {
   background-color: var(--color-background);
 }
 
+body.page--contact .cta-block--credibility {
+  margin-bottom: 67px;
+}
+
 /* Soundwave decoration */
 .contact-page__wave {
   width: 111px;
@@ -38,7 +42,7 @@ body.page--contact .cta-block--credibility .cta-block__inner {
 
 /* Left column — info */
 .contact-page__info {
-  flex: 0 0 631px;
+  flex: 0 1 631px;
 }
 
 .contact-page__title {
@@ -78,6 +82,17 @@ body.page--contact .cta-block--credibility .cta-block__inner {
   gap: var(--spacing-md);
 }
 
+.contact-page__benefits .checklist-item {
+  align-items: center;
+  padding-bottom: 0;
+}
+
+.contact-page__benefits .checklist-item__icon svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
 .contact-page__benefits .checklist-item__text {
   font-family: var(--font-family);
   font-size: var(--p-size);
@@ -88,8 +103,9 @@ body.page--contact .cta-block--credibility .cta-block__inner {
 
 /* Image with wave overlay */
 .contact-page__image {
-  width: 595px;
-  height: 345px;
+  width: 100%;
+  max-width: 595px;
+  aspect-ratio: 595 / 345;
   border-radius: var(--radius-card-lg);
   overflow: hidden;
   position: relative;
@@ -118,6 +134,7 @@ body.page--contact .cta-block--credibility .cta-block__inner {
   width: 86px;
   height: 70px;
   pointer-events: none;
+  display: none;
 }
 
 .contact-page__image-wave svg {
@@ -142,12 +159,6 @@ body.page--contact .cta-block--credibility .cta-block__inner {
     flex: 1;
   }
 
-  .contact-page__image {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 595 / 345;
-  }
-
   .contact-page__title {
     font-size: 28px;
     line-height: 30px;
@@ -158,19 +169,29 @@ body.page--contact .cta-block--credibility .cta-block__inner {
    Responsive — Mobile
    -------------------------------------------------------------------------- */
 
-@media (max-width: 767px) {
-  .contact-page__wave {
-    margin: 32px auto 24px;
-  }
-
+@media (max-width: 900px) {
   .contact-page__layout {
     flex-direction: column;
-    gap: var(--spacing-lg);
-    padding-bottom: var(--spacing-lg);
+    gap: var(--spacing-xxl);
   }
 
   .contact-page__info {
     flex: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-page__layout {
+    padding-bottom: 0;
+  }
+
+  .contact-page__wave {
+    width: 69px;
+    height: 56px;
+    margin: var(--spacing-xl) auto var(--spacing-lg);
+  }
+
+  .contact-page__info {
     text-align: center;
   }
 
@@ -181,17 +202,26 @@ body.page--contact .cta-block--credibility .cta-block__inner {
   }
 
   .contact-page__desc {
-    margin-bottom: 32px;
+    margin-bottom: var(--spacing-lg);
   }
 
   .contact-page__benefits {
-    margin-bottom: 32px;
+    margin-bottom: var(--spacing-lg);
     text-align: left;
+  }
+
+  .contact-page__benefits .checklist-item {
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 1px solid #4A4F554D;
   }
 
   .contact-page__image {
     width: 100%;
-    height: auto;
+    max-width: none;
     aspect-ratio: 595 / 345;
+  }
+
+  .contact-page__image-wave {
+    display: block;
   }
 }
