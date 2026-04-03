@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .state-directory {
-  padding: var(--section-padding) 0;
+  padding: var(--section-padding) 0 124px;
   margin-bottom: 0;
   background: var(--color-text-primary);
   margin-left: calc(-50vw + 50%);
@@ -13,9 +13,13 @@
 }
 
 .state-directory__grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: var(--spacing-lg) var(--grid-gap);
+  columns: 5;
+  column-gap: var(--grid-gap);
+}
+
+.state-directory__grid > * {
+  break-inside: avoid;
+  margin-bottom: var(--spacing-lg);
 }
 
 .state-directory__state-name {
@@ -55,14 +59,18 @@
 
 @media (max-width: 1023px) {
   .state-directory__grid {
-    grid-template-columns: repeat(3, 1fr);
+    columns: 3;
   }
 }
 
 @media (max-width: 767px) {
   .state-directory__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px 20px;
+    columns: 2;
+    column-gap: 20px;
+  }
+
+  .state-directory__grid > * {
+    margin-bottom: 32px;
   }
 
   .state-directory {
