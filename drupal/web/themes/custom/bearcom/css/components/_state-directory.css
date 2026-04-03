@@ -4,7 +4,7 @@
 
 .state-directory {
   padding: var(--section-padding) 0;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 0;
   background: var(--color-text-primary);
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
