@@ -145,7 +145,7 @@
 @media (max-width: 480px) {
   .cta-block--credibility .cta-block__inner {
     flex-direction: column;
-    padding: 40px var(--container-padding) 36px;
+    padding: 40px var(--container-padding) 40px;
     gap: 0;
   }
 
