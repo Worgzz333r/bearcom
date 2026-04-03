@@ -93,6 +93,10 @@
 }
 
 @media (max-width: 767px) {
+  .cta-block--testimonial {
+    padding: var(--spacing-xl) 0;
+  }
+
   .cta-block--testimonial .cta-block__inner {
     padding: var(--spacing-lg) var(--container-padding);
     border-radius: var(--radius-card-lg);

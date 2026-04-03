@@ -83,7 +83,7 @@
   }
 
   .faq-section--two-col .faq-section__layout {
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: var(--spacing-lg);
   }
 
