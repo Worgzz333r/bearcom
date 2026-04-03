@@ -208,7 +208,7 @@ section.solutions-grid .card__subtitle {
 
 @media (max-width: 767px) {
   .solutions-grid {
-    padding: var(--spacing-lg) 0 var(--spacing-xl);
+    padding: var(--spacing-xl) 0;
     background-size: auto 50%;
     background-position: center center;
   }

@@ -44,6 +44,14 @@
     aspect-ratio: 660 / 400;
   }
 
+  .hero--service {
+    padding-bottom: var(--spacing-xl);
+  }
+
+  .hero--service .hero__subtitle {
+    margin-bottom: var(--spacing-md);
+  }
+
   .hero--service .hero__buttons {
     justify-content: flex-start;
   }
