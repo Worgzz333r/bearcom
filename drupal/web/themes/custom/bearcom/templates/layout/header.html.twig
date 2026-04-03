@@ -6,7 +6,7 @@
 #}
 
 {# Top Bar #}
-<div class="top-bar">
+<div class="top-bar {{ header_minimal ? 'top-bar--hidden' : '' }}">
   <div class="container">
     <div class="top-bar__inner">
       <div class="top-bar__search">
@@ -41,14 +41,24 @@
 <header class="site-header {{ header_minimal ? 'site-header--minimal' : '' }}">
   <div class="container">
     <div class="site-header__inner">
-      <a href="/" class="site-header__logo" aria-label="BearCom Home">
-        <img src="/{{ directory }}/images/bearcom-logo.png" alt="BearCom - Always On">
-      </a>
+      {% if header_minimal %}
+        <a href="/" class="site-header__logo site-header__logo--text" aria-label="BearCom Home">
+          {{ header_minimal_title|default('BearCom') }}
+        </a>
+      {% else %}
+        <a href="/" class="site-header__logo" aria-label="BearCom Home">
+          <img src="/{{ directory }}/images/bearcom-logo.png" alt="BearCom - Always On">
+        </a>
+      {% endif %}
 
       <nav class="site-header__nav" aria-label="Main navigation">
         {{ drupal_menu('main', 1, 0, true) }}
         <a href="/contact-us" class="btn btn--primary site-header__cta">Contact Us</a>
       </nav>
+
+      {% if header_minimal %}
+        <a href="/contact-us" class="btn btn--primary site-header__cta site-header__cta--minimal">Contact Us</a>
+      {% endif %}
 
       <div class="site-header__mobile-actions">
         <button class="site-header__mobile-search" aria-label="Search" data-search-toggle>

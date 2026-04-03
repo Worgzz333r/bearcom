@@ -210,10 +210,27 @@
   transform: rotate(0deg);
 }
 
-/* Header minimal (Landing Page, 403, 404) */
+/* Header minimal (Landing Page, Contact, 403, 404) */
+.top-bar--hidden {
+  display: none;
+}
+
 .site-header--minimal .site-header__nav,
 .site-header--minimal .site-header__mobile-actions {
   display: none;
+}
+
+.site-header__logo--text {
+  font-family: var(--font-family);
+  font-size: var(--h4-size);
+  line-height: var(--h4-lh);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark-blue);
+  text-decoration: none;
+}
+
+.site-header__cta--minimal {
+  margin-left: auto;
 }
 
 @media (max-width: 960px) {
