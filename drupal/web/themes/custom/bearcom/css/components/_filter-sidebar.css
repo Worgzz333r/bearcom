@@ -28,7 +28,7 @@
 .filter-sidebar .form-item {
   border: none;
   padding: 0;
-  margin: 0 0 32px;
+  margin: 0;
   padding-bottom: 32px;
   border-bottom: 1px solid rgba(251, 89, 31, 0.3);
 }
@@ -46,8 +46,13 @@
   font-weight: 700;
   color: var(--color-primary);
   margin: 0 0 var(--spacing-sm);
-  padding: 0 0 0 20px;
   border: none;
+}
+
+.filter-sidebar legend .fieldset-legend,
+.filter-sidebar legend span {
+  margin-left: 60px;
+  display: inline-block;
 }
 
 /* Individual checkbox items */
@@ -55,7 +60,7 @@
 .filter-sidebar .bef-checkboxes .form-item {
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-50);
   margin-bottom: var(--spacing-xs);
   padding-left: 20px;
   padding-bottom: 0;
