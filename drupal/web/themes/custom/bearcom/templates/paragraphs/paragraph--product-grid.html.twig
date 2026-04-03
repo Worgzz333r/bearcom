@@ -5,7 +5,7 @@
 <section class="product-grid">
   {% if paragraph.field_title.value %}
     <div class="section__header">
-      <h2 class="section__title">{{ paragraph.field_title.value }}</h2>
+      <h2 class="section__title">{{ paragraph.field_title.value|raw }}</h2>
     </div>
   {% endif %}
 

@@ -113,6 +113,10 @@
   margin-bottom: 56px;
 }
 
+.product-grid .section__title br {
+  display: none;
+}
+
 .product-grid .section__title {
   font-size: var(--h2-size);
   line-height: var(--h2-lh);
@@ -153,9 +157,14 @@
     text-transform: uppercase;
     text-align: center;
     margin-bottom: var(--spacing-lg);
-    max-width: 255px;
     margin-left: auto;
     margin-right: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .product-grid:not(:has(.category-page)) .section__title br {
+    display: block;
   }
 
   .industries-section {

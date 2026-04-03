@@ -99,10 +99,13 @@
 }
 
 .hero--solid .hero__subtitle {
+  font-family: var(--font-family);
   font-size: var(--p-size);
   line-height: var(--p-lh);
   font-weight: var(--font-weight-regular);
   color: var(--color-text-primary);
+  text-align: center;
+  letter-spacing: 0;
   max-width: 1000px;
   margin: 0 0 56px;
 }
