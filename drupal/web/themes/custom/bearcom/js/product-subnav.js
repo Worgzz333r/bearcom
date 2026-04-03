@@ -127,8 +127,9 @@
             link.classList.toggle('is-active', i === activeIndex);
             if (!wasActive && i === activeIndex) {
               var li = link.closest('.product-subnav__item');
-              if (li) {
-                li.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+              if (li && list.scrollWidth > list.clientWidth) {
+                var scrollLeft = li.offsetLeft - (list.clientWidth / 2) + (li.offsetWidth / 2);
+                list.scrollTo({ left: scrollLeft, behavior: 'smooth' });
               }
             }
           });
