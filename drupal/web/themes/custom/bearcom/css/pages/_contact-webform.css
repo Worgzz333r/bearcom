@@ -116,6 +116,11 @@
 .contact-page__form .form-textarea {
   height: 120px;
   resize: none;
+  scrollbar-width: none;
+}
+
+.contact-page__form .form-textarea::-webkit-scrollbar {
+  display: none;
 }
 
 /* Submit button */
@@ -166,6 +171,10 @@
   .contact-page__form {
     flex: none;
     width: 100%;
+  }
+
+  .contact-page__form .form-textarea {
+    height: 80px;
   }
 }
 

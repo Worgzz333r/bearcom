@@ -94,13 +94,14 @@
     flex-direction: row;
     text-align: left;
     padding: var(--spacing-lg) var(--container-padding);
-    gap: var(--spacing-sm);
+    gap: var(--spacing-30);
   }
 
   .cta-block--credibility .cta-block__image {
     flex: 0 0 48%;
     width: auto;
     height: auto;
+    min-height: 185px;
     aspect-ratio: 659 / 325;
   }
 

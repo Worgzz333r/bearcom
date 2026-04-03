@@ -173,7 +173,6 @@ body.page--contact .cta-block--credibility {
   .contact-page__layout {
     flex-direction: column;
     gap: var(--spacing-xxl);
-    padding-bottom: 0;
   }
 
   .contact-page__info {
@@ -182,6 +181,10 @@ body.page--contact .cta-block--credibility {
 }
 
 @media (max-width: 767px) {
+  .contact-page__layout {
+    padding-bottom: 0;
+  }
+
   .contact-page__wave {
     width: 69px;
     height: 56px;
