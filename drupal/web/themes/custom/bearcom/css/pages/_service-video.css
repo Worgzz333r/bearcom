@@ -70,7 +70,7 @@
 /* Video block — mobile */
 @media (max-width: 767px) {
   .video-block {
-    padding: var(--spacing-lg) 0;
+    padding: 60px 0;
   }
 
   .video-block .section__title {
