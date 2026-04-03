@@ -134,11 +134,11 @@
   }
 
   .card-grid--industry_blue .card__image {
-    width: calc(100% + 40px);
+    width: 100%;
     max-width: none;
     height: 160px;
-    border-radius: 0 0 16px 16px;
-    margin: 0 -20px;
+    border-radius: 16px;
+    margin: 0;
   }
 
   .card-grid--industry_blue .section__title {

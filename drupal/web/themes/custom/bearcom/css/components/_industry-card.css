@@ -185,6 +185,11 @@
     border-radius: var(--radius-card-lg) var(--radius-card-lg) 0 0;
   }
 
+  .industries-section .industry-card__image,
+  .industries-section .industry-card__image img {
+    border-radius: var(--radius-card-lg);
+  }
+
   .industry-card__title {
     font-size: var(--h4-size);
     line-height: var(--h4-lh);
