@@ -244,7 +244,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 1000;
+    z-index: calc(var(--z-mobile-menu) + 2);
     background: var(--color-white);
     border-right: none;
     padding: var(--spacing-lg) var(--container-padding);
