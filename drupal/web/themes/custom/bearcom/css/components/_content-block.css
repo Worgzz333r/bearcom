@@ -131,7 +131,7 @@ div + div > .content-block .content-block__wave::before {
 
 @media (max-width: 767px) {
   .content-block {
-    margin: var(--spacing-lg) 0;
+    margin: var(--spacing-xl) 0;
   }
 
   .content-block__inner,

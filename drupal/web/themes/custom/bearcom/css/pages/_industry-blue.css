@@ -94,6 +94,7 @@
   .card-grid--industry_blue {
     background-color: transparent;
     position: relative;
+    padding: var(--spacing-xl) 0;
     padding-left: 0;
     padding-right: 0;
   }
@@ -143,6 +144,10 @@
     border-radius: 16px;
     margin: 0 -20px;
     overflow: hidden;
+  }
+
+  .card-grid--industry_blue .section__header {
+    margin-bottom: var(--spacing-xl);
   }
 
   .card-grid--industry_blue .section__title {
