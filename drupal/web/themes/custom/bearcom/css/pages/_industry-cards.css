@@ -265,7 +265,6 @@
     border-radius: 16px;
     padding: 0 20px 20px;
     gap: 24px;
-    overflow: hidden;
   }
 
   /* Dark section cards — keep transparent */
@@ -281,9 +280,10 @@
     max-width: none;
     height: 216px;
     aspect-ratio: auto;
-    border-radius: 0;
+    border-radius: 16px;
     border: none;
     margin: 0 -20px;
+    overflow: hidden;
   }
   [class*="card-grid--industry"] .card__image img {
     height: 216px;

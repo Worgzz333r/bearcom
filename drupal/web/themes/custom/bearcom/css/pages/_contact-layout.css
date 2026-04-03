@@ -134,7 +134,6 @@ body.page--contact .cta-block--credibility {
   width: 86px;
   height: 70px;
   pointer-events: none;
-  display: none;
 }
 
 .contact-page__image-wave svg {
@@ -221,7 +220,4 @@ body.page--contact .cta-block--credibility {
     aspect-ratio: 595 / 345;
   }
 
-  .contact-page__image-wave {
-    display: block;
-  }
 }
