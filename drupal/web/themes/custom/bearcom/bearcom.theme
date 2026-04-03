@@ -137,6 +137,10 @@ function bearcom_preprocess_page(array &$variables) {
       $alias = _bearcom_get_node_alias($node);
       $variables['is_error_page'] = ($alias === '/403' || $alias === '/404');
       $variables['is_contact_page'] = ($alias === '/contact-us');
+      if ($variables['is_contact_page']) {
+        $variables['header_minimal'] = TRUE;
+        $variables['header_minimal_title'] = $node->getTitle();
+      }
     }
 
     // Landing page — minimal header + minimal footer.
