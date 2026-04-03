@@ -183,6 +183,12 @@
   }
 
   .hero--solid .hero__subtitle {
-    margin: 0 0 32px;
+    margin: 0 auto 32px;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero--solid .hero__subtitle {
+    max-width: 335px;
   }
 }
