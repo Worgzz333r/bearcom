@@ -108,13 +108,31 @@
       if (window.innerWidth > 767) return;
       once('sort-mobile-move', '.form-item-sort-by', context).forEach(function (sortEl) {
         var topBar = document.querySelector('.category-page__top');
-        if (topBar) {
-          topBar.appendChild(sortEl);
-          sortEl.style.position = 'static';
-          sortEl.style.margin = '0';
-          sortEl.style.padding = '0';
-          sortEl.style.border = 'none';
-        }
+        var select = sortEl.querySelector('select');
+        var form = select ? select.closest('form') : null;
+        if (!topBar || !select || !form) return;
+
+        // Clone select and keep it hidden in the form.
+        var hiddenSelect = select.cloneNode(true);
+        hiddenSelect.style.display = 'none';
+        form.appendChild(hiddenSelect);
+
+        // Move the visible sort element to top bar.
+        topBar.appendChild(sortEl);
+        sortEl.style.position = 'static';
+        sortEl.style.margin = '0';
+        sortEl.style.padding = '0';
+        sortEl.style.border = 'none';
+
+        // When dropdown item clicked, sync hidden select and trigger change.
+        sortEl.querySelectorAll('.sort-dropdown__item').forEach(function (item) {
+          item.addEventListener('click', function () {
+            hiddenSelect.value = this.dataset.value;
+            if (window.jQuery) {
+              window.jQuery(hiddenSelect).trigger('change');
+            }
+          });
+        });
       });
     }
   };
