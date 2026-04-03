@@ -102,10 +102,31 @@
   cursor: pointer;
 }
 
-/* Filter toggle + clear button — hidden on desktop */
-.filter-toggle,
-.filter-sidebar__clear {
+/* Filter toggle — hidden on desktop */
+.filter-toggle {
   display: none;
+}
+
+.filter-sidebar__clear {
+  display: inline-block;
+  margin-top: var(--spacing-lg);
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-button);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-sidebar__clear:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 /* Sort by — positioned top-right of layout grid */
@@ -223,19 +244,21 @@
   font-family: var(--font-family);
   font-size: 14px;
   font-weight: var(--font-weight-semibold);
-  color: var(--color-white);
-  background-color: var(--color-primary);
-  border: none;
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
   border-radius: var(--radius-button);
-  padding: var(--spacing-xs) var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
   cursor: pointer;
   text-transform: uppercase;
-  transition: background-color var(--transition-fast);
+  letter-spacing: 0.5px;
+  transition: all var(--transition-fast);
 }
 
 .filter-sidebar .form-actions .button--reset:hover,
 .filter-sidebar input[type="reset"]:hover {
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 /* --------------------------------------------------------------------------
