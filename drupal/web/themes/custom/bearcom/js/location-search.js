@@ -157,22 +157,55 @@
             searchLocations(input.value.trim());
           });
         }
+        function searchByDistance(lat, lon) {
+          if (!dataReady) return;
+          var sorted = allLocations.slice().map(function (loc) {
+            var dLat = (loc.lat - lat) * Math.PI / 180;
+            var dLon = (loc.lon - lon) * Math.PI / 180;
+            var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+              Math.cos(lat * Math.PI / 180) * Math.cos(loc.lat * Math.PI / 180) *
+              Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            loc._dist = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)) * 6371;
+            return loc;
+          }).sort(function (a, b) { return a._dist - b._dist; });
+          renderCards(sorted.slice(0, 1));
+          addMarkers(allLocations);
+        }
+
         if (geolocBtn) {
           geolocBtn.addEventListener('click', function (e) {
             e.preventDefault();
             if (navigator.geolocation) {
               navigator.geolocation.getCurrentPosition(function (pos) {
-                if (map) map.setView([pos.coords.latitude, pos.coords.longitude], 8);
-                searchLocations('');
+                var lat = pos.coords.latitude;
+                var lon = pos.coords.longitude;
+                if (map) map.setView([lat, lon], 8);
+                searchByDistance(lat, lon);
+              }, function () {
+                alert('Unable to get your location.');
               });
+            } else {
+              alert('Geolocation is not supported by your browser.');
             }
           });
         }
 
         initMap();
         loadAllLocations().then(function () {
-          searchLocations('');
           buildDirectory();
+          // Auto-detect location on page load
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (pos) {
+              var lat = pos.coords.latitude;
+              var lon = pos.coords.longitude;
+              if (map) map.setView([lat, lon], 8);
+              searchByDistance(lat, lon);
+            }, function () {
+              searchLocations('');
+            });
+          } else {
+            searchLocations('');
+          }
         });
       });
     }
