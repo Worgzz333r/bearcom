@@ -145,7 +145,8 @@
   overflow-wrap: anywhere;
 }
 
-.site-footer__column-list {
+.site-footer__column-list,
+.site-footer__column .menu {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -154,14 +155,16 @@
   gap: var(--spacing-xs);
 }
 
-.site-footer__column-list a {
+.site-footer__column-list a,
+.site-footer__column .menu a {
   font-size: var(--p-size);
   line-height: var(--p-lh);
   opacity: 0.85;
   white-space: nowrap;
 }
 
-.site-footer__column-list a:hover {
+.site-footer__column-list a:hover,
+.site-footer__column .menu a:hover {
   opacity: 1;
 }
 
@@ -460,12 +463,14 @@
     overflow-wrap: normal;
   }
 
-  .site-footer__column-list {
+  .site-footer__column-list,
+  .site-footer__column .menu {
     align-items: center;
     gap: 14px;
   }
 
-  .site-footer__column-list a {
+  .site-footer__column-list a,
+  .site-footer__column .menu a {
     white-space: normal;
     font-size: var(--p-size);
     line-height: var(--p-lh);

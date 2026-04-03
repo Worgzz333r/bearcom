@@ -71,45 +71,19 @@
         </div>
 
         <nav class="site-footer__nav" aria-label="Footer navigation">
-          <div class="site-footer__column">
-            <h4 class="site-footer__column-title">Products</h4>
-            <ul class="site-footer__column-list">
-              <li><a href="/solutions">Solutions</a></li>
-              <li><a href="/services">Services</a></li>
-              <li><a href="/rentals">Rentals</a></li>
-              <li><a href="/products">Products</a></li>
-              <li><a href="/the-big-game">The Big Game</a></li>
-            </ul>
-          </div>
-
-          <div class="site-footer__column">
-            <h4 class="site-footer__column-title">About Us</h4>
-            <ul class="site-footer__column-list">
-              <li><a href="/about">About Bearcom</a></li>
-              <li><a href="/acquisitions">Acquisitions</a></li>
-              <li><a href="/contact-us">Contact Us</a></li>
-              <li><a href="/locations">Locations</a></li>
-              <li><a href="/careers">Careers</a></li>
-            </ul>
-          </div>
-
-          <div class="site-footer__column">
-            <h4 class="site-footer__column-title">Resources</h4>
-            <ul class="site-footer__column-list">
-              <li><a href="/faq">FAQ</a></li>
-              <li><a href="/employee-access">Employee Access</a></li>
-              <li><a href="/amazon-support">Amazon Support</a></li>
-            </ul>
-          </div>
-
-          <div class="site-footer__column">
-            <h4 class="site-footer__column-title">News</h4>
-            <ul class="site-footer__column-list">
-              <li><a href="/press-release">Press Release</a></li>
-              <li><a href="/industry-trends">Industry Trends</a></li>
-              <li><a href="/blog">Blog</a></li>
-            </ul>
-          </div>
+          {% set footer_menus = [
+            { id: 'footer-products', title: 'Products' },
+            { id: 'footer-about', title: 'About Us' },
+            { id: 'footer-resources', title: 'Resources' },
+            { id: 'footer-news', title: 'News' },
+          ] %}
+          {% for menu in footer_menus %}
+            {% set tree = drupal_menu(menu.id) %}
+            <div class="site-footer__column">
+              <h4 class="site-footer__column-title">{{ menu.title }}</h4>
+              {{ tree }}
+            </div>
+          {% endfor %}
         </nav>
       </div>
 
