@@ -123,6 +123,7 @@ section.product-grid {
 
   .category-page__top .form-item-sort-by {
     position: static;
+    display: block;
   }
 
 
