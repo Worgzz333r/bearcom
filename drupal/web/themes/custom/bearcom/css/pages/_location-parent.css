@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .location-parent {
-  background: var(--color-white);
+  background: var(--color-background);
 }
 
 @media (max-width: 767px) {
