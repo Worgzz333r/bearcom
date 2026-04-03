@@ -156,6 +156,7 @@
     font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
     text-align: center;
+    max-width: 250px;
     margin-bottom: var(--spacing-lg);
     margin-left: auto;
     margin-right: auto;
