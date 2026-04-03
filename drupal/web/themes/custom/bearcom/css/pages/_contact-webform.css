@@ -123,7 +123,7 @@
   flex: 0 0 100%;
   display: flex;
   justify-content: center;
-  margin: 10px 0 var(--spacing-xl);
+  margin: 10px 0 0;
 }
 
 .contact-page__form .webform-button--submit,
@@ -188,6 +188,6 @@
   }
 
   .contact-page__form .form-actions {
-    margin-top: var(--spacing-md);
+    margin: var(--spacing-md) 0 var(--spacing-xl);
   }
 }

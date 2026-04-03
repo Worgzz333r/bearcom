@@ -173,7 +173,7 @@ body.page--contact .cta-block--credibility {
   .contact-page__layout {
     flex-direction: column;
     gap: var(--spacing-xxl);
-    padding-bottom: var(--spacing-lg);
+    padding-bottom: 0;
   }
 
   .contact-page__info {

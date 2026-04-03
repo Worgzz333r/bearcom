@@ -93,7 +93,7 @@
   .cta-block--credibility .cta-block__inner {
     flex-direction: row;
     text-align: left;
-    padding: var(--spacing-md) var(--container-padding);
+    padding: var(--spacing-lg) var(--container-padding);
     gap: var(--spacing-sm);
   }
 
@@ -141,8 +141,8 @@
   }
 }
 
-/* Credibility <=480px — switch to mobile column layout (Figma 375/390) */
-@media (max-width: 480px) {
+/* Credibility <=600px — switch to mobile column layout */
+@media (max-width: 600px) {
   .cta-block--credibility .cta-block__inner {
     flex-direction: column;
     padding: 40px var(--container-padding) 40px;
