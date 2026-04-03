@@ -155,12 +155,6 @@
     color: var(--color-text-dark);
   }
 
-  /* Grey bg behind footer rounded corners on industry parent only */
-  .dialog-off-canvas-main-canvas:has(.industries-section) > .site-footer {
-    margin-top: 0;
-    box-shadow: 0 0 0 32px var(--color-background-alt);
-    clip-path: inset(-32px 0 0 0);
-  }
 }
 
 /* Industry parent: footer spacing + grey bg bridge */
@@ -169,7 +163,7 @@ body.page--industry .site-footer {
 }
 
 @media (max-width: 767px) {
-  body.page--industry .site-footer {
-    margin-top: 0;
+  body.page--industry {
+    background-color: var(--color-background-alt);
   }
 }
