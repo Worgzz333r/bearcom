@@ -122,12 +122,6 @@
     padding: 0;
   }
 
-  /* Industry parent: footer sits on grey bg */
-  .dialog-off-canvas-main-canvas:has(.industries-section) > .site-footer {
-    margin-top: 0;
-  }
-
-
   /* CTA credibility on industry parent — grey bg extends down */
   .main-content:has(.industries-section) .cta-block--credibility {
     background-color: var(--color-background-alt);
@@ -135,7 +129,7 @@
 
   .main-content:has(.industries-section) .cta-block--credibility .cta-block__inner {
     background-color: var(--color-background-alt);
-    padding-bottom: 36px;
+    padding-bottom: 40px;
   }
 
   .cta-block--credibility .cta-block__image {
