@@ -146,7 +146,7 @@
 }
 
 .site-footer__column-list,
-.site-footer__column .menu {
+.site-footer__column ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -155,8 +155,13 @@
   gap: var(--spacing-xs);
 }
 
+.site-footer__column li {
+  margin: 0;
+  padding: 0;
+}
+
 .site-footer__column-list a,
-.site-footer__column .menu a {
+.site-footer__column ul a {
   font-size: var(--p-size);
   line-height: var(--p-lh);
   opacity: 0.85;
@@ -164,7 +169,7 @@
 }
 
 .site-footer__column-list a:hover,
-.site-footer__column .menu a:hover {
+.site-footer__column ul a:hover {
   opacity: 1;
 }
 
@@ -464,13 +469,13 @@
   }
 
   .site-footer__column-list,
-  .site-footer__column .menu {
+  .site-footer__column ul {
     align-items: center;
     gap: 14px;
   }
 
   .site-footer__column-list a,
-  .site-footer__column .menu a {
+  .site-footer__column ul a {
     white-space: normal;
     font-size: var(--p-size);
     line-height: var(--p-lh);
