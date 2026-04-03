@@ -613,6 +613,8 @@
 
   .spec-table__toggle {
     padding: var(--container-padding);
+    font-size: 24px;
+    line-height: 26px;
   }
 
   .spec-table__additional-rows {

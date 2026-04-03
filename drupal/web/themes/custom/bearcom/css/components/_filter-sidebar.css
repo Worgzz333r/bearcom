@@ -289,13 +289,13 @@
   .filter-sidebar .form-item {
     border-bottom: 1px solid var(--color-medium-gray);
     padding-bottom: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 0;
   }
 
   .filter-sidebar fieldset:last-of-type {
     border-bottom: none;
     padding-bottom: 0;
-    margin-bottom: 40px;
+    margin-bottom: 0;
   }
 
   .filter-sidebar .form-actions {

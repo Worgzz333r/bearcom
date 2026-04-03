@@ -88,11 +88,8 @@
                 if (href === '#overview') {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 } else {
-                  var header = document.querySelector('.site-header');
-                  var headerH = header ? header.offsetHeight : 0;
-                  var navH = nav.offsetHeight;
-                  var stickyOffset = headerH + navH;
-                  var y = target.getBoundingClientRect().top + window.pageYOffset - stickyOffset;
+                  var navBottom = nav.getBoundingClientRect().bottom;
+                  var y = target.getBoundingClientRect().top + window.pageYOffset - navBottom;
                   window.scrollTo({ top: y, behavior: 'smooth' });
                 }
               }
