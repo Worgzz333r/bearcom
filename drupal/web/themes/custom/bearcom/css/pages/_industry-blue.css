@@ -137,7 +137,7 @@
   }
 
   .card-grid--industry_blue .card__image {
-    width: 100%;
+    width: calc(100% + 40px);
     max-width: none;
     height: 160px;
     border-radius: 16px;
