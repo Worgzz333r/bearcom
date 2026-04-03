@@ -12,6 +12,10 @@ body.page--contact .cta-block--credibility .cta-block__inner {
   background-color: var(--color-background);
 }
 
+body.page--contact .cta-block--credibility {
+  margin-bottom: 67px;
+}
+
 /* Soundwave decoration */
 .contact-page__wave {
   width: 111px;
@@ -168,7 +172,7 @@ body.page--contact .cta-block--credibility .cta-block__inner {
 @media (max-width: 900px) {
   .contact-page__layout {
     flex-direction: column;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-xxl);
     padding-bottom: var(--spacing-lg);
   }
 
