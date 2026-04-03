@@ -124,12 +124,16 @@
   .card-grid.card-grid--industry_blue .card {
     background-color: var(--color-background);
     border-radius: 16px;
-    max-width: 335px;
+    max-width: 100%;
     height: auto;
     padding: 0 20px 20px;
     gap: 24px;
-    margin: 0 auto;
+    margin: 0;
     overflow: hidden;
+  }
+
+  .card-grid.card-grid--industry_blue .card__body {
+    max-width: 100%;
   }
 
   .card-grid--industry_blue .card__image {
