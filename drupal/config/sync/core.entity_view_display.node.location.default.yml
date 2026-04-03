@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.location.field_about
+    - field.field.node.location.field_about_style
     - field.field.node.location.field_address
     - field.field.node.location.field_cta
     - field.field.node.location.field_description
     - field.field.node.location.field_faq
+    - field.field.node.location.field_hero_link
     - field.field.node.location.field_hero_style
     - field.field.node.location.field_latitude
     - field.field.node.location.field_longitude
@@ -104,7 +106,7 @@ content:
     weight: 100
     region: content
 hidden:
-  field_header_shadow: true
+  field_about_style: true
   field_hero_link: true
   field_hero_style: true
   field_latitude: true

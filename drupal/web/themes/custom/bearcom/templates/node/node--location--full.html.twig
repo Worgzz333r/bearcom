@@ -84,8 +84,9 @@
   </section>
 
   {# About #}
+  {% set about_style = node.field_about_style.value|default('blue') %}
   {% if node.field_about.value %}
-    <section class="location-detail__about">
+    <section class="location-detail__about location-detail__about--{{ about_style }}">
       <div class="container">
         <div class="location-detail__about-layout">
           <div class="location-detail__about-text">

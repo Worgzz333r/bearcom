@@ -1,0 +1,23 @@
+uuid: e0e29005-227e-448f-ba64-f03cbae4cafc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_about_style
+    - node.type.location
+  module:
+    - options
+id: node.location.field_about_style
+field_name: field_about_style
+entity_type: node
+bundle: location
+label: 'About section style'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: blue
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -64,6 +64,11 @@
   fill: var(--color-white);
 }
 
+/* About — dark style */
+.location-detail__about--dark {
+  background-color: var(--color-dark-blue);
+}
+
 /* FAQ + Map */
 .location-detail__faq-section {
   padding: var(--section-padding) 0;
