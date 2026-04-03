@@ -19,12 +19,23 @@
           return 3;
         }
 
+        function updateArrows() {
+          var maxOffset = Math.max(0, items.length - getVisible());
+          if (prev) {
+            prev.classList.toggle('related-radios__arrow--disabled', offset <= 0);
+          }
+          if (next) {
+            next.classList.toggle('related-radios__arrow--disabled', offset >= maxOffset);
+          }
+        }
+
         function update() {
           var item = items[0];
           if (!item) return;
           var gap = parseFloat(getComputedStyle(slides).gap) || 0;
           var itemWidth = item.offsetWidth + gap;
           slides.style.transform = 'translateX(-' + (offset * itemWidth) + 'px)';
+          updateArrows();
         }
 
         if (prev) {
@@ -39,6 +50,8 @@
             if (offset < maxOffset) { offset++; update(); }
           });
         }
+
+        updateArrows();
       });
     }
   };

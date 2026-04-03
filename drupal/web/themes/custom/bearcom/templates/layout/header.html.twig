@@ -6,7 +6,7 @@
 #}
 
 {# Top Bar #}
-<div class="top-bar">
+<div class="top-bar {{ header_minimal ? 'top-bar--hidden' : '' }}">
   <div class="container">
     <div class="top-bar__inner">
       <div class="top-bar__search">
@@ -41,21 +41,36 @@
 <header class="site-header {{ header_minimal ? 'site-header--minimal' : '' }}">
   <div class="container">
     <div class="site-header__inner">
-      <a href="/" class="site-header__logo" aria-label="BearCom Home">
-        <img src="/{{ directory }}/images/bearcom-logo.png" alt="BearCom - Always On">
-      </a>
+      {% if header_minimal %}
+        <a href="/" class="site-header__logo site-header__logo--text" aria-label="BearCom Home">
+          {{ header_minimal_title|default('BearCom') }}
+        </a>
+      {% else %}
+        <a href="/" class="site-header__logo" aria-label="BearCom Home">
+          <img src="/{{ directory }}/images/bearcom-logo.png" alt="BearCom - Always On">
+        </a>
+      {% endif %}
 
       <nav class="site-header__nav" aria-label="Main navigation">
         {{ drupal_menu('main', 1, 0, true) }}
         <a href="/contact-us" class="btn btn--primary site-header__cta">Contact Us</a>
       </nav>
 
+      {% if header_minimal %}
+        <a href="/contact-us" class="btn btn--primary site-header__cta site-header__cta--minimal">Contact Us</a>
+      {% endif %}
+
       <div class="site-header__mobile-actions">
-        <button class="site-header__mobile-search" aria-label="Search" data-search-toggle>
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 19L14.9389 14.9389M17.1111 9.55556C17.1111 13.7284 13.7284 17.1111 9.55556 17.1111C5.38274 17.1111 2 13.7284 2 9.55556C2 5.38274 5.38274 2 9.55556 2C13.7284 2 17.1111 5.38274 17.1111 9.55556Z" stroke="#22262C" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
+        <div class="site-header__mobile-search-wrap" data-mobile-search>
+          <button class="site-header__mobile-search" aria-label="Search" data-mobile-search-toggle>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 19L14.9389 14.9389M17.1111 9.55556C17.1111 13.7284 13.7284 17.1111 9.55556 17.1111C5.38274 17.1111 2 13.7284 2 9.55556C2 5.38274 5.38274 2 9.55556 2C13.7284 2 17.1111 5.38274 17.1111 9.55556Z" stroke="#22262C" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <form class="site-header__mobile-search-field" action="/search" method="get">
+            <input type="text" name="keys" placeholder="Search..." aria-label="Search">
+          </form>
+        </div>
         <button class="hamburger" aria-label="Open menu" data-mobile-menu-toggle>
           <svg class="hamburger__icon-menu" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 10H19M1 16H19M1 4H19" stroke="#22262C" stroke-linecap="round" stroke-linejoin="round"/>
