@@ -139,7 +139,7 @@ processor_settings:
     excerpt_length: 256
     exclude_fields: {  }
     highlight: always
-    highlight_partial: false
+    highlight_partial: true
   html_filter:
     weights:
       preprocess_index: -3
@@ -219,7 +219,7 @@ processor_settings:
     spaces: '[^\p{L}\p{N}]'
     ignored: ._-
     overlap_cjk: 1
-    minimum_word_size: '3'
+    minimum_word_size: '2'
 tracker_settings:
   default:
     indexing_order: fifo
