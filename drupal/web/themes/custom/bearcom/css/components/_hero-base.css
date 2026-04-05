@@ -124,6 +124,7 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
+    gap: var(--spacing-xl);
   }
 
   .hero__content {

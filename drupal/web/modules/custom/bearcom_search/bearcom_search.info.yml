@@ -1,0 +1,7 @@
+name: BearCom Search
+type: module
+description: Fuzzy search support for Search API Database backend
+core_version_requirement: ^10
+package: BearCom
+dependencies:
+  - search_api:search_api
