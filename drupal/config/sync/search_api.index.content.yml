@@ -166,12 +166,6 @@ processor_settings:
       - type
   language_with_fallback: {  }
   rendered_item: {  }
-  stemmer:
-    weights:
-      preprocess_index: 0
-      preprocess_query: 0
-    all_fields: false
-    exceptions: {  }
   stopwords:
     weights:
       preprocess_index: -5
