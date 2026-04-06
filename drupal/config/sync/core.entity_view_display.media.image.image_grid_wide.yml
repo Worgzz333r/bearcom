@@ -1,0 +1,33 @@
+uuid: b2d4f6a8-0c3e-5a7b-9d1f-e6c8a0b4d2f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.image_grid_wide
+    - field.field.media.image.field_media_image
+    - image.style.wide
+    - media.type.image
+  module:
+    - image
+id: media.image.image_grid_wide
+targetEntityType: media
+bundle: image
+mode: image_grid_wide
+content:
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

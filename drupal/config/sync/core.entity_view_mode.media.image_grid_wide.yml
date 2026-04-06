@@ -1,0 +1,11 @@
+uuid: a1c3e5f7-9b2d-4f6a-8e0c-d4b6a8f2e1c3
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.image_grid_wide
+label: 'Image Grid Wide'
+description: 'Wide image style (1090px) for image grid blocks'
+targetEntityType: media
+cache: true
