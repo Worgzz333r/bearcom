@@ -40,6 +40,9 @@
             if (isMobile) {
               swiper.params.slidesPerView = 1;
               swiper.params.spaceBetween = 16;
+            } else {
+              swiper.params.slidesPerView = 3;
+              swiper.params.spaceBetween = 40;
             }
             swiper.params.slidesPerGroup = 1;
             swiper.update();
@@ -51,7 +54,7 @@
                 swiper.params.spaceBetween = 16;
               } else {
                 swiper.params.slidesPerView = 3;
-                swiper.params.spaceBetween = 24;
+                swiper.params.spaceBetween = 40;
               }
               swiper.params.slidesPerGroup = 1;
               swiper.params.scrollbar.dragSize = 377;

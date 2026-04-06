@@ -61,6 +61,14 @@
   display: none;
 }
 
+/* Mobile — reduce spacing below swiper */
+@media (max-width: 767px) {
+  .card-grid--industry .swiper-container,
+  .card-grid--industry_dark .swiper-container {
+    padding-bottom: 24px;
+  }
+}
+
 /* Hide pagination */
 .card-grid--industry .swiper-pagination,
 .card-grid--industry_dark .swiper-pagination {
