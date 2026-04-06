@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.image_grid_wide
     - field.field.paragraph.image_grid_item.field_icon
     - field.field.paragraph.image_grid_item.field_link
     - field.field.paragraph.image_grid_item.field_title
@@ -18,7 +19,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: image_grid_wide
       link: false
     third_party_settings: {  }
     weight: 0
