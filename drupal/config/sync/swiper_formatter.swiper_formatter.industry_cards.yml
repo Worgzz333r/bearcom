@@ -22,7 +22,7 @@ swiper_options:
   centeredSlides: false
   speed: 300
   slidesPerView: 3.0
-  spaceBetween: 24
+  spaceBetween: 40
   slidesPerGroup: 3
   loopedSlides: 1
   noSwipingSelector: '.no-swipe, button, input'
@@ -85,7 +85,7 @@ swiper_options:
       breakpoint: '1024'
       weight: 2
       slidesPerView: 3
-      spaceBetween: 24
+      spaceBetween: 40
       slidesPerGroup: 3
   lazy:
     enabled: false

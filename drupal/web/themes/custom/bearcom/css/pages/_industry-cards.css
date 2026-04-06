@@ -48,6 +48,7 @@
   display: block;
 }
 
+
 /* Cards — FULL OVERRIDE of _card.css
    Simple vertical: image top → title → description, all centered */
 
@@ -79,6 +80,10 @@
   height: auto;
   border: none;
   overflow: hidden;
+}
+/* Slider cards — match grid spacing between image and body */
+[class*="card-grid--industry"].card-grid--slider .card__body {
+  margin-top: var(--spacing-lg);
 }
 /* Kill fade gradients */
 [class*="card-grid--industry"] .card-grid__items > div > div:nth-child(4n+1) .card__image::after,
