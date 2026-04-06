@@ -220,7 +220,7 @@
 }
 
 /* Product comparison — tablet */
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
   .product-comparison__grid {
     gap: var(--spacing-md);
   }
