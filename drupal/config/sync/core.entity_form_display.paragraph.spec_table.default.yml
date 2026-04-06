@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.spec_table.field_description
+    - field.field.paragraph.spec_table.field_hide_desktop
+    - field.field.paragraph.spec_table.field_hide_mobile
     - field.field.paragraph.spec_table.field_items
     - field.field.paragraph.spec_table.field_style
     - field.field.paragraph.spec_table.field_title
@@ -42,6 +44,20 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  field_hide_mobile:
+    type: boolean_checkbox
+    weight: -99
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_hide_desktop:
+    type: boolean_checkbox
+    weight: -98
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_style:
     type: options_select
