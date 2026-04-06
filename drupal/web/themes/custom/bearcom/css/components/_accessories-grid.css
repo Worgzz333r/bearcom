@@ -110,6 +110,9 @@
   }
 
   .accessories-grid__title {
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: 600;
     text-transform: uppercase;
     margin-bottom: var(--spacing-sm);
   }

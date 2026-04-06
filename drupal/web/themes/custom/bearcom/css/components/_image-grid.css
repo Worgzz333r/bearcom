@@ -105,6 +105,9 @@ a.image-grid__item:hover {
   }
 
   .image-grid .section__title {
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: 600;
     text-transform: uppercase;
   }
 
