@@ -36,7 +36,7 @@
 
 .hero__buttons {
   display: flex;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-lg);
   align-items: center;
 }
 

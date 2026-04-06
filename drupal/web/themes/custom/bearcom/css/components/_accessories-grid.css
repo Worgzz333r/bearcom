@@ -5,9 +5,9 @@
 
 .accessories-grid__title {
   text-align: center;
-  font-size: var(--h2-size);
-  line-height: var(--h2-lh);
-  font-weight: 700;
+  font-size: var(--h1-size);
+  line-height: var(--h1-lh);
+  font-weight: 600;
   color: var(--color-dark-blue);
   margin-bottom: var(--spacing-sm);
 }

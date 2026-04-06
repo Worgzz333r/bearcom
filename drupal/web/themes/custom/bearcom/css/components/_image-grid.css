@@ -3,6 +3,12 @@
   padding: var(--section-padding) 0;
 }
 
+.image-grid .section__title {
+  font-size: var(--h1-size);
+  line-height: var(--h1-lh);
+  font-weight: 600;
+}
+
 .image-grid__items > div {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
