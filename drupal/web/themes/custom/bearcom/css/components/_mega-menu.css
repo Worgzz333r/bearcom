@@ -37,8 +37,7 @@
   display: block;
 }
 
-.mega-menu__link:hover,
-.mega-menu__link--active {
+.mega-menu__link:hover {
   color: var(--color-primary);
 }
 
