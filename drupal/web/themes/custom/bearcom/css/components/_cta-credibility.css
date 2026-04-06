@@ -51,7 +51,7 @@
 
 .cta-block--credibility .cta-block__title {
   color: var(--color-dark-blue);
-  text-align: center;
+  padding-left: var(--spacing-lg);
 }
 
 .cta-block--credibility .cta-block__description {
