@@ -77,3 +77,10 @@ body.mobile-menu-open {
     display: none;
   }
 }
+
+/* Utility: hide on desktop */
+@media (min-width: 768px) {
+  .hide-on-desktop {
+    display: none;
+  }
+}

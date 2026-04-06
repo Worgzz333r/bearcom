@@ -1,6 +1,8 @@
 {# Spec Table — title + description + rows, 6+ rows collapse into accordion #}
 {% set style = paragraph.field_style.value|default('default') %}
-<div class="spec-table{{ style != 'default' ? ' spec-table--' ~ style : '' }}">
+{% set hide_mobile = paragraph.field_hide_mobile.value %}
+{% set hide_desktop = paragraph.field_hide_desktop.value %}
+<div class="spec-table{{ style != 'default' ? ' spec-table--' ~ style : '' }}{{ hide_mobile ? ' hide-on-mobile' : '' }}{{ hide_desktop ? ' hide-on-desktop' : '' }}">
   {% set title = paragraph.field_title.value|default('') %}
   {% if title %}
     <h2 class="spec-table__title">{{ title|replace({'H2 - ': '', 'Product Name': product_name|default('Product Name')}) }}</h2>
@@ -20,4 +22,4 @@
     {{ content.field_items }}
   </div>
 </div>
-{{ content|without('field_title', 'field_description', 'field_items', 'field_style') }}
+{{ content|without('field_title', 'field_description', 'field_items', 'field_style', 'field_hide_mobile', 'field_hide_desktop') }}

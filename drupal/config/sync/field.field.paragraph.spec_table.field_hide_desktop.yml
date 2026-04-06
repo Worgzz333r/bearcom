@@ -1,0 +1,20 @@
+uuid: e6f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9a0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hide_desktop
+    - paragraphs.paragraphs_type.spec_table
+id: paragraph.spec_table.field_hide_desktop
+field_name: field_hide_desktop
+entity_type: paragraph
+bundle: spec_table
+label: 'Hide on desktop'
+description: 'Hide this spec table on desktop devices'
+required: false
+translatable: true
+default_value:
+  - value: 0
+default_value_callback: ''
+settings: {  }
+field_type: boolean

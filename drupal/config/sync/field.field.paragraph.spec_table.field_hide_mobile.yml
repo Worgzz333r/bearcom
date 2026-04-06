@@ -1,0 +1,20 @@
+uuid: d5e6f7a8-b9c0-4d1e-2f3a-4b5c6d7e8f9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hide_mobile
+    - paragraphs.paragraphs_type.spec_table
+id: paragraph.spec_table.field_hide_mobile
+field_name: field_hide_mobile
+entity_type: paragraph
+bundle: spec_table
+label: 'Hide on mobile'
+description: 'Hide this spec table on mobile devices'
+required: false
+translatable: true
+default_value:
+  - value: 0
+default_value_callback: ''
+settings: {  }
+field_type: boolean

@@ -1,0 +1,18 @@
+uuid: c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_hide_desktop
+field_name: field_hide_desktop
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
