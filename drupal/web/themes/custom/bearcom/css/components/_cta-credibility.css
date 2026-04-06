@@ -193,5 +193,6 @@
     font-size: 24px;
     line-height: 28px;
     max-width: 255px;
+    padding-left: 0;
   }
 }
