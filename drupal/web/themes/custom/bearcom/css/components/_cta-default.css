@@ -211,4 +211,8 @@
     width: 100%;
     display: none;
   }
+
+  .cta-block--default .cta-block__inner {
+    background-color: var(--color-primary-light);
+  }
 }
