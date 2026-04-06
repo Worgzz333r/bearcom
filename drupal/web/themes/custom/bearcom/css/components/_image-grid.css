@@ -76,6 +76,7 @@
 
 .image-grid--rentals .image-grid__item {
   border-radius: 0;
+  background: transparent;
 }
 
 .image-grid--rentals .image-grid__image img {
