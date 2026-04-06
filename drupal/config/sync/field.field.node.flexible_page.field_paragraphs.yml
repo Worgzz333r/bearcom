@@ -18,6 +18,7 @@ dependencies:
     - paragraphs.paragraphs_type.product_grid
     - paragraphs.paragraphs_type.solutions_grid
     - paragraphs.paragraphs_type.stats_counter
+    - paragraphs.paragraphs_type.team_grid
     - paragraphs.paragraphs_type.video_block
   module:
     - entity_reference_revisions
@@ -51,5 +52,6 @@ settings:
       image_grid: image_grid
       location_finder: location_finder
       solutions_grid: solutions_grid
+      team_grid: team_grid
     negate: 0
 field_type: entity_reference_revisions

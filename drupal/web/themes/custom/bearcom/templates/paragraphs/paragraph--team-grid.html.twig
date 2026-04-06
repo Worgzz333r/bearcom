@@ -1,0 +1,33 @@
+{# Team Grid — mobile-only block: caption + title + CTA + images (2-1-2 pattern) #}
+{{ attach_library('bearcom/team-grid') }}
+{% set link_uri = paragraph.field_link.0.url ? paragraph.field_link.0.url.toString() : '' %}
+{% set link_title = paragraph.field_link.0.title ?? '' %}
+
+<section class="team-grid">
+  <div class="container">
+    {% if paragraph.field_subtitle.value %}
+      <p class="team-grid__caption">{{ paragraph.field_subtitle.value }}</p>
+    {% endif %}
+
+    {% if paragraph.field_title.value %}
+      <h2 class="team-grid__title">{{ paragraph.field_title.value }}</h2>
+    {% endif %}
+
+    {% if link_title %}
+      <div class="team-grid__cta">
+        <a href="{{ link_uri ?: '#' }}" class="btn btn--primary">{{ link_title }}</a>
+      </div>
+    {% endif %}
+
+    {% if paragraph.field_images|length > 0 %}
+      <div class="team-grid__images">
+        {% for item in paragraph.field_images %}
+          <div class="team-grid__image">
+            {{ item.entity|view }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+{{ content|without('field_subtitle', 'field_title', 'field_link', 'field_images') }}

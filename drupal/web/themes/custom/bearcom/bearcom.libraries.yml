@@ -23,6 +23,7 @@ global:
       css/components/_checklist.css: {}
       css/components/_faq-section.css: {}
       css/components/_image-grid.css: {}
+      css/components/_team-grid.css: {}
       css/components/_pagination.css: {}
       css/components/_breadcrumbs.css: {}
       css/components/_form.css: {}
@@ -166,6 +167,10 @@ newsletter:
   css:
     component:
       css/components/_newsletter.css: {}
+
+team-grid:
+  js:
+    js/team-grid.js: {}
 
 accessories-grid:
   css:
