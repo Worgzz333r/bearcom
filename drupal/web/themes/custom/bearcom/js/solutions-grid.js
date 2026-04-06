@@ -3,14 +3,14 @@
 
   function getPerView() {
     var w = window.innerWidth;
-    if (w < 650) return 1;
+    if (w < 768) return 1;
     if (w < 1200) return 2;
     return 3;
   }
 
   function getSpaceBetween() {
     var w = window.innerWidth;
-    if (w < 650) return 16;
+    if (w < 768) return 16;
     if (w < 1200) return 24;
     return 40;
   }
