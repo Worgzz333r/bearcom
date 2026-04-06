@@ -1,0 +1,56 @@
+uuid: c8f2b6d0-9e3a-7c1f-4b5d-a0e2f7c9d1b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.team_grid.field_images
+    - field.field.paragraph.team_grid.field_link
+    - field.field.paragraph.team_grid.field_subtitle
+    - field.field.paragraph.team_grid.field_title
+    - paragraphs.paragraphs_type.team_grid
+  module:
+    - link
+    - media_library
+id: paragraph.team_grid.default
+targetEntityType: paragraph
+bundle: team_grid
+mode: default
+content:
+  field_subtitle:
+    type: string_textfield
+    label: above
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_title:
+    type: string_textfield
+    label: above
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_link:
+    type: link_default
+    label: above
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_images:
+    type: media_library_widget
+    label: above
+    settings:
+      media_types:
+        - image
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

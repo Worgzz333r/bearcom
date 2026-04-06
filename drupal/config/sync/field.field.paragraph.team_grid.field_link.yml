@@ -1,0 +1,23 @@
+uuid: a6d0f4b8-7c1e-5a9d-2f3b-e8c0d5a7b9f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.team_grid
+  module:
+    - link
+id: paragraph.team_grid.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: team_grid
+label: 'CTA Button'
+description: 'Call to action button'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

@@ -1,0 +1,27 @@
+uuid: b7e1a5c9-8d2f-6b0e-3a4c-f9d1e6b8c0a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_images
+    - media.type.image
+    - paragraphs.paragraphs_type.team_grid
+id: paragraph.team_grid.field_images
+field_name: field_images
+entity_type: paragraph
+bundle: team_grid
+label: Images
+description: 'Grid images (5 recommended)'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

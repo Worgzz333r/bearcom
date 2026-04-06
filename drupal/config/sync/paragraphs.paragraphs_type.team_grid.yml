@@ -1,0 +1,10 @@
+uuid: d3a7c1e5-4f8b-2d6a-9c0e-b5f7a2d8e4c1
+langcode: en
+status: true
+dependencies: {  }
+id: team_grid
+label: 'Team Grid'
+icon_uuid: null
+icon_default: null
+description: 'Mobile-only block with caption, title, CTA button, and a grid of 5 images (3+2 layout).'
+behavior_plugins: {  }
