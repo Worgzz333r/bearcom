@@ -12,6 +12,7 @@
 
 .content-block__image {
   flex: 0 0 51%;
+  max-width: 661px;
   border-radius: var(--radius-card-lg);
   overflow: hidden;
 }
@@ -110,7 +111,7 @@ div + div > .content-block .content-block__wave {
 
 div + div > .content-block .content-block__wave::before {
   content: '';
-  width: 38px;
+  width: 53px;
   height: 42px;
   background: url('../../images/orange-wave-segment.svg') no-repeat center / contain;
 }
