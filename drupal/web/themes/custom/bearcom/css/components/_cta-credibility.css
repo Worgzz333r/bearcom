@@ -55,7 +55,7 @@
 }
 
 .cta-block--credibility .cta-block__description {
-  color: var(--color-text-primary);
+  color: var(--color-text-dark);
   text-align: left;
   margin: 0 0 46px;
 }
@@ -146,6 +146,7 @@
   }
 
   .cta-block--credibility .cta-block__description {
+    color: var(--color-text-primary);
     margin-bottom: var(--spacing-md);
   }
 }
